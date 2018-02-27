@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180227111859) do
+ActiveRecord::Schema.define(version: 20180227160000) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,10 @@ ActiveRecord::Schema.define(version: 20180227111859) do
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "number"
+    t.integer "first_creator_id"
+    t.integer "second_creator_id"
+    t.integer "third_creator_id"
   end
 
   create_table "creators", force: :cascade do |t|
@@ -34,6 +38,7 @@ ActiveRecord::Schema.define(version: 20180227111859) do
     t.bigint "batch_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "batch_score"
     t.index ["batch_id"], name: "index_creators_on_batch_id"
     t.index ["user_id"], name: "index_creators_on_user_id"
   end

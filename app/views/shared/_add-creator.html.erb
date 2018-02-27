@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-offset-3 col-xs-6 text-center">
+      <h1> Add your creator for the next batch</h1>
+      <%= simple_form_for(@creator) do |f| %>
+        <!-- [...] -->
+        <%= f.input :youtube_name%>
+        <%= f.input :description%>
+        <%= f.input :channel_url%>
+        <%= f.input :video_url%>
+        <%= f.input :nb_followers%>
+        <%= f.association :batch, label_method: :id %>
+        <%= f.input :language%>
+        <!-- [...] -->
+        <%= f.submit "Add a Creator", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+

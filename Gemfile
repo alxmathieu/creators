@@ -14,6 +14,7 @@ gem 'pundit'
 # Act As Taggable - Gems
 gem 'acts-as-taggable-on', '~> 4.0'
 
+
 # Front Gems
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
