@@ -9,6 +9,17 @@ class CreatorsController < ApplicationController
     authorize @creator
   end
 
+  def create
+    @creator = Creator.new(creators_params)
+    @creator.user = current_user
+    authorize @creator
+    if @creator.save
+      redirect_to new_creator_path
+    else
+      render 'creators/new'
+    end
+  end
+
   # def create
   #   @performance = Performance.new(performances_params)
   #   @performance.artist = current_user
@@ -22,7 +33,7 @@ class CreatorsController < ApplicationController
   private
 
   def creators_params
-    params.require(:creators).permit(:price, :description)
+    params.require(:creator).permit(:user_id, :youtube_name, :description, :channel_url, :video_url, :nb_followers, :language, :batch_id)
   end
 
 end
