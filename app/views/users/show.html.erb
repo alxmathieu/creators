@@ -1,13 +1,48 @@
 <div class="container">
-  <h1>Hello</h1>
-  <div class="user-infos text-center">
-    <% if @user.avatar.nil? %>
-      <%= image_tag 'default-avatar', alt: @user.username, class: "avatar-large" %>
+
+  <div class="card user-infos text-center">
+    <div class="user-infos-content">
+      <% if @user.avatar.nil? %>
+        <%= image_tag 'default-avatar', alt: @user.username, class: "avatar-large" %>
+      <% else %>
+        <%= image_tag @user.avatar, alt: @user.username, class: "avatar-large" %>
+      <% end %>
+      <h3><%= @user.username %></h3>
+      <p><%= @user.bio %></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>My journey</h2>
+    <p>My current status: <%= @user.level_name %></p>
+    <h3>Steps to level up</h3>
+    <% if @user.level == 0 %>
+      <ul>
+        <li>Upvote at least 10 creators</li>
+      </ul>
     <% else %>
-      <%= image_tag @user.avatar, alt: @user.username, class: "avatar-large" %>
+      <ul>
+        <li>Dig at least x creators</li>
+        <li>Receive at least x upvotes on the creators you digged</li>
+      </ul>
     <% end %>
   </div>
 
-  <h2>My journey</h2>
-  <p>Salut coucou</p>
+  <div class="card">
+    <h2>My digs</h2>
+    <ul class="list-unstyled">
+      <% @user.creators.each do |creator| %>
+        <li><%= creator.youtube_name %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>My upvotes</h2>
+    <ul class="list-unstyled">
+      <% @user.upvotes.each do |upvote| %>
+        <li><%= Creator.find(upvote_id).youtube_name %></li>
+      <% end %>
+    </ul>
+  </div>
 </div>
