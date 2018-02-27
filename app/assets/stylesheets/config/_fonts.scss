@@ -2,9 +2,9 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700|Permanent+Marker");
 
 // Define fonts for body and headers
-$body-font: "Lato", "Helvetica", "sans-serif";
-$headers-font: "Permanent Marker", "Helvetica", "cursive";
-
+$body-font: "Lato 700", "Helvetica", "sans-serif";
+$headers-font: "Lato 300", "Helvetica", "cursive";
+$creators-font: "Permanent Marker", "Helvetica", "cursive";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {

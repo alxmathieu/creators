@@ -9,6 +9,13 @@ gem 'puma'
 gem 'rails', '5.1.5'
 gem 'redis'
 
+
+# Act as Taggable - GEM
+gem 'acts-as-taggable-on', '~> 4.0'
+
+
+
+# Font GEMS
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
