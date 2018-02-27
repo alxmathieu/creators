@@ -1,6 +1,7 @@
 class CreatorsController < ApplicationController
   before_action :find_creator, only: [ :show, :edit, :update ]
 
+
   def index
     @creators = Creator.all
   end
