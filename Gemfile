@@ -9,6 +9,7 @@ gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.1.5'
 gem 'redis'
+gem 'pundit'
 
 # Act As Taggable - Gems
 gem 'acts-as-taggable-on', '~> 4.0'
