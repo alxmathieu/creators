@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>Hello</h1>
+  <div class="user-infos text-center">
+    <% if @user.avatar.nil? %>
+      <%= image_tag 'default-avatar', alt: @user.username, class: "avatar-large" %>
+    <% else %>
+      <%= image_tag @user.avatar, alt: @user.username, class: "avatar-large" %>
+    <% end %>
+  </div>
+
+  <h2>My journey</h2>
+  <p>Salut coucou</p>
+</div>
