@@ -12,21 +12,25 @@
     </div>
   </div>
 
-  <div class="card">
-    <h2>My journey</h2>
-    <p>My current status: <%= @user.level_name %></p>
-    <h3>Steps to level up</h3>
-    <% if @user.level == 0 %>
-      <ul>
-        <li>Upvote at least 10 creators</li>
-      </ul>
-    <% else %>
-      <ul>
-        <li>Dig at least x creators</li>
-        <li>Receive at least x upvotes on the creators you digged</li>
-      </ul>
-    <% end %>
-  </div>
+  <% if current_user == @user  %>
+    <div class="card">
+      <h2>My journey</h2>
+      <p>My current status: <%= @user.level_name %></p>
+      <h3>Steps to level up</h3>
+      <% if @user.level == 0 %>
+        <ul>
+          <li>Upvote at least 10 creators</li>
+        </ul>
+      <% elsif @user.level == 3 %>
+        <p>You're already an <%= @user.level_name %>!</p>
+      <% else %>
+        <ul>
+          <li>Dig at least <%= pluralize @user.dig_needed, "creator" %></li>
+          <li>Receive at least <%= pluralize @user.upvotes_needed, "upvote" %> on the creators you digged</li>
+        </ul>
+      <% end %>
+    </div>
+  <% end %>
 
   <div class="card">
     <h2>My digs</h2>

@@ -2,8 +2,10 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   LEVELS = ['Viewer', 'Basic digger', 'Advanced digger', 'Expert digger']
-  LEVEL_UP_CONDITIONS = [{nb_dig: 1, upvotes_received: 10},
+  LEVEL_UP_CONDITIONS = [{}, {},
+                         {nb_dig: 1, upvotes_received: 10},
                          {nb_dig: 2, upvotes_received: 20}]
+
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
@@ -18,7 +20,7 @@ class User < ApplicationRecord
   def upvotes_received
     upvotes = 0
     self.creators.each do |creator|
-      upvotes += creators.upvotes.length
+      upvotes += creator.upvotes.length
     end
     return upvotes
   end
@@ -36,13 +38,13 @@ class User < ApplicationRecord
   end
 
   def level_2?
-    self.number_digged > LEVEL_UP_CONDITIONS[0][:nb_dig] &&
-      self.upvotes_received > LEVEL_UP_CONDITIONS[0][:upvotes_received]
+    self.number_digged > LEVEL_UP_CONDITIONS[2][:nb_dig] &&
+      self.upvotes_received > LEVEL_UP_CONDITIONS[2][:upvotes_received]
   end
 
   def level_3?
-    self.number_digged > LEVEL_UP_CONDITIONS[1][:nb_dig] &&
-      self.upvotes_received > LEVEL_UP_CONDITIONS[1][:upvotes_received]
+    self.number_digged > LEVEL_UP_CONDITIONS[3][:nb_dig] &&
+      self.upvotes_received > LEVEL_UP_CONDITIONS[3][:upvotes_received]
   end
 
   def update_level
@@ -54,5 +56,13 @@ class User < ApplicationRecord
       self.level = 1
     end
     self.save
+  end
+
+  def dig_needed
+    LEVEL_UP_CONDITIONS[self.level + 1][:nb_dig]
+  end
+
+  def upvotes_needed
+    LEVEL_UP_CONDITIONS[self.level + 1][:upvotes_received]
   end
 end
