@@ -96,7 +96,8 @@ ActiveRecord::Schema.define(version: 20180227160000) do
     t.string "avatar"
     t.string "channel_url"
     t.integer "nb_following"
-    t.string "level"
+    t.integer "level"
+    t.text "bio"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
