@@ -1,2 +1,11 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Showcased:</h1>
+<p><%= @showcased_creator.youtube_name %> || found by <%= @showcased_creator.user.username %></p>
+<p> "<%= @showcased_creator.description %>" </p>
+
+<h1>Current Batch</h1>
+<ul>
+  <% @creators_in_current_batch.each do |creator| %>
+
+    <li> <%= creator.youtube_name %> || found by <%= creator.user.username  %></li>
+  <% end %>
+</ul>
