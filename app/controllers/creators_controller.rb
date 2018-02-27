@@ -7,7 +7,7 @@ class CreatorsController < ApplicationController
   end
 
   def show
-
+    authorize @creator
   end
 
   def new
