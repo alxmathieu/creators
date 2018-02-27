@@ -5,7 +5,14 @@
 <h1>Current Batch</h1>
 <ul>
   <% @creators_in_current_batch.each do |creator| %>
-
     <li> <%= creator.youtube_name %> || found by <%= creator.user.username  %></li>
   <% end %>
 </ul>
+<h1>Batch of last week</h1>
+<ul>
+  <% @creators_in_last_batch.each do |creator| %>
+    <li> <%= creator.youtube_name %> || found by <%= creator.user.username  %></li>
+  <% end %>
+</ul>
+
+
