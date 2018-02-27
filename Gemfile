@@ -11,8 +11,6 @@ gem 'redis'
 
 
 # Act as Taggable - GEM
-gem 'acts-as-taggable-on', '~> 4.0'
-
 
 
 # Font GEMS
