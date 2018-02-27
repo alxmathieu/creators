@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'open-uri'
+
+puts 'Cleaning models...'
+  Booking.destroy_all
+  Photo.destroy_all
+  Performance.destroy_all
+  User.destroy_all
+puts 'Done!'
