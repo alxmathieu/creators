@@ -9,8 +9,30 @@
 require 'open-uri'
 
 puts 'Cleaning models...'
-  Booking.destroy_all
-  Photo.destroy_all
-  Performance.destroy_all
+  Upvote.destroy_all
+  Creator.destroy_all
+  Batch.destroy_all
   User.destroy_all
 puts 'Done!'
+
+
+Creator.create(channel_url: "http://bit.ly/1sEbnIU", youtube_name: "Casey Neistat", description: "THE inventor of vlogging", video_url: "http://bit.ly/2mSafKI" )
+
+
+
+
+
+ t.string "channel_url"
+    t.string "youtube_name"
+    t.text "description"
+    t.string "video_url"
+    t.integer "nb_followers"
+    t.boolean "is_showcased"
+    t.string "country"
+    t.string "language"
+    t.bigint "user_id"
+    t.bigint "batch_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["batch_id"], name: "index_creators_on_batch_id"
+    t.index ["user_id"], name: "index_creators_on_user_id"
