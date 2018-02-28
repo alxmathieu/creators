@@ -13,10 +13,10 @@ puts 'Cleaning models...'
   Batch.destroy_all
 puts 'Done!'
 
-max = User.create!(username: "Max", email: "max@email.com", password: "123456")
-hugo = User.create!(username: "Hugo", email: "hugo@email.com", password: "123456")
-benoit= User.create!(username: "Benoit", email: "benoit@email.com", password: "123456")
-pip = User.create!(username: "Pip'", email: "pip@email.com", password: "123456")
+max = User.create!(username: "Max", email: "max@email.com", password: "123456", level: 1)
+hugo = User.create!(username: "Hugo", email: "hugo@email.com", password: "123456", level: 2)
+benoit= User.create!(username: "Benoit", email: "benoit@email.com", password: "123456", level: 3)
+pip = User.create!(username: "Pip'", email: "pip@email.com", password: "123456", level: 4)
 
 batch_9 = Batch.create!(status: "active", number: 201809)
 batch_8 = Batch.create!(status: "inactive", number: 201808)
