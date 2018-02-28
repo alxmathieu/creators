@@ -2,8 +2,8 @@ class UpvotesController < ApplicationController
 
   def create
     #if Upvote.create(user_id: current_user.id, creator_id = upvote_params[:creator_id])
-    @upvote = Upvote.new(upvotes_params)
-    @upvote.user = current_user
+    @creator = Creator.find(params[:creator_id])
+    @upvote = Upvote.new(user: current_user, creator: @creator)
     authorize @upvote
     if @upvote.save
       redirect_to root_path
@@ -15,8 +15,8 @@ class UpvotesController < ApplicationController
 
   private
 
-  def upvotes_params
-    params.permit(:user_id, :creator_id)
-  end
+  # def upvotes_params
+  #   params.require(:upvote).permit(:user_id, :creator_id, :video_attributes)
+  # end
 
 end
