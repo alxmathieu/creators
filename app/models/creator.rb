@@ -4,6 +4,14 @@ class Creator < ApplicationRecord
   belongs_to :batch
   has_many :upvotes
 
+  def video_youtube_id
+      pattern = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/
+      regex = self.video_url.match(pattern)
+      youtube_id = regex[1]
+      return youtube_id
+
+  end
+
   # Avatar Photo
   mount_uploader :avatar_photo, PhotoUploader
 
@@ -14,6 +22,7 @@ class Creator < ApplicationRecord
   validates :video_url, presence: true, format: {with: /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/}
   validates :nb_followers, presence: true
   validates :batch, presence: true
+
 
   # Act as Taggable
   acts_as_taggable # Alias for acts_as_taggable_on :tags
