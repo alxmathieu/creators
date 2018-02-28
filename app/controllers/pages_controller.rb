@@ -1,8 +1,6 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
 
-  # CURRENT_BATCH = Batch.where("status = 'active'")[0]
-  # LAST_BATCH = Batch.where("number = #{CURRENT_BATCH.number - 1}")
 
   def home
     # for upvote creation
@@ -21,8 +19,17 @@ class PagesController < ApplicationController
   private
 
   def sort_creators(array)
-    asc = array.sort_by {|creator| creator.upvotes.length }
-    asc.reverse
+    all_upvotes = 0
+    Batch.current_batch.creators.each do |creator|
+      all_upvotes += creator.upvotes.length
+    end
+    if all_upvotes > 0
+      asc = array.sort_by {|creator| creator.upvotes.length }
+      asc.reverse
+    else
+      asc = array.sort_by {|creator| creator.user.level }
+      asc.reverse
+    end
   end
 
 end

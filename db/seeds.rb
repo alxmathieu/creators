@@ -14,11 +14,12 @@ puts 'Cleaning models...'
   Batch.destroy_all
 puts 'Done!'
 
+
 puts "Creating Users..."
-max = User.create!(username: "Max", email: "max@email.com", password: "123456", remote_avatar_url: "http://bit.ly/2EF3rJz")
-hugo = User.create!(username: "Hugo", email: "hugo@email.com", password: "123456", remote_avatar_url: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/izq9au9wdqhux41ukrps.jpg")
-benoit= User.create!(username: "Benoit", email: "benoit@email.com", password: "123456", remote_avatar_url: "https://avatars3.githubusercontent.com/u/29869077?v=4")
-pip = User.create!(username: "Pip'", email: "pip@email.com", password: "123456", remote_avatar_url: "https://avatars2.githubusercontent.com/u/25395242?v=4")
+max = User.create!(username: "Max", email: "max@email.com", password: "123456", remote_avatar_url: "http://bit.ly/2EF3rJz", level: 0)
+hugo = User.create!(username: "Hugo", email: "hugo@email.com", password: "123456", remote_avatar_url: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/izq9au9wdqhux41ukrps.jpg", level: 2)
+benoit= User.create!(username: "Benoit", email: "benoit@email.com", password: "123456", remote_avatar_url: "https://avatars3.githubusercontent.com/u/29869077?v=4", level: 1)
+pip = User.create!(username: "Pip'", email: "pip@email.com", password: "123456", remote_avatar_url: "https://avatars2.githubusercontent.com/u/25395242?v=4", level: 3)
 puts "Done!"
 
 puts "Creating Batches..."

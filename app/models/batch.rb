@@ -2,8 +2,7 @@ class Batch < ApplicationRecord
   has_many :creators
 
   def self.current_batch
-    current_batch = Batch.where("status = 'active'").first
-    return current_batch
+    Batch.where("status = 'active'").first
   end
 
   def self.last_batch
