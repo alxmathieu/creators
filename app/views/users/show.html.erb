@@ -16,6 +16,7 @@
     <div class="card">
       <h2>My journey</h2>
       <p>My current status: <%= @user.level_name %></p>
+      <%# render 'progress' %>
       <h3>Steps to level up</h3>
       <% if @user.level == 0 %>
         <ul>
@@ -26,7 +27,7 @@
       <% else %>
         <ul>
           <li>Dig at least <%= pluralize @user.dig_needed, "creator" %></li>
-          <li>Receive at least <%= pluralize @user.upvotes_needed, "upvote" %> on the creators you digged</li>
+          <li>Receive at least <%= pluralize @user.upvotes_needed, "upvote" %> on the creators you dug</li>
         </ul>
       <% end %>
     </div>
