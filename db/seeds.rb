@@ -19,6 +19,7 @@ hugo = User.create!(username: "Hugo", email: "hugo@email.com", password: "123456
 benoit= User.create!(username: "Benoit", email: "benoit@email.com", password: "123456")
 pip = User.create!(username: "Pip'", email: "pip@email.com", password: "123456")
 
+puts "Creating Batches"
 batch_8 = Batch.create!(status: "inactive", number: 201808)
 batch_9 = Batch.create!(status: "active", number: 201809)
 batch_10 = Batch.create!(status: "pending", number: 201810)
