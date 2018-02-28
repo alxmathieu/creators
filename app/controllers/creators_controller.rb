@@ -10,16 +10,6 @@ class CreatorsController < ApplicationController
     authorize @creator
   end
 
-
-  def edit
-  end
-
-  def update
-    if @creator.update(creator_params)
-      redirect_to creator_path
-    else
-      render :edit
-
   def new
     @creator = Creator.new
     authorize @creator
@@ -36,12 +26,25 @@ class CreatorsController < ApplicationController
     end
   end
 
-  private
+  def edit
+  end
 
+  def update
+    authorize @creator
+    if @creator.update(creator_params)
+      redirect_to creator_path
+    else
+      render :edit
+    end
+  end
+
+
+
+
+  private
 
   def find_creator
     @creator = Creator.find(params[:id])
-
   end
 
   def creator_params

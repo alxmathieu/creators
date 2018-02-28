@@ -7,8 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-require 'open-uri'
-
 puts 'Cleaning models...'
   Upvote.destroy_all
   Creator.destroy_all
@@ -37,6 +35,7 @@ upvote4 = Upvote.create!(user_id: max.id, creator_id: squeezie.id)
 # user1 = User.create!(username: "Maximilien", avatar:"http://bit.ly/2EF3rJz", email: "maximilien@email.com", password: "123456", is_artist: true, location: "New York", bio: "An artwork can be accommodated in an interior wall, in the living room, bedroom, kitchen or in a studio and showroom. The service of indoor artwork extends to both private clients, companies and public organizations.")
 
 
+
 # puts "Creating 2 Users"
 #   user1 = User.create!(username: "Maximilien", avatar:"http://bit.ly/2EF3rJz", email: "maximilien@email.com", password: "123456", channel_url: "channel-url1.com", nb_following: 12)
 #   user2 = User.create!(username: "Tanguy", avatar:"http://bit.ly/2Hx6P7l", email: "tanguy@email.com", password: "123456", channel_url: "channel-url2.com", nb_following: 11)
@@ -54,3 +53,4 @@ upvote4 = Upvote.create!(user_id: max.id, creator_id: squeezie.id)
 #   creator2 = Creator.create!(youtube_name: "Port d'Attache", channel_url: "http://bit.ly/2EYM2rD", video_url: "https://youtu.be/cbhO4bJLHdM", description: " L’équipage qui vous présente la Bretagne sous ses aspects les plus inédits ! Sa culture, sa gastronomie, ses initiatives et ses lieux insolites vont vous inspirer.", nb_followers: 107 , is_showcased: false, country: "France", language: "french", user: user2, batch: batch1)
 
 # puts "Done!"
+
