@@ -27,6 +27,10 @@ casey = Creator.create!(channel_url: "http://bit.ly/1sEbnIU", youtube_name: "Cas
 benjamin_verrecchia = Creator.create!(channel_url: "http://bit.ly/2Cn0qfp", youtube_name: "Benjamin Verrecchia", description: "His laugh is just too funny", video_url: "http://bit.ly/2BRhRnr", nb_followers: 87654, is_showcased: false, country: "france", language: "french", batch_id: batch_9.id, user_id: max.id)
 squeezie = Creator.create!(channel_url: "http://bit.ly/1QGbnGm", youtube_name: "squeezie", description: "So funny! Great indie videogaming", video_url: "http://bit.ly/2BRhRnr", nb_followers: 117463, is_showcased: false, country: "france", language: "french", batch_id: batch_9.id, user_id: benoit.id)
 
-
+upvote1 = Upvote.create!(user_id: max.id, creator_id: casey.id)
+upvote3 = Upvote.create!(user_id: benoit.id, creator_id: casey.id)
+upvote2 = Upvote.create!(user_id: hugo.id, creator_id: benjamin_verrecchia.id)
+upvote4 = Upvote.create!(user_id: benoit.id, creator_id: squeezie.id)
+upvote4 = Upvote.create!(user_id: max.id, creator_id: squeezie.id)
 
 # user1 = User.create!(username: "Maximilien", avatar:"http://bit.ly/2EF3rJz", email: "maximilien@email.com", password: "123456", is_artist: true, location: "New York", bio: "An artwork can be accommodated in an interior wall, in the living room, bedroom, kitchen or in a studio and showroom. The service of indoor artwork extends to both private clients, companies and public organizations.")

@@ -5,15 +5,24 @@ class PagesController < ApplicationController
   # LAST_BATCH = Batch.where("number = #{CURRENT_BATCH.number - 1}")
 
   def home
-    @showcased_creator = Creator.where("is_showcased = true")[0]
-    current_batch = Batch.where("status = 'active'")[0]
-    last_batch = Batch.where("number = #{current_batch.number - 1}")[0]
-    # sql active records : @my_bookings = Booking.joins(:performance).where(performances: { user_id: current_user.id }).order(status: :DESC)
-    @creators_in_current_batch = Creator.where("batch_id = #{current_batch.id}")
-    @creators_in_last_batch = Creator.where("batch_id = #{last_batch.id}")
-
+    # for upvote creation
+    @upvote = Upvote.new
+    # for showcasing div
+    @showcased_creator = Creator.where("is_showcased = true").first
+    # for rankings
+    current_batch = Batch.where("status = 'active'").first
+    last_batch = Batch.where("number = #{current_batch.number - 1}").first
+    creators_in_current_batch = Creator.where("batch_id = #{current_batch.id}")
+    creators_in_last_batch = Creator.where("batch_id = #{last_batch.id}")
+    @ordered_creators_current_batch = sort_creators(creators_in_current_batch)
+    @ordered_creators_last_batch = sort_creators(creators_in_last_batch)
   end
 
+  private
 
+  def sort_creators(array)
+    asc = array.sort_by {|creator| creator.upvotes.length }
+    asc.reverse
+  end
 
 end
