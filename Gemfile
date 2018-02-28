@@ -14,6 +14,9 @@ gem 'pundit'
 # Act As Taggable - Gems
 gem 'acts-as-taggable-on', '~> 4.0'
 
+# Photo Uploader
+gem 'carrierwave', '~> 1.2'
+
 
 # Front Gems
 gem 'autoprefixer-rails'
