@@ -1,9 +1,10 @@
 .footer {
   background: $charcoal;
   display: flex;
+  text-align: center;
   align-items: center;
-  justify-content: space-between;
-  height: 150px;
+  justify-content: space-around;
+  height: 120px;
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
   margin-top: 50px;
