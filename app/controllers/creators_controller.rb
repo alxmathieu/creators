@@ -12,6 +12,7 @@ class CreatorsController < ApplicationController
   def create
     @creator = Creator.new(creators_params)
     @creator.user = current_user
+    @creator.batch = Batch.next_batch
     authorize @creator
     if @creator.save
       redirect_to new_creator_path

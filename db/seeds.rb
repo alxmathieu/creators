@@ -19,8 +19,9 @@ hugo = User.create!(username: "Hugo", email: "hugo@email.com", password: "123456
 benoit= User.create!(username: "Benoit", email: "benoit@email.com", password: "123456")
 pip = User.create!(username: "Pip'", email: "pip@email.com", password: "123456")
 
-batch_9 = Batch.create!(status: "active", number: 201809)
 batch_8 = Batch.create!(status: "inactive", number: 201808)
+batch_9 = Batch.create!(status: "active", number: 201809)
+batch_10 = Batch.create!(status: "pending", number: 201810)
 
 casey = Creator.create!(channel_url: "https://www.youtube.com/user/caseyneistat", youtube_name: "Casey Neistat", description: "THE inventor of vlogging", video_url: "https://www.youtube.com/watch?v=jG7dSXcfVqE", nb_followers: 130000, is_showcased: true, country: "United-States", language: "english", batch_id: batch_8.id, user_id: hugo.id)
 benjamin_verrecchia = Creator.create!(channel_url: "https://www.youtube.com/channel/UCuKa7_pustUzOj3IBcgYNPg", youtube_name: "Benjamin Verrecchia", description: "His laugh is just too funny", video_url: "https://www.youtube.com/watch?v=PmWNOwD11YY", nb_followers: 87654, is_showcased: false, country: "france", language: "french", batch_id: batch_9.id, user_id: max.id)

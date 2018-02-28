@@ -7,11 +7,11 @@ class Batch < ApplicationRecord
   end
 
   def self.last_batch
-    Batch.where("number = #{Batch.current.number - 1}").first
+    Batch.where("number = #{Batch.current_batch.number - 1}").first
   end
 
   def self.next_batch
-    Batch.where("number = #{Batch.current.number + 1}").first
+    Batch.where("number = #{Batch.current_batch.number + 1}").first
   end
 
 end

@@ -12,7 +12,6 @@
           <%= f.input :nb_followers%>
           <%= f.input :language, class: " bfh-languages"%>
           <%= f.input :country %>
-          <%= f.association :batch, label_method: :id %>
           <%= f.input :tag_list, hint: "Add several tags separated with commas",  value: f.object.tag_list.to_s %>
         </div>
         <!-- [...] -->
