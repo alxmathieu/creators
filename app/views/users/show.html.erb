@@ -10,13 +10,16 @@
       <h3><%= @user.username %></h3>
       <p><%= @user.bio %></p>
     </div>
+    <% if current_user == @user  %>
+      <%= link_to "Edit", "#" %>
+    <% end %>
   </div>
 
   <% if current_user == @user  %>
     <div class="card">
       <h2>My journey</h2>
       <p>My current status: <%= @user.level_name %></p>
-      <%# render 'progress' %>
+      <%= render 'progress' %>
       <h3>Steps to level up</h3>
       <% if @user.level == 0 %>
         <ul>
@@ -34,7 +37,11 @@
   <% end %>
 
   <div class="card">
-    <h2>My digs</h2>
+    <% if current_user == @user %>
+      <h2>My digs (<%= @user.creators.length %>)</h2>
+    <% else %>
+      <h2>Creators uploaded by <%= @user.username %> (<%= @user.creators.length %>)</h2>
+    <% end %>
     <ul class="list-unstyled">
       <% @user.creators.each do |creator| %>
         <li><%= creator.youtube_name %></li>
@@ -43,10 +50,14 @@
   </div>
 
   <div class="card">
-    <h2>My upvotes</h2>
+    <% if current_user == @user  %>
+      <h2>My upvotes (<%= @user.upvotes.length %>)</h2>
+    <% else %>
+      <h2>Creators upvoted by <%= @user.username %> (<%= @user.upvotes.length %>)</h2>
+    <% end %>
     <ul class="list-unstyled">
       <% @user.upvotes.each do |upvote| %>
-        <li><%= Creator.find(upvote_id).youtube_name %></li>
+        <li><%= Creator.find(upvote.creator_id).youtube_name %></li>
       <% end %>
     </ul>
   </div>

@@ -3,5 +3,4 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     authorize @user
   end
-
 end
