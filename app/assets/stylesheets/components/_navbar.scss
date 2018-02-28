@@ -75,3 +75,12 @@
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
+
+/* When small screen */
+.navbar-xs-menu {
+  color: $light-gray;
+
+  &:hover {
+  color: $gold;
+  }
+}
