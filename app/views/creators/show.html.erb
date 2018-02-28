@@ -14,7 +14,7 @@
             <% if upvote_for_creator.nil? %>
               <%= button_to 'Upvote', creator_upvotes_path(@creator) %>
             <% else upvote_for_creator %>
-              <%= link_to 'Upvote', creator_upvote_path(upvote_for_creator), method: :delete %>
+              <%= link_to 'Upvote', creator_upvotes_path(upvote_for_creator), method: :delete %>
             <% end %>
           </div>
         </div>
