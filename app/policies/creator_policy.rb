@@ -13,8 +13,14 @@ class CreatorPolicy < ApplicationPolicy
     true
   end
 
-  def create?
+  def new?
+    # n'authoriser que pour les user avec un certain level
     true
+  end
+
+  def create?
+    # n'authoriser que pour les user avec un certain level
+    new?
   end
 
   def update?
