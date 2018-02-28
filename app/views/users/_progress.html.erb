@@ -1,40 +1,41 @@
-
 <div class="steps">
     <ul class="steps-container">
-        <li style="width:25%;" class="activated">
+        <!-- <li style="width:25%;" class="activated"> -->
+        <li style="width:25%;" class="<%= 'activated' if @user.level >= 0 %>" id="<%= 'current' if @user.level == 0 %>">
             <div class="step">
                 <div class="step-image"><span></span></div>
                 <div class="step-name">Viewer</div>
             </div>
         </li>
-        <li style="width:25%;" >
+        <li style="width:25%;" class="<%= 'activated' if @user.level >= 1 %>" id="<%= 'current' if @user.level == 1 %>">
             <div class="step">
                 <div class="step-image"><span></span></div>
                 <div class="step-name">Basic digger</div>
             </div>
         </li>
-        <li style="width:25%;">
+        <li style="width:25%;" class="<%= 'activated' if @user.level >= 2 %>" id="<%= 'current' if @user.level == 2 %>">
             <div class="step">
                 <div class="step-image"><span></span></div>
                 <div class="step-name">Advanced digger</div>
             </div>
         </li>
-        <li style="width:25%;">
+        <li style="width:25%;" class="<%= 'activated' if @user.level >= 3 %>" id="<%= 'current' if @user.level == 3 %>">
             <div class="step">
                 <div class="step-image"><span></span></div>
                 <div class="step-name">Expert digger</div>
             </div>
         </li>
     </ul>
-    <div class="step-bar" style="width:25%;"></div>
+    <% @width = 0 %>
+    <% case @user.level %>
+    <% when 0 %>
+      <% @width = "width:25%;" %>
+    <% when 1 %>
+      <% @width = "width:50%;" %>
+    <% when 2 %>
+      <% @width = "width:75%;" %>
+    <% when 3 %>
+      <% @width = "width:100%;" %>
+    <% end %>
+    <div class="step-bar" style="<%= @width %>"></div>
 </div>
-
-<!-- <div class="progressbar-container">
-  <ul class="progressbar">
-    <li class="active">Viewer</li>
-    <li>Basic digger</li>
-    <li>Advanced digger</li>
-    <li>Expert digger</li>
-  </ul>
-</div> -->
-

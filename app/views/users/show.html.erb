@@ -1,40 +1,51 @@
 <div class="container">
 
   <div class="card user-infos text-center">
-    <div class="user-infos-content">
+    <div class="user-infos-container">
       <% if @user.avatar.nil? %>
         <%= image_tag 'default-avatar', alt: @user.username, class: "avatar-large" %>
       <% else %>
         <%= image_tag @user.avatar, alt: @user.username, class: "avatar-large" %>
       <% end %>
-      <h3><%= @user.username %></h3>
-      <p><%= @user.bio %></p>
+      <div class="user-infos-content" id="id-user-infos">
+        <h3><%= @user.username %></h3>
+        <p><%= @user.bio %></p>
+      </div>
     </div>
     <% if current_user == @user  %>
-      <%= link_to "Edit", "#" %>
+      <%= render 'form_edit' %>
+      <%= link_to "", "#", class: "fas fa-edit", id:"edit-user-btn" %>
     <% end %>
   </div>
 
   <% if current_user == @user  %>
     <div class="card">
-      <h2>My journey</h2>
-      <p>My current status: <%= @user.level_name %></p>
-      <%= render 'progress' %>
-      <h3>Steps to level up</h3>
-      <% if @user.level == 0 %>
-        <ul>
-          <li>Upvote at least 10 creators</li>
-        </ul>
-      <% elsif @user.level == 3 %>
-        <p>You're already an <%= @user.level_name %>!</p>
-      <% else %>
-        <ul>
-          <li>Dig at least <%= pluralize @user.dig_needed, "creator" %></li>
-          <li>Receive at least <%= pluralize @user.upvotes_needed, "upvote" %> on the creators you dug</li>
-        </ul>
-      <% end %>
+      <h2>My profile on Creators</h2>
+      <div class="achievments">
+        <%= render 'progress' %>
+        <div class="divider"></div>
+        <div class="next-steps">
+          <h4>Steps to upgrade your profile</h4>
+          <% if @user.level == 0 %>
+            <ul class="list-unstyled">
+              <li style="<%= 'text-decoration: line-through;' if @user.number_upvoted > 9 %>">Upvote at least 10 creators <span class="light-color">(<%= 10 - @user.number_upvoted %> left!)</span></li>
+            </ul>
+          <% elsif @user.level == 3 %>
+            <p>You're already an <%= @user.level_name %>!</p>
+          <% else %>
+            <ul class="list-unstyled">
+              <li style="<%= 'text-decoration: line-through;' if @user.dig_needed - @user.creators.length == 0 %>">Dig at least <%= pluralize @user.dig_needed, "creator" %> <span class="light-color">(<%= @user.dig_needed - @user.creators.length %> left!)</span></li>
+              <li style="<%= 'text-decoration: line-through;' if @user.upvotes_needed - @user.upvotes.length == 0 %>">Receive at least <%= pluralize @user.upvotes_needed, "upvote" %> on the creators you dug <span class="light-color">(<%= @user.upvotes_needed - @user.upvotes.length %> left!)</span></li>
+            </ul>
+          <% end %>
+        </div>
+      </div>
     </div>
   <% end %>
+
+  <div class="card">
+    <%= render 'digs_upvotes' %>
+  </div>
 
   <div class="card">
     <% if current_user == @user %>
