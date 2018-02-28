@@ -13,6 +13,8 @@ class UpvotesController < ApplicationController
     end
   end
 
+
+
   private
 
   # def upvotes_params
