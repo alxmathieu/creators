@@ -32,7 +32,7 @@
   <ul>
     <% @ordered_creators_current_batch.each do |creator| %>
       <li>
-        <%= creator.youtube_name %> || found by <%= creator.user.username %> || <%= creator.upvotes.length %> ||
+        <%= link_to creator.youtube_name, creator_path(creator.id)  %> || found by <%= creator.user.username %> || <%= creator.upvotes.length %> ||
         <% if user_signed_in? %>
           <% upvote_for_creator = current_user.upvotes.where("creator_id = #{creator.id}").first %>
           <% if upvote_for_creator.nil? %>
