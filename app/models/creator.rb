@@ -4,6 +4,9 @@ class Creator < ApplicationRecord
   belongs_to :batch
   has_many :upvotes
 
+  # Avatar Photo
+  mount_uploader :avatar_photo, PhotoUploader
+
   # Validations
   validates :channel_url, presence: true, uniqueness: true, format: { with: /(?:https|http)\:\/\/(?:[\w]+\.)?youtube\.com\/(?:c\/|channel\/|user\/)?([a-zA-Z0-9\-]{1,})/, message: 'Channel url is invalid'}
   validates :youtube_name, presence: true
