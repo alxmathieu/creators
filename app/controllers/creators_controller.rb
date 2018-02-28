@@ -1,7 +1,13 @@
 class CreatorsController < ApplicationController
+  before_action :find_creator, only: [ :show, :edit, :update ]
+
 
   def index
     @creators = Creator.all
+  end
+
+  def show
+    authorize @creator
   end
 
   def new
@@ -20,10 +26,30 @@ class CreatorsController < ApplicationController
     end
   end
 
-  private
-
-  def creators_params
-    params.require(:creator).permit(:user_id, :youtube_name, :description, :channel_url, :video_url, :nb_followers, :language, :batch_id, :tag_list)
+  def edit
   end
 
+  def update
+    authorize @creator
+    if @creator.update(creator_params)
+      redirect_to creator_path
+    else
+      render :edit
+    end
+  end
+
+
+
+
+  private
+
+  def find_creator
+    @creator = Creator.find(params[:id])
+  end
+
+  def creator_params
+    params.require(:creator).permit(:user_id, :batch_id, :youtube_name, :description, :channel_url, :video_url, :nb_followers, :is_showcased, :country, :language)
+  end
 end
+
+
