@@ -20,6 +20,7 @@ class CreatorsController < ApplicationController
     end
   end
 
+
   private
 
   def creators_params

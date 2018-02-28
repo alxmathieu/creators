@@ -8,7 +8,7 @@
 
 require 'open-uri'
 
-puts 'Cleaning models...'
+puts 'Cleaning models instances...'
   Upvote.destroy_all
   Creator.destroy_all
   User.destroy_all
