@@ -7,7 +7,18 @@
   <% @ordered_creators_current_batch.each do |creator| %>
     <li>
       <%= creator.youtube_name %> || found by <%= creator.user.username %> || <%= creator.upvotes.length %> ||
-      <%= link_to 'Upvote', creator_upvotes_path(creator), method: :post %>
+      <% if user_signed_in? %>
+        <% upvote_for_creator = current_user.upvotes.where("creator_id = #{creator.id}").first %>
+        <% if upvote_for_creator.nil? %>
+          <%= link_to 'Upvote', creator_upvotes_path(creator), method: :post %>
+        <% else upvote_for_creator %>
+          <%= link_to 'Upvote', upvote_path(upvote_for_creator), method: :delete %>
+        <% end %>
+      <% else %>
+          <%= link_to 'Upvote', new_user_session_path %>
+      <% end %>
+
+
     </li>
   <% end %>
 </ul>
@@ -19,5 +30,5 @@
   <% end %>
 </ul>
 
-<%= link_to "Add a new creator", new_creator_path  %>
+<%= link_to "Add a new creator", new_creator_path %>
 

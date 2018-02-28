@@ -6,7 +6,7 @@ class UpvotePolicy < ApplicationPolicy
   end
 
   def new?
-    true
+    user
   end
 
   def create?
