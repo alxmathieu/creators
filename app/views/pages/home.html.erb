@@ -1,2 +1,23 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Showcased:</h1>
+<p><%= @showcased_creator.youtube_name %> || found by <%= @showcased_creator.user.username %></p>
+<p> "<%= @showcased_creator.description %>" </p>
+
+<h1>Current Batch</h1>
+<ul>
+  <% @ordered_creators_current_batch.each do |creator| %>
+    <li>
+      <%= creator.youtube_name %> || found by <%= creator.user.username %> || <%= creator.upvotes.length %> ||
+      <%= link_to 'Upvote', creator_upvotes_path(creator), method: :post %>
+    </li>
+  <% end %>
+</ul>
+
+<h1>Batch of last week</h1>
+<ul>
+  <% @ordered_creators_last_batch.each do |creator| %>
+    <li> <%= creator.youtube_name %> || found by <%= creator.user.username %> || <%= creator.upvotes.length %></li>
+  <% end %>
+</ul>
+
+<%= link_to "Add a new creator", new_creator_path  %>
+
