@@ -1,8 +1,6 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
 
-  # CURRENT_BATCH = Batch.where("status = 'active'")[0]
-  # LAST_BATCH = Batch.where("number = #{CURRENT_BATCH.number - 1}")
 
   def home
     # for upvote creation

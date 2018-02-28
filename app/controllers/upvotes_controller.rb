@@ -1,5 +1,5 @@
 class UpvotesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:create]
 
   def create
     #if Upvote.create(user_id: current_user.id, creator_id = upvote_params[:creator_id])

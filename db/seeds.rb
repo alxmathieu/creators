@@ -20,6 +20,7 @@ pip = User.create!(username: "Pip'", email: "pip@email.com", password: "123456")
 
 batch_9 = Batch.create!(status: "active", number: 201809)
 batch_8 = Batch.create!(status: "inactive", number: 201808)
+batch_10 = Batch.create!(status: "pending", number: 201810)
 
 casey = Creator.create!(channel_url: "http://bit.ly/1sEbnIU", youtube_name: "Casey Neistat", description: "THE inventor of vlogging", video_url: "http://bit.ly/2mSafKI", nb_followers: 130000, is_showcased: true, country: "United-States", language: "english", batch_id: batch_8.id, user_id: hugo.id)
 benjamin_verrecchia = Creator.create!(channel_url: "http://bit.ly/2Cn0qfp", youtube_name: "Benjamin Verrecchia", description: "His laugh is just too funny", video_url: "http://bit.ly/2BRhRnr", nb_followers: 87654, is_showcased: false, country: "france", language: "french", batch_id: batch_9.id, user_id: max.id)
