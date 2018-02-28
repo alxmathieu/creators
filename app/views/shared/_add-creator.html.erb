@@ -4,14 +4,15 @@
       <h1> Add your creator for the next batch</h1>
       <%= simple_form_for(@creator) do |f| %>
         <!-- [...] -->
+        <%= f.input :channel_url%>
         <%= f.input :youtube_name%>
         <%= f.input :description%>
-        <%= f.input :channel_url%>
         <%= f.input :video_url%>
         <%= f.input :nb_followers%>
+        <%= f.input :language%>
+        <%= f.input :country %>
         <%= f.association :batch, label_method: :id %>
         <%= f.input :tag_list, hint: "Add several tags separated with commas",  value: f.object.tag_list.to_s %>
-        <%= f.input :language%>
         <!-- [...] -->
         <%= f.submit "Add a Creator", class: "btn btn-primary" %>
       <% end %>
