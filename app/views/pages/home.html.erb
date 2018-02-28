@@ -1,18 +1,27 @@
 <div class="container">
   <div class="showcased">
-    <div class="row">
-      <div class="col-xs-12 col-md-3">
-        <div class="card showcased-content">
-          <%= image_tag "default-avatar.png", class: "avatar-showcased" %>
-          <div class="showcased-infos">
-            <%= @showcased_creator.youtube_name %>
-            found by <%= @showcased_creator.user.username %>
-            <%= @showcased_creator.description %>
-          </div>
-          <div class="showcased-video">
-            "placeholder-video"
-          </div>
+    <div class="card card-showcased">
+      <%= cl_image_tag @showcased_creator.avatar_photo, class: "avatar-showcased" %>
+      <div class="showcased-infos">
+        <div class="showcased-name">
+          <%= @showcased_creator.youtube_name %>
         </div>
+        <div class="showcased-tags">
+          <ul class="list-unstyled list-inline list-tags">
+            <% @showcased_creator.tag_list.each do |tag| %>
+              <li> <%= tag %></li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="showcased-digger">
+          found by <%= @showcased_creator.user.username %>
+        </div>
+        <div class="showcased-description">
+          <%= @showcased_creator.description %>
+        </div>
+      </div>
+      <div class="showcased-video">
+        "placeholder-video"
       </div>
     </div>
   </div>

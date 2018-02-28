@@ -1,10 +1,36 @@
 // Specific CSS for your home-page
+.card-showcased{
+  padding: 15px;
+  background-color: $charcoal;
+  color: white;
+  display: flex;
+  align-items: center;
+}
 .avatar-showcased{
-  width: 150px;
+  height: 120px;
   border-radius: 50%;
+  flex: 0 1 auto;
 }
 
-.showcased-content{
-  display: flex;
+.showcased-video{
+  flex: 0 0 350px;
+}
 
+.showcased-name{
+  font-family: $creators-font;
+  font-size: 50px;
+  line-height: 45px;
+
+}
+
+.showcased-tags{
+    font-size: 15px;
+    color: $light-gray ;
+    font-family: $body-font ;
+    margin-top: 3px;
+
+  }
+
+.list-tags {
+  margin-left: 10px !important;
 }
