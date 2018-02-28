@@ -13,6 +13,12 @@ gem 'pundit'
 
 # Act As Taggable - Gems
 gem 'acts-as-taggable-on', '~> 4.0'
+gem 'country_select'
+
+
+# Photo Uploader
+gem 'cloudinary'
+gem 'carrierwave', '~> 1.2'
 
 
 # Front Gems

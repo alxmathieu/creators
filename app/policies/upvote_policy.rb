@@ -6,7 +6,7 @@ class UpvotePolicy < ApplicationPolicy
   end
 
   def new?
-    true
+    user
   end
 
   def create?
@@ -14,6 +14,6 @@ class UpvotePolicy < ApplicationPolicy
   end
 
   def destroy?
-    record.user == user
+    record.user.id == user.id
   end
 end

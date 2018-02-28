@@ -1,23 +1,57 @@
-<h1>Showcased:</h1>
-<p><%= @showcased_creator.youtube_name %> || found by <%= @showcased_creator.user.username %></p>
-<p> "<%= @showcased_creator.description %>" </p>
+<div class="container">
+  <div class="showcased">
+    <div class="row">
+      <div class="col-xs-12 col-md-3">
+        <div class="card showcased-content">
+          <%= image_tag "default-avatar.png", class: "avatar-showcased" %>
+          <div class="showcased-infos">
+            <%= @showcased_creator.youtube_name %>
+            found by <%= @showcased_creator.user.username %>
+            <%= @showcased_creator.description %>
+          </div>
+          <div class="showcased-video">
+            "placeholder-video"
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<h1>Current Batch</h1>
-<ul>
-  <% @ordered_creators_current_batch.each do |creator| %>
-    <li>
-      <%= creator.youtube_name %> || found by <%= creator.user.username %> || <%= creator.upvotes.length %> ||
-      <%= link_to 'Upvote', creator_upvotes_path(creator), method: :post %>
-    </li>
-  <% end %>
-</ul>
 
-<h1>Batch of last week</h1>
-<ul>
-  <% @ordered_creators_last_batch.each do |creator| %>
-    <li> <%= creator.youtube_name %> || found by <%= creator.user.username %> || <%= creator.upvotes.length %></li>
-  <% end %>
-</ul>
 
-<%= link_to "Add a new creator", new_creator_path  %>
+  <h1>Current Batch</h1>
+  <ul>
+    <% @ordered_creators_current_batch.each do |creator| %>
+      <li>
+        <%= creator.youtube_name %> || found by <%= creator.user.username %> || <%= creator.upvotes.length %> ||
+        <% if user_signed_in? %>
+          <% upvote_for_creator = current_user.upvotes.where("creator_id = #{creator.id}").first %>
+          <% if upvote_for_creator.nil? %>
+            <%= link_to 'Upvote', creator_upvotes_path(creator), method: :post %>
+          <% else upvote_for_creator %>
+            <%= link_to 'Upvote', upvote_path(upvote_for_creator), method: :delete %>
+          <% end %>
+        <% else %>
+            <%= link_to 'Upvote', new_user_session_path %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+
+  <h1>Batch of last week</h1>
+  <ul>
+    <% @ordered_creators_last_batch.each do |creator| %>
+      <li> <%= creator.youtube_name %> || found by <%= creator.user.username %> || <%= creator.upvotes.length %></li>
+    <% end %>
+  </ul>
+
+  <%= link_to "Add a new creator", new_creator_path %>
+
+
+</div>
+
+
+
+
+
 

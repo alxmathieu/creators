@@ -1,22 +1,30 @@
 class UpvotesController < ApplicationController
+  before_action :authenticate_user!, only: [:create]
 
   def create
     #if Upvote.create(user_id: current_user.id, creator_id = upvote_params[:creator_id])
-    @upvote = Upvote.new(upvotes_params)
-    @upvote.user = current_user
+    @creator = Creator.find(params[:creator_id])
+    @upvote = Upvote.new(user: current_user, creator: @creator)
     authorize @upvote
     if @upvote.save
       redirect_to root_path
     else
       flash[:alert] = "You are not authorized to perform this action."
-      redirect_to(root_path)
+      redirect_to root_path
     end
+  end
+
+  def destroy
+    @upvote = Upvote.find(params[:id])
+    authorize @upvote
+    @upvote.destroy
+    redirect_to root_path
   end
 
   private
 
-  def upvotes_params
-    params.permit(:user_id, :creator_id)
-  end
+  # def upvotes_params
+  #   params.require(:upvote).permit(:user_id, :creator_id, :video_attributes)
+  # end
 
 end
