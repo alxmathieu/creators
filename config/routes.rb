@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   resources :users, only: [:show, :edit, :update]
-  resources :creators, only: [ :index, :new, :create, :show, :edit, :update ] do
+  resources :creators, only: [ :index, :create, :show, :edit, :update ] do
+    collection do
+      post "new", to: "creators#new"
+    end
     resources :upvotes, only: [:new, :create]
   end
 resources :upvotes, only: [:destroy]

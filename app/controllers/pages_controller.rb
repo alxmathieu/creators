@@ -18,6 +18,8 @@ class PagesController < ApplicationController
       @ordered_creators_current_batch = sort_creators(creators_in_current_batch)
       @ordered_creators_last_batch = sort_creators(creators_in_last_batch)
     end
+    @creator = Creator.new
+
   end
 
   private

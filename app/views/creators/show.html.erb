@@ -1,56 +1,59 @@
-<div class="wrapper">
-  <div class="container">
-    <div class="banner" style="background-image: #EEEEEE">
-      <div class="banner-content" >
-        <%= button_to 'Back', root_path(@creator) %>
-        <%#= @creator.avatar %>
-        <h1><%= @creator.youtube_name %></h1>
-        <div class="upvotes-content">
-          <div class="counter-upvotes">
-            <%= @creator.upvotes.length %>
-          </div>
-          <div class="btn-upvotes">
-            <% upvote_for_creator = current_user.upvotes.where("creator_id = #{@creator.id}").first %>
-            <% if upvote_for_creator.nil? %>
-              <%= button_to 'Upvote', creator_upvotes_path(@creator) %>
-            <% else upvote_for_creator %>
-              <%= link_to 'Upvote', creator_upvotes_path(upvote_for_creator), method: :delete %>
-            <% end %>
-          </div>
-        </div>
-
+<div class="back-btn">
+  <%= link_to '', root_path(@creator), class: "fas fa-arrow-left" %>
+</div>
+<div class="container grid">
+  <div class="card show-card" >
+    <div class="creator">
+      <%= cl_image_tag @creator.avatar_photo, class: "avatar-large" %>
+      <h1><%= @creator.youtube_name %></h1>
     </div>
+    <div class="upvotes-content btn btn-primary">
+      <div class="counter-upvotes">
+        <%= @creator.upvotes.length %>
+      </div>
+      <div class="btn-upvotes">
+        <% upvote_for_creator = current_user.upvotes.where("creator_id = #{@creator.id}").first %>
+          <% if upvote_for_creator.nil? %>
+            <%= link_to 'Upvote', creator_upvotes_path(@creator), method: :post %>
+          <% else upvote_for_creator %>
+            <%= link_to 'Upvote', upvote_path(upvote_for_creator), method: :delete %>
+          <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="card info">
+    <% @creator.tag_list.each do |tag| %>
+      <ul>
+        <%= tag %>
+      </ul>
+    <% end %>
+    <ul><%= @creator.nb_followers %> followers</ul>
+    <ul><%#= @creator.nb_video %> Vidéo</ul>
+    <ul><i class="fab fa-instagram"></i> Instagram</ul>
+    <ul><i class="fab fa-facebook-square"></i> Faceboof</ul>
+    <ul><i class="fab fa-twitter-square"></i> Twitter</ul>
+    <ul><%= link_to "Channel", @creator.channel_url, class: "btn btn-primary" %></ul>
+    <!-- <ul class="g-ytsubscribe" data-channelid= <%#= @creator.channel_id %> data-count="hidden"></ul> -->
+    <ul class="g-ytsubscribe" data-channel="GoogleDevelopers" data-count="hidden"></ul> <!-- a remplacer par la ligne au dessus quand la channel id sera disponible -->
+  </div>
+  <div class="card description">
+    <i class="fas fa-quote-left"></i>    <%= @creator.description %>    <i class="fas fa-quote-right"></i>
+    <p> by <%= @creator.user.username %> <%= cl_image_tag @creator.user.avatar, class: "avatar" %></p>
+  </div>
+  <div class="video">
+    <iframe class="ytplayer-showcased" type="text/html"
+    src="http://www.youtube.com/embed/<%= @creator.video_youtube_id %>?autoplay=0"
+    frameborder="0" height="349px" width="620">
+    </iframe>
+  </div>
+  <div class="card fun-figures" >
+    <h3>Fun Figures</h3>
   </div>
 </div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="description">
-        <div style="margin: auto">
-          <p>"<%= @creator.description %>"</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="description">
-        <div style="margin: auto">
-
-          <iframe id="ytplayer" type="text/html" width="640" height="360"
-          src="http://www.youtube.com/embed/<%= @creator.video_youtube_id %>?autoplay=1&origin=http://example.com"
-          frameborder="0"/>
-
-          </div>
-        </div>
-
-      </div>
 
 
-    </div>
-  </div>
-</div>
 
 
+  <script src="https://apis.google.com/js/platform.js"></script>
 
