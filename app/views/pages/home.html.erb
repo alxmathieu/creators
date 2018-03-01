@@ -1,33 +1,40 @@
 <div class="container">
-  <div class="showcased">
-    <div class="card card-showcased">
-      <%= cl_image_tag @showcased_creator.avatar_photo, class: "avatar-showcased" %>
-      <div class="showcased-infos">
-        <div class="showcased-name">
-          <%= @showcased_creator.youtube_name %>
+  <% unless @showcased_creator.nil? %>
+    <div class="showcased">
+      <div class="card card-showcased">
+        <div class="showcased-avatar-tags">
+          <%= cl_image_tag @showcased_creator.avatar_photo, class: "avatar-showcased-creator" %>
+          <div class="showcased-tags">
+            <ul class="list-unstyled list-tags">
+              <% @showcased_creator.tag_list.each do |tag| %>
+                <li> <%= "##{tag}" %></li>
+              <% end %>
+            </ul>
+          </div>
         </div>
-        <div class="showcased-tags">
-          <ul class="list-unstyled list-inline list-tags">
-            <% @showcased_creator.tag_list.each do |tag| %>
-              <li> <%= tag %></li>
-            <% end %>
-          </ul>
+        <div class="showcased-infos">
+          <div class="showcased-name">
+            <%= @showcased_creator.youtube_name %>
+          </div>
+          <div class="showcased-description">
+            <i class="fas fa-quote-left"></i>
+            <%= @showcased_creator.description %>
+            <i class="fas fa-quote-right"></i>
+          </div>
+          <div class="showcased-digger">
+            discovered by <%= @showcased_creator.user.username %>
+            <%= cl_image_tag @showcased_creator.user.avatar, class: "avatar-showcased-digger" %>
+          </div>
         </div>
-        <div class="showcased-digger">
-          found by <%= @showcased_creator.user.username %>
+        <div class="showcased-video">
+          <iframe class="ytplayer-showcased" type="text/html"
+          src="http://www.youtube.com/embed/<%= @showcased_creator.video_youtube_id %>?autoplay=0"
+          frameborder="0">
+          </iframe>
         </div>
-        <div class="showcased-description">
-          <%= @showcased_creator.description %>
-        </div>
-      </div>
-      <div class="showcased-video">
-        <iframe class="ytplayer-showcased" type="text/html"
-        src="http://www.youtube.com/embed/<%= @showcased_creator.video_youtube_id %>?autoplay=0"
-        frameborder="0">
-        </iframe>
       </div>
     </div>
-  </div>
+  <% end %>
 
 
 
