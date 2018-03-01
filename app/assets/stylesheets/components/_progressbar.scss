@@ -1,62 +1,63 @@
 .steps {
-    min-height: 90px;
-    padding: 30px 0 0 0;
-    position: relative;
+  min-height: 90px;
+  margin: 30px 0px;
+  position: relative;
+  flex: 1;
 }
 .steps-container {
-    background: $light-gray;
-    height: 10px;
-    width: 100%;
-    // border-radius: 10px;
-    margin: 0;
-    list-style: none;
+  background: $light-gray;
+  height: 10px;
+  width: 100%;
+  border-radius: 10px;
+  margin: 0;
+  list-style: none;
+  padding: 0;
 }
 .steps-container li {
-    text-align: center;
-    list-style: none;
-    float: left;
+  text-align: center;
+  list-style: none;
+  float: left;
 }
-.step {
-    padding: 0 50px;
-}
+
 .step-image {
-    margin: -14px 0 0 0;
+  margin: -14px 0 0 0;
 }
 .step-image span {
-    background-color: $light-gray;
-    display: block;
-    width: 37px;
-    height: 37px;
-    margin: 0 auto;
-    border-radius: 37px;
+  background-color: $light-gray;
+  display: block;
+  width: 37px;
+  height: 37px;
+  margin: 0 auto;
+  border-radius: 37px;
 }
 .step-name {
-    font-size: 11px;
-    font-style: italic;
-    color: #999;
-    margin: 8px 0 0 0;
+  font-size: 14px;
+  color: #8F8F8F;
+  margin: 8px 0 0 0;
 }
 .activated .step-image span {
-    background-color: $gold;
+  background-color: $gold;
 }
 .activated .step-image span:after {
-    background-color: #FFF;
-    display: block;
-    content: '';
-    position: absolute;
-    z-index: 1;
-    width: 27px;
-    height: 27px;
-    margin: 5px;
-    border-radius: 27px   ;
+  background-color: $light-gray;
+  display: block;
+  content: '';
+  position: absolute;
+  z-index: 1;
+  width: 27px;
+  height: 27px;
+  margin: 5px;
+  border-radius: 27px;
+}
+#current .step-name {
+  color: $charcoal;
+  font-weight: bold
 }
 .step-bar {
-    background-color: $gold;
-    height: 10px;
-    position: absolute;
-    top: 30px;
-    // border-radius: 10px 0 0 10px;
+  background-color: $gold;
+  height: 10px;
+  position: absolute;
+  top: 0;
+  border-radius: 10px;
 }
-.step-bar.last {
-    // border-radius: 10px;
-}
+
