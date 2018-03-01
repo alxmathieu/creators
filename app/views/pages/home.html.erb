@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-xs-12 col-md-3">
         <div class="card showcased-content">
-          <%= image_tag "default-avatar.png", class: "avatar-showcased" %>
+          <%= cl_image_tag @showcased_creator.avatar_photo, class: "avatar-showcased" %>
           <div class="showcased-infos">
             <%= @showcased_creator.youtube_name %>
             found by <%= @showcased_creator.user.username %>
@@ -16,6 +16,7 @@
       </div>
     </div>
   </div>
+
 
 
 
