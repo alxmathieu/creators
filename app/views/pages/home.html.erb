@@ -29,7 +29,9 @@
     </div>
   </div>
 
-
+<% if Batch.all.empty? %>
+  <h2> Please check back later! A new batch will be released soon.</h2>
+<% else %>
   <h1>Current Batch</h1>
   <ul>
     <% @ordered_creators_current_batch.each do |creator| %>
@@ -48,15 +50,15 @@
       </li>
     <% end %>
   </ul>
-
-  <h1>Batch of last week</h1>
+  <h2>Batch of last week</h2>
   <ul>
     <% @ordered_creators_last_batch.each do |creator| %>
       <li> <%= creator.youtube_name %> || found by <%= creator.user.username %> || <%= creator.upvotes.length %></li>
     <% end %>
   </ul>
-
   <%= link_to "Add a new creator", new_creator_path %>
+<% end %>
+
 
 
 </div>
