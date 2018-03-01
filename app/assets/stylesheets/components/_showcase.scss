@@ -1,0 +1,91 @@
+.card-showcased{
+  padding: 15px;
+  background-color: $charcoal;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 25px;
+  position: relative;
+  .fa-star{
+    position: absolute;
+    top: 15px;
+    font-size: 25px;
+    color: rgba($gold, 1);
+  }
+}
+
+.avatar-showcased-creator{
+  height: 120px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+  // position: absolute;
+  // top: -125px;
+}
+
+.showcased-video{
+  flex: 0 0 350px;
+  iframe {
+    height:43vh;
+    width:38vw;
+  }
+}
+
+.showcased-name{
+  font-family: $creators-font;
+  font-size: 50px;
+  line-height: 45px;
+  color: white;
+  text-decoration: none;
+  &:hover{
+    color: $light-gray;
+    text-decoration: none;
+  }
+}
+
+.showcased-digger{
+  text-align: right;
+  margin-right: 15px;
+}
+
+.showcased-description{
+  padding: 25px 15px;
+  text-align: justify;
+}
+
+.showcased-tags{
+  font-size: 15px;
+  color: $silver-gray ;
+  font-family: $body-font ;
+  margin-top: 10px;
+  font-style: italic;
+  }
+
+.list-tags {
+  margin-left: 10px !important;
+}
+
+.avatar-showcased-digger{
+  height: 50px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+.showcased-avatar-tags{
+  position: relative;
+}
+
+.showcased-infos{
+  padding: 0px 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
