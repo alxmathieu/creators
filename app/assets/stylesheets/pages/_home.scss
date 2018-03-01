@@ -1,18 +1,20 @@
 .content-homepage{
   display: flex;
-  justify-content: space-between;
 }
 
 .container-rankings{
   background-color: white;
-  //width: 80%
+  width: 80%;
+  margin: 20px 40px 0px 0px;
 }
 
 .container-menu{
+  text-align: right;
+  display: flex;
+  flex-direction: column;
   margin-top: 20px;
-  .btn-info{
-    //display: inline;
-    color: white !important;
+  .btn{
+    margin-bottom: 15px;
   }
 }
 
@@ -46,9 +48,7 @@
 }
 
 .first-position{
-
 }
-
 
 .modal.fade {
   z-index: 10000000 !important;
