@@ -21,13 +21,15 @@
         </div>
       </div>
       <div class="showcased-video" >
-        <iframe id="ytplayer" type="text/html"
+        <iframe class="ytplayer-showcased" type="text/html"
         src="http://www.youtube.com/embed/<%= @showcased_creator.video_youtube_id %>?autoplay=0"
         frameborder="0">
         </iframe>
       </div>
     </div>
   </div>
+
+
 
 <% if Batch.all.empty? %>
   <h2> Please check back later! A new batch will be released soon.</h2>
