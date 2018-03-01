@@ -6,20 +6,33 @@
 .container-rankings{
   background-color: white;
   width: 80%
-
 }
 
 .container-menu{
   margin-top: 20px;
-}
-
-.title-current-batch{
-
+  background-color: red;
+  text-align: right;
 }
 
 .last-batch{
-  margin-top: 50px;
+  margin-top: 60px;
 }
 
+.card h2{
+  margin-bottom: 0px;
+}
 
+.tagline-last-batch{
+  color: $silver-gray;
+  font-size: 16px;
+  font-style: italic;
+  margin-bottom: 20px;
+}
 
+.btn-submit-home{
+
+}
+
+.btn-all-creators-home{
+
+}
