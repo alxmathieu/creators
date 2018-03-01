@@ -9,14 +9,13 @@ class Creator < ApplicationRecord
       regex = self.video_url.match(pattern)
       youtube_id = regex[1]
       return youtube_id
-
   end
 
   # Avatar Photo
   mount_uploader :avatar_photo, PhotoUploader
 
   # Validations
-  validates :channel_url, presence: true, uniqueness: true, format: { with: /(?:https|http)\:\/\/(?:[\w]+\.)?youtube\.com\/(?:c\/|channel\/|user\/)?([a-zA-Z0-9\-]{1,})/, message: 'Channel url is invalid'}
+  validates :channel_url, presence: true, uniqueness: true, format: { with: c, message: 'Channel url is invalid'}
   validates :youtube_name, presence: true
   validates :description, presence: true, length: { minimum: 20 }
   validates :video_url, presence: true, format: {with: /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/}
@@ -30,3 +29,4 @@ class Creator < ApplicationRecord
   # ONLY FOR RUBY 5.2
   # has_many :tag_taggings, class_name: 'ActsAsTaggableOn::Tagging'
 end
+
