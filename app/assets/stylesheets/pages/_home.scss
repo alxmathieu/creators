@@ -5,13 +5,15 @@
 
 .container-rankings{
   background-color: white;
-  width: 80%
+  //width: 80%
 }
 
 .container-menu{
   margin-top: 20px;
-  background-color: red;
-  text-align: right;
+  .btn-info{
+    //display: inline;
+    color: white !important;
+  }
 }
 
 .last-batch{
@@ -30,9 +32,28 @@
 }
 
 .btn-submit-home{
-
+  width: 10em;
 }
 
 .btn-all-creators-home{
+  width: 10em;
+  margin-top: 15px;
 
 }
+
+.first-last-week .second-last-week .third-last-week{
+  display: flex;
+}
+
+.first-position{
+
+}
+
+
+
+
+
+
+
+
+
