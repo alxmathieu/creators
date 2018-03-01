@@ -11,8 +11,8 @@ class UpvotesController < ApplicationController
 
       redirect_to request.referrer
     else
-      flash[:alert] = "You are not authorized to perform this action."
-      redirect_to root_path
+      flash[:alert] = "There's been an error. Please try-again later or sign-in"
+      redirect_to request.referrer
     end
   end
 

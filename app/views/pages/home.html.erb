@@ -2,17 +2,17 @@
   <% unless @showcased_creator.nil? %>
     <div class="showcased">
       <div class="card card-showcased">
-        <div class="editors-choice">
+        <!-- <div class="editors-choice">
           Editor's choice
-        </div>
-        <!-- <i class="fas fa-star"></i> -->
+        </div> -->
+        <i class="fas fa-star"></i>
         <div class="showcased-avatar-tags">
           <%= link_to(creator_path(@showcased_creator)) do %>
             <%= image_tag @showcased_creator.avatar_photo, class: "avatar-showcased-creator"%>
           <% end %>
           <div class="showcased-tags">
             <ul class="list-unstyled list-tags" style="text-align: center">
-              <% @showcased_creator.tag_list.first(7).each do |tag| %>
+              <% @showcased_creator.tag_list.first(5).each do |tag| %>
                 <li>
                   <% if tag.length < 13 %>
                     <%= "##{tag.capitalize}" %>
@@ -28,7 +28,7 @@
           <%= link_to @showcased_creator.youtube_name , creator_path(@showcased_creator), class: "showcased-name" %>
           <div class="showcased-description">
             <i class="fas fa-quote-left"></i>
-            <%= @showcased_creator.description %>
+            <%= @showcased_creator.description.first(350) %>
             <i class="fas fa-quote-right"></i>
           </div>
           <div class="showcased-digger">
@@ -169,15 +169,19 @@
         <%= link_to "See all creators", creators_path %>
       </div>
       <div class="ranking-last-week">
-        <div class="first-last-week">
-          first
-        </div>
-        <div class="second-last-week">
-          second
-        </div>
-        <div class="third-last-week">
-          third
-        </div>
+        <h5> Last week's winners </h5>
+          <ul class="list-unstyled">
+            <% @winners_last_batch.each do |winner| %>
+              <div class="position-last-week">
+                <li>
+                  <%= "#{@winners_last_batch.index(winner) + 1}" %> - <%= winner.youtube_name %>
+                  <%= link_to(creator_path(winner)) do %>
+                    <%= image_tag winner.avatar_photo, class: "avatar-creator"%>
+                  <% end %>
+                </li>
+              </div>
+            <% end %>
+          </ul>
       </div>
     </div>
   </div>

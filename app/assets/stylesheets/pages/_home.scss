@@ -43,8 +43,9 @@
 
 }
 
-.first-last-week .second-last-week .third-last-week{
+.first-last-week, .second-last-week, .third-last-week{
   display: flex;
+  justify-content: space-between;
 }
 
 .first-position{
@@ -54,3 +55,12 @@
   z-index: 10000000 !important;
 }
 
+.ranking-last-week{
+  text-align: left;
+  background-color: $silver-gray;
+  padding: 10px;
+  color: white;
+  li {
+    margin-bottom: 10px;
+  }
+}
