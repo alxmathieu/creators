@@ -9,7 +9,6 @@ class Creator < ApplicationRecord
       regex = self.video_url.match(pattern)
       youtube_id = regex[1]
       return youtube_id
-
   end
 
   # Avatar Photo
@@ -30,3 +29,4 @@ class Creator < ApplicationRecord
   # ONLY FOR RUBY 5.2
   # has_many :tag_taggings, class_name: 'ActsAsTaggableOn::Tagging'
 end
+
