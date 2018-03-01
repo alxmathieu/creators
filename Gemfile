@@ -30,9 +30,6 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
-# Youtube
-gem 'google-api-client', '>0.7'
-
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
