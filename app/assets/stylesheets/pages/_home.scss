@@ -7,6 +7,13 @@
   align-items: center;
   justify-content: space-between;
   margin-top: 25px;
+  position: relative;
+  .fa-star{
+    position: absolute;
+    top: 15px;
+    font-size: 25px;
+    color: rgba($gold, 1);
+  }
 
 }
 .avatar-showcased-creator{
@@ -30,6 +37,12 @@
   font-family: $creators-font;
   font-size: 50px;
   line-height: 45px;
+  color: white;
+  text-decoration: none;
+  &:hover{
+    color: $light-gray;
+    text-decoration: none;
+  }
 }
 
 .showcased-digger{
@@ -70,6 +83,7 @@
 .showcased-infos{
   padding: 0px 10px;
 }
+
 
 
 

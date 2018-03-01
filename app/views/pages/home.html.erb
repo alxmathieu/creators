@@ -2,8 +2,11 @@
   <% unless @showcased_creator.nil? %>
     <div class="showcased">
       <div class="card card-showcased">
+        <i class="fas fa-star"></i>
         <div class="showcased-avatar-tags">
-          <%= cl_image_tag @showcased_creator.avatar_photo, class: "avatar-showcased-creator" %>
+          <%= link_to(creator_path(@showcased_creator)) do %>
+            <%= image_tag @showcased_creator.avatar_photo, class: "avatar-showcased-creator"%>
+          <% end %>
           <div class="showcased-tags">
             <ul class="list-unstyled list-tags">
               <% @showcased_creator.tag_list.each do |tag| %>
@@ -13,9 +16,7 @@
           </div>
         </div>
         <div class="showcased-infos">
-          <div class="showcased-name">
-            <%= @showcased_creator.youtube_name %>
-          </div>
+          <%= link_to @showcased_creator.youtube_name , creator_path(@showcased_creator), class: "showcased-name" %>
           <div class="showcased-description">
             <i class="fas fa-quote-left"></i>
             <%= @showcased_creator.description %>
@@ -23,7 +24,9 @@
           </div>
           <div class="showcased-digger">
             discovered by <%= @showcased_creator.user.username %>
-            <%= cl_image_tag @showcased_creator.user.avatar, class: "avatar-showcased-digger" %>
+            <%= link_to(user_path(@showcased_creator.user)) do %>
+              <%= image_tag @showcased_creator.user.avatar, class: "avatar-showcased-digger"%>
+            <% end %>
           </div>
         </div>
         <div class="showcased-video">
@@ -35,7 +38,6 @@
       </div>
     </div>
   <% end %>
-
 
 
 <% if Batch.all.empty? %>
