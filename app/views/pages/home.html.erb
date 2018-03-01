@@ -55,7 +55,6 @@
           <div class="current-batch">
             <ul class="list-unstyled">
               <% @ordered_creators_current_batch.each do |creator| %>
-              <%= link_to(creator_path(creator)) do %>
                 <li class="card-creator">
                   <div class="creator-info">
                     <div class="card-avatar">
@@ -87,7 +86,6 @@
                       </div>
                     </div>
                   </div>
-                  <% end -%>
                   <div class="card-upvote btn btn-primary">
                     <% if user_signed_in? %>
                       <% upvote_for_creator = current_user.upvotes.where("creator_id = #{creator.id}").first %>
@@ -163,7 +161,7 @@
         <%= link_to "Add a new creator", "#creator-modal", "data-toggle" => "modal", class: '' %>
         <%= render 'modal_creator' %>
       </div>
-      <div class="btn btn-primary btn-lg btn-all-creators-home">
+      <div class="btn btn-info btn-lg btn-all-creators-home">
         <%= link_to "See all creators", creators_path %>
       </div>
     </div>
@@ -171,9 +169,3 @@
 
 
 </div>
-
-
-
-
-
-
