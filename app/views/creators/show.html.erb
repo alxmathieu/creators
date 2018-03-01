@@ -17,6 +17,7 @@
           </div>
           <div class="btn-upvotes">
             <% upvote_for_creator = current_user.upvotes.where("creator_id = #{@creator.id}").first %>
+
             <% if upvote_for_creator.nil? %>
             <%= button_to 'Upvote', creator_upvotes_path(@creator) %>
             <% else upvote_for_creator %>
