@@ -23,4 +23,4 @@ class Scrapper
   end
 end
 
-Scrapper.new('https://www.youtube.com/user/leclubofficiel/').scrape
+# Scrapper.new('https://www.youtube.com/user/leclubofficiel/').scrape
