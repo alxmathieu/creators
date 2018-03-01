@@ -1,17 +1,22 @@
 .content-homepage{
   display: flex;
-  justify-content: space-between;
+
 }
 
 .container-rankings{
   background-color: white;
-  width: 80%
+  width: 80%;
+  margin: 20px 40px 0px 0px;
 }
 
 .container-menu{
-  margin-top: 20px;
-  background-color: red;
   text-align: right;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  .btn{
+    margin-bottom: 15px;
+  }
 }
 
 .last-batch{
@@ -27,14 +32,6 @@
   font-size: 16px;
   font-style: italic;
   margin-bottom: 20px;
-}
-
-.btn-submit-home{
-
-}
-
-.btn-all-creators-home{
-
 }
 
 .modal.fade {
