@@ -1,11 +1,47 @@
 .user-infos {
   margin-top: 50px;
+  position: relative;
   h3 {
-    margin-top: 0px;
+    margin-top: 11px;
   }
 }
 
-.user-infos-content {
-  position: relative;
-  top: -35px;
+.user-infos-container {
+  // position: relative;
+  // top: -55px;
+}
+
+#edit-form-user {
+  padding: 20px 70px;
+}
+
+#edit-user-btn {
+  color: $charcoal;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  opacity: 0.6;
+  &:hover {
+    text-decoration: none;
+    opacity: 1;
+  }
+}
+
+.achievments {
+  display: flex;
+  justify-content: space-between;
+}
+
+.divider {
+  width: 1px;
+  margin: 10px 20px;
+  background: $light-gray;
+}
+
+.next-steps {
+  max-width: 350px;
+}
+
+.light-color {
+  opacity: 0.6;
 }

@@ -97,7 +97,7 @@ ActiveRecord::Schema.define(version: 20180228143757) do
     t.string "avatar", default: "http://res.cloudinary.com/benoitprigent/image/upload/v1519828592/default-avatar.png"
     t.string "channel_url"
     t.integer "nb_following"
-    t.integer "level"
+    t.integer "level", default: 0
     t.text "bio"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
