@@ -11,7 +11,6 @@ class CreatorsController < ApplicationController
   end
 
   def new
-    raise
     @creator = Creator.new
     authorize @creator
   end
