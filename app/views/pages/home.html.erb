@@ -160,13 +160,15 @@
     </div>
     <div class="container-menu">
       <div class="btn btn-primary btn-lg btn-submit-home">
-        <%= link_to "Add a creator", new_creator_path %>
+        <%= link_to "Add a new creator", "#creator-modal", "data-toggle" => "modal", class: '' %>
+        <%= render 'modal_creator' %>
       </div>
       <div class="btn btn-primary btn-lg btn-all-creators-home">
         <%= link_to "See all creators", creators_path %>
       </div>
     </div>
   </div>
+
 
 </div>
 
