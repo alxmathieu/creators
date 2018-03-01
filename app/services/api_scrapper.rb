@@ -6,7 +6,6 @@ class ApiScrapper
     @url = url
     @api_url = 'https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&'
     @api_url_videos = 'https://www.googleapis.com/youtube/v3/search?order=relevance&part=snippet&channelId='
-
   end
 
   def analyze_url

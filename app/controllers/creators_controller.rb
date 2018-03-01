@@ -13,9 +13,9 @@ class CreatorsController < ApplicationController
   end
 
   def new
-    @data = {}
-    @data = ApiScrapper.new('https://www.youtube.com/user/orelsan').scrape
-    @creator = Creator.new
+    channel_url = params[:creator][:channel_url]
+    @youtube_data = ApiScrapper.new(channel_url).scrape
+    @creator = Creator.new(@youtube_data)
     authorize @creator
   end
 
