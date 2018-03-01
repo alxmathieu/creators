@@ -7,7 +7,7 @@
       <%= cl_image_tag @creator.avatar_photo, class: "avatar-large" %>
       <h1><%= @creator.youtube_name %></h1>
     </div>
-    <div class="upvotes-content">
+    <div class="upvotes-content btn btn-primary">
       <div class="counter-upvotes">
         <%= @creator.upvotes.length %>
       </div>
@@ -16,29 +16,34 @@
           <% if upvote_for_creator.nil? %>
             <%= link_to 'Upvote', creator_upvotes_path(@creator), method: :post %>
           <% else upvote_for_creator %>
-            <%= link_to 'Destroy', upvote_path(upvote_for_creator), method: :delete %>
+            <%= link_to 'Upvote', upvote_path(upvote_for_creator), method: :delete %>
           <% end %>
       </div>
     </div>
   </div>
   <div class="card info">
-
-<% @creator.tag_list.each do |tag| %>
-      <li>
-        <%= @creator.tag_list %>
-      </li>
+    <% @creator.tag_list.each do |tag| %>
+      <ul>
+        <%= tag %>
+      </ul>
     <% end %>
-
-
+    <ul><%= @creator.nb_followers %> followers</ul>
+    <ul><%#= @creator.nb_video %> Vidéo</ul>
+    <ul><i class="fab fa-instagram"></i> Instagram</ul>
+    <ul><i class="fab fa-facebook-square"></i> Faceboof</ul>
+    <ul><i class="fab fa-twitter-square"></i> Twitter</ul>
+    <ul><%= link_to "Channel", @creator.channel_url, class: "btn btn-primary" %></ul>
+    <!-- <ul class="g-ytsubscribe" data-channelid= <%#= @creator.channel_id %> data-count="hidden"></ul> -->
+    <ul class="g-ytsubscribe" data-channel="GoogleDevelopers" data-count="hidden"></ul> <!-- a remplacer par la ligne au dessus quand la channel id sera disponible -->
   </div>
   <div class="card description">
     <i class="fas fa-quote-left"></i>    <%= @creator.description %>    <i class="fas fa-quote-right"></i>
     <p> by <%= @creator.user.username %> <%= cl_image_tag @creator.user.avatar, class: "avatar" %></p>
   </div>
-  <div class="card video">
+  <div class="video">
     <iframe class="ytplayer-showcased" type="text/html"
     src="http://www.youtube.com/embed/<%= @creator.video_youtube_id %>?autoplay=0"
-    frameborder="0" height="310px" width="620">
+    frameborder="0" height="349px" width="620">
     </iframe>
   </div>
   <div class="card fun-figures" >
@@ -50,4 +55,5 @@
 
 
 
+  <script src="https://apis.google.com/js/platform.js"></script>
 
