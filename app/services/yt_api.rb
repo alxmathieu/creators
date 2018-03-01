@@ -57,17 +57,19 @@ class ApiScrapper
     end
 
     return {
-      id: id,
-      title: title,
-      avatar: avatar,
+      channel_id: id,
+      youtube_name: title,
+      avatar_photo: avatar,
       view_count: view_count,
-      subscriber_count: subscriber_count,
-      video_count: video_count,
-      videos: videos
+      nb_followers: subscriber_count,
+      nb_videos: video_count,
+      top_videos: videos
     }
   end
 
 end
 
-puts ApiScrapper.new('https://www.youtube.com/user/orelsan').scrape
+
+# puts ApiScrapper.new('https://www.youtube.com/user/orelsan').scrape
+# data = ApiScrapper.new('https://www.youtube.com/user/orelsan').scrape
 # puts ApiScrapper.new('https://www.youtube.com/channel/UChCDYcBCrb8tuPAO6e0P-Hw').scrape

@@ -7,7 +7,9 @@ class UpvotesController < ApplicationController
     @upvote = Upvote.new(user: current_user, creator: @creator)
     authorize @upvote
     if @upvote.save
-      redirect_to root_path
+
+
+      redirect_to request.referrer
     else
       flash[:alert] = "You are not authorized to perform this action."
       redirect_to root_path
@@ -18,7 +20,9 @@ class UpvotesController < ApplicationController
     @upvote = Upvote.find(params[:id])
     authorize @upvote
     @upvote.destroy
-    redirect_to root_path
+
+
+    redirect_to request.referrer
   end
 
   private

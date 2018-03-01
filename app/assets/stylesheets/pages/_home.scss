@@ -1,10 +1,38 @@
-// Specific CSS for your home-page
-.avatar-showcased{
-  width: 150px;
-  border-radius: 50%;
+.content-homepage{
+  display: flex;
+  justify-content: space-between;
 }
 
-.showcased-content{
-  display: flex;
+.container-rankings{
+  background-color: white;
+  width: 80%
+}
+
+.container-menu{
+  margin-top: 20px;
+  background-color: red;
+  text-align: right;
+}
+
+.last-batch{
+  margin-top: 60px;
+}
+
+.card h2{
+  margin-bottom: 0px;
+}
+
+.tagline-last-batch{
+  color: $silver-gray;
+  font-size: 16px;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.btn-submit-home{
+
+}
+
+.btn-all-creators-home{
 
 }

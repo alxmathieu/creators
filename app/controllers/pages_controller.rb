@@ -8,12 +8,17 @@ class PagesController < ApplicationController
     # for showcasing div
     @showcased_creator = Creator.where("is_showcased = true").first
     # for rankings
-    current_batch = Batch.where("status = 'active'").first
-    last_batch = Batch.where("number = #{current_batch.number - 1}").first
-    creators_in_current_batch = Creator.where("batch_id = #{current_batch.id}")
-    creators_in_last_batch = Creator.where("batch_id = #{last_batch.id}")
-    @ordered_creators_current_batch = sort_creators(creators_in_current_batch)
-    @ordered_creators_last_batch = sort_creators(creators_in_last_batch)
+    if Batch.where("status = 'active'").empty?
+      current_batch = nil
+    else
+      current_batch = Batch.where("status = 'active'").first
+      last_batch = Batch.where("number = #{current_batch.number - 1}").first
+      creators_in_current_batch = Creator.where("batch_id = #{current_batch.id}")
+      creators_in_last_batch = Creator.where("batch_id = #{last_batch.id}")
+      @ordered_creators_current_batch = sort_creators(creators_in_current_batch)
+      @ordered_creators_last_batch = sort_creators(creators_in_last_batch)
+    end
+    @creator = Creator.new
   end
 
   private
