@@ -1,24 +1,25 @@
-<div class="navbar-wagon">
+<div class="navbar-creators">
   <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png", height: 50 %>
+  <%= link_to root_path, class: "navbar-creators-brand" do %>
+    <%= cl_image_tag asset_url("logo-inline-yellow.svg"), class: "hidden-xs"  %>
+    <%= cl_image_tag asset_url("tagline-only-yellow.svg"), class: "hidden-sm hidden-md hidden-lg"  %>
   <% end %>
 
+
+
   <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
+  <div class="navbar-creators-right hidden-xs hidden-sm">
 
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Dashboard", user_path(current_user), class: "navbar-creators-item navbar-creators-link" %>
 
       <!-- Avatar with dropdown menu -->
-      <div class="navbar-wagon-item">
+      <div class="navbar-creators-item">
         <div class="dropdown">
-          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <%= cl_image_tag current_user.avatar, class: "avatar dropdown-toggle", id: "navbar-creators-menu", "data-toggle" => "dropdown" %>
+          <ul class="dropdown-menu dropdown-menu-right navbar-creators-dropdown-menu">
             <li>
               <%= link_to "#" do %>
                 <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
@@ -39,18 +40,19 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-creators-item navbar-creators-link" %>
     <% end %>
   </div>
 
   <!-- Dropdown list appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
+  <div class="navbar-creators-item navbar-xs-menu hidden-md hidden-lg">
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
+      <ul class="dropdown-menu dropdown-menu-right navbar-creators-dropdown-menu">
+        <li>
+          <%= link_to "Dashboard", user_path(current_user), class: "navbar-creators-item navbar-creators-link" %>
+        </li>
+        <!-- <li><a href="#">Other one</a></li> -->
       </ul>
     </div>
   </div>
