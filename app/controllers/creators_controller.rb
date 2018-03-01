@@ -1,3 +1,5 @@
+require_relative '../services/yt_api'
+
 class CreatorsController < ApplicationController
   before_action :find_creator, only: [ :show, :edit, :update ]
 
@@ -11,6 +13,8 @@ class CreatorsController < ApplicationController
   end
 
   def new
+    @data = {}
+    @data = ApiScrapper.new('https://www.youtube.com/user/orelsan').scrape
     @creator = Creator.new
     authorize @creator
   end
