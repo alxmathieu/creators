@@ -17,9 +17,6 @@
     </div>
   </div>
 
-
-
-
   <h1>Current Batch</h1>
   <ul>
     <% @ordered_creators_current_batch.each do |creator| %>
@@ -46,9 +43,7 @@
     <% end %>
   </ul>
 
-  <%# link_to "Add a new creator", new_creator_path %>
   <%= link_to "Add a new creator", "#creator-modal", "data-toggle" => "modal", class: '' %>
-  <!-- Button trigger modal -->
 
   <%= render 'modal_creator' %>
 

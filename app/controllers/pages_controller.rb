@@ -14,6 +14,7 @@ class PagesController < ApplicationController
     creators_in_last_batch = Creator.where("batch_id = #{last_batch.id}")
     @ordered_creators_current_batch = sort_creators(creators_in_current_batch)
     @ordered_creators_last_batch = sort_creators(creators_in_last_batch)
+    @creator = Creator.new
   end
 
   private
