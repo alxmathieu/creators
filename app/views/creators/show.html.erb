@@ -1,62 +1,53 @@
-<div class="wrapper">
-  <div class="container">
-    <div class="banner" style="background-image: #EEEEEE">
-      <div class="banner-content" >
-        <div class="back-btn">
-          <!-- <i class="fas fa-arrow-left"></i> -->
-          <%= link_to '', root_path(@creator), class: "fas fa-arrow-left" %>
-        </div>
-        <div class="creator">
-          <%= cl_image_tag @creator.avatar_photo, class: "avatar-large" %>
-          <h1><%= @creator.youtube_name %></h1>
-
-        </div>
-        <div class="upvotes-content">
-          <div class="counter-upvotes">
-            <%= @creator.upvotes.length %>
-          </div>
-          <div class="btn-upvotes">
-            <% upvote_for_creator = current_user.upvotes.where("creator_id = #{@creator.id}").first %>
-
-            <% if upvote_for_creator.nil? %>
-            <%= button_to 'Upvote', creator_upvotes_path(@creator) %>
-            <% else upvote_for_creator %>
-            <%= link_to 'Upvote', creator_upvotes_path(upvote_for_creator), method: :delete %>
-            <% end %>
-          </div>
-        </div>
+<div class="back-btn">
+  <%= link_to '', root_path(@creator), class: "fas fa-arrow-left" %>
+</div>
+<div class="container grid">
+  <div class="card show-card" >
+    <div class="creator">
+      <%= cl_image_tag @creator.avatar_photo, class: "avatar-large" %>
+      <h1><%= @creator.youtube_name %></h1>
+    </div>
+    <div class="upvotes-content">
+      <div class="counter-upvotes">
+        <%= @creator.upvotes.length %>
       </div>
-      <%= @creator.tag_list %>
+      <div class="btn-upvotes">
+        <% upvote_for_creator = current_user.upvotes.where("creator_id = #{@creator.id}").first %>
+          <% if upvote_for_creator.nil? %>
+            <%= link_to 'Upvote', creator_upvotes_path(@creator), method: :post %>
+          <% else upvote_for_creator %>
+            <%= link_to 'Destroy', upvote_path(upvote_for_creator), method: :delete %>
+          <% end %>
+      </div>
     </div>
   </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="description">
-          <div style="margin: auto">
-            <p><i class="fas fa-quote-left"></i>    <%= @creator.description %>    <i class="fas fa-quote-right"></i></p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-7">
-        <div class="description">
-          <div style="margin: auto">
+  <div class="card info">
 
-            <iframe id="ytplayer" type="text/html" width="640" height="360"
-            src="http://www.youtube.com/embed/<%= @creator.video_youtube_id %>?autoplay=1&origin=http://example.com"
-            frameborder="0"/>
-
-          </div>
-        </div>
-
-      </div>
+<% @creator.tag_list.each do |tag| %>
+      <li>
+        <%= @creator.tag_list %>
+      </li>
+    <% end %>
 
 
-    </div>
+  </div>
+  <div class="card description">
+    <i class="fas fa-quote-left"></i>    <%= @creator.description %>    <i class="fas fa-quote-right"></i>
+    <p> by <%= @creator.user.username %> <%= cl_image_tag @creator.user.avatar, class: "avatar" %></p>
+  </div>
+  <div class="card video">
+    <iframe class="ytplayer-showcased" type="text/html"
+    src="http://www.youtube.com/embed/<%= @creator.video_youtube_id %>?autoplay=0"
+    frameborder="0" height="310px" width="620">
+    </iframe>
+  </div>
+  <div class="card fun-figures" >
+    <h3>Fun Figures</h3>
   </div>
 </div>
+
+
+
 
 
 
