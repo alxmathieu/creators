@@ -16,10 +16,11 @@
 .card-creator{
   // background-color: red;
   display: flex;
-  margin: 20px 5px;
-  padding: 12px 10px;
+  margin: 0px 5px;
+  padding: 20px 15px;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 0.5px solid rgba($light-gray, 0.7);
   &:hover{
     background-color: rgba($light-gray, 0.4)
   }
@@ -49,6 +50,7 @@
 
 .card-sub-content{
   display: flex;
+  justify-content: space-between;
 }
 
 
@@ -64,7 +66,12 @@
   font-style: italic;
 }
 
+.creator-description{
+  font-size: 15px;
+  margin-left: 30px;
 
+
+}
 
 
 

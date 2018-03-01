@@ -1,23 +1,25 @@
+.content-homepage{
+  display: flex;
+  justify-content: space-between;
+}
+
 .container-rankings{
   background-color: white;
-  width: 75%
+  width: 80%
+
 }
 
 .container-menu{
   margin-top: 20px;
-  width: 25%;
-  margin-left: 45px;
 }
 
 .title-current-batch{
 
 }
 
-.current-batch{
-
+.last-batch{
+  margin-top: 50px;
 }
 
-.content-homepage{
-  display: flex;
-}
+
 
