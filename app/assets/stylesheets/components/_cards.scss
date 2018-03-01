@@ -9,3 +9,71 @@
     margin-top: 0px;
   }
 }
+
+
+// FOR CREATOR CARDS
+
+.card-creator{
+  // background-color: red;
+  display: flex;
+  margin: 20px 5px;
+  padding: 12px 10px;
+  justify-content: space-between;
+  align-items: center;
+  &:hover{
+    background-color: rgba($light-gray, 0.4)
+  }
+}
+
+.creator-info{
+  display: flex;
+  align-items: center;
+}
+
+
+.avatar-creator{
+  height: 50px;
+  border-radius: 50%;
+
+}
+
+.card-avatar{
+  height: 50px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+.card-content{
+  padding: 0px 20px;
+}
+
+.card-sub-content{
+  display: flex;
+}
+
+
+.creator-name{
+  font-family: $creators-font;
+  color: black !important;
+  font-size: 20px;
+}
+
+.creator-tags{
+  font-size: 10px;
+  color: $silver-gray;
+  font-style: italic;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
