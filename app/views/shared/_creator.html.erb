@@ -2,7 +2,7 @@
   <div class="creator-info">
     <div class="card-avatar">
       <%= link_to(creator_path(creator)) do %>
-        <%= image_tag creator.avatar_photo, class: "avatar-creator"%>
+        <%= cl_image_tag creator.avatar_photo, class: "avatar-creator"%>
       <% end %>
     </div>
     <div class="card-content">
@@ -29,16 +29,8 @@
       </div>
     </div>
   </div>
-  <div class="card-upvote btn btn-primary">
-    <% if user_signed_in? %>
-      <% upvote_for_creator = current_user.upvotes.where("creator_id = #{creator.id}").first %>
-      <% if upvote_for_creator.nil? %>
-        <%= link_to "Upvote (#{creator.upvotes.length})", creator_upvotes_path(creator), method: :post %>
-      <% else upvote_for_creator %>
-        <%= link_to "Upvote (#{creator.upvotes.length})", upvote_path(upvote_for_creator), method: :delete %>
-      <% end %>
-    <% else %>
-      <%= link_to "Upvote (#{creator.upvotes.length})", new_user_session_path %>
-    <% end %>
+  <div class="card-upvote btn btn-primary" id="upvote-btn-creator-<%= creator.id %>" >
+    <%= render 'shared/upvote-button', creator: creator %>
+    <!-- JS script -->
   </div>
 </li>

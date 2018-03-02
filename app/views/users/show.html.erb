@@ -59,7 +59,7 @@
     <% end %>
     <ul class="list-unstyled">
       <% @user.creators.each do |creator| %>
-        <%= render 'pages/creator', :creator => creator %>
+        <%= render 'shared/creator', :creator => creator %>
       <% end %>
     </ul>
   </div>
@@ -73,7 +73,7 @@
     <ul class="list-unstyled">
       <% @user.upvotes.each do |upvote| %>
         <% creator = Creator.find(upvote.creator_id) %>
-        <%= render 'pages/creator', :creator => creator %>
+        <%= render 'shared/creator', :creator => creator %>
       <% end %>
     </ul>
   </div>
