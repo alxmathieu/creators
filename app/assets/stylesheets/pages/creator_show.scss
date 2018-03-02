@@ -1,7 +1,9 @@
 
 
 .upvotes-content {
-  text-align: center
+  text-align: center;
+  align-items: center;
+  display: flex;
 }
 
 
@@ -13,11 +15,25 @@
 .show-card{
   background-color: $silver-gray;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   margin-top: 10px;
   margin-bottom: 0px;
   padding: 0px;
+
+  .avatar-large {
+    height: 120px;
+    width: 120px;
+  }
+}
+
+.showcased-name {
+    font-family: "Permanent Marker", "Helvetica", "cursive";
+    font-size: 50px;
+    line-height: 45px;
+    margin: 10px;
+    color: white;
+    text-decoration: none;
 }
 
 .grid {
@@ -39,6 +55,21 @@
   grid-column: 2/ span 2;
   margin: 5px;
   padding-top: 10px;
+  display: flex;
+  position: relative;
+
+}
+
+.quote {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+.discovered-by {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
 }
 
 .info {
@@ -46,6 +77,12 @@
   grid-column: 1/ span 1;
   margin: 5px;
   padding: 0px;
+
+}
+
+ul {
+    margin-top: 0;
+    margin-bottom: 21px;
 }
 
 .video {
@@ -61,4 +98,12 @@
   margin: 5px;
   margin-left: 0px;
   padding: 0px;
+}
+
+.btn-upvotes {
+  margin: 5px;
+}
+
+.counter-upvotes {
+  margin: 5px;
 }

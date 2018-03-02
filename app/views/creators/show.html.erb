@@ -5,12 +5,9 @@
   <div class="card show-card" >
     <div class="creator">
       <%= cl_image_tag @creator.avatar_photo, class: "avatar-large" %>
-      <h1><%= @creator.youtube_name %></h1>
+       <%= link_to @creator.youtube_name , creator_path(@creator), class: "showcased-name" %>
     </div>
     <div class="upvotes-content btn btn-primary">
-      <div class="counter-upvotes">
-        <%= @creator.upvotes.length %>
-      </div>
       <div class="btn-upvotes">
         <% upvote_for_creator = current_user.upvotes.where("creator_id = #{@creator.id}").first %>
           <% if upvote_for_creator.nil? %>
@@ -19,16 +16,25 @@
             <%= link_to 'Upvote', upvote_path(upvote_for_creator), method: :delete %>
           <% end %>
       </div>
+      <i class="fas fa-caret-up"></i>
+      <div class="counter-upvotes">
+        <%= @creator.upvotes.length %>
+      </div>
     </div>
   </div>
   <div class="card info">
-    <% @creator.tag_list.each do |tag| %>
-      <ul>
-        <%= tag %>
-      </ul>
-    <% end %>
-    <ul><%= @creator.nb_followers %> followers</ul>
-    <ul><%#= @creator.nb_video %> Vidéo</ul>
+    <h3> Informations</h3>
+    <div class="tags">
+      <% @creator.tag_list.each do |tag| %>
+        <ul>
+          <%= tag %>
+        </ul>
+      <% end %>
+    </div>
+    <div class="followers">
+      <ul><%= @creator.nb_followers %> followers</ul>
+      <ul><%#= @creator.nb_video %> Vidéos</ul>
+    </div>
     <ul><i class="fab fa-instagram"></i> Instagram</ul>
     <ul><i class="fab fa-facebook-square"></i> Faceboof</ul>
     <ul><i class="fab fa-twitter-square"></i> Twitter</ul>
@@ -37,9 +43,14 @@
     <ul class="g-ytsubscribe" data-channel="GoogleDevelopers" data-count="hidden"></ul> <!-- a remplacer par la ligne au dessus quand la channel id sera disponible -->
   </div>
   <div class="card description">
-    <i class="fas fa-quote-left"></i>    <%= @creator.description %>    <i class="fas fa-quote-right"></i>
-    <p> by <%= @creator.user.username %> <%= cl_image_tag @creator.user.avatar, class: "avatar" %></p>
+    <div class= "quote">
+      <i class="fas fa-quote-left"></i>    <%= @creator.description %>    <i class="fas fa-quote-right"></i>
+    </div>
+    <div class="discovered-by">
+      <p> discovered by <%= @creator.user.username %> <%= cl_image_tag @creator.user.avatar, class: "avatar" %></p>
+    </div>
   </div>
+
   <div class="video">
     <iframe class="ytplayer-showcased" type="text/html"
     src="http://www.youtube.com/embed/<%= @creator.video_youtube_id %>?autoplay=0"
