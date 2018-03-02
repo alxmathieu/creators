@@ -1,12 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
-
 puts 'Cleaning models...'
   Upvote.destroy_all
   Creator.destroy_all
@@ -43,3 +34,26 @@ upvote2 = Upvote.create!(user_id: hugo.id, creator_id: benjamin_verrecchia.id)
 upvote4 = Upvote.create!(user_id: benoit.id, creator_id: squeezie.id)
 upvote4 = Upvote.create!(user_id: max.id, creator_id: squeezie.id)
 puts "Done!"
+
+
+###################################
+# require 'yaml'
+
+# file = Rails.root.join('db', 'seeds', 'seed.yml')
+# sample = YAML.load(open(file).read)
+
+# puts 'Creating creators...'
+# creators = {}
+# sample["creators"].each do |creator|
+#   creators[creator["youtube_name"]] = Creator.create! creator.slice("youtube_name", "channel_url")
+# end
+
+# puts 'Finished!'
+
+
+
+
+
+
+
+
