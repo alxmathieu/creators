@@ -6,9 +6,9 @@ Rails.application.routes.draw do
     collection do
       post "new", to: "creators#new"
     end
-    resources :upvotes, only: [:new, :create]
+    resources :upvotes, only: [:new, :create, :destroy]
   end
-resources :upvotes, only: [:destroy]
+# resources :upvotes, only: [:destroy]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

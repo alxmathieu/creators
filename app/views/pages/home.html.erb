@@ -8,7 +8,7 @@
         <i class="fas fa-star"></i>
         <div class="showcased-avatar-tags">
           <%= link_to(creator_path(@showcased_creator)) do %>
-            <%= image_tag @showcased_creator.avatar_photo, class: "avatar-showcased-creator"%>
+            <%= cl_image_tag @showcased_creator.avatar_photo, class: "avatar-showcased-creator"%>
           <% end %>
           <div class="showcased-tags">
             <ul class="list-unstyled list-tags" style="text-align: center">
@@ -58,7 +58,7 @@
           <div class="current-batch">
             <ul class="list-unstyled">
               <% @ordered_creators_current_batch.each do |creator| %>
-                <%= render 'shared/creator', :creator => creator %>
+                <%= render 'shared/creator', creator: creator %>
               <% end %>
             </ul>
           </div>
@@ -67,7 +67,7 @@
               <div class="tagline-last-batch">Missed last week's batch? Check them out!</div>
             <ul class="list-unstyled">
               <% @ordered_creators_last_batch.each do |creator| %>
-                <%= render 'shared/creator', :creator => creator %>
+                <%= render 'shared/creator', creator: creator %>
               <% end %>
             </ul>
           </div>
@@ -90,7 +90,7 @@
                 <li>
                   <%= "#{@winners_last_batch.index(winner) + 1}" %> - <%= winner.youtube_name %>
                   <%= link_to(creator_path(winner)) do %>
-                    <%= image_tag winner.avatar_photo, class: "avatar-creator"%>
+                    <%= cl_image_tag winner.avatar_photo, class: "avatar-creator"%>
                   <% end %>
                 </li>
               </div>
