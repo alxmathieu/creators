@@ -1,6 +1,7 @@
 class Batch < ApplicationRecord
   has_many :creators
 
+
   def self.current_batch
     Batch.where("status = 'active'").first
   end

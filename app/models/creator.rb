@@ -2,7 +2,8 @@ class Creator < ApplicationRecord
   # Dependency
   belongs_to :user
   belongs_to :batch
-  has_many :upvotes
+  has_many :upvotes, dependent: :destroy
+
 
 
   def video_youtube_id

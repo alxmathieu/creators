@@ -1,13 +1,13 @@
 require 'yaml'
 
-puts 'Destroying batches...'
-Batch.destroy_all
-puts 'Destroying upvotes'
+puts 'Destroying upvotes...'
 Upvote.destroy_all
 puts 'Destroying creators...'
 Creator.destroy_all
 puts 'Destroying users...'
 User.destroy_all
+puts 'Destroying batches...'
+Batch.destroy_all
 
 file = Rails.root.join('db', 'seeds', 'seed.yml')
 sample = YAML.load(open(file).read)
