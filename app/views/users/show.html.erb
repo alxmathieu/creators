@@ -43,9 +43,9 @@
     </div>
   <% end %>
 
-  <div class="card">
-    <%= render 'digs_upvotes' %>
-  </div>
+<!--   <div class="card">
+    <% render 'digs_upvotes' %>
+  </div> -->
 
   <div class="card">
     <% if current_user == @user %>
@@ -55,7 +55,7 @@
     <% end %>
     <ul class="list-unstyled">
       <% @user.creators.each do |creator| %>
-        <li><%= creator.youtube_name %></li>
+        <%= render 'pages/creator', :creator => creator %>
       <% end %>
     </ul>
   </div>
@@ -68,7 +68,8 @@
     <% end %>
     <ul class="list-unstyled">
       <% @user.upvotes.each do |upvote| %>
-        <li><%= Creator.find(upvote.creator_id).youtube_name %></li>
+        <% creator = Creator.find(upvote.creator_id) %>
+        <%= render 'pages/creator', :creator => creator %>
       <% end %>
     </ul>
   </div>
