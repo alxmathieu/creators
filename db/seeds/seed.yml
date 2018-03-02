@@ -20,10 +20,12 @@ users:
     remote_avatar_url: "https://kitt.lewagon.com/placeholder/users/benoitprigent"
     level: 2
 batches:
-  - status: "inactive"
-    number: 1
+  - status: "pending"
+    number: 201811
   - status: "active"
-    number: 2
+    number: 201810
+  - status: "inactive"
+    number: 201809
 creators:
   - youtube_name: "Casey Neistat"
     channel_url: "https://www.youtube.com/user/caseyneistat"
