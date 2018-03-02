@@ -24,7 +24,6 @@ class PagesController < ApplicationController
       @winners_last_batch = [Creator.find(last_batch.first_creator_id), Creator.find(last_batch.second_creator_id), Creator.find(last_batch.third_creator_id) ]
     else
       @winners_last_batch = []
-      raise
     end
 
   end

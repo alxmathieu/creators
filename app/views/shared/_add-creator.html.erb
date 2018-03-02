@@ -35,7 +35,7 @@
           <%= f.input :tag_list, label: "Add a few tag applying to #{@creator.youtube_name}", hint: "Add several tags separated with commas",  value: f.object.tag_list.to_s %>
 
           <!-- [Hidden-Fields] -->
-          <%= f.hidden_field :channel_url, error: "COUCOU" %>
+          <%= f.hidden_field :channel_url %>
           <%= f.hidden_field :youtube_name %>
           <%= f.hidden_field :avatar_photo %>
           <%= f.hidden_field :nb_followers %>
