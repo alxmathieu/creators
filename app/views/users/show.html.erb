@@ -9,7 +9,11 @@
       <% end %>
       <div class="user-infos-content" id="id-user-infos">
         <h3><%= @user.username %></h3>
-        <p><%= @user.bio %></p>
+        <% if @user.bio.nil? && current_user == @user %>
+          <p><strong>Edit your profile to describe yourself!</strong></p>
+        <% else %>
+          <p><%= @user.bio %></p>
+        <% end %>
       </div>
     </div>
     <% if current_user == @user  %>
@@ -43,9 +47,9 @@
     </div>
   <% end %>
 
-  <div class="card">
-    <%= render 'digs_upvotes' %>
-  </div>
+<!--   <div class="card">
+    <% render 'digs_upvotes' %>
+  </div> -->
 
   <div class="card">
     <% if current_user == @user %>
@@ -55,7 +59,7 @@
     <% end %>
     <ul class="list-unstyled">
       <% @user.creators.each do |creator| %>
-        <li><%= creator.youtube_name %></li>
+        <%= render 'shared/creator', :creator => creator %>
       <% end %>
     </ul>
   </div>
@@ -68,7 +72,8 @@
     <% end %>
     <ul class="list-unstyled">
       <% @user.upvotes.each do |upvote| %>
-        <li><%= Creator.find(upvote.creator_id).youtube_name %></li>
+        <% creator = Creator.find(upvote.creator_id) %>
+        <%= render 'shared/creator', :creator => creator %>
       <% end %>
     </ul>
   </div>

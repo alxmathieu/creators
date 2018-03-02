@@ -1,0 +1,9 @@
+function upvote(innerHTML) {
+  const upvote = document.getElementById('upvote-btn-creator-<%= @creator.id %>')
+  upvote.innerHTML = innerHTML;
+}
+
+upvote("<%= j render 'shared/upvote-button', creator: @creator %>");
+
+
+

@@ -16,6 +16,7 @@ class CreatorsController < ApplicationController
     channel_url = params[:creator][:channel_url]
     @youtube_data = ApiScrapper.new(channel_url).scrape
     @creator = Creator.new(@youtube_data.slice(:channel_url, :youtube_name, :avatar_photo, :nb_followers))
+    @creator = Creator.new
     authorize @creator
   end
 
