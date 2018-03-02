@@ -20,13 +20,12 @@ class CreatorsController < ApplicationController
   end
 
   def create
-    @creator = Creator.new(creators_params)
+    @creator = Creator.new(creator_params)
     @creator.user = current_user
     @creator.batch = Batch.next_batch
     authorize @creator
-    raise
     if @creator.save
-      redirect_to new_creator_path
+      redirect_to creator_path(@creator)
     else
       render 'creators/new'
     end

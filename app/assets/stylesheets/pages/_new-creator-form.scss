@@ -1,0 +1,41 @@
+#show-form-card {
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+.show-form {
+  h1 {
+    font-size: 20px;
+  }
+
+
+}
+
+
+.name-figures {
+  display: flex;
+
+}
+
+
+#avatar-name-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  // background-color: green;
+
+  img {
+    // background-color: blue;
+    padding: 10px;
+    height: 150px;
+  }
+  h3 {
+    font-size: 30px;
+    // background-color: red;
+    max-width: 50%;
+  }
+
+}
