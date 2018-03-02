@@ -24,10 +24,3 @@ sample["creators"].each do |creator|
 end
 
 puts 'Finished!'
-
-
-
-
-
-
-

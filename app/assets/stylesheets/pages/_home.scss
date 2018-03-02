@@ -1,17 +1,21 @@
 .content-homepage{
   display: flex;
-  justify-content: space-between;
 }
 
 .container-rankings{
   background-color: white;
-  width: 80%
+  width: 80%;
+  margin: 20px 40px 0px 0px;
 }
 
 .container-menu{
-  margin-top: 20px;
-  background-color: red;
   text-align: right;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  .btn{
+    margin-bottom: 15px;
+  }
 }
 
 .last-batch{
@@ -30,13 +34,33 @@
 }
 
 .btn-submit-home{
-
+  width: 10em;
 }
 
 .btn-all-creators-home{
+  width: 10em;
+  margin-top: 15px;
 
+}
+
+.first-last-week, .second-last-week, .third-last-week{
+  display: flex;
+  justify-content: space-between;
+}
+
+.first-position{
 }
 
 .modal.fade {
   z-index: 10000000 !important;
+}
+
+.ranking-last-week{
+  text-align: left;
+  background-color: $silver-gray;
+  padding: 10px;
+  color: white;
+  li {
+    margin-bottom: 10px;
+  }
 }
