@@ -1,0 +1,59 @@
+#show-form-card {
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+.show-form {
+  h1 {
+    font-size: 20px;
+  }
+
+
+}
+
+
+.name-figures {
+  display: flex;
+
+}
+
+#new_creator {
+  font-size: 13px;
+
+  label {
+    font-weight: 200;
+  }
+
+  button {
+    text-align: center;
+  }
+}
+
+// .form-card {
+//   form {
+//     font-size: 13px;
+//     font-weight: 300;
+//   }
+// }
+
+#avatar-name-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  // background-color: green;
+
+  img {
+    // background-color: blue;
+    padding: 10px;
+    height: 150px;
+  }
+  h3 {
+    font-size: 30px;
+    // background-color: red;
+    max-width: 50%;
+  }
+
+}

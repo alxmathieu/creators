@@ -1,3 +1,5 @@
+# require_relative '../services/yt_api'
+
 class CreatorsController < ApplicationController
   before_action :find_creator, only: [ :show, :edit, :update ]
 
@@ -11,17 +13,20 @@ class CreatorsController < ApplicationController
   end
 
   def new
+    channel_url = params[:creator][:channel_url]
+    @youtube_data = ApiScrapper.new(channel_url).scrape
+    @creator = Creator.new(@youtube_data.slice(:channel_url, :youtube_name, :avatar_photo, :nb_followers))
     @creator = Creator.new
     authorize @creator
   end
 
   def create
-    @creator = Creator.new(creators_params)
+    @creator = Creator.new(creator_params)
     @creator.user = current_user
     @creator.batch = Batch.next_batch
     authorize @creator
     if @creator.save
-      redirect_to new_creator_path
+      redirect_to creator_path(@creator)
     else
       render 'creators/new'
     end
@@ -46,7 +51,7 @@ class CreatorsController < ApplicationController
   end
 
   def creator_params
-    params.require(:creator).permit(:user_id, :batch_id, :youtube_name, :description, :channel_url, :video_url, :nb_followers, :is_showcased, :country, :language)
+    params.require(:creator).permit(:user_id, :batch_id, :youtube_name, :description, :channel_url, :video_url, :nb_followers, :is_showcased, :country, :language, :avatar_photo)
   end
 end
 
