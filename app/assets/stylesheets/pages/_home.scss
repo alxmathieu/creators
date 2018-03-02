@@ -40,7 +40,6 @@
 .btn-all-creators-home{
   width: 10em;
   margin-top: 15px;
-
 }
 
 .first-last-week, .second-last-week, .third-last-week{
@@ -48,7 +47,11 @@
   justify-content: space-between;
 }
 
-.first-position{
+.position-last-week{
+  //font-family: $creators-font;
+  .avatar-creator{
+    height: 30px;
+  }
 }
 
 .modal.fade {
