@@ -7,12 +7,12 @@
       <div class="card card-showcased" id="show-form-card">
         <div id="avatar-name-div">
           <% unless @youtube_data[:avatar_photo].nil? %>
-          <%= cl_image_tag @youtube_data[:avatar_photo], class: "avatar-showcased-creator" %>
+            <%= cl_image_tag @youtube_data[:avatar_photo], class: "avatar-showcased-creator" %>
           <% end %>
         </div>
           <div class="name-figures"></div>
             <h3 class="showcased-name"> <%=@creator.youtube_name %></h3>
-            <p><%= @youtube_data[:nb_followers] %> Followers </p>
+            <p><%= @creator.nb_followers %> Followers </p>
             <p><%= @youtube_data[:nb_videos]%> Videos Uploaded</p>
       </div>
     </div>
