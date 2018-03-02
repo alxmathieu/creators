@@ -1,0 +1,15 @@
+creators:
+  - youtube_name: "Casey Neistat"
+    channel_url: "https://www.youtube.com/user/caseyneistat"
+    video_url: "https://www.youtube.com/watch?v=jG7dSXcfVqE"
+    nb_followers: 130000
+    description: |
+      THE inventor of vlogging
+    is_showcased: true
+    country: United-States
+    language: english
+    remote_avatar_photo_url: "https://yt3.ggpht.com/-x2NNN2y49G0/AAAAAAAAAAI/AAAAAAAAAAA/RhwVaxMvqW8/s288-mo-c-c0xffffffff-rj-k-no/photo.jpg"
+    tag_list:
+      - "Awesome"
+      - "Vlog"
+      - "World"

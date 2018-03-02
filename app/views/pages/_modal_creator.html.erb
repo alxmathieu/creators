@@ -2,19 +2,16 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Enter the URL of the creator's channel you want to share</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
+          <h5 class="modal-title" id="exampleModalLabel">Enter the URL of the creator's channel you want to share</h5>
         </div>
         <div class="modal-body">
-
           <%= simple_form_for @creator, url: creators_path do |form| %>
             <%= form.input :channel_url, as: :string, placeholder: "https://www.youtube.com/channel/mychanel" %>
             <%= form.button :submit, 'Retrieve data', class:"btn btn-primary" %>
           <% end %>
-
-
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
