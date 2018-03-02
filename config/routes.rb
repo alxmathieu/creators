@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :creators, only: [ :index, :create, :show, :edit, :update ] do
     collection do
       post "new", to: "creators#new"
+      post "create", to: "creators#create"
     end
     resources :upvotes, only: [:new, :create]
   end

@@ -1,10 +1,38 @@
+users:
+  - username: Alexis
+    email: "alexis@email.com"
+    password: "123456"
+    remote_avatar_url: "https://kitt.lewagon.com/placeholder/users/AlexisPipieri"
+    level: 0
+  - username: Hugo
+    email: "hugo@email.com"
+    password: "123456"
+    remote_avatar_url: "https://kitt.lewagon.com/placeholder/users/hugolbhn"
+    level: 1
+  - username: Alex
+    email: "alex@email.com"
+    password: "123456"
+    remote_avatar_url: "https://kitt.lewagon.com/placeholder/users/alxmathieu"
+    level: 1
+  - username: Benoit
+    email: "benoit@email.com"
+    password: "123456"
+    remote_avatar_url: "https://kitt.lewagon.com/placeholder/users/benoitprigent"
+    level: 2
+batches:
+  - status: "inactive"
+    number: 1
+  - status: "active"
+    number: 2
 creators:
   - youtube_name: "Casey Neistat"
     channel_url: "https://www.youtube.com/user/caseyneistat"
     video_url: "https://www.youtube.com/watch?v=jG7dSXcfVqE"
     nb_followers: 130000
     description: |
-      THE inventor of vlogging
+      THE inventor of vlogging THE inventor of vlogging THE inventor of vlogging
+    user: Hugo
+    batch: 1
     is_showcased: true
     country: United-States
     language: english
