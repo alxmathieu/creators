@@ -19,6 +19,24 @@
 
 }
 
+#new_creator {
+  font-size: 13px;
+
+  label {
+    font-weight: 200;
+  }
+
+  button {
+    text-align: center;
+  }
+}
+
+// .form-card {
+//   form {
+//     font-size: 13px;
+//     font-weight: 300;
+//   }
+// }
 
 #avatar-name-div {
   display: flex;
