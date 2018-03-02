@@ -56,6 +56,7 @@ class ApiScrapper
     end
 
     return {
+      channel_url: @url,
       channel_id: id,
       youtube_name: title,
       avatar_photo: avatar,
@@ -69,6 +70,6 @@ class ApiScrapper
 end
 
 
-# puts ApiScrapper.new('https://www.youtube.com/user/orelsan').scrape
+puts ApiScrapper.new('https://www.youtube.com/user/orelsan').scrape
 # data = ApiScrapper.new('https://www.youtube.com/user/orelsan').scrape
 # puts ApiScrapper.new('https://www.youtube.com/channel/UChCDYcBCrb8tuPAO6e0P-Hw').scrape
