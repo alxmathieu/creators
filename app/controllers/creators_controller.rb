@@ -15,7 +15,7 @@ class CreatorsController < ApplicationController
   def new
     channel_url = params[:creator][:channel_url]
     @youtube_data = ApiScrapper.new(channel_url).scrape
-    @creator = Creator.new(@youtube_data.slice(:channel_url, :youtube_name, :avatar_photo, :nb_followers))
+    @creator = Creator.new(@youtube_data.slice(:channel_url, :youtube_name, :remote_avatar_photo_url, :nb_followers))
     authorize @creator
   end
 
@@ -50,7 +50,7 @@ class CreatorsController < ApplicationController
   end
 
   def creator_params
-    params.require(:creator).permit(:user_id, :batch_id, :youtube_name, :description, :channel_url, :video_url, :nb_followers, :is_showcased, :country, :language, :avatar_photo)
+    params.require(:creator).permit(:user_id, :batch_id, :youtube_name, :description, :channel_url, :video_url, :nb_followers, :is_showcased, :country, :language, :remote_avatar_photo_url)
   end
 end
 
