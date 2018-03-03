@@ -19,13 +19,6 @@ users:
     password: "123456"
     remote_avatar_url: "https://kitt.lewagon.com/placeholder/users/benoitprigent"
     level: 2
-batches:
-  - status: "pending"
-    number: 201811
-  - status: "active"
-    number: 201810
-  - status: "inactive"
-    number: 201809
 creators:
   - youtube_name: "Casey Neistat"
     channel_url: "https://www.youtube.com/user/caseyneistat"
@@ -172,3 +165,13 @@ creators:
     tag_list:
       - "Biology"
       - "Vulgarizator"
+batches:
+  - status: "pending"
+    number: 201811
+  - status: "active"
+    number: 201810
+  - status: "inactive"
+    number: 201809
+    first_creator: "Ivan Bede"
+    second_creator: "Le Pérave"
+    third_creator: "Adèle"
