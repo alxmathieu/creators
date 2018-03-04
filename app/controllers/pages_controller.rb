@@ -21,7 +21,9 @@ class PagesController < ApplicationController
     @creator = Creator.new
 
     unless last_batch.nil? || Creator.where("batch_id = #{last_batch.id}").length < 3
-      @winners_last_batch = [Creator.find(last_batch.first_creator_id), Creator.find(last_batch.second_creator_id), Creator.find(last_batch.third_creator_id) ]
+      # TO BE REMOVED on Monday, used as a placeholder to avoid error 500 during the week-end
+      @winners_last_batch = [Creator.all.first, Creator.all.last, Creator.all[1]]
+      # @winners_last_batch = [Creator.find(last_batch.first_creator_id), Creator.find(last_batch.second_creator_id), Creator.find(last_batch.third_creator_id) ]
     else
       @winners_last_batch = []
     end
