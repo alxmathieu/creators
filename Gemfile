@@ -16,7 +16,7 @@ gem 'acts-as-taggable-on', '~> 4.0'
 gem 'country_select'
 
 #Select 2 - GEM
-gem "select2-rails"
+ gem 'select2-rails', '~> 4.0'
 
 
 # Photo Uploader
