@@ -4,14 +4,13 @@ class Creator < ApplicationRecord
   belongs_to :batch
   has_many :upvotes, dependent: :destroy
 
-
-
   def video_youtube_id
       pattern = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/
       regex = self.video_url.match(pattern)
       youtube_id = regex[1]
       return youtube_id
   end
+
   # Avatar Photo
   mount_uploader :avatar_photo, PhotoUploader
 
