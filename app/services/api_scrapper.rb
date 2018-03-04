@@ -31,45 +31,48 @@ class ApiScrapper
     end
     info_serialized = open(url).read
     info = JSON.parse(info_serialized)
+    if info["items"].empty?
+      return nil
+    else
+      # Id
+      id = info["items"][0]["id"]
 
-    # Id
-    id = info["items"][0]["id"]
+      # Snippets
+      snippet = info["items"][0]["snippet"]
+      title = snippet["title"]
+      avatar = snippet["thumbnails"]["default"]["url"]
 
-    # Snippets
-    snippet = info["items"][0]["snippet"]
-    title = snippet["title"]
-    avatar = snippet["thumbnails"]["default"]["url"]
+      # Statistics
+      stats = info["items"][0]["statistics"]
+      view_count = stats["viewCount"]
+      subscriber_count = stats["subscriberCount"]
+      video_count = stats["videoCount"]
 
-    # Statistics
-    stats = info["items"][0]["statistics"]
-    view_count = stats["viewCount"]
-    subscriber_count = stats["subscriberCount"]
-    video_count = stats["videoCount"]
+      # Videos
+      # url_videos = @api_url_videos + id + '&maxResults=5&key=#{ENV["YOUTUBE_API_KEY"]}'
+      url_videos = @api_url_videos + id + '&maxResults=5&key=AIzaSyBXB3cRp_EAO4kRoCn0tFqDx1-5j4UuiFU'
+      video_serialized = open(url_videos).read
+      video = JSON.parse(video_serialized)
 
-    # Videos
-    # url_videos = @api_url_videos + id + '&maxResults=5&key=#{ENV["YOUTUBE_API_KEY"]}'
-    url_videos = @api_url_videos + id + '&maxResults=5&key=AIzaSyBXB3cRp_EAO4kRoCn0tFqDx1-5j4UuiFU'
-    video_serialized = open(url_videos).read
-    video = JSON.parse(video_serialized)
+      videos = []
+      items = video["items"]
+      items.each do |item|
+        videos << item["id"]["videoId"]
+      end
 
-    videos = []
-    items = video["items"]
-    items.each do |item|
-      videos << item["id"]["videoId"]
+      return {
+        channel_url: @url,
+        channel_id: id,
+        youtube_name: title,
+        remote_avatar_photo_url: avatar,
+        view_count: view_count,
+        nb_followers: subscriber_count,
+        nb_videos: video_count,
+        top_videos: videos
+      }
     end
-
-    return {
-      channel_url: @url,
-      channel_id: id,
-      youtube_name: title,
-      remote_avatar_photo_url: avatar,
-      view_count: view_count,
-      nb_followers: subscriber_count,
-      nb_videos: video_count,
-      top_videos: videos
-    }
   end
 end
 
-puts ApiScrapper.new('https://www.youtube.com/channel/UChCDYcBCrb8tuPAO6e0P-Hw').scrape
+puts ApiScrapper.new('https://www.youtube.com/channel/UC-XlvkxWeSMLjjuIe3Zks2').scrape
 
