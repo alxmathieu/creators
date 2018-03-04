@@ -19,7 +19,7 @@
 }
 
 #edit-form-user {
-  padding: 20px 70px;
+  padding-top: 20px;
 }
 
 #edit-user-btn {
@@ -39,6 +39,10 @@
   justify-content: space-between;
 }
 
+.progress-bar-container {
+  flex: 1 0 auto;
+}
+
 .divider {
   width: 1px;
   margin: 10px 20px;
@@ -46,6 +50,7 @@
 }
 
 .next-steps {
+  flex: 0 0 30%;
   max-width: 350px;
 }
 
