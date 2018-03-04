@@ -4,6 +4,9 @@
   position: relative;
   flex: 1;
 }
+.step a {
+  text-decoration: none;
+}
 .steps-container {
   background: $light-gray;
   height: 10px;

@@ -9,7 +9,8 @@
         </div>
         <div class="modal-body">
           <%= simple_form_for @creator, url: creators_path do |form| %>
-            <%= form.input :channel_url, as: :string, placeholder: "https://www.youtube.com/channel/mychanel" %>
+            <%= form.error_notification %>
+            <%= form.input :channel_url, required: true, as: :string, placeholder: "https://www.youtube.com/channel/mychanel" %>
             <%= form.button :submit, 'Retrieve data', class:"btn btn-primary" %>
           <% end %>
         </div>

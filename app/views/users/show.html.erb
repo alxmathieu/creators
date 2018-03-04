@@ -1,80 +1,92 @@
 <div class="container">
-
-  <div class="card user-infos text-center">
-    <div class="user-infos-container">
-      <% if @user.avatar.nil? %>
-        <%= image_tag 'default-avatar', alt: @user.username, class: "avatar-large" %>
-      <% else %>
-        <%= image_tag @user.avatar, alt: @user.username, class: "avatar-large" %>
-      <% end %>
-      <div class="user-infos-content" id="id-user-infos">
-        <h3><%= @user.username %></h3>
-        <% if @user.bio.nil? && current_user == @user %>
-          <p><strong>Edit your profile to describe yourself!</strong></p>
-        <% else %>
-          <p><%= @user.bio %></p>
+  <div class="col">
+    <div class="col-md-3">
+      <div class="card user-infos text-center">
+        <div class="user-infos-container">
+          <% if @user.avatar.nil? %>
+            <%= image_tag 'default-avatar', alt: @user.username, class: "avatar-large" %>
+          <% else %>
+            <%= image_tag @user.avatar.url(:bright_face), alt: @user.username, class: "avatar-large" %>
+          <% end %>
+          <div class="user-infos-content" id="id-user-infos">
+            <h3><%= @user.username %></h3>
+            <% if @user.bio.nil? && current_user == @user %>
+              <p><strong>Edit your profile to describe yourself!</strong></p>
+            <% else %>
+              <p><%= @user.bio %></p>
+            <% end %>
+          </div>
+        </div>
+        <% if current_user == @user  %>
+          <%= render 'form_edit' %>
+          <%= link_to "", "#", class: "fas fa-edit", id:"edit-user-btn" %>
         <% end %>
       </div>
     </div>
-    <% if current_user == @user  %>
-      <%= render 'form_edit' %>
-      <%= link_to "", "#", class: "fas fa-edit", id:"edit-user-btn" %>
-    <% end %>
-  </div>
-
-  <% if current_user == @user  %>
-    <div class="card">
-      <h2>My profile on Creators</h2>
-      <div class="achievments">
-        <%= render 'progress' %>
-        <div class="divider"></div>
-        <div class="next-steps">
-          <h4>Steps to upgrade your profile</h4>
-          <% if @user.level == 0 %>
-            <ul class="list-unstyled">
-              <li style="<%= 'text-decoration: line-through;' if @user.number_upvoted > 9 %>">Upvote at least 10 creators <span class="light-color">(<%= 10 - @user.number_upvoted %> left!)</span></li>
-            </ul>
-          <% elsif @user.level == 3 %>
-            <p>You're already an <%= @user.level_name %>!</p>
-          <% else %>
-            <ul class="list-unstyled">
-              <li style="<%= 'text-decoration: line-through;' if @user.dig_needed - @user.creators.length == 0 %>">Dig at least <%= pluralize @user.dig_needed, "creator" %> <span class="light-color">(<%= @user.dig_needed - @user.creators.length %> left!)</span></li>
-              <li style="<%= 'text-decoration: line-through;' if @user.upvotes_needed - @user.upvotes.length == 0 %>">Receive at least <%= pluralize @user.upvotes_needed, "upvote" %> on the creators you dug <span class="light-color">(<%= @user.upvotes_needed - @user.upvotes.length %> left!)</span></li>
-            </ul>
-          <% end %>
+    <div class="col-md-9">
+      <% if current_user == @user  %>
+        <div class="card">
+          <h2>My profile on Creators</h2>
+          <div class="achievments">
+            <%= render 'progress' %>
+            <div class="divider"></div>
+            <div class="next-steps">
+              <h4>Steps to upgrade your profile</h4>
+              <% if @user.level == 0 %>
+                <ul class="list-unstyled">
+                  <li style="<%= 'text-decoration: line-through;' if @user.number_upvoted > 9 %>">Upvote at least <%= @user.min_upvotes %> creators <span class="light-color">
+                    (<%= @user.number_upvoted < @user.min_upvotes ? (@user.min_upvotes - @user.number_upvoted) : "0" %> left!)</span>
+                  </li>
+                </ul>
+              <% elsif @user.level == 3 %>
+                <p>You're already an <%= @user.level_name %>!</p>
+              <% else %>
+                <ul class="list-unstyled">
+                  <li style="<%= 'text-decoration: line-through;' if @user.dig_needed - @user.creators.length <= 0 %>">Dig at least <%= pluralize @user.dig_needed, "creator" %> <span class="light-color">
+                    (<%= @user.creators.length < @user.dig_needed ? (@user.dig_needed - @user.creators.length) : "0" %> left!)</span>
+                  </li>
+                  <li style="<%= 'text-decoration: line-through;' if @user.upvotes_needed - @user.upvotes.length <= 0 %>">Receive at least <%= pluralize @user.upvotes_needed, "upvote" %> on the creators you dug <span class="light-color">
+                    (<%= @user.upvotes.length < @user.upvotes_needed ? (@user.upvotes_needed - @user.upvotes.length) : "0" %> left!)</span>
+                  </li>
+                </ul>
+              <% end %>
+            </div>
+          </div>
         </div>
+      <% end %>
+
+    <!--   <div class="card">
+        <% render 'digs_upvotes' %>
+      </div> -->
+
+      <div class="card">
+        <% if current_user == @user %>
+          <h2>My digs (<%= @user.creators.length %>)</h2>
+        <% else %>
+          <h2>Creators uploaded by <%= @user.username %> (<%= @user.creators.length %>)</h2>
+        <% end %>
+        <ul class="list-unstyled">
+          <% @user.creators.each do |creator| %>
+            <%= render 'shared/creator', :creator => creator %>
+          <% end %>
+        </ul>
       </div>
+
+      <div class="card">
+        <% if current_user == @user  %>
+          <h2>My upvotes (<%= @user.upvotes.length %>)</h2>
+        <% else %>
+          <h2>Creators upvoted by <%= @user.username %> (<%= @user.upvotes.length %>)</h2>
+        <% end %>
+        <ul class="list-unstyled">
+          <% @user.upvotes.each do |upvote| %>
+            <% creator = Creator.find(upvote.creator_id) %>
+            <%= render 'shared/creator', :creator => creator %>
+          <% end %>
+        </ul>
+      </div>
+
     </div>
-  <% end %>
-
-<!--   <div class="card">
-    <% render 'digs_upvotes' %>
-  </div> -->
-
-  <div class="card">
-    <% if current_user == @user %>
-      <h2>My digs (<%= @user.creators.length %>)</h2>
-    <% else %>
-      <h2>Creators uploaded by <%= @user.username %> (<%= @user.creators.length %>)</h2>
-    <% end %>
-    <ul class="list-unstyled">
-      <% @user.creators.each do |creator| %>
-        <%= render 'shared/creator', :creator => creator %>
-      <% end %>
-    </ul>
   </div>
 
-  <div class="card">
-    <% if current_user == @user  %>
-      <h2>My upvotes (<%= @user.upvotes.length %>)</h2>
-    <% else %>
-      <h2>Creators upvoted by <%= @user.username %> (<%= @user.upvotes.length %>)</h2>
-    <% end %>
-    <ul class="list-unstyled">
-      <% @user.upvotes.each do |upvote| %>
-        <% creator = Creator.find(upvote.creator_id) %>
-        <%= render 'shared/creator', :creator => creator %>
-      <% end %>
-    </ul>
-  </div>
 </div>

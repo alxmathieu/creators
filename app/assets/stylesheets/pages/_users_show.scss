@@ -1,8 +1,15 @@
 .user-infos {
-  margin-top: 50px;
+  // margin-top: 50px;
+  min-height: 60vh;
   position: relative;
   h3 {
     margin-top: 11px;
+  }
+}
+
+@media(max-width: 720px) {
+  .user-infos {
+    min-height: 0px;
   }
 }
 
