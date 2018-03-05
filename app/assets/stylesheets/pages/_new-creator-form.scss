@@ -1,7 +1,37 @@
+// Vidéos Cards
+
+.add-video-btn {
+  color: black;
+  text-decoration: none;
+  a {
+  text-decoration: none;
+  }
+  &:hover {
+    text-decoration: none;
+    color: $silver-gray;
+  }
+}
+
+
+// When selected vidéo
+.selected-video {
+  border-style: solid;
+  border-width: 0px 0px 3px 0px;
+  // border-color: #04DEAD;
+  border-color: $charcoal
+}
+
+// Vidéo Cards
+.video-card {
+  margin: 10px;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+
 #show-form-card {
   display: flex;
   flex-direction: column;
-
 }
 
 
@@ -9,8 +39,6 @@
   h1 {
     font-size: 20px;
   }
-
-
 }
 
 
@@ -31,12 +59,6 @@
   }
 }
 
-// .form-card {
-//   form {
-//     font-size: 13px;
-//     font-weight: 300;
-//   }
-// }
 
 #avatar-name-div {
   display: flex;
