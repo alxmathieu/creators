@@ -42,16 +42,7 @@
             <div class="form-inputs">
              <%= f.input :description, label: "Write the review about #{@creator.youtube_name}, explain what makes you vibrate..."%>
 
-
-
              <%= f.input :tag_list, label: "Add a few tag applying to #{@creator.youtube_name}", hint: "Add several tags separated with commas",  value: f.object.tag_list.to_s %>
-
-             <%#= f.input :video_url, :as => :radio_buttons, collection: @video_array, label: "Pick a video that embodies the most #{@creator.youtube_name}"  %>
-
-              <%#= f.collection_radio_buttons(
-    :video_url, @video_array, :first, :last
-  ) do |b|
-    b.label { b.radio_button + b.text } end %>
 
              <!-- [Hidden-Fields] -->
              <%= f.hidden_field :channel_url %>
