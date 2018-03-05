@@ -13,7 +13,6 @@ class CreatorsController < ApplicationController
   def new
     channel_url = params[:creator][:channel_url]
     @youtube_data = ApiScrapper.new(channel_url).scrape
-    @video_array = youtube_videos
     if @youtube_data.nil?
       @creator = Creator.new
     else
