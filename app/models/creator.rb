@@ -2,23 +2,27 @@ class Creator < ApplicationRecord
   # Dependency
   belongs_to :user
   belongs_to :batch
-  has_many :upvotes
+  has_many :upvotes, dependent: :destroy
 
+  PATTERN_VIDEO = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/
+  PATTERN_CHANNEL = /(?:https|http)\:\/\/(?:[\w]+\.)?youtube\.com\/((?:c\/|channel\/|user\/))?([a-zA-Z0-9\-\_]{1,})/
 
   def video_youtube_id
-      pattern = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/
-      regex = self.video_url.match(pattern)
-      youtube_id = regex[1]
-      return youtube_id
+    regex = self.video_url.match(PATTERN_VIDEO)
+    youtube_id = regex[1]
+    return youtube_id
   end
+
   # Avatar Photo
   mount_uploader :avatar_photo, PhotoUploader
 
   # Validations
-  validates :channel_url, presence: true, uniqueness: true, format: { with: /(?:https|http)\:\/\/(?:[\w]+\.)?youtube\.com\/(?:c\/|channel\/|user\/)?([a-zA-Z0-9\-]{1,})/, message: 'Channel url is invalid'}
+  validates :channel_url, presence: true, uniqueness: true,
+    format: { with: PATTERN_CHANNEL, message: 'Channel url is invalid'}
   validates :youtube_name, presence: true
   validates :description, presence: true, length: { minimum: 20 }
-  validates :video_url, presence: true, format: {with: /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/}
+  validates :video_url, presence: true,
+    format: {with: PATTERN_VIDEO}
   validates :nb_followers, presence: true
   validates :batch, presence: true
 

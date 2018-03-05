@@ -1,0 +1,174 @@
+users:
+  - username: Alexis
+    email: "alexis@email.com"
+    password: "123456"
+    remote_avatar_url: "https://kitt.lewagon.com/placeholder/users/AlexisPipieri"
+    level: 0
+  - username: Hugo
+    email: "hugo@email.com"
+    password: "123456"
+    remote_avatar_url: "https://kitt.lewagon.com/placeholder/users/hugolbhn"
+    level: 1
+  - username: Alex
+    email: "alex@email.com"
+    password: "123456"
+    remote_avatar_url: "https://kitt.lewagon.com/placeholder/users/alxmathieu"
+    level: 1
+  - username: Benoit
+    email: "benoit@email.com"
+    password: "123456"
+    remote_avatar_url: "https://kitt.lewagon.com/placeholder/users/benoitprigent"
+    level: 2
+batches:
+  - status: "pending"
+    number: 201811
+  - status: "active"
+    number: 201810
+  - status: "inactive"
+    number: 201809
+creators:
+  - youtube_name: "Casey Neistat"
+    channel_url: "https://www.youtube.com/user/caseyneistat"
+    video_url: "https://www.youtube.com/watch?v=jG7dSXcfVqE"
+    nb_followers: 130000
+    description: |
+      THE inventor of vlogging THE inventor of vlogging THE inventor of vlogging
+    user: Hugo
+    batch: 201810
+    is_showcased: false
+    country: United-States
+    language: English
+    remote_avatar_photo_url: "https://yt3.ggpht.com/-x2NNN2y49G0/AAAAAAAAAAI/AAAAAAAAAAA/RhwVaxMvqW8/s288-mo-c-c0xffffffff-rj-k-no/photo.jpg"
+    tag_list:
+      - "Awesome"
+      - "Vlog"
+      - "World"
+  - youtube_name: "Ivan Bede"
+    channel_url: "https://www.youtube.com/channel/UCAurJS6W9SOtGFgNF3909UA"
+    video_url: "https://www.youtube.com/watch?v=dSrqzNQhIo8"
+    nb_followers: 471746
+    description: |
+      Ivan is a young and talented French youtuber. His style is very close to
+      "The Palmashow", and everyone who love's absurd comedy should check him out!
+    user: Alex
+    batch: 201809
+    is_showcased: false
+    country: France
+    language: French
+    remote_avatar_photo_url: "https://yt3.ggpht.com/-x2NNN2y49G0/AAAAAAAAAAI/AAAAAAAAAAA/RhwVaxMvqW8/s288-mo-c-c0xffffffff-rj-k-no/photo.jpg"
+    tag_list:
+      - "Humour"
+      - "Sketch"
+  - youtube_name: "Benjamin Verracchia"
+    channel_url: "https://www.youtube.com/channel/UCuKa7_pustUzOj3IBcgYNPg"
+    video_url: "https://www.youtube.com/watch?v=mzEqgLplvYo"
+    nb_followers: 287354
+    description: |
+      Benjamin is Pierre Croce's best friend. Or colleague, as he says. But
+      they will do videos together that will take you by surprise! His storytelling talent is just amazing.
+    user: Alexis
+    batch: 201810
+    is_showcased: false
+    country: France
+    language: French
+    remote_avatar_photo_url: "https://yt3.ggpht.com/-x2NNN2y49G0/AAAAAAAAAAI/AAAAAAAAAAA/RhwVaxMvqW8/s288-mo-c-c0xffffffff-rj-k-no/photo.jpg"
+    tag_list:
+      - "Humour"
+      - "Storytelling"
+      - "Karaoke"
+  - youtube_name: "Simon Puech"
+    channel_url: "https://www.youtube.com/channel/UCMQSwUNSnMOP4IRysfeg8EA"
+    video_url: "https://www.youtube.com/watch?v=jUBw8kiAthA"
+    nb_followers: 139764
+    description: |
+      Simon Puech is a UFO in the French youtube game. He started as a Video-game reviewer,
+      but with a very specific angle. Almost philosophical. He's now broaden his audience,
+      and will talk about diverse subjects.
+    user: Benoit
+    batch: 201810
+    is_showcased: true
+    country: France
+    language: French
+    remote_avatar_photo_url: "https://yt3.ggpht.com/-x2NNN2y49G0/AAAAAAAAAAI/AAAAAAAAAAA/RhwVaxMvqW8/s288-mo-c-c0xffffffff-rj-k-no/photo.jpg"
+    tag_list:
+      - "Video-game"
+      - "Storytelling"
+      - "Nice picture"
+  - youtube_name: "Le Pérave"
+    channel_url: "https://www.youtube.com/user/MagdaSleeper"
+    video_url: "https://www.youtube.com/watch?v=ZekfwA2NkYY"
+    nb_followers: 101263
+    description: |
+      Le Perave is probably one of the future rock star on Youtube in France.
+      His sense of humor is just 120% absurd, and you should definitely check him out!
+    user: Benoit
+    batch: 201809
+    is_showcased: false
+    country: France
+    language: French
+    remote_avatar_photo_url: "https://yt3.ggpht.com/-x2NNN2y49G0/AAAAAAAAAAI/AAAAAAAAAAA/RhwVaxMvqW8/s288-mo-c-c0xffffffff-rj-k-no/photo.jpg"
+    tag_list:
+      - "Sketch"
+      - "Humour"
+  - youtube_name: "LeClubOfficiel"
+    channel_url: "https://www.youtube.com/user/leclubofficiel"
+    video_url: "https://www.youtube.com/watch?v=ejO3xSoBjPw&t=106s"
+    nb_followers: 35056
+    description: |
+      Le Club, c'est tout simplement les plus gros rageux du web. Chaque semaine ils parlent de l'actualité du web et ne mâchent pas leurs mots 😍
+    user: Benoit
+    batch: 201810
+    is_showcased: true
+    country: France
+    language: French
+    remote_avatar_photo_url: "https://yt3.ggpht.com/-zgfLurPbfAw/AAAAAAAAAAI/AAAAAAAAAAA/K39nW-AR0r8/s288-mo-c-c0xffffffff-rj-k-no/photo.jpg"
+    tag_list:
+      - "YoutubeReview"
+      - "Francais"
+      - "Indie"
+  - youtube_name: "BITS - Le Magazine de la pop culture"
+    channel_url: "https://www.youtube.com/channel/UCE0rL50xdXJYW6grkwHjTgQ"
+    video_url: "https://www.youtube.com/watch?v=XAi6bGCvWDg"
+    nb_followers: 38056
+    description: |
+      C'est Arte mais c'est cooool, retour sur l'histoire de la pop culture !
+    user: Hugo
+    batch: 201810
+    is_showcased: true
+    country: France
+    language: French
+    remote_avatar_photo_url: "https://yt3.ggpht.com/-zgfLurPbfAw/AAAAAAAAAAI/AAAAAAAAAAA/K39nW-AR0r8/s288-mo-c-c0xffffffff-rj-k-no/photo.jpg"
+    tag_list:
+      - "AirBnb"
+      - "TV"
+      - "PopCulture"
+  - youtube_name: "Adèle"
+    channel_url: "https://www.youtube.com/channel/UC4p1s3UMlru9kkkp74Yb42g"
+    video_url: "https://www.youtube.com/watch?v=0bSDGpjDm9E"
+    nb_followers: 38056
+    description: |
+      Adèle veut devenir actrice, et elle va réussir c'est sûr! En attendant, elle a toujours 16 ans et elle adooooore jouer sur pires clichés sur les jeunes. Check it out!
+    user: Hugo
+    batch: 201809
+    is_showcased: true
+    country: France
+    language: French
+    remote_avatar_photo_url: "https://yt3.ggpht.com/-zgfLurPbfAw/AAAAAAAAAAI/AAAAAAAAAAA/K39nW-AR0r8/s288-mo-c-c0xffffffff-rj-k-no/photo.jpg"
+    tag_list:
+      - "YoungGeneration"
+      - "GirlBoss"
+  - youtube_name: "DirtyBiology"
+    channel_url: "https://www.youtube.com/channel/UCtqICqGbPSbTN09K1_7VZ3Q"
+    video_url: "https://www.youtube.com/watch?v=1qvJDQTqSHY"
+    nb_followers: 38056
+    description: |
+      Surement un des premièrs vulgarisateurs du web français avec une touche design particulièrement apréciable!
+    user: Hugo
+    batch: 201809
+    is_showcased: true
+    country: France
+    language: French
+    remote_avatar_photo_url: "https://yt3.ggpht.com/-zgfLurPbfAw/AAAAAAAAAAI/AAAAAAAAAAA/K39nW-AR0r8/s288-mo-c-c0xffffffff-rj-k-no/photo.jpg"
+    tag_list:
+      - "Biology"
+      - "Vulgarizator"
