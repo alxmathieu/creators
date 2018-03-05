@@ -20,7 +20,7 @@ class PagesController < ApplicationController
     end
     @creator = Creator.new
 
-    if last_batch.first_creator_id.nil? || last_batch.second_creator_id.nil? || last_batch.third_creator_id.nil?
+    if last_batch.nil? || last_batch.first_creator_id.nil? || last_batch.second_creator_id.nil? || last_batch.third_creator_id.nil?
       @winners_last_batch = []
     elsif Batch.last_batch.creators.size >= 3
       @winners_last_batch = [Creator.find(last_batch.first_creator_id), Creator.find(last_batch.second_creator_id), Creator.find(last_batch.third_creator_id)]
