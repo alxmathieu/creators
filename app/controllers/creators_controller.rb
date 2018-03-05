@@ -3,7 +3,13 @@ class CreatorsController < ApplicationController
 
 
   def index
-    @creators = policy_scope(Creator).order(created_at: :desc)
+    @creators = policy_scope(Creator)
+    if params[:name].present?
+      @creators = Creator.where("youtube_name ILIKE ?", "%#{params[:name]}%")
+    end
+
+
+
   end
 
   def show

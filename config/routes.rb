@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  get "index", to: "creators#index", as: :search
+  get :creators, to: "creators#index", as: :search
   resources :users, only: [:show, :edit, :update]
   resources :creators, only: [:index, :show, :edit, :update ] do
     collection do
