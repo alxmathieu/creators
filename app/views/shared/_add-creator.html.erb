@@ -63,37 +63,29 @@
            </div>
         </div>
       </div>
+  </div> <!-- Fin de la first row -->
 
-
-      <div class="row">
-        <div class="col-xs-12">
-
-          <div class="card form-card text-center">
-
-          <h1 class="text-center"> Pick a video that embodies the most <%= @creator.youtube_name%> </h1>
-              <% @youtube_data[:top_videos].each do |id| %>
-              <div class="col-xs-2 video-card text-center" id="">
-
-                    <iframe class="ytplayer-showcased" type="text/html" id="<%= id %>"
+			<div class="card form-card text-center">
+        	<h1 class="text-center"> Pick a video that embodies the most <%= @creator.youtube_name%> </h1>
+					<div class="row">
+						<div class="container">
+						<% @youtube_data[:top_videos].each do |id| %>
+              <div class="col-xs-2 video-card text-center">
+								<iframe class="ytplayer-showcased" type="text/html" id="<%= id %>{"
                      src="http://www.youtube.com/embed/<%= id %>?autoplay=0"
-                     frameborder="0" height="150px" width="200">
-                     </iframe>
-
-                     <%= link_to "  I want this one 👌", "#", class: "add-video-btn", id: id %>
+                     frameborder="0" height="150px" width="200"> </iframe>
+                <%= link_to "  I want this one 👌", "#", class: "add-video-btn", id: id %>
               </div>
-                 <% end %>
-
+            <% end %>
+						</div>
+          </div>
              <%= f.hidden_field :video_url, label: "Pick a video that embodies the most #{@creator.youtube_name}", id: "video-form" %>
+	      <div class="form-actions text-center">
+	        <%= f.submit "Add #{@creator.youtube_name}", class: "btn btn-primary" %>
+	      </div>
+    	</div>
 
-
-
-           <!-- [...] -->
-           <div class="form-actions text-center">
-            <%= f.submit "Add #{@creator.youtube_name}", class: "btn btn-primary" %>
-          </div>
-          </div>
-        </div>
-        <% end %>
+    <% end %> <!-- end of the simple form -->
       </div>
-    <% end %>
-  </div>
+    <% end %> <!-- end of if youtubeData nil -->
+</div>
