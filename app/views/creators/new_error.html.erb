@@ -2,9 +2,8 @@
   <h2 class="text-center">Enter the URL of the creator's channel you want to share</h2>
   <div class="row">
     <div class="col-xs-12 col-sm-offset-4 col-sm-4">
-      <div class="text-center">
+      <div class="text-center" style="margin-top:50px">
         <%= simple_form_for @creator, url: creators_path do |form| %>
-          <%= form.error_notification %>
           <%= form.input :channel_url, required: true, as: :string, placeholder: "https://www.youtube.com/channel/mychanel" %>
           <%= form.button :submit, 'Retrieve data', class:"btn btn-primary" %>
         <% end %>

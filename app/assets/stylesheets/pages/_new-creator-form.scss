@@ -1,24 +1,22 @@
 // Vidéos Cards
-
+.wrapper-videos {
+  display: flex;
+  justify-content: space-around;
+}
 .add-video-btn {
   color: black;
-  text-decoration: none;
-  a {
-  text-decoration: none;
-  }
   &:hover {
     text-decoration: none;
     color: $silver-gray;
   }
 }
 
-
 // When selected vidéo
 .selected-video {
   border-style: solid;
   border-width: 0px 0px 3px 0px;
   // border-color: #04DEAD;
-  border-color: $charcoal
+  border-color: $green;
 }
 
 // Vidéo Cards
@@ -26,39 +24,43 @@
   margin: 10px;
   margin-top: 20px;
   padding: 10px;
+  a {
+    text-decoration: none;
+  }
 }
-
 
 #show-form-card {
   display: flex;
   flex-direction: column;
+  margin-top: 20px;
+  min-height: 307px;
+  h3 {
+    font-size: 40px;
+  }
 }
-
 
 .show-form {
   h1 {
     font-size: 20px;
   }
+  h2 {
+    font-size: 20px;
+  }
 }
-
 
 .name-figures {
   display: flex;
-
 }
 
 #new_creator {
   font-size: 13px;
-
   label {
     font-weight: 200;
   }
-
   button {
     text-align: center;
   }
 }
-
 
 #avatar-name-div {
   display: flex;
@@ -66,7 +68,6 @@
   justify-content: left;
   align-items: center;
   // background-color: green;
-
   img {
     // background-color: blue;
     padding: 10px;
@@ -77,5 +78,10 @@
     // background-color: red;
     max-width: 50%;
   }
+}
 
+#submit-creator-btn {
+  margin-top: 30px;
+  margin-bottom: 50px;
+  padding: 15px 30px;
 }
