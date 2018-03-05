@@ -6,7 +6,7 @@
           <% if @user.avatar.nil? %>
             <%= image_tag 'default-avatar', alt: @user.username, class: "avatar-large" %>
           <% else %>
-            <%= image_tag @user.avatar.url(:bright_face), alt: @user.username, class: "avatar-large" %>
+            <%= image_tag @user.avatar.url, alt: @user.username, class: "avatar-large" %>
           <% end %>
           <div class="user-infos-content" id="id-user-infos">
             <h3><%= @user.username %></h3>

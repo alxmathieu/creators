@@ -29,16 +29,10 @@
       </div>
       <div class="col-xs-6">
         <h1 class="text-center"> Add some information to your review 🎬🎬🎬</h1>
-        <div>
-          <% if @creator.errors.messages.any? %>
-          <p><%= @creator.errors.full_messages %></p>
-          <% end %>
-        </div>
         <div class="card form-card">
 
           <%= simple_form_for @creator, url: create_creators_path do |f| %>
             <!-- [...] -->
-            <%= f.error_notification %>
             <div class="form-inputs">
              <%= f.input :description, label: "Write the review about #{@creator.youtube_name}, explain what makes you vibrate..."%>
              <%= f.input :video_url, label: "Pick a video that embodies the most #{@creator.youtube_name}" %>

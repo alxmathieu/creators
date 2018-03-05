@@ -20,3 +20,9 @@
   // min-height: calc(100vh -200px);
   min-height: calc(100vh - 200px);
 }
+
+#form-input-no-border {
+  border: none;
+  box-shadow: none;
+  border-bottom: 1px solid $gold;
+}
