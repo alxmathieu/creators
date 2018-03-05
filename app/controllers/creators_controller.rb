@@ -8,6 +8,14 @@ class CreatorsController < ApplicationController
       @creators = Creator.where("youtube_name ILIKE ?", "%#{params[:name]}%")
     end
 
+    if params[:categories].present?
+      @creators = Creator.where("tag_list ILIKE ?", "%#{params[:categories]}%")
+    end
+
+    if params[:language].present?
+      @creators = Creator.where("tag_list ILIKE ?", "%#{params[:categories]}%")
+    end
+
 
 
   end
