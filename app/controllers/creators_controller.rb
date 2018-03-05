@@ -48,11 +48,6 @@ class CreatorsController < ApplicationController
 
   private
 
-
-  def id_to_url(id)
-    return "https://www.youtube.com/watch?v=#{id}"
-  end
-
   def youtube_videos
     array = []
     @youtube_data[:top_videos].each do |video_id|

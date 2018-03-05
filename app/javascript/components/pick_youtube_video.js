@@ -3,7 +3,6 @@ function pickVideo() {
   const pickvideoBtn = document.querySelectorAll(".add-video-btn");
   const videoForm = document.getElementById("video-form");
   const all_video = document.querySelectorAll(".ytplayer-showcased");
-  console.log(all_video);
 
   pickvideoBtn.forEach((button) => {
     button.addEventListener("click", (event) => {
