@@ -9,13 +9,9 @@
         </div>
         <div class="modal-body">
           <%= simple_form_for @creator, url: creators_path do |form| %>
-            <%= form.error_notification %>
-            <%= form.input :channel_url, required: true, as: :string, placeholder: "https://www.youtube.com/channel/mychanel" %>
+            <%= form.input :channel_url, required: true, as: :string, id: "form-input-no-border", placeholder: "https://www.youtube.com/channel/mychanel" %>
             <%= form.button :submit, 'Retrieve data', class:"btn btn-primary" %>
           <% end %>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
