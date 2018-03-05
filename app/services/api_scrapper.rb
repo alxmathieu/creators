@@ -23,11 +23,9 @@ class ApiScrapper
   def scrape
     analyze_url
     if @youtube_id.nil?
-      # url = @api_url + 'forUsername=' + @youtube_username + '&key=#{ENV["YOUTUBE_API_KEY"]}'
-      url = @api_url + 'forUsername=' + @youtube_username + '&key=AIzaSyBXB3cRp_EAO4kRoCn0tFqDx1-5j4UuiFU'
+      url = @api_url + 'forUsername=' + @youtube_username + "&key=#{ENV["YOUTUBE_API_KEY"]}"
     elsif @youtube_username.nil?
-      # url = @api_url + 'id=' + @youtube_id + '&key=#{ENV["YOUTUBE_API_KEY"]}'
-      url = @api_url + 'id=' + @youtube_id + '&key=AIzaSyBXB3cRp_EAO4kRoCn0tFqDx1-5j4UuiFU'
+      url = @api_url + 'id=' + @youtube_id + "&key=#{ENV["YOUTUBE_API_KEY"]}"
     end
     info_serialized = open(url).read
     info = JSON.parse(info_serialized)
@@ -49,8 +47,8 @@ class ApiScrapper
       video_count = stats["videoCount"]
 
       # Videos
-      # url_videos = @api_url_videos + id + '&maxResults=5&key=#{ENV["YOUTUBE_API_KEY"]}'
-      url_videos = @api_url_videos + id + '&maxResults=5&key=AIzaSyBXB3cRp_EAO4kRoCn0tFqDx1-5j4UuiFU'
+      url_videos = @api_url_videos + id + "&maxResults=5&key=#{ENV["YOUTUBE_API_KEY"]}"
+      puts url_videos
       video_serialized = open(url_videos).read
       video = JSON.parse(video_serialized)
 
