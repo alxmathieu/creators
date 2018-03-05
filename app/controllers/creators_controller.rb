@@ -11,18 +11,23 @@ class CreatorsController < ApplicationController
   end
 
   def new
-    raise
-    @creator = Creator.new
+    channel_url = params[:creator][:channel_url]
+    @youtube_data = ApiScrapper.new(channel_url).scrape
+    if @youtube_data.nil?
+      @creator = Creator.new
+    else
+      @creator = Creator.new(@youtube_data.slice(:channel_url, :youtube_name, :remote_avatar_photo_url, :nb_followers))
+    end
     authorize @creator
   end
 
   def create
-    @creator = Creator.new(creators_params)
+    @creator = Creator.new(creator_params)
     @creator.user = current_user
     @creator.batch = Batch.next_batch
     authorize @creator
     if @creator.save
-      redirect_to new_creator_path
+      redirect_to creator_path(@creator)
     else
       render 'creators/new'
     end
@@ -42,12 +47,20 @@ class CreatorsController < ApplicationController
 
   private
 
+  def youtube_videos
+    array = []
+    @youtube_data[:top_videos].each do |video_id|
+    array << "https://www.youtube.com/watch?v=#{video_id}"
+    end
+    return array
+  end
+
   def find_creator
     @creator = Creator.find(params[:id])
   end
 
   def creator_params
-    params.require(:creator).permit(:user_id, :batch_id, :youtube_name, :description, :channel_url, :video_url, :nb_followers, :is_showcased, :country, :language)
+    params.require(:creator).permit(:user_id, :batch_id, :youtube_name, :description, :channel_url, :video_url, :nb_followers, :is_showcased, :country, :language, :remote_avatar_photo_url)
   end
 end
 

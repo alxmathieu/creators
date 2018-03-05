@@ -2,13 +2,14 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   resources :users, only: [:show, :edit, :update]
-  resources :creators, only: [ :index, :create, :show, :edit, :update ] do
+  resources :creators, only: [ :index, :show, :edit, :update ] do
     collection do
       post "new", to: "creators#new"
+      post "create", to: "creators#create", as: :create
     end
-    resources :upvotes, only: [:new, :create]
+    resources :upvotes, only: [:new, :create, :destroy]
   end
-resources :upvotes, only: [:destroy]
+# resources :upvotes, only: [:destroy]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

@@ -9,12 +9,7 @@
     </div>
     <div class="upvotes-content btn btn-primary">
       <div class="btn-upvotes">
-        <% upvote_for_creator = current_user.upvotes.where("creator_id = #{@creator.id}").first %>
-          <% if upvote_for_creator.nil? %>
-            <%= link_to 'Upvote', creator_upvotes_path(@creator), method: :post %>
-          <% else upvote_for_creator %>
-            <%= link_to 'Upvote', upvote_path(upvote_for_creator), method: :delete %>
-          <% end %>
+        <%= render 'shared/upvote-button', :creator => @creator %>
       </div>
       <i class="fas fa-caret-up"></i>
       <div class="counter-upvotes">

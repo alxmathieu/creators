@@ -1,0 +1,10 @@
+<% if user_signed_in? %>
+  <% upvote_for_creator = current_user.upvotes.where("creator_id = #{creator.id}").first %>
+  <% if upvote_for_creator.nil? %>
+    <%= link_to "Upvote (#{creator.upvotes.length})", creator_upvotes_path(creator), method: :post, remote: true %>
+  <% else upvote_for_creator %>
+    <%= link_to "Upvote (#{creator.upvotes.length})", creator_upvote_path(creator, upvote_for_creator), method: :delete, remote: true %>
+  <% end %>
+<% else %>
+  <%= link_to "Upvote (#{creator.upvotes.length})", new_user_session_path %>
+<% end %>

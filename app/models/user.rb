@@ -2,18 +2,16 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   LEVELS = ['Viewer', 'Basic digger', 'Advanced digger', 'Expert digger']
-  LEVEL_UP_CONDITIONS = [{}, {},
-                         {nb_dig: 1, upvotes_received: 10},
-                         {nb_dig: 2, upvotes_received: 20}]
+  LEVEL_UP_CONDITIONS = [{}, {min_upvotes: 10},
+                         {nb_dig: 1, upvotes_received: 50},
+                         {nb_dig: 2, upvotes_received: 100}]
 
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :creators
-  has_many :upvotes
+  has_many :upvotes, dependent: :destroy
   validates :username, presence: true, uniqueness: true
-
-
 
   # Photo Uploader
   mount_uploader :avatar, PhotoUploader
@@ -69,5 +67,9 @@ class User < ApplicationRecord
 
   def upvotes_needed
     LEVEL_UP_CONDITIONS[self.level + 1][:upvotes_received]
+  end
+
+  def min_upvotes
+    LEVEL_UP_CONDITIONS[self.level + 1][:min_upvotes]
   end
 end

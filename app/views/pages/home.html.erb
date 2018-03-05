@@ -2,14 +2,17 @@
   <% unless @showcased_creator.nil? %>
     <div class="showcased">
       <div class="card card-showcased">
+        <!-- <div class="editors-choice">
+          Editor's choice
+        </div> -->
         <i class="fas fa-star"></i>
         <div class="showcased-avatar-tags">
           <%= link_to(creator_path(@showcased_creator)) do %>
-            <%= image_tag @showcased_creator.avatar_photo, class: "avatar-showcased-creator"%>
+            <%= cl_image_tag @showcased_creator.avatar_photo, class: "avatar-showcased-creator"%>
           <% end %>
           <div class="showcased-tags">
             <ul class="list-unstyled list-tags" style="text-align: center">
-              <% @showcased_creator.tag_list.first(7).each do |tag| %>
+              <% @showcased_creator.tag_list.first(5).each do |tag| %>
                 <li>
                   <% if tag.length < 13 %>
                     <%= "##{tag.capitalize}" %>
@@ -25,7 +28,7 @@
           <%= link_to @showcased_creator.youtube_name , creator_path(@showcased_creator), class: "showcased-name" %>
           <div class="showcased-description">
             <i class="fas fa-quote-left"></i>
-            <%= @showcased_creator.description %>
+            <%= @showcased_creator.description.first(350) %>...
             <i class="fas fa-quote-right"></i>
           </div>
           <div class="showcased-digger">
@@ -55,102 +58,16 @@
           <div class="current-batch">
             <ul class="list-unstyled">
               <% @ordered_creators_current_batch.each do |creator| %>
-                <li class="card-creator">
-                  <div class="creator-info">
-                    <div class="card-avatar">
-                      <%= link_to(creator_path(creator)) do %>
-                        <%= image_tag creator.avatar_photo, class: "avatar-creator"%>
-                      <% end %>
-                    </div>
-                    <div class="card-content">
-                      <div class="creator-name">
-                        <%= link_to creator.youtube_name, creator_path(creator.id), class: "creator-name" %>
-                      </div>
-                      <div class="card-sub-content">
-                        <div class="creator-tags">
-                          <ul class="list-unstyled creator-tags">
-                            <% creator.tag_list.first(3).each do |tag| %>
-                              <li>
-                                <% if tag.length < 13 %>
-                                  <%= "##{tag.capitalize}" %>
-                                <% else %>
-                                  <%= "##{tag.capitalize.first(13)}" %>
-                                <% end %>
-                              </li>
-                            <% end %>
-                          </ul>
-                        </div>
-                        <div class="creator-description">
-                          <%= creator.description.first(100) %>...
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-upvote btn btn-primary">
-                    <% if user_signed_in? %>
-                      <% upvote_for_creator = current_user.upvotes.where("creator_id = #{creator.id}").first %>
-                      <% if upvote_for_creator.nil? %>
-                        <%= link_to "Upvote (#{creator.upvotes.length})", creator_upvotes_path(creator), method: :post %>
-                      <% else upvote_for_creator %>
-                        <%= link_to "Upvote (#{creator.upvotes.length})", upvote_path(upvote_for_creator), method: :delete %>
-                      <% end %>
-                    <% else %>
-                      <%= link_to "Upvote (#{creator.upvotes.length})", new_user_session_path %>
-                    <% end %>
-                  </div>
-                </li>
+                <%= render 'shared/creator', creator: creator %>
               <% end %>
             </ul>
           </div>
           <div class="last-batch">
             <h2>Last week's Creators</h2>
-              <div class="tagline-last-batch">Missed last week batch? Check them out!</div>
+              <div class="tagline-last-batch">Missed last week's batch? Check them out!</div>
             <ul class="list-unstyled">
               <% @ordered_creators_last_batch.each do |creator| %>
-                <li class="card-creator">
-                  <div class="creator-info">
-                    <div class="card-avatar">
-                      <%= link_to(creator_path(creator)) do %>
-                        <%= image_tag creator.avatar_photo, class: "avatar-creator"%>
-                      <% end %>
-                    </div>
-                    <div class="card-content">
-                      <div class="creator-name">
-                        <%= link_to creator.youtube_name, creator_path(creator.id), class: "creator-name" %>
-                      </div>
-                      <div class="card-sub-content">
-                        <div class="creator-tags">
-                          <ul class="list-unstyled creator-tags">
-                            <% creator.tag_list.first(3).each do |tag| %>
-                              <li>
-                                <% if tag.length < 13 %>
-                                  <%= "##{tag.capitalize}" %>
-                                <% else %>
-                                  <%= "##{tag.capitalize.first(13)}" %>
-                                <% end %>
-                              </li>
-                            <% end %>
-                          </ul>
-                        </div>
-                        <div class="creator-description">
-                          <%= creator.description.first(100) %>...
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-upvote btn btn-primary">
-                    <% if user_signed_in? %>
-                      <% upvote_for_creator = current_user.upvotes.where("creator_id = #{creator.id}").first %>
-                      <% if upvote_for_creator.nil? %>
-                        <%= link_to "Upvote (#{creator.upvotes.length})", creator_upvotes_path(creator), method: :post %>
-                      <% else upvote_for_creator %>
-                        <%= link_to "Upvote (#{creator.upvotes.length})", upvote_path(upvote_for_creator), method: :delete %>
-                      <% end %>
-                    <% else %>
-                      <%= link_to "Upvote (#{creator.upvotes.length})", new_user_session_path %>
-                    <% end %>
-                  </div>
-                </li>
+                <%= render 'shared/creator', creator: creator %>
               <% end %>
             </ul>
           </div>
@@ -160,13 +77,28 @@
     <div class="container-menu">
       <div class="btn btn-primary btn-lg btn-submit-home">
         <%= link_to "Add a new creator", "#creator-modal", "data-toggle" => "modal", class: '' %>
-        <%= render 'modal_creator' %>
+        <%= render 'shared/modal_creator' %>
       </div>
-      <div class="btn btn-info btn-lg btn-all-creators-home">
+      <div class="btn btn-warning btn-lg btn-submit-home">
         <%= link_to "See all creators", creators_path %>
       </div>
+      <% unless @winners_last_batch = [] %>
+        <div class="ranking-last-week card">
+          <h5> Last week's winners </h5>
+          <ul class="list-unstyled">
+            <% @winners_last_batch.each do |winner| %>
+              <div class="position-last-week">
+                <li>
+                  <%= "#{@winners_last_batch.index(winner) + 1}" %> - <%= winner.youtube_name %>
+                  <%= link_to(creator_path(winner)) do %>
+                    <%= cl_image_tag winner.avatar_photo, class: "avatar-creator"%>
+                  <% end %>
+                </li>
+              </div>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
     </div>
   </div>
-
-
 </div>
