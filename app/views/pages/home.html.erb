@@ -2,10 +2,10 @@
   <% unless @showcased_creator.nil? %>
     <div class="showcased">
       <div class="card card-showcased">
-        <!-- <div class="editors-choice">
-          Editor's choice
-        </div> -->
-        <i class="fas fa-star"></i>
+        <div class="editors-choice">
+          Team's choice
+        </div>
+       <!--  <i class="fas fa-star"></i> -->
         <div class="showcased-avatar-tags">
           <%= link_to(creator_path(@showcased_creator)) do %>
             <%= cl_image_tag @showcased_creator.avatar_photo, class: "avatar-showcased-creator"%>
@@ -75,7 +75,7 @@
 
     </div>
     <div class="container-menu">
-      <div class="btn btn-primary btn-lg btn-submit-home">
+      <div class="btn btn-primary btn-lg btn-submit">
         <%= link_to "Add a new creator", "#creator-modal", "data-toggle" => "modal", class: '' %>
         <%= render 'shared/modal_creator' %>
       </div>

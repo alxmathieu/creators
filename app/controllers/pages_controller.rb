@@ -25,6 +25,7 @@ class PagesController < ApplicationController
       # @winners_last_batch = sort_creators(Creator.where("batch_id = #{last_batch.id}")).first(3)
       @winners_last_batch = [Creator.find(last_batch.first_creator_id), Creator.find(last_batch.second_creator_id), Creator.find(last_batch.third_creator_id) ]
     else
+
       @winners_last_batch = []
     end
 

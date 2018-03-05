@@ -6,5 +6,5 @@
     <%= link_to "Upvote (#{creator.upvotes.length})", creator_upvote_path(creator, upvote_for_creator), method: :delete, remote: true, class: "card-upvote btn btn-primary" %>
   <% end %>
 <% else %>
-  <%= link_to "Upvote (#{creator.upvotes.length})", new_user_session_path %>
+  <%= link_to "Upvote (#{creator.upvotes.length})", new_user_session_path, class: "card-upvote btn btn-warning" %>
 <% end %>
