@@ -28,6 +28,10 @@ class PagesController < ApplicationController
       @winners_last_batch = []
     end
 
+    if user_signed_in?
+      current_user.update_level
+    end
+
   end
 
   private
