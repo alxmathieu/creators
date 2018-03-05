@@ -1,1 +1,16 @@
 <h1> Hello </h1>
+<div class="container">
+  <div class="content-search">
+      <div class="container-rankings card">
+        <div class="current-batch">
+          <ul class="list-unstyled">
+            <% @creators.each do |creator| %>
+               <%= render 'shared/creator', creator: creator %>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+  </div>
+</div>
+
+

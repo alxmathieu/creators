@@ -3,7 +3,7 @@ class CreatorsController < ApplicationController
 
 
   def index
-    @creators = Creator.all
+    @creators = policy_scope(Creator).order(created_at: :desc)
   end
 
   def show
