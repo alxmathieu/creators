@@ -18,13 +18,24 @@
 
           <div class="card card-showcased" id="show-form-card">
             <div id="avatar-name-div">
-
             <%= cl_image_tag @youtube_data[:remote_avatar_photo_url], class: "avatar-showcased-creator" %>
-
             </div>
-            <div class="name-figures"></div>
             <h3 class="showcased-name"> <%=@creator.youtube_name %></h3>
-            <p><%= @creator.nb_followers %> Followers | <%= @youtube_data[:nb_videos]%> Videos Uploaded</p>
+            <div class="creator-stats">
+                <div>
+                  <span><strong><%= @creator.nb_followers / 1000 %>k</strong></span>
+                  <p>Followers</p>
+                </div>
+                <div>
+                  <span><strong><%= @youtube_data[:nb_videos] %></strong></span>
+                  <p>Videos</p>
+                </div>
+                <div>
+                  <span><strong><%= @youtube_data[:view_count].to_i / 1000 %>k</strong></span>
+                  <p>Views</p>
+                </div>
+              </ul>
+            </div>
           </div>
         </div>
         <div class="col-xs-6">
