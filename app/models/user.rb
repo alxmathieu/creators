@@ -38,6 +38,7 @@ class User < ApplicationRecord
 
   def level_1?
     self.number_upvoted > 9
+    # self.number_upvoted > LEVEL_UP_CONDITIONS[1][:min_upvotes]
   end
 
   def level_2?

@@ -29,8 +29,14 @@ class PagesController < ApplicationController
     elsif Batch.last_batch.creators.size == 1
       @winners_last_batch = [Creator.find(last_batch.first_creator_id)]
     else
+
       @winners_last_batch = []
     end
+
+    if user_signed_in?
+      current_user.update_level
+    end
+
   end
 
   private

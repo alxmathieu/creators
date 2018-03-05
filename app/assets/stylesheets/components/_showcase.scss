@@ -7,6 +7,7 @@
   justify-content: space-between;
   margin-top: 25px;
   position: relative;
+  overflow-x: hidden;
   .fa-star{
     position: absolute;
     top: 15px;
@@ -15,11 +16,11 @@
   }
   .editors-choice{
     position: absolute;
-    top: 27px;
-    left: -1px;
-    transform: rotate(-35deg);
+    top: 20px;
+    left: -30px;
+    transform: rotate(-42deg);
     background-color: rgba($gold, 1);
-    padding: 3px;
+    padding: 5px 25px;
     font-size: 15px;
     font-weight: bolder;
     text-align: center;
