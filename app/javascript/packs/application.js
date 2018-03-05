@@ -11,3 +11,9 @@ $(document).ready(function(){
       html : true
     });
 });
+
+
+// User edition
+
+import { pickVideo } from '../components/pick_youtube_video';
+pickVideo()
