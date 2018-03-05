@@ -11,10 +11,6 @@
       <div class="btn-upvotes">
         <%= render 'shared/upvote-button', :creator => @creator %>
       </div>
-      <i class="fas fa-caret-up"></i>
-      <div class="counter-upvotes">
-        <%= @creator.upvotes.length %>
-      </div>
     </div>
   </div>
   <div class="card info">
@@ -26,11 +22,6 @@
         </ul>
       <% end %>
     </div>
-    <div class="followers">
-      <p class="subtitle-info"><strong>Followers on Youtube</strong></p>
-      <ul><%= @creator.nb_followers %> followers</ul>
-      <ul><%#= @creator.nb_video %> Vidéos</ul>
-    </div>
     <div class="social">
       <p class="subtitle-info"><strong>Social</strong></p>
       <ul><i class="fab fa-instagram"></i> Instagram</ul>
@@ -39,15 +30,18 @@
       <div class="btn-channel">
         <ul><%= link_to "Channel", @creator.channel_url %></ul>
       </div>
+      <div class="btn-subscribe text-center">
+        <ul class="g-ytsubscribe" data-channelid="UChH5L8Od81YohhlVWGdDyQg" data-count="hidden"></ul>
+        <!-- TO DO a remplacer par la ligne:
+        <ul class="g-ytsubscribe" data-channelid= <%= @creator.channel_id %> data-count="hidden"></ul>
+        quand la channel id sera disponible et faire css -->
+      </div>
     </div>
-    <ul class="g-ytsubscribe" data-channel="GoogleDevelopers" data-count="hidden"></ul> <!-- TO DO a remplacer par la ligne:
-    <ul class="g-ytsubscribe" data-channelid= <%#= @creator.channel_id %> data-count="hidden"></ul>
-    quand la channel id sera disponible et faire css -->
   </div>
 
 
   <div class="card description">
-    <div class= "quote">
+    <div class= "quote" style=" font-size: 20px">
       <i class="fas fa-quote-left"></i>    <%= @creator.description %>    <i class="fas fa-quote-right"></i>
     </div>
     <div class="discovered-by">
@@ -55,14 +49,18 @@
     </div>
   </div>
 
-  <div class="video">
+  <div class="card video">
     <iframe class="ytplayer-showcased" type="text/html"
     src="http://www.youtube.com/embed/<%= @creator.video_youtube_id %>?autoplay=0"
     frameborder="0" height="349px" width="620">
     </iframe>
   </div>
   <div class="card fun-figures" >
-    <h3>Fun Figures</h3>
+    <div class="followers">
+      <p class="subtitle-info"><strong>Followers on Youtube</strong></p>
+      <ul><%= @creator.nb_followers %> followers</ul>
+      <ul><%#= @creator.nb_video %> Vidéos</ul>
+    </div>
   </div>
 </div>
 

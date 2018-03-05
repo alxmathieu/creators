@@ -57,6 +57,7 @@
 }
 
 .show-card {
+ background-image:linear-gradient(90deg, $gold, $charcoal);
   grid-row: 1/ span 1;
   grid-column: 1/ span 3;
   margin-top: 10px;
@@ -67,12 +68,15 @@
 .info {
   grid-row: 2/ span 2;
   grid-column: 1/ span 1;
-  margin: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   padding: 0px;
+  border-top: 5px solid $charcoal;
+
 }
 
 .subtitle-info {
-  margin: 10px;
+  margin: 0px;
 }
 
 .social {
@@ -90,6 +94,8 @@
 }
 
 .description {
+  background-color: $charcoal;
+  color: white;
   grid-row: 2/ span 1;
   grid-column: 2/ span 2;
   margin: 5px;
@@ -112,16 +118,18 @@
 .video {
   grid-row: 3/ span 1;
   grid-column: 2/ span 1;
-  margin: 5px;
   padding: 0px;
+  margin: auto;
+  border-top: 5px solid $gold;
 }
 
 .fun-figures {
   grid-row: 3/ span 1;
   grid-column: 3/ span 1;
-  margin: 5px;
+  margin: 0px;
   margin-left: 0px;
   padding: 0px;
+  border-top: 5px solid $charcoal;
 }
 
 .btn-upvotes {
