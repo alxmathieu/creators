@@ -17,9 +17,9 @@
 
         <div class="card card-showcased" id="show-form-card">
           <div id="avatar-name-div">
-            <% unless @youtube_data[:avatar_photo].nil? %>
-            <%= cl_image_tag @youtube_data[:avatar_photo], class: "avatar-showcased-creator" %>
-            <% end %>
+
+          <%= cl_image_tag @youtube_data[:remote_avatar_photo_url], class: "avatar-showcased-creator" %>
+
           </div>
           <div class="name-figures"></div>
           <h3 class="showcased-name"> <%=@creator.youtube_name %></h3>
@@ -35,7 +35,6 @@
             <!-- [...] -->
             <div class="form-inputs">
              <%= f.input :description, label: "Write the review about #{@creator.youtube_name}, explain what makes you vibrate..."%>
-             <%= f.input :video_url, label: "Pick a video that embodies the most #{@creator.youtube_name}" %>
 
              <%= f.input :tag_list, label: "Add a few tag applying to #{@creator.youtube_name}", hint: "Add several tags separated with commas",  value: f.object.tag_list.to_s %>
 
@@ -47,13 +46,31 @@
              <%= f.hidden_field :country %>
              <%= f.hidden_field :language, class: " bfh-languages"%>
            </div>
-           <!-- [...] -->
-           <div class="form-actions text-center">
-            <%= f.submit "Add #{@creator.youtube_name}", class: "btn btn-primary" %>
-          </div>
-        <% end %>
+        </div>
       </div>
-    <% end %>
-  </div>
-</div>
+  </div> <!-- Fin de la first row -->
+
+			<div class="card form-card text-center">
+        	<h1 class="text-center"> Pick a video that embodies the most <%= @creator.youtube_name%> </h1>
+					<div class="row">
+						<div class="container">
+						<% @youtube_data[:top_videos].each do |id| %>
+              <div class="col-xs-2 video-card text-center">
+								<iframe class="ytplayer-showcased" type="text/html" id="<%= id %>{"
+                     src="http://www.youtube.com/embed/<%= id %>?autoplay=0"
+                     frameborder="0" height="150px" width="200"> </iframe>
+                <%= link_to "  I want this one 👌", "#", class: "add-video-btn", id: id %>
+              </div>
+            <% end %>
+						</div>
+          </div>
+             <%= f.hidden_field :video_url, label: "Pick a video that embodies the most #{@creator.youtube_name}", id: "video-form" %>
+	      <div class="form-actions text-center">
+	        <%= f.submit "Add #{@creator.youtube_name}", class: "btn btn-primary" %>
+	      </div>
+    	</div>
+
+    <% end %> <!-- end of the simple form -->
+      </div>
+    <% end %> <!-- end of if youtubeData nil -->
 </div>

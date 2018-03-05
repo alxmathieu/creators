@@ -79,9 +79,26 @@
         <%= link_to "Add a new creator", "#creator-modal", "data-toggle" => "modal", class: '' %>
         <%= render 'shared/modal_creator' %>
       </div>
-      <!-- <div class="btn btn-warning btn-lg btn-submit-home">
+      <div class="btn btn-warning btn-lg btn-submit-home">
         <%= link_to "See all creators", creators_path %>
-      </div> -->
+      </div>
+      <% unless @winners_last_batch = [] %>
+        <div class="ranking-last-week card">
+          <h5> Last week's winners </h5>
+          <ul class="list-unstyled">
+            <% @winners_last_batch.each do |winner| %>
+              <div class="position-last-week">
+                <li>
+                  <%= "#{@winners_last_batch.index(winner) + 1}" %> - <%= winner.youtube_name %>
+                  <%= link_to(creator_path(winner)) do %>
+                    <%= cl_image_tag winner.avatar_photo, class: "avatar-creator"%>
+                  <% end %>
+                </li>
+              </div>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

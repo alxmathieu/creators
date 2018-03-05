@@ -53,6 +53,14 @@ class CreatorsController < ApplicationController
 
   private
 
+  def youtube_videos
+    array = []
+    @youtube_data[:top_videos].each do |video_id|
+    array << "https://www.youtube.com/watch?v=#{video_id}"
+    end
+    return array
+  end
+
   def find_creator
     @creator = Creator.find(params[:id])
   end
