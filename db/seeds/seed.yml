@@ -19,6 +19,9 @@ users:
     password: "123456"
     remote_avatar_url: "https://kitt.lewagon.com/placeholder/users/benoitprigent"
     level: 2
+tags:
+  - name: "Vlog"
+  - name: "Gaming"
 batches:
   - status: "pending"
     number: 201811

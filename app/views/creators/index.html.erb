@@ -27,11 +27,12 @@
 
       <h3> - Categories</h3>
       <div class="card">
-        <%= text_field_tag :categories,
+        <%#= text_field_tag :categories,
           params[:categories],
           class: "form-control",
           placeholder: "Insert cat"
         %>
+        <%= select_tag :categories, options_from_collection_for_select(@categories, :id, :name, params[:categories]) %>
       </div>
 
       <h3> - Languages </h3>

@@ -32,5 +32,5 @@ sample["creators"].each do |creator|
   creators[creator["youtube_name"]] = Creator.create! creator.slice("youtube_name", "channel_url", "video_url", "nb_followers", "description", "is_showcased", "remote_avatar_photo_url").merge(user: user).merge(batch: batch)
 end
 
-
+ActsAsTaggableOn::Tag.create(name: "plop")
 puts 'Finished!'

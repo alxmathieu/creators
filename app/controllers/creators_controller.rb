@@ -3,17 +3,20 @@ class CreatorsController < ApplicationController
 
 
   def index
+    @categories = ActsAsTaggableOn::Tag.order(:name)
+
     @creators = policy_scope(Creator)
+
     if params[:name].present?
-      @creators = Creator.where("youtube_name ILIKE ?", "%#{params[:name]}%")
+      @creators = @creators.where("youtube_name ILIKE ?", "%#{params[:name]}%")
     end
 
     if params[:categories].present?
-      @creators = Creator.where("tag_list ILIKE ?", "%#{params[:categories]}%")
+      @creators = @creators.joins(taggings: :tag).where(tags: { id: params[:categories] })
     end
 
     if params[:language].present?
-      @creators = Creator.where("tag_list ILIKE ?", "%#{params[:categories]}%")
+      @creators = @creators.where("tag_list ILIKE ?", "%#{params[:categories]}%")
     end
 
 
@@ -66,7 +69,7 @@ class CreatorsController < ApplicationController
   end
 
   def creator_params
-    params.require(:creator).permit(:user_id, :batch_id, :youtube_name, :description, :channel_url, :video_url, :nb_followers, :is_showcased, :country, :language, :remote_avatar_photo_url)
+    params.require(:creator).permit(:user_id, :batch_id, :youtube_name, :description, :channel_url, :video_url, :nb_followers, :is_showcased, :country, :language, :remote_avatar_photo_url, :tag_list)
   end
 end
 
