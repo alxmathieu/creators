@@ -38,6 +38,7 @@ class CreatorsController < ApplicationController
       return render 'creators/new_error'
     end
     @youtube_data = ApiScrapper.new(channel_url).scrape
+    @categories = ActsAsTaggableOn::Tag.order(:name)
     if @youtube_data.nil?
       @creator = Creator.new
     else
