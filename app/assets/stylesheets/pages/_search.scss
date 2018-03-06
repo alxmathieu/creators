@@ -30,15 +30,45 @@
   height: 65vh;
 }
 
-// Level - card - info
 
-.level-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+// Design - Ligne
+
+
+.overflow-div {
+  overflow: hidden;
 }
 
+.back-search2{
+    z-index: -2;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    -webkit-transform: rotate(-25deg);
+    background-color: #3A4750;
+    padding: 30px 2000px;
+  }
+
+  .back-search{
+      z-index: -2;
+      position: absolute;
+      top: 643px;
+      left: -80px;
+      -webkit-transform: rotate(-5deg);
+      background-color: #3A4750;
+      padding: 30px 1200px;
+    }
+
+// Level - card - info
+
+
+.search-form {
+  justify-content: center;
+  width: 40vw;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .lever-user-typo {
   color: $charcoal;
   font-weight: 500;
