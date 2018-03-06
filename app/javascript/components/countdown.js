@@ -15,7 +15,6 @@ function getSeconds() {
  if (curday < 0) { curday += 7; } //already after countdown time, switch to next week
  if (diff <= 0) { diff += (86400 * 7) }
  startTimer (diff);
-console.log(diff)
 }
 
 function startTimer(secs) {
