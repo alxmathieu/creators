@@ -45,24 +45,23 @@
             <%= simple_form_for @creator, url: create_creators_path do |f| %>
               <!-- [...] -->
               <div class="form-inputs">
-               <%= f.input :description, label: "Write the review about #{@creator.youtube_name}, explain what makes you vibrate..."%>
+                <%= f.input :description, label: "Write the review about #{@creator.youtube_name}, explain what makes you vibrate..."%>
+                <div class="form-group">
+                  <%= label_tag :tags, "Add a few tag applying to #{@creator.youtube_name}" %>
+                  <%= select_tag :tags, options_from_collection_for_select(
+                      @categories, 'id', 'name'), class: 'select2-tags', id: "input-tags-multiple", multiple: true, style:"width: 100%; font-size: 16px" %>
+                </div>
 
-               <%# f.input :tag_list, label: "Add a few tag applying to #{@creator.youtube_name}", hint: "Add several tags separated with commas",  value: f.object.tag_list.to_s %>
+                <%= f.input :language, label: "Language of the channel" %>
 
-               <%= select_tag "tags", options_from_collection_for_select(
-                    @categories, 'id', 'name'), class: 'select2', id: "input-tags-multiple", multiple: true %>
-
-
-               <%= f.input :language, label: "Language of the channel" %>
-
-               <!-- [Hidden-Fields] -->
-               <%= f.hidden_field :channel_url %>
-               <%= f.hidden_field :channel_id %>
-               <%= f.hidden_field :youtube_name %>
-               <%= f.hidden_field :remote_avatar_photo_url %>
-               <%= f.hidden_field :nb_followers %>
-               <%= f.hidden_field :country %>
-               <%= f.hidden_field :language, class: " bfh-languages"%>
+                <!-- [Hidden-Fields] -->
+                <%= f.hidden_field :channel_url %>
+                <%= f.hidden_field :channel_id %>
+                <%= f.hidden_field :youtube_name %>
+                <%= f.hidden_field :remote_avatar_photo_url %>
+                <%= f.hidden_field :nb_followers %>
+                <%= f.hidden_field :country %>
+                <%= f.hidden_field :language, class: " bfh-languages"%>
              </div>
           </div>
         </div>
