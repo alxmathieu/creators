@@ -1,10 +1,29 @@
 <% if user_signed_in? %>
   <% upvote_for_creator = current_user.upvotes.where("creator_id = #{creator.id}").first %>
   <% if upvote_for_creator.nil? %>
-    <%= link_to "Upvote (#{creator.upvotes.length})", creator_upvotes_path(creator), method: :post, remote: true, class: "card-upvote btn btn-warning" %>
+    <%= link_to creator_upvotes_path(creator), method: :post, remote: true do %>
+       <i class="fas fa-chevron-circle-up icon-not-upvoted"></i>
+    <% end %>
   <% else upvote_for_creator %>
-    <%= link_to "Upvote (#{creator.upvotes.length})", creator_upvote_path(creator, upvote_for_creator), method: :delete, remote: true, class: "card-upvote btn btn-primary" %>
+    <%= link_to creator_upvote_path(creator, upvote_for_creator), method: :delete, remote: true do %>
+       <i class="fas fa-chevron-circle-up icon-upvoted"></i>
+    <% end %>
   <% end %>
 <% else %>
-  <%= link_to "Upvote (#{creator.upvotes.length})", new_user_session_path, class: "card-upvote btn btn-warning" %>
+  <%= link_to new_user_session_path do %>
+     <i class="fas fa-chevron-circle-up icon-not-upvoted "></i>
+  <% end %>
 <% end %>
+<span class="nb_upvotes"> <%= creator.upvotes.length %> </span>
+
+
+
+<!-- Back up -->
+
+    <%#= link_to "Upvote (#{creator.upvotes.length})", creator_upvotes_path(creator), method: :post, remote: true, class: "card-upvote btn btn-warning" %>
+  <%# else %>
+    <%#= link_to "Upvote (#{creator.upvotes.length})", creator_upvote_path(creator, upvote_for_creator), method: :delete, remote: true, class: "card-upvote btn btn-primary" %>
+  <%# end %>
+<%# else %>
+  <%#= link_to "Upvote (#{creator.upvotes.length})", new_user_session_path, class: "card-upvote btn btn-warning" %>
+<%# end %>
