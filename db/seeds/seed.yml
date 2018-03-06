@@ -32,14 +32,13 @@ tags:
   - name: "Productivity 🎯"
   - name: "Animated 🐌"
   - name: "Fun"
-  - name: ""
   - name: "Tech Friendly"
   - name: "Kids"
   - name: "Entrepreuneurship"
   - name: "Food & Cooking"
   - name: "Sport"
   - name: "Reviews"
-  - name: "Girl Boss"
+  - name: "Girl Power"
 batches:
   - status: "pending"
     number: 201811

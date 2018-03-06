@@ -4,7 +4,8 @@ class CreatorsController < ApplicationController
 
   def index
     @categories = ActsAsTaggableOn::Tag.order(:name)
-
+    @batches = Batch.order(created_at: :asc)
+    @languages = Creator.find_all_languages
     @creators = policy_scope(Creator)
 
     if params[:name].present?
@@ -13,6 +14,10 @@ class CreatorsController < ApplicationController
 
     if params[:categories].present?
       @creators = @creators.joins(taggings: :tag).where(tags: { id: params[:categories] })
+    end
+
+    if params[:batch].present?
+      @creators = @creators.where(batch_id: params[:batch])
     end
 
     if params[:language].present?
@@ -63,6 +68,8 @@ class CreatorsController < ApplicationController
   end
 
   private
+
+
 
   def find_creator
     @creator = Creator.find(params[:id])

@@ -32,7 +32,7 @@ creators = {}
 sample["creators"].each do |creator|
   user = users[creator["user"]]
   batch = batches[creator["batch"]]
-  creators[creator["youtube_name"]] = Creator.create! creator.slice("youtube_name", "channel_url", "video_url", "nb_followers", "description", "is_showcased", "remote_avatar_photo_url").merge(user: user).merge(batch: batch)
+  creators[creator["youtube_name"]] = Creator.create! creator.slice("youtube_name", "channel_url", "video_url", "nb_followers", "description", "is_showcased", "remote_avatar_photo_url", "language").merge(user: user).merge(batch: batch)
 end
 
 puts 'Creating Tags'
