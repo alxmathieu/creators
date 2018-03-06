@@ -15,8 +15,8 @@ class PagesController < ApplicationController
       last_batch = Batch.last_batch
       creators_in_current_batch = current_batch.creators
       creators_in_last_batch = last_batch.creators
-      @ordered_creators_current_batch = sort_creators(creators_in_current_batch)
-      @ordered_creators_last_batch = sort_creators(creators_in_last_batch)
+      @ordered_creators_current_batch = sort_creators_current_batch(creators_in_current_batch)
+      @ordered_creators_last_batch = sort_creators_last_batch(creators_in_last_batch)
     end
     @creator = Creator.new
 
@@ -41,7 +41,7 @@ class PagesController < ApplicationController
 
   private
 
-  def sort_creators(array)
+  def sort_creators_current_batch(array)
     all_upvotes = 0
     Batch.current_batch.creators.each do |creator|
       all_upvotes += creator.upvotes.length
@@ -54,5 +54,10 @@ class PagesController < ApplicationController
       asc.reverse
     end
   end
+
+def sort_creators_last_batch(array)
+  asc = array.sort_by {|creator| creator.upvotes.length }
+  asc.reverse
+end
 
 end
