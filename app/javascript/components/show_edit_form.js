@@ -10,4 +10,4 @@ function showEditUserForm() {
   });
 };
 
-export{showEditUserForm};
+export {showEditUserForm};

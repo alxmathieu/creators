@@ -25,12 +25,13 @@ class Creator < ApplicationRecord
   mount_uploader :avatar_photo, PhotoUploader
 
   # Validations
-  validates :channel_url, presence: true, uniqueness: true,
-    format: { with: PATTERN_CHANNEL, message: 'Channel url is invalid'}
+  validates :channel_url, presence: true,
+    uniqueness: { message: 'This creator has already been proposed' },
+    format: { with: PATTERN_CHANNEL, message: 'Channel url is invalid' }
   validates :youtube_name, presence: true
   validates :description, presence: true, length: { minimum: 20 }
   validates :video_url, presence: true,
-    format: {with: PATTERN_VIDEO}
+    format: {with: PATTERN_VIDEO }
   validates :nb_followers, presence: true
   validates :batch, presence: true
 

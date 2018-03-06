@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 ruby '2.4.3'
 
+# For background jobs
+gem 'sidekiq'
+gem 'sidekiq-failures', '~> 1.0'
 
 gem 'devise'
 gem 'figaro'

@@ -23,9 +23,6 @@ class CreatorsController < ApplicationController
     if params[:languages].present?
       @creators = @creators.where(language: params[:languages])
     end
-
-
-
   end
 
   def show
@@ -34,13 +31,19 @@ class CreatorsController < ApplicationController
 
   def new
     channel_url = params[:creator][:channel_url]
+    @creator = Creator.new(channel_url: channel_url)
+    @creator.valid?
+    authorize @creator
+    unless @creator.errors[:channel_url].empty?
+      return render 'creators/new_error'
+    end
     @youtube_data = ApiScrapper.new(channel_url).scrape
     if @youtube_data.nil?
       @creator = Creator.new
     else
-      @creator = Creator.new(@youtube_data.slice(:channel_url, :youtube_name, :remote_avatar_photo_url, :nb_followers))
+      @creator = Creator.new(@youtube_data.slice(:channel_url, :youtube_name,
+        :remote_avatar_photo_url, :nb_followers, :channel_id))
     end
-    authorize @creator
   end
 
   def create
@@ -51,7 +54,8 @@ class CreatorsController < ApplicationController
     if @creator.save
       redirect_to creator_path(@creator)
     else
-      render 'creators/new'
+      @youtube_data = ApiScrapper.new(params[:creator][:channel_url]).scrape
+      return render 'creators/new'
     end
   end
 
@@ -68,8 +72,6 @@ class CreatorsController < ApplicationController
   end
 
   private
-
-
 
   def find_creator
     @creator = Creator.find(params[:id])
