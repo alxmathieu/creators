@@ -5,7 +5,7 @@
 .container-rankings{
   background-color: white;
   width: 80%;
-  margin: 20px 40px 0px 0px;
+  margin: 20px 40px 20px 0px;
 }
 
 .container-menu{
@@ -48,6 +48,7 @@
   //font-family: $creators-font;
   .avatar-creator{
     height: 30px;
+    text-align: right;
   }
 }
 
@@ -58,8 +59,21 @@
 .ranking-last-week{
   text-align: left;
   padding: 10px;
-
   li {
     margin-bottom: 10px;
   }
+}
+
+.fa-chevron-circle-up{
+  font-size: 30px;
+  padding: 0px;
+}
+
+.icon-upvoted{
+  color: $gold;
+}
+
+.icon-not-upvoted{
+  color: $silver-gray;
+  opacity: 0.5;
 }

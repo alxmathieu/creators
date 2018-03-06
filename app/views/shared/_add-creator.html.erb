@@ -68,7 +68,7 @@
         </div>
       </div> <!-- Fin de la first row -->
 
-        <h2 class="text-center">2. Pick a video that embodies the most <%= @creator.youtube_name%> </h2>
+        <h2 class="text-center">2. Pick a video that embodies <%= @creator.youtube_name%> the most  </h2>
         <!-- <div class="card form-card text-center"> -->
           <div class="wrapper-videos">
             <!-- <div class="row"> -->
@@ -76,7 +76,7 @@
                 <!-- <div class="col-sm-3"> -->
                   <div class="video-card text-center">
                     <iframe class="ytplayer-showcased" type="text/html" id="<%= id %>{"
-                         src="http://www.youtube.com/embed/<%= id %>?autoplay=0"
+                         src="https://www.youtube.com/embed/<%= id %>?autoplay=0"
                          frameborder="0" height="150px" width="225px"> </iframe>
                     <%= link_to "I want this one 👆", "#", class: "add-video-btn", id: id %>
                   </div>
