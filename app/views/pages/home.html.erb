@@ -2,10 +2,10 @@
   <% unless @showcased_creator.nil? %>
     <div class="showcased">
       <div class="card card-showcased">
-        <!-- <div class="editors-choice">
-          Editor's choice
-        </div> -->
-        <i class="fas fa-star"></i>
+        <div class="editors-choice">
+          Team's choice
+        </div>
+       <!--  <i class="fas fa-star"></i> -->
         <div class="showcased-avatar-tags">
           <%= link_to(creator_path(@showcased_creator)) do %>
             <%= cl_image_tag @showcased_creator.avatar_photo, class: "avatar-showcased-creator"%>
@@ -40,7 +40,7 @@
         </div>
         <div class="showcased-video">
           <iframe class="ytplayer-showcased" type="text/html"
-          src="http://www.youtube.com/embed/<%= @showcased_creator.video_youtube_id %>?autoplay=0"
+          src="https://www.youtube.com/embed/<%= @showcased_creator.video_youtube_id %>?autoplay=0"
           frameborder="0">
           </iframe>
         </div>
@@ -75,14 +75,14 @@
 
     </div>
     <div class="container-menu">
-      <div class="btn btn-primary btn-lg btn-submit-home">
+      <div class="btn btn-primary btn-lg btn-submit">
         <%= link_to "Add a new creator", "#creator-modal", "data-toggle" => "modal", class: '' %>
         <%= render 'shared/modal_creator' %>
       </div>
       <div class="btn btn-warning btn-lg btn-submit-home">
         <%= link_to "See all creators", creators_path %>
       </div>
-      <% unless @winners_last_batch = [] %>
+      <% unless @winners_last_batch == [] %>
         <div class="ranking-last-week card">
           <h5> Last week's winners </h5>
           <ul class="list-unstyled">
