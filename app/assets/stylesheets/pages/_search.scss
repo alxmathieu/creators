@@ -9,16 +9,39 @@
   display: flex;
 }
 
+.side-wrapper {
+  width: 30vw;
+  margin-right: 20px;
+  position: sticky;
+  top: 10px;
+  margin-bottom: 20px;
+}
+
+.sticky {
+  position: sticky;
+  top: 10px;
+}
+
 .filters-card {
   background-color: $charcoal;
   display: flex;
   flex-direction: column;
   color: white;
-  width: 30vw;
   height: 65vh;
-  margin-right: 20px;
-  position: sticky;
-  top: 10px;
+}
+
+// Level - card - info
+
+.level-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.lever-user-typo {
+  color: $charcoal;
+  font-weight: 500;
 }
 
 .content-homepage{
@@ -43,7 +66,7 @@
   justify-content:center;
 }
 
-.btn-add-creator {
+.btn-charcoal-creator {
   background-color: $charcoal;
 }
 
