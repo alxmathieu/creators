@@ -27,11 +27,23 @@
 }
 
 .show-card{
-
+  position: relative;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-image:linear-gradient( $gold, $light-gray);
+  padding: 50px;
+
+  .back-show{
+    z-index: -2;
+    position: absolute;
+    top: 38px;
+    left: -80px;
+    -webkit-transform: rotate(-5deg);
+    background-color: #3A4750;
+    padding: 50px 1200px;
+    font-size: 15px;
+    font-weight: bolder;
+}
 
   .avatar-large {
     height: 120px;
@@ -76,18 +88,22 @@
 
 .description {
   position: relative;
+  display: flex;
+  // align-items: center;
   box-shadow: none;
   margin: 0px ;
   padding: 71px;
 }
 
 .quote {
-  position: absolute;
-  top: 20px;
-  left: 30px;
+//   flex: 1 0 100px;
+//   position: absolute;
+//   top: 20px;
+//   left: 30px;
 }
 
 .discovered-by {
+  // flex: 0 0 20%;
   position: absolute;
   bottom: 15px;
   right: 30px;
@@ -97,10 +113,6 @@
   padding: 0px;
   margin: auto;
   border-top: 5px solid $gold;
-}
-
-.btn-upvotes {
-  margin: 5px;
 }
 
 .counter-upvotes {
