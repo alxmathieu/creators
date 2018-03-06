@@ -20,8 +20,26 @@ users:
     remote_avatar_url: "https://kitt.lewagon.com/placeholder/users/benoitprigent"
     level: 2
 tags:
-  - name: "Vlog"
-  - name: "Gaming"
+  - name: "Vlogging 🤳"
+  - name: "Gaming 🎮"
+  - name: "Science 🔬"
+  - name: "Cinema 🎬"
+  - name: "Music 🎧"
+  - name: "Popularization"
+  - name: "History 📚"
+  - name: "Travel"
+  - name: "Beauty & LifeStyle 💅"
+  - name: "Productivity 🎯"
+  - name: "Animated 🐌"
+  - name: "Fun"
+  - name: ""
+  - name: "Tech Friendly"
+  - name: "Kids"
+  - name: "Entrepreuneurship"
+  - name: "Food & Cooking"
+  - name: "Sport"
+  - name: "Reviews"
+  - name: "Girl Boss"
 batches:
   - status: "pending"
     number: 201811

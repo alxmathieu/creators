@@ -1,5 +1,7 @@
 require 'yaml'
 
+puts 'Destroying Tags...'
+ActsAsTaggableOn::Tag.destroy_all
 puts 'Destroying upvotes...'
 Upvote.destroy_all
 puts 'Destroying creators...'
@@ -8,6 +10,7 @@ puts 'Destroying users...'
 User.destroy_all
 puts 'Destroying batches...'
 Batch.destroy_all
+
 
 file = Rails.root.join('db', 'seeds', 'seed.yml')
 sample = YAML.load(open(file).read)
@@ -32,5 +35,9 @@ sample["creators"].each do |creator|
   creators[creator["youtube_name"]] = Creator.create! creator.slice("youtube_name", "channel_url", "video_url", "nb_followers", "description", "is_showcased", "remote_avatar_photo_url").merge(user: user).merge(batch: batch)
 end
 
-ActsAsTaggableOn::Tag.create(name: "plop")
+puts 'Creating Tags'
+sample["tags"].each do |tag|
+  ActsAsTaggableOn::Tag.create! tag
+end
+
 puts 'Finished!'
