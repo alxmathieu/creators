@@ -33,11 +33,15 @@
   display: flex;
   flex-direction: column;
   margin-top: 20px;
-  height: 307px;
+  height: 300px;
   h3 {
     font-size: 40px;
     margin-top: 11px;
   }
+}
+
+.form-card {
+  height: 300px;
 }
 
 .show-form {
