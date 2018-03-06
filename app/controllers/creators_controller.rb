@@ -20,8 +20,8 @@ class CreatorsController < ApplicationController
       @creators = @creators.where(batch_id: params[:batch])
     end
 
-    if params[:language].present?
-      @creators = @creators.where("tag_list ILIKE ?", "%#{params[:categories]}%")
+    if params[:languages].present?
+      @creators = @creators.where(language: params[:languages])
     end
 
 

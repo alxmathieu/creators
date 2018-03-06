@@ -25,18 +25,18 @@
 
       <h3> - Categories</h3>
       <div class="card">
-        <%= select_tag :categories, options_from_collection_for_select(@categories, :id, :name, params[:categories]) %>
+        <%= select_tag :categories, options_from_collection_for_select(@categories, :id, :name, params[:categories]), include_blank: true, class: 'select2', multiple: true %>
       </div>
 
       <h3> - Languages </h3>
       <div class="card">
         <%#= collection_select %>
-        <%= select_tag :languages, options_from_collection_for_select(@languages, :id, params[:languages]) %>
+        <%= select_tag :languages, options_for_select(@languages, params[:languages]), include_blank: true %>
       </div>
 
       <h3> - Batch </h3>
       <div class="card">
-        <%= select_tag :batch, options_from_collection_for_select(@batches, :id, :number, params[:batch]) %>
+        <%= select_tag :batch, options_from_collection_for_select(@batches, :id, :number, params[:batch]), include_blank: true %>
       </div>
     </div>
 
