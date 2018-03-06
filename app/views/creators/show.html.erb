@@ -1,68 +1,81 @@
-<div class="back-btn">
-  <%= link_to '', root_path(@creator), class: "fas fa-arrow-left" %>
-</div>
-<div class="container grid">
-  <div class="card show-card" >
-    <div class="creator">
-      <%= cl_image_tag @creator.avatar_photo, class: "avatar-large" %>
-       <%= link_to @creator.youtube_name , creator_path(@creator), class: "showcased-name" %>
-    </div>
-    <div class="upvotes-content btn btn-primary">
-      <div class="btn-upvotes">
-        <%= render 'shared/upvote-button', :creator => @creator %>
-      </div>
-    </div>
+<div class="show-card">
+  <!-- <div class="back-btn">
+    <%= link_to '', root_path(@creator), class: "fas fa-arrow-left" %>
+  </div> -->
+  <div class="creator">
+    <%= cl_image_tag @creator.avatar_photo, class: "avatar-large" %>
+     <%= link_to @creator.youtube_name , creator_path(@creator), class: "showcased-name" %>
   </div>
-  <div class="card info">
-    <div class="tags">
-      <p class="subtitle-info"><strong>Tags</strong></p>
-      <% @creator.tag_list.each do |tag| %>
-        <ul>
-          <%= tag %>
-        </ul>
-      <% end %>
-    </div>
-    <div class="social">
-      <p class="subtitle-info"><strong>Social</strong></p>
-      <ul><i class="fab fa-instagram"></i> Instagram</ul>
-      <ul><i class="fab fa-facebook-square"></i> Faceboof</ul>
-      <ul><i class="fab fa-twitter-square"></i> Twitter</ul>
-      <div class="btn-channel">
-        <ul><%= link_to "Channel", @creator.channel_url %></ul>
-      </div>
-      <div class="btn-subscribe text-center">
-        <ul class="g-ytsubscribe" data-channelid="UChH5L8Od81YohhlVWGdDyQg" data-count="hidden"></ul>
-        <!-- TO DO a remplacer par la ligne:
-        <ul class="g-ytsubscribe" data-channelid= <%= @creator.channel_id %> data-count="hidden"></ul>
-        quand la channel id sera disponible et faire css -->
-      </div>
-    </div>
-  </div>
-
-
-  <div class="card description">
-    <div class= "quote" style=" font-size: 20px">
-      <i class="fas fa-quote-left"></i>    <%= @creator.description %>    <i class="fas fa-quote-right"></i>
-    </div>
-    <div class="discovered-by">
-      <p> discovered by <%= @creator.user.username %> <%= cl_image_tag @creator.user.avatar, class: "avatar" %></p>
-    </div>
-  </div>
-
-  <div class="card video">
-    <iframe class="ytplayer-showcased" type="text/html"
-    src="http://www.youtube.com/embed/<%= @creator.video_youtube_id %>?autoplay=0"
-    frameborder="0" height="349px" width="620">
-    </iframe>
-  </div>
-  <div class="card fun-figures" >
-    <div class="followers">
-      <p class="subtitle-info"><strong>Followers on Youtube</strong></p>
-      <ul><%= @creator.nb_followers %> followers</ul>
-      <ul><%#= @creator.nb_video %> Vidéos</ul>
+  <div class="upvotes-content btn btn-primary">
+    <div class="btn-upvotes">
+      <%= render 'shared/upvote-button', :creator => @creator %>
     </div>
   </div>
 </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-4">
+      <div class="card info">
+        <div class="tags">
+          <p class="subtitle-info"><strong>Tags</strong></p>
+          <% @creator.tag_list.each do |tag| %>
+            <ul>
+              <%= tag %>
+            </ul>
+          <% end %>
+          <div class="followers">
+            <p class="subtitle-info"><strong>Followers on Youtube</strong></p>
+            <ul><%= "#{@creator.nb_followers/1000}" %> K</ul>
+            <ul><%#= @creator.nb_video %> Vidéos</ul>
+          </div>
+        </div>
+        <div class="social">
+          <p class="subtitle-info"><strong>Social</strong></p>
+          <ul><i class="fab fa-instagram"></i> Instagram</ul>
+          <ul><i class="fab fa-facebook-square"></i> Faceboof</ul>
+          <ul><i class="fab fa-twitter-square"></i> Twitter</ul>
+          <div class="btn-channel">
+            <ul><%= link_to "Channel", @creator.channel_url %></ul>
+          </div>
+          <div class="btn-subscribe ">
+            <ul class="g-ytsubscribe" data-channelid="UChH5L8Od81YohhlVWGdDyQg" data-count="hidden"></ul>
+            <!-- TO DO a remplacer par la ligne:
+            <ul class="g-ytsubscribe" data-channelid= <%= @creator.channel_id %> data-count="hidden"></ul>
+            quand la channel id sera disponible et faire css -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-8">
+      <div class="card description-video">
+        <div class="card description">
+          <div class= "quote" style=" font-size: 20px">
+            <i class="fas fa-quote-left"></i>    <%= @creator.description %>    <i class="fas fa-quote-right"></i>
+          </div>
+          <div class="discovered-by">
+            <p> discovered by <%= @creator.user.username %> <%= cl_image_tag @creator.user.avatar, class: "avatar" %></p>
+          </div>
+        </div>
+        <div class="videoWrapper">
+          <iframe class="ytplayer-showcased" type="text/html"
+          src="https://www.youtube.com/embed/<%= @creator.video_youtube_id %>?autoplay=0"
+          frameborder="0" width="100%" heigth= "100%">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
 
 
 
