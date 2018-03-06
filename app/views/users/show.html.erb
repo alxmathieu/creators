@@ -10,11 +10,27 @@
           <% end %>
           <div class="user-infos-content" id="id-user-infos">
             <h3><%= @user.username %></h3>
-            <% if @user.bio.nil? && current_user == @user %>
-              <p><strong>Edit your profile to describe yourself!</strong></p>
-            <% else %>
-              <p><%= @user.bio %></p>
-            <% end %>
+            <div class="bio-section text-left">
+              <h4>About</h4>
+              <% if @user.bio.nil? && current_user == @user %>
+                <p><strong>Edit your profile to describe yourself!</strong></p>
+              <% else %>
+                <p><%= @user.bio %></p>
+              <% end %>
+              <i class="fas fa-map-marker-alt"></i><span> Paris</span>
+            </div>
+            <div class="bio-section text-left">
+              <h4>Status</h4>
+              <p><%= @user.level_name %></p>
+            </div>
+            <div class="bio-section text-left">
+              <h4>What I like</h4>
+              <ul class="list-unstyled">
+                <li>Fun</li>
+                <li>Lover</li>
+                <li>Cat</li>
+              </ul>
+            </div>
           </div>
         </div>
         <% if current_user == @user  %>
@@ -26,8 +42,8 @@
     <div class="col-md-9">
       <% if current_user == @user %>
         <div class="card">
-          <h2>My profile on Creators</h2>
-          <div class="achievments">
+          <h2 class="achievements-title">My profile on Creators</h2>
+          <div class="achievements">
             <div class="progress-bar-container">
               <%= render 'progress' %>
             </div>
@@ -68,11 +84,13 @@
             <% end %>
           </a>
           </li>
-          <% if current_user == @user  %>
-            <li role="presentation"><a href="#upvotes" aria-controls="upvotes" role="tab" data-toggle="tab">
+          <li role="presentation"><a href="#upvotes" aria-controls="upvotes" role="tab" data-toggle="tab">
+            <% if current_user == @user %>
               My upvotes (<%= @user.upvotes.length %>)
+            <% else %>
+              Creators upvoted by <%= @user.username %> (<%= @user.upvotes.length %>)
+            <% end %>
           </a></li>
-          <% end %>
         </ul>
 
         <!-- Tab panes -->

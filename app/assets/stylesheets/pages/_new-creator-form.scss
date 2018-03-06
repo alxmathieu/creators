@@ -33,9 +33,10 @@
   display: flex;
   flex-direction: column;
   margin-top: 20px;
-  min-height: 307px;
+  height: 307px;
   h3 {
     font-size: 40px;
+    margin-top: 11px;
   }
 }
 
@@ -84,4 +85,14 @@
   margin-top: 30px;
   margin-bottom: 50px;
   padding: 15px 30px;
+}
+
+.creator-stats {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 80px;
+  p {
+    font-size: 14px;
+  }
 }
