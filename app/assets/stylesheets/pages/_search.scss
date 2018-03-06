@@ -1,4 +1,9 @@
 
+// Header Search
+
+.header-search {
+  padding-top: 20px;
+}
 
 .wrapper-search {
   display: flex;
@@ -6,8 +11,11 @@
 
 .filters-card {
   background-color: $charcoal;
+  display: flex;
+  flex-direction: column;
   color: white;
-  width: 40vw;
+  width: 30vw;
+  height: 65vh;
   margin-right: 20px;
 }
 
@@ -17,4 +25,37 @@
 
 #ranking-search {
   width: 100%;
+  padding: 30px;
+}
+
+
+
+ // No result-card //
+.no-result-card {
+  color: $silver-gray;
+  justify-content:center;
+}
+
+.no-result-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+}
+
+.btn-add-creator {
+  background-color: $charcoal;
+}
+
+
+// Select 2 forms
+
+.select2form-index {
+  width: 100%;
+}
+
+.select-tags {
+  li {
+    color: black;
+  }
 }

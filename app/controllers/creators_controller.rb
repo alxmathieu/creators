@@ -4,12 +4,13 @@ class CreatorsController < ApplicationController
 
   def index
     @categories = ActsAsTaggableOn::Tag.order(:name)
-    @batches = Batch.order(created_at: :asc)
+    @batches = Batch.where(status: ["active", "closed"]).order(created_at: :asc)
     @languages = Creator.find_all_languages
     @creators = policy_scope(Creator)
 
     if params[:name].present?
-      @creators = @creators.where("youtube_name ILIKE ?", "%#{params[:name]}%")
+      sql_query = "description ILIKE :query OR youtube_name ILIKE :query"
+      @creators = @creators.where(sql_query, query: "%#{params[:name]}%")
     end
 
     if params[:categories].present?
