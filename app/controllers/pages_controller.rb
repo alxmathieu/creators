@@ -37,6 +37,12 @@ class PagesController < ApplicationController
       current_user.update_level
     end
 
+    if Batch.next_batch.creators.length < 4
+      @next_creators = ""
+    else
+      @next_creators = Batch.next_batch.creators.length
+    end
+
   end
 
   private
