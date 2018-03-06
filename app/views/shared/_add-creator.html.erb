@@ -50,7 +50,7 @@
                <%# f.input :tag_list, label: "Add a few tag applying to #{@creator.youtube_name}", hint: "Add several tags separated with commas",  value: f.object.tag_list.to_s %>
 
                <%= select_tag "tags", options_from_collection_for_select(
-                    @categories, 'id', 'name'), class: 'select2', id: "input-tags-multiple", multiple: true %>
+                    @categories, 'id', 'name'), class: 'select2', id: "input-tags-multiple", multiple: true, style:"width: 100%" %>
 
 
                <%= f.input :language, label: "Language of the channel" %>
