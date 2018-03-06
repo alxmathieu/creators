@@ -48,7 +48,6 @@ class ApiScrapper
 
       # Videos
       url_videos = "#{@api_url_videos}#{channel_id}&maxResults=5&key=#{ENV['YOUTUBE_API_KEY']}"
-      puts url_videos
       video_serialized = open(url_videos).read
       video = JSON.parse(video_serialized)
 
