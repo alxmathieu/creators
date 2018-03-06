@@ -1,4 +1,5 @@
 import "bootstrap";
+import '../components/select2';
 
 // User edition
 import { showEditUserForm } from '../components/show_edit_form';
@@ -11,7 +12,6 @@ $(document).ready(function(){
       html : true
     });
 });
-
 
 // User edition
 

@@ -33,7 +33,7 @@ class ApiScrapper
       return nil
     else
       # Id
-      id = info["items"][0]["id"]
+      channel_id = info["items"][0]["id"]
 
       # Snippets
       snippet = info["items"][0]["snippet"]
@@ -47,8 +47,7 @@ class ApiScrapper
       video_count = stats["videoCount"]
 
       # Videos
-      url_videos = "#{@api_url_videos}#{id}&maxResults=5&key=#{ENV['YOUTUBE_API_KEY']}"
-      puts url_videos
+      url_videos = "#{@api_url_videos}#{channel_id}&maxResults=5&key=#{ENV['YOUTUBE_API_KEY']}"
       video_serialized = open(url_videos).read
       video = JSON.parse(video_serialized)
 
@@ -60,7 +59,7 @@ class ApiScrapper
 
       return {
         channel_url: @url,
-        channel_id: id,
+        channel_id: channel_id,
         youtube_name: title,
         remote_avatar_photo_url: avatar,
         view_count: view_count,

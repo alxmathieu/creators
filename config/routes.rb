@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   end
   devise_for :users
   root to: 'pages#home'
+  get :creators, to: "creators#index", as: :search
   resources :users, only: [:show, :edit, :update]
-  resources :creators, only: [ :index, :show, :edit, :update ] do
+  resources :creators, only: [:show, :edit, :update ] do
     collection do
       post "new", to: "creators#new"
       post "create", to: "creators#create", as: :create

@@ -19,6 +19,26 @@ users:
     password: "123456"
     remote_avatar_url: "https://kitt.lewagon.com/placeholder/users/benoitprigent"
     level: 2
+tags:
+  - name: "Vlogging 🤳"
+  - name: "Gaming 🎮"
+  - name: "Science 🔬"
+  - name: "Cinema 🎬"
+  - name: "Music 🎧"
+  - name: "Popularization"
+  - name: "History 📚"
+  - name: "Travel"
+  - name: "Beauty & LifeStyle 💅"
+  - name: "Productivity 🎯"
+  - name: "Animated 🐌"
+  - name: "Fun"
+  - name: "Tech Friendly"
+  - name: "Kids"
+  - name: "Entrepreuneurship"
+  - name: "Food & Cooking"
+  - name: "Sport"
+  - name: "Reviews"
+  - name: "Girl Power"
 batches:
   - status: "closed"
     number: 201809
@@ -26,6 +46,26 @@ batches:
     number: 201810
   - status: "pending"
     number: 201811
+tags:
+  - name: "Vlogging 🤳"
+  - name: "Gaming 🎮"
+  - name: "Science 🔬"
+  - name: "Cinema 🎬"
+  - name: "Music 🎧"
+  - name: "Popularization"
+  - name: "History 📚"
+  - name: "Travel"
+  - name: "Beauty & LifeStyle 💅"
+  - name: "Productivity 🎯"
+  - name: "Animated 🐌"
+  - name: "Fun"
+  - name: "Tech Friendly"
+  - name: "Kids"
+  - name: "Entrepreuneurship"
+  - name: "Food & Cooking"
+  - name: "Sport"
+  - name: "Reviews"
+  - name: "Girl Power"
 creators:
   - youtube_name: "Casey Neistat"
     channel_url: "https://www.youtube.com/user/caseyneistat"
