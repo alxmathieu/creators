@@ -89,7 +89,7 @@
             <% @winners_last_batch.each do |winner| %>
               <div class="position-last-week">
                 <li>
-                  <%= "#{@winners_last_batch.index(winner) + 1}" %> - <%= winner.youtube_name %>
+                  <%= "#{@winners_last_batch.index(winner) + 1}" %> - <%= winner.youtube_name %> <br>
                   <%= link_to(creator_path(winner)) do %>
                     <%= cl_image_tag winner.avatar_photo, class: "avatar-creator"%>
                   <% end %>

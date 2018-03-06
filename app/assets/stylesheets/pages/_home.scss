@@ -48,6 +48,7 @@
   //font-family: $creators-font;
   .avatar-creator{
     height: 30px;
+    text-align: right;
   }
 }
 
@@ -58,8 +59,21 @@
 .ranking-last-week{
   text-align: left;
   padding: 10px;
-
   li {
     margin-bottom: 10px;
   }
+}
+
+.fa-chevron-circle-up{
+  font-size: 30px;
+  padding: 0px;
+}
+
+.icon-upvoted{
+  color: $gold;
+}
+
+.icon-not-upvoted{
+  color: $silver-gray;
+  opacity: 0.5;
 }

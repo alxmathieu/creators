@@ -42,7 +42,7 @@
 }
 
 .card-content{
-  padding: 0px 20px;
+  padding: 0px 80px 0px 20px;
 }
 
 .card-sub-content{
@@ -65,9 +65,21 @@
 .creator-description{
   font-size: 15px;
   margin-left: 30px;
+  text-align: justify;
 }
 
-
+.card-upvote{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-right: 15px;
+  .nb_upvotes{
+    font-size: 12px;
+    color: $silver-gray;
+    margin-top: 7px;
+    opacity: 0.7;
+  }
+}
 
 
 
