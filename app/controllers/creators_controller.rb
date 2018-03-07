@@ -84,8 +84,8 @@ class CreatorsController < ApplicationController
 
   def creator_params
     params.require(:creator).permit(:user_id, :batch_id, :youtube_name,
-      :description, :channel_url, :video_url, :nb_followers, :is_showcased,
-      :country, :language, :remote_avatar_photo_url)
+      :description, :channel_url, :channel_id, :video_url, :nb_followers,
+      :is_showcased, :country, :language, :remote_avatar_photo_url)
   end
 end
 

@@ -80,8 +80,12 @@
     </div>
     <div class="container-menu">
       <div class="btn btn-primary btn-lg btn-submit">
-        <%= link_to "Add a new creator", "#creator-modal", "data-toggle" => "modal", class: '' %>
-        <%= render 'shared/modal_creator' %>
+        <% if user_signed_in? %>
+          <%= link_to "Add a new creator", "#creator-modal", "data-toggle" => "modal" %>
+          <%= render 'shared/modal_creator' %>
+        <% else %>
+          <%= link_to "Add a new creator", new_user_session_path %>
+        <% end %>
       </div>
 
       <div class="teaser-next-week card">
