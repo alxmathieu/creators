@@ -11,7 +11,7 @@
      <%= link_to @creator.youtube_name , creator_path(@creator), class: "showcased-name" %>
   </div>
   <div class="upvotes-content">
-    <div class="card-upvote" id="upvote-btn-creator-<%= @creator.id %>" >
+    <div class="card-upvote btn" id="upvote-btn-creator-<%= @creator.id %>" >
       <%= render 'shared/upvote-button', creator: @creator %>
     </div>
   </div>

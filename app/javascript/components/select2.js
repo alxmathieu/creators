@@ -29,3 +29,4 @@ $('.select2batches').select2({
   allowClear: true
 });
 
+import 'select2/dist/css/select2.css';
