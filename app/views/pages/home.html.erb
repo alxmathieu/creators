@@ -49,7 +49,7 @@
     </div>
   <% end %>
   <div class="content-homepage">
-    <div class="container-rankings card">
+    <div class="container-rankings card card-gold">
       <div class="title-current-batch">
         <% if Batch.current_batch.nil? || Batch.all.empty? %>
           <h1> Please check back later! A new batch will be released soon.</h1>
@@ -66,25 +66,32 @@
           <div class="last-batch">
             <h2>Last week's Creators</h2>
               <div class="tagline-last-batch">Missed last week's ranking? Check them out!</div>
-            <ul class="list-unstyled">
-              <% @ordered_creators_last_batch.each do |creator| %>
-                <%= render 'shared/creator', creator: creator %>
-              <% end %>
-            </ul>
+            <div class="last-ranking">
+              <ul class="list-unstyled">
+                <% @ordered_creators_last_batch.each do |creator| %>
+                  <%= render 'shared/creator', creator: creator %>
+                <% end %>
+              </ul>
+              <div class="btn btn-info btn-lg">
+                <%= link_to "See all creators", search_path %>
+              </div>
+            </div>
           </div>
-          <div class="btn btn-info btn-lg btn-submit-home">
-            <%= link_to "See all creators", search_path %>
-          </div>
+
         <% end %>
 
     </div>
     <div class="container-menu">
       <div class="btn btn-primary btn-lg btn-submit">
-        <%= link_to "Add a new creator", "#creator-modal", "data-toggle" => "modal", class: '' %>
-        <%= render 'shared/modal_creator' %>
+        <% if user_signed_in? %>
+          <%= link_to "Add a new creator", "#creator-modal", "data-toggle" => "modal" %>
+          <%= render 'shared/modal_creator' %>
+        <% else %>
+          <%= link_to "Add a new creator", new_user_session_path %>
+        <% end %>
       </div>
 
-      <div class="teaser-next-week card">
+      <div class="teaser-next-week card card-charcoal">
         <span>Discover <%= pluralize @next_creators, " new Creator" %> in</span>
         <div id="countholder">
          <div class="days" ><span id="days"></span><div>Days</div></div>
@@ -93,7 +100,7 @@
         </div>
       </div>
       <% unless @winners_last_batch == [] %>
-        <div class="ranking-last-week card">
+        <div class="ranking-last-week card card-charcoal">
           <h5> Last week's winners </h5>
           <ul class="list-unstyled">
             <% @winners_last_batch.each do |winner| %>
@@ -109,6 +116,7 @@
           </ul>
         </div>
       <% end %>
+      <%= render 'shared/user-level-card' %>
     </div>
   </div>
 </div>

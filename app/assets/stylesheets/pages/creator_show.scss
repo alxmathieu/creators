@@ -1,21 +1,9 @@
-.back-btn {
-  background-color: $charcoal;
-  color: $charcoal;
-}
-
 .upvotes-content {
   text-align: center;
   display: flex;
 
 }
 
-.btn-upvotes {
-  margin-right: 10px;
-}
-
-.fa-caret-up {
-  margin-right: 5Px
-}
 
 .counter-upvotes {
   margin-right: 10Px
@@ -26,24 +14,30 @@
   align-items: center;
 }
 
+.back-show{
+  z-index: -2;
+  position: absolute;
+  top: 300px;
+  left: -80px;
+  -webkit-transform: rotate(-5deg);
+  background-color: $charcoal;
+  height: 200px;
+  width: 120vw;
+
+}
+
+.wrapper {
+  overflow: hidden;
+}
+
 .show-card{
   position: relative;
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding: 50px;
+  width: 100vw;
 
-  .back-show{
-    z-index: -2;
-    position: absolute;
-    top: 38px;
-    left: -80px;
-    -webkit-transform: rotate(-5deg);
-    background-color: $charcoal;
-    padding: 50px 1200px;
-    font-size: 15px;
-    font-weight: bolder;
-}
 
   .avatar-large {
     height: 120px;
@@ -57,15 +51,15 @@
     font-family: "Permanent Marker", "Helvetica", "cursive";
     font-size: 50px;
     line-height: 45px;
-    color: white;
+    color: $charcoal;
     text-decoration: none;
   }
 
 }
 
 .info {
-  border-top: 5px solid $charcoal;
   margin: 0px;
+  margin-bottom: 30px;
 }
 
 .subtitle-info {
@@ -78,8 +72,26 @@
   }
 }
 
-.btn-channel {
+.btn-more {
   background-color: none;
+  position: absolute;
+  padding: 10px;
+  bottom: -5px;
+  right: 42%;
+
+  a {
+
+    font-size: 16px;
+    text-decoration: none;
+    color: $silver-gray;
+    transition: 0.3 ease;
+
+    &:hover {
+      text-decoration: none;
+      opacity: 0.8;
+
+    }
+  }
 }
 
 .btn-subscribe {
@@ -95,6 +107,7 @@
 }
 
 .quote {
+  font-size: 30px;
 }
 
 .discovered-by {
@@ -106,7 +119,6 @@
 .description-video {
   padding: 0px;
   margin: auto;
-  border-top: 5px solid $gold;
 }
 
 .counter-upvotes {
@@ -116,13 +128,13 @@
 .videoWrapper {
   position: relative;
   padding-bottom: 56.25%; /* 16:9 */
-  padding-left: 2%;
+  padding-left: 5%;
   padding-top: 0px;
   margin-bottom: 20px;
 }
 
 .videoWrapper iframe {
   position: absolute;
-  width: 96%;
-  height: 96%;
+  width: 90%;
+  height: 90%;
 }
