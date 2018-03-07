@@ -105,10 +105,23 @@
 
 .select2form-index {
   width: 100%;
+  color: black;
+
+  option {
+    font-weight: 400;
+    color: black;
+  }
+
+  .selection {
+    font-weight: 400;
+    color: black;
+  }
+
 }
 
 .select-tags {
   li {
     color: black;
+    font-weight: 400;
   }
 }

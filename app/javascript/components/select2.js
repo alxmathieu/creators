@@ -8,6 +8,13 @@ $('.select2-tags').select2({
   allowClear: true
 });
 
+$('.select2-search-tags').select2({
+  maximumSelectionLength: 1,
+  placeholder: 'Tags',
+  tags: false,
+  allowClear: true
+});
+
 $('.select2lang').select2({
   maximumSelectionLength: 1,
   placeholder: 'Languages',
