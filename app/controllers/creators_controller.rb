@@ -4,12 +4,13 @@ class CreatorsController < ApplicationController
 
   def index
     @categories = ActsAsTaggableOn::Tag.order(:name)
-    @batches = Batch.order(created_at: :asc)
+    @batches = Batch.where(status: ["active", "closed"]).order(created_at: :asc)
     @languages = Creator.find_all_languages
     @creators = policy_scope(Creator)
 
     if params[:name].present?
-      @creators = @creators.where("youtube_name ILIKE ?", "%#{params[:name]}%")
+      sql_query = "description ILIKE :query OR youtube_name ILIKE :query"
+      @creators = @creators.where(sql_query, query: "%#{params[:name]}%")
     end
 
     if params[:categories].present?
@@ -51,6 +52,9 @@ class CreatorsController < ApplicationController
     @creator = Creator.new(creator_params)
     @creator.user = current_user
     @creator.batch = Batch.next_batch
+    params[:tags].each do |tag_id|
+      @creator.tag_list.add(ActsAsTaggableOn::Tag.find(tag_id))
+    end
     authorize @creator
     if @creator.save
       redirect_to creator_path(@creator)
@@ -79,7 +83,9 @@ class CreatorsController < ApplicationController
   end
 
   def creator_params
-    params.require(:creator).permit(:user_id, :batch_id, :youtube_name, :description, :channel_url, :video_url, :nb_followers, :is_showcased, :country, :language, :remote_avatar_photo_url, :tag_list)
+    params.require(:creator).permit(:user_id, :batch_id, :youtube_name,
+      :description, :channel_url, :video_url, :nb_followers, :is_showcased,
+      :country, :language, :remote_avatar_photo_url)
   end
 end
 

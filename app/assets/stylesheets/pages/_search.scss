@@ -1,14 +1,77 @@
 
+// Header Search
+
+.header-search {
+  padding-top: 20px;
+}
 
 .wrapper-search {
   display: flex;
 }
 
+.side-wrapper {
+  width: 30vw;
+  margin-right: 20px;
+  position: sticky;
+  top: 10px;
+  margin-bottom: 20px;
+}
+
+.sticky {
+  position: sticky;
+  top: 10px;
+}
+
 .filters-card {
   background-color: $charcoal;
+  display: flex;
+  flex-direction: column;
   color: white;
+  height: 65vh;
+}
+
+
+// Design - Ligne
+
+
+.overflow-div {
+  overflow: hidden;
+}
+
+.back-search2{
+    z-index: -2;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    -webkit-transform: rotate(-25deg);
+    background-color: #3A4750;
+    padding: 30px 2000px;
+  }
+
+  .back-search{
+      z-index: -2;
+      position: absolute;
+      top: 643px;
+      left: -80px;
+      -webkit-transform: rotate(-5deg);
+      background-color: #3A4750;
+      padding: 30px 1200px;
+    }
+
+// Level - card - info
+
+
+.search-form {
+  justify-content: center;
   width: 40vw;
-  margin-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.lever-user-typo {
+  color: $charcoal;
+  font-weight: 500;
 }
 
 .content-homepage{
@@ -17,4 +80,35 @@
 
 #ranking-search {
   width: 100%;
+  padding: 30px;
+}
+
+ // No result-card //
+.no-result-card {
+  color: $silver-gray;
+  justify-content:center;
+}
+
+.no-result-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+}
+
+.btn-charcoal-creator {
+  background-color: $charcoal;
+}
+
+
+// Select 2 forms
+
+.select2form-index {
+  width: 100%;
+}
+
+.select-tags {
+  li {
+    color: black;
+  }
 }

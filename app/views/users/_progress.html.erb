@@ -2,8 +2,7 @@
 
 <div class="steps">
     <ul class="steps-container">
-        <!-- <li style="width:25%;" class="activated"> -->
-        <li style="width:25%;" class="<%= 'activated' if @user.level >= 0 %>" id="<%= 'current' if @user.level == 0 %>">
+        <li style="width:25%;" class="<%= 'activated' if user.level >= 0 %>" id="<%= 'current' if user.level == 0 %>">
             <div class="step">
               <a href="#" title="You can:" data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="- Upvote Creators">
                 <div class="step-image"><span></span></div>
@@ -11,15 +10,21 @@
               </a>
             </div>
         </li>
-        <li style="width:25%;" class="<%= 'activated' if @user.level >= 1 %>" id="<%= 'current' if @user.level == 1 %>">
+        <li style="width:25%;" class="<%= 'activated' if user.level >= 1 %>" id="<%= 'current' if user.level == 1 %>">
             <div class="step">
-              <a href="#" title="You can" data-toggle="popover" data-html=true data-placement="bottom" data-trigger="hover" data-content="- Upvote Creators <br>- Showcase one Creator per week" >
+              <a href="#" title="Steps" data-toggle="popover" data-html=true data-placement="bottom" data-trigger="hover"
+              <% if user.min_upvotes.nil? || user.min_upvotes - user.upvotes.length == 0  %>
+                data-content="You are a <%= current_user.level_name %> !"
+              <% else %>
+                data-content="Upvote at least <%= user.min_upvotes %> creators"
+              <% end %>
+              >
                 <div class="step-image"><span></span></div>
                 <div class="step-name">Basic digger</div>
               </a>
             </div>
         </li>
-        <li style="width:25%;" class="<%= 'activated' if @user.level >= 2 %>" id="<%= 'current' if @user.level == 2 %>">
+        <li style="width:25%;" class="<%= 'activated' if user.level >= 2 %>" id="<%= 'current' if user.level == 2 %>">
             <div class="step">
               <a href="#" title="You can" data-toggle="popover" data-html=true data-placement="bottom" data-trigger="hover"
                 data-content="- Upvote Creators <br>- Showcase one Creator per week <br>- Get your Creator highlighted in the weekly ranking">
@@ -28,7 +33,7 @@
               </a>
             </div>
         </li>
-        <li style="width:25%;" class="<%= 'activated' if @user.level >= 3 %>" id="<%= 'current' if @user.level == 3 %>">
+        <li style="width:25%;" class="<%= 'activated' if user.level >= 3 %>" id="<%= 'current' if user.level == 3 %>">
             <div class="step">
               <a href="#" title="You can" data-toggle="popover" data-html=true data-placement="bottom" data-trigger="hover" data-content="- Upvote Creators <br>- Showcase one Creator per week <br>- Get your Creator highlighted in the weekly ranking <br>- Write a 'Team's choice' recommendation">
                 <div class="step-image"><span></span></div>
@@ -38,7 +43,7 @@
         </li>
     </ul>
     <% @width = 0 %>
-    <% case @user.level %>
+    <% case user.level %>
     <% when 0 %>
       <% @width = "width:25%;" %>
     <% when 1 %>
