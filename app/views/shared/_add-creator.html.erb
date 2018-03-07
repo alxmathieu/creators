@@ -52,7 +52,7 @@
                       @categories, 'id', 'name'), class: 'select2-tags', id: "input-tags-multiple", multiple: true, style:"width: 100%; font-size: 16px" %>
                 </div>
 
-                <%= f.input :language, label: "Language of the channel" %>
+                <%= f.input :language, label: "Language of the channel", class: "select2lang", multiple: true %>
 
                 <!-- [Hidden-Fields] -->
                 <%= f.hidden_field :channel_url %>
