@@ -1,32 +1,17 @@
-  <div class="modal fade" id="creator-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="creator-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-          <% if current_user.level == 0 || %>
-            <h5 class="modal-title" id="exampleModalLabel">🚫</h5>
-          <% else %>
-            <h5 class="modal-title" id="exampleModalLabel">Enter the URL of the creator's channel you want to share</h5>
-          <% end %>
+          <h5 class="modal-title" id="exampleModalLabel">Enter the URL of the creator's channel you want to share</h5>
         </div>
         <div class="modal-body">
-        <% if current_user.level == 0 %>
-          <p>Sorry, you can't upload a creator yet...</p>
-          <p>Upvotes some creators you like!</p>
-          <%= render 'users/progress', user: current_user %>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
-<!--             <button type="button" class="btn btn-primary" href="#">See my profile</button> -->
-          </div>
-        <% elsif current_user.level == 1 && Batch.next_batch.creators.each { |c| c.user == current_user} %>
-        <% else %>
           <%= simple_form_for @creator, url: creators_path do |form| %>
             <%= form.input :channel_url, required: true, as: :string, id: "form-input-no-border", placeholder: "https://www.youtube.com/channel/mychanel" %>
             <%= form.button :submit, 'Retrieve data', class:"btn btn-primary" %>
           <% end %>
-        <% end %>
         </div>
       </div>
     </div>
