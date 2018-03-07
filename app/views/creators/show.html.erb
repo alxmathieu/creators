@@ -65,7 +65,14 @@
           <ul><i class="fab fa-twitter-square"></i> Twitter</ul>
           <div class="btn-subscribe ">
             <!-- <ul class="g-ytsubscribe" data-channelid="UChH5L8Od81YohhlVWGdDyQg" data-count="hidden" target="_blank"></ul> -->
-            <ul class="g-ytsubscribe" data-channelid= <%= @creator.channel_id %> data-count="hidden", target="_blank"></ul>
+            <div class="youtube-btn1">
+              <ul class="g-ytsubscribe" data-channelid="<%= @creator.channel_id %>" data-count="hidden"></ul>
+              </div>
+              <div class="youtube-btn2">
+                <a href= "<%= @creator.channel_url %>?sub_confirmation=1" target="_blank"></a>
+              </div>
+
+
             <!-- TO DO a remplacer par la ligne:
             quand la channel id sera disponible et faire css -->
           </div>

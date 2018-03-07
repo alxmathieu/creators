@@ -96,6 +96,27 @@
 
 .btn-subscribe {
   margin-left: 40px;
+  position: relative;
+}
+
+.youtube-btn1 {
+  position: relative;
+}
+
+.youtube-btn2 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 24px;
+  width: 85px;
+  background-color: none;
+
+  a {
+    text-decoration: none;
+    color: white;
+    padding: 12px 42px 12px 42px;
+
+  }
 }
 
 .description {
