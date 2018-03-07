@@ -52,7 +52,7 @@
                       @categories, 'id', 'name'), class: 'select2-tags', id: "input-tags-multiple", multiple: true, style:"width: 100%; font-size: 16px" %>
                 </div>
 
-                <%= f.input :language, label: "Language of the channel" %>
+                <%= f.input :language, label: "Language of the channel", class: "select2lang", multiple: true %>
 
                 <!-- [Hidden-Fields] -->
                 <%= f.hidden_field :channel_url %>
@@ -68,26 +68,20 @@
       </div> <!-- Fin de la first row -->
 
         <h2 class="text-center">2. Pick a video that embodies <%= @creator.youtube_name%> the most  </h2>
-        <!-- <div class="card form-card text-center"> -->
           <div class="wrapper-videos">
-            <!-- <div class="row"> -->
               <% @youtube_data[:top_videos].each do |id| %>
-                <!-- <div class="col-sm-3"> -->
                   <div class="video-card text-center">
                     <iframe class="ytplayer-showcased" type="text/html" id="<%= id %>{"
                          src="https://www.youtube.com/embed/<%= id %>?autoplay=0"
                          frameborder="0" height="150px" width="225px"> </iframe>
-                    <%= link_to "I want this one 👆", "#", class: "add-video-btn", id: id %>
+                    <%= link_to "I want this one 👆", "#", class: "add-video-btn btn", id: id %>
                   </div>
-                <!-- </div> -->
               <% end %>
-            <!-- </div> -->
           </div>
           <%= f.hidden_field :video_url, label: "Pick a video that embodies the most #{@creator.youtube_name}", id: "video-form" %>
           <div class="form-actions text-center">
             <%= f.submit "Add #{@creator.youtube_name} to the game!", class: "btn btn-primary", id:"submit-creator-btn" %>
           </div>
-        <!-- </div> -->
 
       <% end %> <!-- end of the simple form -->
       </div>

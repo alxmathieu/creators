@@ -1,0 +1,5 @@
+meta_product_name: "Creators"
+meta_title: "Creators - Discover new Creators"
+meta_description: "Want to find hidden gems on YouTube? To share the genius you just found? Visit us on Creators!"
+meta_image: "creators-banner-resized.png"     # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards

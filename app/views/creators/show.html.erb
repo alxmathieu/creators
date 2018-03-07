@@ -1,3 +1,6 @@
+<% content_for :meta_title, "#{@creator.youtube_name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @creator.description.first(100) %>
+
 <div class="show-card" >
 
   <!-- <div class="back-btn">
@@ -8,11 +11,13 @@
      <%= link_to @creator.youtube_name , creator_path(@creator), class: "showcased-name" %>
   </div>
   <div class="upvotes-content">
-    <div>
-      <%= render 'shared/upvote-button', :creator => @creator %>
+    <div class="card-upvote btn btn-primary" id="upvote-btn-creator-<%= @creator.id %>" >
+      <%= render 'shared/upvote_full_btn', creator: @creator %>
     </div>
   </div>
-  <div class="back-show ">
+  <div class="wrapper">
+    <div class="back-show ">
+    </div>
   </div>
 </div>
 <div class="container">
@@ -20,9 +25,9 @@
     <div class="col-xs-12 col-md-8">
 
 
-      <div class="card description-video">
+      <div class="card description-video card-gold">
         <div class="card description">
-          <div class= "quote" style=" font-size: 20px">
+          <div class= "quote" style=" font-size: 25px">
             <i class="fas fa-quote-left"></i>    <%= @creator.description %>    <i class="fas fa-quote-right"></i>
           </div>
           <div class="discovered-by">
@@ -32,38 +37,38 @@
         <div class="videoWrapper">
           <iframe class="ytplayer-showcased" type="text/html"
           src="https://www.youtube.com/embed/<%= @creator.video_youtube_id %>?autoplay=0"
-          frameborder="0" width="100%" heigth= "100%">
+          frameborder="0" width="100%" heigth= "100%" >
           </iframe>
+          <div class="btn-more">
+          <%= link_to "More on Youtube...", @creator.channel_url, :target => "_blank" %>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="col-xs-12 col-md-4">
-      <div class="card info">
-        <div class="tags">
+      <div class="card info card-charcoal">
+        <div class="tags info">
           <p class="subtitle-info"><strong>Tags</strong></p>
           <% @creator.tag_list.each do |tag| %>
             <ul>
               <%= tag %>
             </ul>
           <% end %>
-          <div class="followers">
-            <p class="subtitle-info"><strong>Followers on Youtube</strong></p>
-            <ul><%= "#{@creator.nb_followers/1000}" %> K</ul>
-            <ul><%#= @creator.nb_video %> Vidéos</ul>
-          </div>
         </div>
-        <div class="social">
+        <div class="followers info">
+          <p class="subtitle-info"><strong>Followers on Youtube</strong></p>
+          <ul><%= "#{@creator.nb_followers/1000}" %> K</ul>
+          <ul><%#= @creator.nb_video %> Vidéos</ul>
+        </div>
+        <div class="social info">
           <p class="subtitle-info"><strong>Social</strong></p>
           <ul><i class="fab fa-instagram"></i> Instagram</ul>
           <ul><i class="fab fa-facebook-square"></i> Faceboof</ul>
           <ul><i class="fab fa-twitter-square"></i> Twitter</ul>
-          <div class="btn-channel">
-            <ul><%= link_to "Channel", @creator.channel_url %></ul>
-          </div>
           <div class="btn-subscribe ">
-            <ul class="g-ytsubscribe" data-channelid="UChH5L8Od81YohhlVWGdDyQg" data-count="hidden"></ul>
-            <!-- <ul class="g-ytsubscribe" data-channelid= <%= @creator.channel_id %> data-count="hidden"></ul> -->
+            <!-- <ul class="g-ytsubscribe" data-channelid="UChH5L8Od81YohhlVWGdDyQg" data-count="hidden" target="_blank"></ul> -->
+            <ul class="g-ytsubscribe" data-channelid= <%= @creator.channel_id %> data-count="hidden", target="_blank"></ul>
             <!-- TO DO a remplacer par la ligne:
             quand la channel id sera disponible et faire css -->
           </div>

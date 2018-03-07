@@ -31,35 +31,11 @@
 }
 
 
-// Design - Ligne
+// Design - Scroll
 
 
-.overflow-div {
-  overflow: hidden;
-}
 
-.back-search2{
-    z-index: -2;
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    -webkit-transform: rotate(-25deg);
-    background-color: #3A4750;
-    padding: 30px 2000px;
-  }
-
-  .back-search{
-      z-index: -2;
-      position: absolute;
-      top: 643px;
-      left: -80px;
-      -webkit-transform: rotate(-5deg);
-      background-color: #3A4750;
-      padding: 30px 1200px;
-    }
-
-// Level - card - info
-
+// Search - Bar - Design
 
 .search-form {
   justify-content: center;
@@ -69,6 +45,32 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.search-bar {
+  height: 50px;
+  border-style: none;
+  border-top-left-radius:
+   30px;
+  border-bottom-left-radius: 30px;
+  box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.1);
+}
+
+.search-btn {
+  font-weight: lighter;
+  height: 50px;
+  width: 100px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.1);
+
+
+}
+
+// Level - card - info
+
+
+
+
 .lever-user-typo {
   color: $charcoal;
   font-weight: 500;
@@ -105,10 +107,22 @@
 
 .select2form-index {
   width: 100%;
+  color: black;
+
+  option {
+    font-weight: 400;
+    color: black;
+  }
+
+  .selection {
+    font-weight: 400;
+    color: black;
+  }
 }
 
 .select-tags {
   li {
     color: black;
+    font-weight: 400;
   }
 }

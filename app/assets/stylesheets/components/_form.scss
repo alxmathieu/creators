@@ -26,3 +26,12 @@
   box-shadow: none;
   border-bottom: 1px solid $gold;
 }
+
+.stuff{
+  border-top: unset !important;
+  border-left: unset !important;
+  border-right: unset !important;
+  border-bottom: 1px solid $gold;
+  box-shadow: unset !important;
+}
+
