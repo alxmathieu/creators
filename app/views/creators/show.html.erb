@@ -1,5 +1,6 @@
 <% content_for :meta_title, "#{@creator.youtube_name} is on #{DEFAULT_META["meta_product_name"]}" %>
-<% content_for :meta_description, @creator.description %>
+<% content_for :meta_description, @creator.description.first(100) %>
+
 <div class="show-card" >
 
   <!-- <div class="back-btn">
