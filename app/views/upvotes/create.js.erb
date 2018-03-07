@@ -3,7 +3,10 @@ function upvote(innerHTML) {
   upvote.innerHTML = innerHTML;
 }
 
-upvote("<%= j render 'shared/upvote-button', creator: @creator %>");
+if (document.getElementById("show-creator")) {
+  upvote("<%= j render 'shared/upvote_full_btn', creator: @creator %>");
+}
 
-
-
+if (document.getElementById("homepage")) {
+  upvote("<%= j render 'shared/upvote-button', creator: @creator %>");
+}

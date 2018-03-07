@@ -11,13 +11,44 @@
   }
 }
 
-.full-btn-upvote{
+
+.full-btn-upvote {
+  width: 200px;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.upvote-btn-title-symbol {
+  flex: 0 0 70%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 24px;
+  padding: 10px 0;
+  // margin: 10px;
+}
+
+.upvote-btn-title {
+  padding-left: 10px;
+}
+
+.full-btn-upvote-nb{
+  flex: 0 0 30%;
+  background-color: white;
+  color: $silver-gray;
+  width:30px;
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
 
-.full-btn-upvote-nb{
-
+.fa-angle-up {
+  padding: 0px 10px 0px 10px;
+  margin-right: 10px;
+  font-size: 24px;
 }
 
+.btn-upvote-no-padding {
+  padding: 0;
+}
