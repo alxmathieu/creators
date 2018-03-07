@@ -20,3 +20,4 @@ pickVideo();
 
 import { getSeconds } from '../components/countdown';
 getSeconds();
+
