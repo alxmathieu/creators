@@ -2,7 +2,12 @@
   <div class="no-result-content">
     <h4>  Didn't find the creator you wanted ? 😢</h4>
     <div class="btn btn-charcoal-creator">
-      <%= link_to "Add yours", "#creator-modal", "data-toggle" => "modal", class: '' %>
+      <% if user_signed_in? %>
+        <%= link_to "Add a new creator", "#creator-modal", "data-toggle" => "modal" %>
+        <%= render 'shared/modal_creator' %>
+      <% else %>
+        <%= link_to "Add a new creator", new_user_session_path %>
+      <% end %>
     </div>
   </div>
 </li>

@@ -4,6 +4,7 @@
   justify-content: space-around;
 }
 .add-video-btn {
+
   color: black;
   &:hover {
     text-decoration: none;
@@ -21,11 +22,16 @@
 
 // Vidéo Cards
 .video-card {
+  flex: 0 0 23%;
   margin: 10px;
   margin-top: 20px;
   padding: 10px;
   a {
     text-decoration: none;
+  }
+  iframe {
+    width: 100%;
+    margin-bottom: 25px;
   }
 }
 

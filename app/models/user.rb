@@ -74,7 +74,7 @@ class User < ApplicationRecord
     LEVEL_UP_CONDITIONS[self.level + 1][:min_upvotes]
   end
 
-  def number_uploaded
+  def number_uploaded_next_batch
     number = 0
     Batch.next_batch.creators.each do |creator|
       number += 1 if creator.user == self
@@ -82,13 +82,26 @@ class User < ApplicationRecord
     number
   end
 
-  def self.allowed_to_upload?
-    if self.level == 0
+  def allowed_to_upload?
+    if self.admin
+      return true
+    elsif self.level == 0
       return false
     elsif self.level == 1 || self.level == 2
-      return false if self.number_uploaded >= 1
+      return false if self.number_uploaded_next_batch >= 1
     elsif self.level == 3
-      return false if self.number_uploaded > 3
+      return false if self.number_uploaded_next_batch > 3
     end
+    return true
   end
 end
+
+
+
+
+
+
+
+
+
+

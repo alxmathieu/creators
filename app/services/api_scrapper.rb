@@ -47,7 +47,7 @@ class ApiScrapper
       video_count = stats["videoCount"]
 
       # Videos
-      url_videos = "#{@api_url_videos}#{channel_id}&maxResults=5&key=#{ENV['YOUTUBE_API_KEY']}"
+      url_videos = "#{@api_url_videos}#{channel_id}&maxResults=4&key=#{ENV['YOUTUBE_API_KEY']}"
       video_serialized = open(url_videos).read
       video = JSON.parse(video_serialized)
 

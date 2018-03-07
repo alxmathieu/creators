@@ -1,18 +1,42 @@
-<div class="modal fade" id="creator-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<% if user_signed_in? %>
+  <div class="modal fade" id="creator-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-          <h5 class="modal-title" id="exampleModalLabel">Enter the URL of the creator's channel you want to share</h5>
+          <% if current_user.allowed_to_upload? %>
+            <h5 class="modal-title" id="exampleModalLabel">Enter the URL of the creator's channel you want to share</h5>
+          <% else %>
+            <h5 class="modal-title" id="exampleModalLabel">🚫</h5>
+          <% end %>
         </div>
         <div class="modal-body">
-          <%= simple_form_for @creator, url: creators_path do |form| %>
-            <%= form.input :channel_url, required: true, as: :string, id: "form-input-no-border", placeholder: "https://www.youtube.com/channel/mychanel" %>
-            <%= form.button :submit, 'Retrieve data', class:"btn btn-primary" %>
+          <% if current_user.allowed_to_upload? %>
+            <%= simple_form_for @creator, url: creators_path do |form| %>
+              <%= form.input :channel_url, required: true, as: :string, id: "form-input-no-border", placeholder: "https://www.youtube.com/channel/mychanel" %>
+              <%= form.button :submit, 'Retrieve data', class:"btn btn-primary" %>
+            <% end %>
+          <% else %>
+            <p>Sorry, you can't upload a creator...</p>
+            <% if current_user.level == 0 %>
+              <p>Upvotes some creators you like!</p>
+            <% elsif current_user.level == 1 || current_user.level == 2 %>
+              <p>You can only upload 1 creator per week!</p>
+            <% elsif current_user.level == 3 %>
+              <p>You can only upload 2 creators per week!</p>
+            <% end %>
+            <%= render 'users/progress', user: current_user %>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+              <div class="btn btn-primary">
+                <%= link_to "See my profile", user_path(current_user) %>
+              </div>
+            </div>
           <% end %>
         </div>
       </div>
     </div>
   </div>
+<% end %>
