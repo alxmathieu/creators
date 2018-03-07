@@ -1,0 +1,5 @@
+meta_product_name: "Creators"
+meta_title: "Creators - Discover new Creators"
+meta_description: "Relevant description"
+meta_image: "logo-inline-yellow.svg"                       # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
