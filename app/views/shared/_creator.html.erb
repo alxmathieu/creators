@@ -24,7 +24,7 @@
               </ul>
             </div>
             <div class="creator-description">
-              <%= creator.description.first(100) %>...
+              <%= link_to "#{creator.description.first(120)}...", creator_path(creator) %>
             </div>
           </div>
         </div>

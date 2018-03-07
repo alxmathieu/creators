@@ -1,3 +1,4 @@
+
 <div class="container">
   <% unless @showcased_creator.nil? %>
     <div class="showcased">
@@ -64,12 +65,15 @@
           </div>
           <div class="last-batch">
             <h2>Last week's Creators</h2>
-              <div class="tagline-last-batch">Missed last week's batch? Check them out!</div>
+              <div class="tagline-last-batch">Missed last week's ranking? Check them out!</div>
             <ul class="list-unstyled">
               <% @ordered_creators_last_batch.each do |creator| %>
                 <%= render 'shared/creator', creator: creator %>
               <% end %>
             </ul>
+          </div>
+          <div class="btn btn-info btn-lg btn-submit-home">
+            <%= link_to "See all creators", search_path %>
           </div>
         <% end %>
 
@@ -79,8 +83,14 @@
         <%= link_to "Add a new creator", "#creator-modal", "data-toggle" => "modal", class: '' %>
         <%= render 'shared/modal_creator' %>
       </div>
-      <div class="btn btn-warning btn-lg btn-submit-home">
-        <%= link_to "See all creators", search_path %>
+
+      <div class="teaser-next-week card">
+        <span>Discover <%= pluralize @next_creators, " new Creator" %> in</span>
+        <div id="countholder">
+         <div class="days" ><span id="days"></span><div>Days</div></div>
+         <div class="hours"><span id="hours"></span><div>Hours</div></div>
+         <div class="minutes"><span id="minutes"></span><div>Minutes</div></div>
+        </div>
       </div>
       <% unless @winners_last_batch == [] %>
         <div class="ranking-last-week card">
@@ -102,3 +112,6 @@
     </div>
   </div>
 </div>
+
+
+
