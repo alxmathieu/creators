@@ -7,7 +7,6 @@ if (document.getElementById("edit-form-user")) {
   showEditUserForm();
 };
 
-
 // User edition
 
 import { pickVideo } from '../components/pick_youtube_video';
