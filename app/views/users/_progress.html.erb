@@ -4,7 +4,7 @@
     <ul class="steps-container">
         <li style="width:25%;" class="<%= 'activated' if user.level >= 0 %>" id="<%= 'current' if user.level == 0 %>">
             <div class="step">
-              <a href="#" title="Steps" data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Sign up">
+              <a href="#" title="You can:" data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="- Upvote Creators">
                 <div class="step-image"><span></span></div>
                 <div class="step-name">Viewer</div>
               </a>
@@ -26,8 +26,8 @@
         </li>
         <li style="width:25%;" class="<%= 'activated' if user.level >= 2 %>" id="<%= 'current' if user.level == 2 %>">
             <div class="step">
-              <a href="#" title="Steps" data-toggle="popover" data-html=true data-placement="bottom" data-trigger="hover"
-                data-content="Dig at least 1 creator <br> Receive at least 50 upvotes on your digs">
+              <a href="#" title="You can" data-toggle="popover" data-html=true data-placement="bottom" data-trigger="hover"
+                data-content="- Upvote Creators <br>- Showcase one Creator per week <br>- Get your Creator highlighted in the weekly ranking">
                 <div class="step-image"><span></span></div>
                 <div class="step-name">Advanced digger</div>
               </a>
@@ -35,7 +35,7 @@
         </li>
         <li style="width:25%;" class="<%= 'activated' if user.level >= 3 %>" id="<%= 'current' if user.level == 3 %>">
             <div class="step">
-              <a href="#" title="Steps" data-toggle="popover" data-html=true data-placement="bottom" data-trigger="hover" data-content="Dig at least 2 creators <br> Receive at least 100 upvotes on your digs">
+              <a href="#" title="You can" data-toggle="popover" data-html=true data-placement="bottom" data-trigger="hover" data-content="- Upvote Creators <br>- Showcase one Creator per week <br>- Get your Creator highlighted in the weekly ranking <br>- Write a 'Team's choice' recommendation">
                 <div class="step-image"><span></span></div>
                 <div class="step-name">Expert digger</div>
               </a>

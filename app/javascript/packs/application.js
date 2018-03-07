@@ -16,4 +16,7 @@ $(document).ready(function(){
 // User edition
 
 import { pickVideo } from '../components/pick_youtube_video';
-pickVideo()
+pickVideo();
+
+import { getSeconds } from '../components/countdown';
+getSeconds();
