@@ -52,8 +52,11 @@ class CreatorsController < ApplicationController
     @creator = Creator.new(creator_params)
     @creator.user = current_user
     @creator.batch = Batch.next_batch
-    params[:tags].each do |tag_id|
-      @creator.tag_list.add(ActsAsTaggableOn::Tag.find(tag_id))
+    @creator.language = params[:language][0]
+    unless params[:tags].nil?
+      params[:tags].each do |tag_id|
+        @creator.tag_list.add(ActsAsTaggableOn::Tag.find(tag_id))
+      end
     end
     authorize @creator
     if @creator.save

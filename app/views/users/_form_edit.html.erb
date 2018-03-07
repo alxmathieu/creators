@@ -1,11 +1,17 @@
 <!-- <div class="row">
   <div class="col-xs-12 col-sm-offset-2 col-sm-8"> -->
-    <div id="edit-form-user" class="text-center hidden">
+    <div id="edit-form-user" class="text-center hidden" style="overflow: hidden;">
       <%= simple_form_for(@user) do |f| %>
         <%= f.input :avatar %>
         <%= f.input :avatar_cache, as: :hidden %>
         <%= f.input :username %>
         <%= f.input :bio %>
+        <%= f.input :location %>
+        <div class="form-group">
+          <%= label_tag :tags, "Choose some tags" %>
+          <%= select_tag :tags, options_from_collection_for_select(
+              @categories, 'id', 'name', @user.tags.map {|t| t.id}), class: 'select2-tags', id: "input-tags-multiple", multiple: true, style:"width: 100%; font-size: 16px" %>
+        </div>
         <%= f.submit class: "btn btn-primary"%>
       <% end %>
     </div>

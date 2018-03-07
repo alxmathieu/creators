@@ -54,8 +54,9 @@
         <% if Batch.current_batch.nil? || Batch.all.empty? %>
           <h1> Please check back later! A new batch will be released soon.</h1>
         <% else %>
-          <h1>Discover this week's new Creators</h1>
+          <h1 style= "margin-bottom: 0px">Discover this week's new Creators</h1>
       </div>
+      <div class="tagline-last-batch">Here are some brand new Creators! Upvote and make them reach the top.</div>
           <div class="current-batch">
             <ul class="list-unstyled">
               <% @ordered_creators_current_batch.each do |creator| %>
