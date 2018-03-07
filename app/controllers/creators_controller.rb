@@ -8,8 +8,6 @@ class CreatorsController < ApplicationController
     @languages = Creator.find_all_languages
     @creators = policy_scope(Creator)
 
-    # .sort_by {|creator| creator.upvotes.length }
-
     if params[:name].present?
       sql_query = "description ILIKE :query OR youtube_name ILIKE :query"
       @creators = @creators.where(sql_query, query: "%#{params[:name]}%")
