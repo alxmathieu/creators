@@ -83,7 +83,9 @@ class User < ApplicationRecord
   end
 
   def allowed_to_upload?
-    if self.level == 0
+    if self.admin
+      return true
+    elsif self.level == 0
       return false
     elsif self.level == 1 || self.level == 2
       return false if self.number_uploaded_next_batch >= 1
