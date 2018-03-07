@@ -83,3 +83,34 @@
 .light-color {
   opacity: 0.6;
 }
+
+// Bootstrap tabs redesign
+.custom-tabs {
+  border-bottom: none;
+}
+
+.custom-tabs > li > a {
+  color: #000000;
+  background-color: white;
+}
+
+.custom-tabs > li > a:hover {
+  color: #000000;
+  background-color: white;
+  border: none;
+  border-bottom: 3px solid $gold;
+}
+
+.custom-tabs > li.active > a, .custom-tabs > li.active > a:focus {
+  color: #000000;
+  font-weight: bold;
+  background-color: white;
+  border: none;
+  border-bottom: 3px solid $gold;
+}
+
+.nav-tabs > li.active > a:hover {
+  background-color: white;
+  border: none;
+  border-bottom: 3px solid $gold;
+}

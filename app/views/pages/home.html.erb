@@ -116,7 +116,9 @@
           </ul>
         </div>
       <% end %>
-      <%= render 'shared/user-level-card' %>
+      <% if user_signed_in? %>
+        <%= render 'shared/user-level-card' %>
+      <% end %>
     </div>
   </div>
 </div>
