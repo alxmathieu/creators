@@ -12,12 +12,12 @@
             <h3><%= @user.username %></h3>
             <div class="bio-section text-left">
               <h4>About</h4>
-              <% if @user.bio.nil? && current_user == @user %>
+              <% if (@user.bio.nil? || @user.bio.empty?) && current_user == @user %>
                 <p><strong>Edit your profile to describe yourself!</strong></p>
               <% else %>
                 <p><%= @user.bio %></p>
               <% end %>
-              <i class="fas fa-map-marker-alt"></i><span> Paris</span>
+              <i class="fas fa-map-marker-alt"></i><span> <%= @user.location %></span>
             </div>
             <div class="bio-section text-left">
               <h4>Status</h4>
@@ -25,11 +25,11 @@
             </div>
             <div class="bio-section text-left">
               <h4>What I like</h4>
-              <ul class="list-unstyled">
-                <li>Fun</li>
-                <li>Lover</li>
-                <li>Cat</li>
-              </ul>
+              <% @user.tag_list.each do |tag| %>
+                <ul class="list-unstyled">
+                  # <%= tag %>
+                </ul>
+              <% end %>
             </div>
           </div>
         </div>
