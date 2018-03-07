@@ -7,11 +7,6 @@ if (document.getElementById("edit-form-user")) {
   showEditUserForm();
 };
 
-$(document).ready(function(){
-    $('[data-toggle="popover"]').popover({
-      html : true
-    });
-});
 
 // User edition
 
@@ -24,6 +19,16 @@ import { getSeconds } from '../components/countdown';
 if (document.getElementById("days")) {
   getSeconds();
 };
+
+
+if (document.getElementById("id-user-infos")) {
+  $(document).ready(function(){
+      $('[data-toggle="popover"]').popover({
+        html : true
+      });
+  });
+};
+
 
 
 
