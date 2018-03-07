@@ -6,7 +6,6 @@
   background-color: white;
   width: 80%;
   margin: 20px 40px 20px 0px;
-  border-top: 5px solid $gold;
 }
 
 .container-menu{
@@ -14,6 +13,9 @@
   display: flex;
   flex-direction: column;
   margin-top: 20px;
+  .level-card{
+    max-width: 200px;
+  }
 }
 
 .last-batch{
@@ -51,7 +53,8 @@
 .ranking-last-week{
   text-align: left;
   padding: 10px;
-  border-top: 5px solid $charcoal;
+  margin-top: 0px;
+  margin-bottom: 0px;
   li {
     margin-bottom: 10px;
   }
@@ -73,12 +76,21 @@
 
 .teaser-next-week{
   padding: 10px;
-  border-top: 5px solid $charcoal;
   max-width: 200px;
 }
 
+.profile-journey{
+  max-width: 200px;
+}
 
-
+.last-ranking{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .btn-info{
+    width: 20%;
+  }
+}
 
 
 
