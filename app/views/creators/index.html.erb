@@ -45,7 +45,8 @@
 
         <div class="select-tags">
           <h3> - Batch </h3>
-          <%= select_tag :batch, options_from_collection_for_select(@batches, :id, :number, params[:batch]), include_blank: true, class: "select2batches select2form-index", multiple: true %>
+          <%#= select_tag :batch, options_from_collection_for_select(@batches, :id, self.name, params[:batch]), include_blank: true, class: "select2batches select2form-index", multiple: true %>
+          <%= select_tag :batch, options_for_select(@batches.collect{ |b| [b.name, b.id]}, params[:batch]), include_blank: true, class: "select2batches select2form-index", multiple: true %>
         </div>
 
         <div class= "select-tags text-center">
