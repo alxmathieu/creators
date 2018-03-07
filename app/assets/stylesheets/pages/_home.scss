@@ -53,7 +53,6 @@
 .ranking-last-week{
   text-align: left;
   padding: 10px;
-  margin-top: 0px;
   margin-bottom: 0px;
   li {
     margin-bottom: 10px;
@@ -65,18 +64,11 @@
   padding: 0px;
 }
 
-.icon-upvoted{
-  color: $gold;
-}
-
-.icon-not-upvoted{
-  color: $silver-gray;
-  opacity: 0.5;
-}
 
 .teaser-next-week{
   padding: 10px;
   max-width: 200px;
+  margin-bottom: 0px;
 }
 
 .profile-journey{
@@ -92,7 +84,20 @@
   }
 }
 
+.icon-upvoted{
+  color: $gold;
+}
 
+.icon-not-upvoted{
+  color: $silver-gray;
+  opacity: 0.5;
+  &:hover{
+    opacity: 0.9;
+    color: $gold;
+    -webkit-animation: ld-spin 1.6s ;
+    animation: ld-spin 1.6s ;
+  }
+}
 
 
 
