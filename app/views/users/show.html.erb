@@ -1,7 +1,7 @@
 <div class="container">
   <div class="col">
     <div class="col-md-3">
-      <div class="card user-infos text-center">
+      <div class="card user-infos text-center card-charcoal">
         <div class="user-infos-container">
           <% if @user.avatar.nil? %>
             <%= image_tag 'default-avatar', alt: @user.username, class: "avatar-large" %>
@@ -41,7 +41,7 @@
     </div>
     <div class="col-md-9">
       <% if current_user == @user %>
-        <div class="card">
+        <div class="card card-gold">
           <h2 class="achievements-title">My profile on Creators</h2>
           <div class="achievements">
             <div class="progress-bar-container">
@@ -73,7 +73,7 @@
         </div>
       <% end %>
 
-      <div class="card">
+      <div class="card card-charcoal">
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
           <li role="presentation" class="active"><a href="#digs" aria-controls="digs" role="tab" data-toggle="tab">

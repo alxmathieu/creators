@@ -11,9 +11,27 @@
      <%= link_to @creator.youtube_name , creator_path(@creator), class: "showcased-name" %>
   </div>
   <div class="upvotes-content">
-    <div class="card-upvote btn btn-primary" id="upvote-btn-creator-<%= @creator.id %>" >
-      <%= render 'shared/upvote_full_btn', creator: @creator %>
-    </div>
+
+
+    <% if @creator.batch == Batch.current_batch  %>
+      <div class="upvote-tip">
+        Help the Creator reach the top of this week's ranking!
+      </div>
+      <div class="card-upvote btn btn-primary" id="upvote-btn-creator-<%= @creator.id %>" >
+        <%= render 'shared/upvote_full_btn', creator: @creator %>
+      </div>
+    <% elsif @creator.batch == Batch.next_batch %>
+      <div class="upvote-tip">
+        This Creator will be part of next week's ranking! <br> Come back later to help him/her reach the top!
+      </div>
+    <% else %>
+      <div class="card-upvote btn btn-primary" id="upvote-btn-creator-<%= @creator.id %>" >
+        <%= render 'shared/upvote_full_btn', creator: @creator %>
+      </div>
+    <% end %>
+
+
+
   </div>
   <div class="wrapper">
     <div class="back-show ">
