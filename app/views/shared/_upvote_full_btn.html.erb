@@ -1,25 +1,29 @@
+<!-- ATTENTION click sur symbole uniquement !! -->
 <div class="full-btn-upvote">
-  <div class="upvote-btn-title">
-    Upvote
-  </div>
-  <div>
-    <% if user_signed_in? %>
-      <% upvote_for_creator = current_user.upvotes.where("creator_id = #{creator.id}").first %>
-      <% if upvote_for_creator.nil? %>
-        <%= link_to creator_upvotes_path(creator), method: :post, remote: true do %>
-           <i class="fas fa-chevron-circle-up"></i>
+  <div class="upvote-btn-title-symbol">
+    <div class="upvote-btn-title">Upvote
+    </div>
+    <div class="upvote-btn-symbol">
+      <% if user_signed_in? %>
+        <% upvote_for_creator = current_user.upvotes.where("creator_id = #{creator.id}").first %>
+        <% if upvote_for_creator.nil? %>
+          <%= link_to creator_upvotes_path(creator), method: :post, remote: true do %>
+             <i class="fas fa-angle-up"></i>
+          <% end %>
+        <% else upvote_for_creator %>
+          <%= link_to creator_upvote_path(creator, upvote_for_creator), method: :delete, remote: true do %>
+             <i class="fas fa-angle-up"></i></i>
+          <% end %>
         <% end %>
-      <% else upvote_for_creator %>
-        <%= link_to creator_upvote_path(creator, upvote_for_creator), method: :delete, remote: true do %>
-           <i class="fas fa-chevron-circle-up"></i>
+      <% else %>
+        <%= link_to new_user_session_path do %>
+           <i class="fas fa-angle-up"></i>
         <% end %>
       <% end %>
-    <% else %>
-      <%= link_to new_user_session_path do %>
-         <i class="fas fa-chevron-circle-up"></i>
-      <% end %>
-    <% end %>
+    </div>
   </div>
-  <div class="full-btn-upvote-nb"><%= creator.upvotes.length %> </div>
+  <div class="full-btn-upvote-nb">
+    <%= creator.upvotes.length %>
+  </div>
 </div>
 

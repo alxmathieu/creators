@@ -1,7 +1,7 @@
 <% content_for :meta_title, "#{@creator.youtube_name} is on #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, @creator.description.first(100) %>
 
-<div class="show-card" >
+<div class="show-card" id="show-creator" >
 
   <!-- <div class="back-btn">
     <%= link_to '', root_path(@creator), class: "fas fa-arrow-left" %>
@@ -11,7 +11,7 @@
      <%= link_to @creator.youtube_name , creator_path(@creator), class: "showcased-name" %>
   </div>
   <div class="upvotes-content">
-    <div class="card-upvote btn btn-primary" id="upvote-btn-creator-<%= @creator.id %>" >
+    <div class="btn btn-primary btn-upvote-no-padding" id="upvote-btn-creator-<%= @creator.id %>" >
       <%= render 'shared/upvote_full_btn', creator: @creator %>
     </div>
   </div>
