@@ -28,3 +28,4 @@ $('.select2batches').select2({
   tags: false,
   allowClear: true
 });
+

@@ -16,7 +16,14 @@ $(document).ready(function(){
 // User edition
 
 import { pickVideo } from '../components/pick_youtube_video';
-pickVideo();
+if (document.getElementById("video-form")) {
+  pickVideo();
+};
 
 import { getSeconds } from '../components/countdown';
-getSeconds();
+if (document.getElementById("days")) {
+  getSeconds();
+};
+
+
+
