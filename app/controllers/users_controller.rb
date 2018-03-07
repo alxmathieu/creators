@@ -3,6 +3,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     authorize @user
     @user.update_level
+    @creator = Creator.new
   end
 
   def update

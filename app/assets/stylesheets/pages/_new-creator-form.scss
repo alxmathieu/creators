@@ -4,7 +4,10 @@
   justify-content: space-around;
 }
 .add-video-btn {
-
+  width: 100%;
+  background-color: white;
+  padding: 10px;
+  box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
   color: black;
   &:hover {
     text-decoration: none;
@@ -31,7 +34,7 @@
   }
   iframe {
     width: 100%;
-    margin-bottom: 25px;
+    margin-bottom: -4px;
   }
 }
 
