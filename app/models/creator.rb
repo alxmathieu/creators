@@ -41,5 +41,9 @@ class Creator < ApplicationRecord
   # acts_as_taggable_on :skills, :interests
   # ONLY FOR RUBY 5.2
   # has_many :tag_taggings, class_name: 'ActsAsTaggableOn::Tagging'
+
+  # Scope
+  scope :ordered_upvotes, -> { joins("LEFT OUTER JOIN upvotes ON creators.id = upvotes.creator_id").group("creators.id").order('count(upvotes.id) DESC')}
+
 end
 
