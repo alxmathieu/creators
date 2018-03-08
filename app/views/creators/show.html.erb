@@ -7,7 +7,7 @@
     <%= link_to '', root_path(@creator), class: "fas fa-arrow-left" %>
   </div> -->
   <div class="creator">
-    <%= cl_image_tag @creator.avatar_photo, class: "avatar-large"%>
+
      <%= link_to @creator.youtube_name , creator_path(@creator), class: "showcased-name" %>
   </div>
   <div class="upvotes-content">
@@ -31,7 +31,10 @@
             <i class="fas fa-quote-left"></i>    <%= @creator.description %>    <i class="fas fa-quote-right"></i>
           </div>
           <div class="discovered-by">
-            <p> discovered by <%= @creator.user.username %> <%= cl_image_tag @creator.user.avatar, class: "avatar" %></p>
+            discovered by <%= @creator.user.username %>
+            <%= link_to(user_path(@creator.user)) do %>
+              <%= image_tag @creator.user.avatar, class: "avatar-showcased-digger"%>
+            <% end %>
           </div>
         </div>
         <div class="videoWrapper">
@@ -59,12 +62,12 @@
         <div class="followers info">
           <p class="subtitle-info"><strong>Followers on Youtube</strong></p>
           <ul><%= "#{@creator.nb_followers/1000}" %> K</ul>
-          <ul><%#= @creator.nb_video %> Vidéos</ul>
+          <ul><%= @creator.nb_video %> Vidéos</ul>
         </div>
         <div class="social info">
           <p class="subtitle-info"><strong>Social</strong></p>
           <ul><i class="fab fa-instagram"></i> Instagram</ul>
-          <ul><i class="fab fa-facebook-square"></i> Faceboof</ul>
+          <ul><i class="fab fa-facebook-square"></i> Facebook</ul>
           <ul><i class="fab fa-twitter-square"></i> Twitter</ul>
           <div class="btn-subscribe ">
             <!-- <ul class="g-ytsubscribe" data-channelid="UChH5L8Od81YohhlVWGdDyQg" data-count="hidden" target="_blank"></ul> -->
