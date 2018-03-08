@@ -7,8 +7,10 @@
     <%= link_to '', root_path(@creator), class: "fas fa-arrow-left" %>
   </div> -->
   <div class="creator">
-
-     <%= link_to @creator.youtube_name , creator_path(@creator), class: "showcased-name" %>
+    <%= cl_image_tag @creator.avatar_photo, class: "avatar-large"%>
+     <div class="showcased-name">
+      <%= @creator.youtube_name %>
+     </div>
   </div>
   <div class="upvotes-content">
     <div class="btn btn-primary btn-upvote-no-padding" id="upvote-btn-creator-<%= @creator.id %>" >
@@ -55,14 +57,14 @@
           <p class="subtitle-info"><strong>Tags</strong></p>
           <% @creator.tag_list.each do |tag| %>
             <ul>
-              <%= tag %>
+              #<%= tag %>
             </ul>
           <% end %>
         </div>
         <div class="followers info">
           <p class="subtitle-info"><strong>Followers on Youtube</strong></p>
           <ul><%= "#{@creator.nb_followers/1000}" %> K</ul>
-          <ul><%= @creator.nb_video %> Vidéos</ul>
+          <ul><%#= @creator.nb_videos %> Vidéos</ul>
         </div>
         <div class="social info">
           <p class="subtitle-info"><strong>Social</strong></p>
