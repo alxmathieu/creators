@@ -3,7 +3,7 @@ users:
     email: "alexis@lewagon.com"
     password: "123456"
     remote_avatar_url: "https://kitt.lewagon.com/placeholder/users/AlexisPipieri"
-    level: 0
+    level: 2
   - username: Hugo
     email: "hugo@lewagon.com"
     password: "123456"
@@ -18,12 +18,17 @@ users:
     email: "benoit@lewagon.com"
     password: "123456"
     remote_avatar_url: "https://kitt.lewagon.com/placeholder/users/benoitprigent"
-    level: 2
+    level: 0
   - username: Anne-Cécile
     email: "anne-cecile@gmail.com"
     password: "123456"
     remote_avatar_url: "https://kitt.lewagon.com/placeholder/users/alxmathieu"
     level: 3
+  - username: Sophie
+    email: "sophie.ianiro@email.com"
+    password: "123456"
+    remote_avatar_url: "https://cloudinary-a.akamaihd.net/hopwork/image/upload/t_bigprofile/k5z1cjtilprpkxmgoyeg.jpg"
+    level: 2
 tags:
   - name: "Vlog 🤳"
   - name: "Gaming 🎮"
@@ -167,4 +172,77 @@ creators:
       - "Tech"
       - "Reviews"
       - "Vlog"
-
+  - youtube_name: "Bon Appetit Ski"
+    channel_url: "https://www.youtube.com/user/Bonappetitski"
+    video_url: "https://www.youtube.com/watch?v=EtkfqKod87c"
+    channel_id: "UCjHh3N6jUJKdrtTqNorpRhg"
+    nb_followers: 39080
+    nb_videos: 64
+    description: |
+      Each winter, Bon Appetit Ski is THE rendez-vous of ski fans. Every week
+      they invite some friends and go on a crazy skiing trip in France or mostly
+      everywhere they can find some good snow! I highly recommend this to you guys
+      if you want to get ready for the next season!
+    user: Alexis
+    batch: 201810
+    is_showcased: false
+    country: France
+    language: French
+    remote_avatar_photo_url: "https://yt3.ggpht.com/-ebdBJcxbDYY/AAAAAAAAAAI/AAAAAAAAAAA/SrQSDV8NpiI/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+    tag_list:
+      - "Sport"
+      - "Travel"
+  - youtube_name: "La Blogothèque"
+    channel_url: "https://www.youtube.com/user/LaBlogotheque/"
+    video_url: "https://www.youtube.com/watch?v=kwa_f0c3Xqs"
+    channel_id: "UCFAKGci5lneha2x4XMbzYrQ"
+    nb_followers: 393781
+    nb_videos: 853
+    description: |
+      La Blogotheque change the way we experience music. It's a collection of rare
+      and intimate sessions with bands. If you think of an artist you like,
+      you should definitely check if La Blogotheque have already filmed them !
+    user: Alexis
+    batch: 201809
+    is_showcased: false
+    country: France
+    language: French
+    remote_avatar_photo_url: "https://yt3.ggpht.com/-mv2ETrr4js4/AAAAAAAAAAI/AAAAAAAAAAA/dzv3TZnFUxY/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+    tag_list:
+      - "Music 🎧"
+  - youtube_name: "Le Règlement"
+    channel_url: "https://www.youtube.com/channel/UCcqe1EHmdaLVBwfqk5OtmXw"
+    video_url: "https://www.youtube.com/watch?v=BYQXa0k9z44"
+    channel_id: "UCcqe1EHmdaLVBwfqk5OtmXw"
+    nb_followers: 304414
+    nb_videos: 34
+    description: |
+      Le Règlement was founded by a french rap fan. He deeply analyzes the lyrics and
+      the visuals of rap songs.
+    user: Alexis
+    batch: 201809
+    is_showcased: false
+    country: France
+    language: French
+    remote_avatar_photo_url: "https://yt3.ggpht.com/-D8sKShqIeBw/AAAAAAAAAAI/AAAAAAAAAAA/mMYYfQoWbjU/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+    tag_list:
+      - "Music 🎧"
+  - youtube_name: "Stupid Economics"
+    channel_url: "https://www.youtube.com/channel/UCyJDHgrsUKuWLe05GvC2lng"
+    video_url: "https://www.youtube.com/watch?v=Zj6zPtAElgM"
+    channel_id: "UCyJDHgrsUKuWLe05GvC2lng"
+    nb_followers: 82213
+    nb_videos: 48
+    description: |
+      Stupid Economics talks about economics with motion design, Monopoly money
+      or even Lego bricks. The aim is to help you to discover economics, and learn
+      about the world that surrounds you.
+    user: Sophie
+    batch: 201810
+    is_showcased: false
+    country: France
+    language: French
+    remote_avatar_photo_url: "https://yt3.ggpht.com/-0o2ChA6SZvM/AAAAAAAAAAI/AAAAAAAAAAA/n066fV9isxQ/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+    tag_list:
+      - "Economics"
+      - "Vulgarization"
