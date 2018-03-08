@@ -44,7 +44,7 @@ class CreatorsController < ApplicationController
       @creator = Creator.new
     else
       @creator = Creator.new(@youtube_data.slice(:channel_url, :youtube_name,
-        :remote_avatar_photo_url, :nb_followers, :channel_id))
+        :remote_avatar_photo_url, :nb_followers, :channel_id, :nb_videos))
     end
   end
 
@@ -91,7 +91,7 @@ class CreatorsController < ApplicationController
   def creator_params
     params.require(:creator).permit(:user_id, :batch_id, :youtube_name,
       :description, :channel_url, :channel_id, :video_url, :nb_followers,
-      :is_showcased, :country, :language, :remote_avatar_photo_url)
+      :is_showcased, :country, :language, :remote_avatar_photo_url, :nb_videos)
   end
 end
 
