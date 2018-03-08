@@ -41,8 +41,9 @@
 .position-last-week{
   //font-family: $creators-font;
   .avatar-creator{
+    margin-top: 5px;
     height: 30px;
-    text-align: right;
+    // text-align: right;
   }
 }
 
@@ -54,6 +55,7 @@
   text-align: left;
   padding: 10px;
   margin-bottom: 0px;
+  max-width: 200px;
   li {
     margin-bottom: 10px;
   }

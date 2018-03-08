@@ -50,10 +50,12 @@ class CreatorsController < ApplicationController
 
   def create
     @creator = Creator.new(creator_params)
+    @categories = ActsAsTaggableOn::Tag.order(:name)
     @creator.user = current_user
     @creator.batch = Batch.next_batch
-    @creator.language = params[:language][0]
-    @categories = ActsAsTaggableOn::Tag.order(:name)
+    unless params[:language].nil?
+      @creator.language = params[:language][0]
+    end
     unless params[:tags].nil?
       params[:tags].each do |tag_id|
         @creator.tag_list.add(ActsAsTaggableOn::Tag.find(tag_id))

@@ -56,7 +56,7 @@
                     @categories, 'id', 'name'), class: 'select2-tags', id: "input-tags-multiple", multiple: true, style:"width: 100%; font-size: 16px" %>
 
 
-                <%= label_tag :tags, "Main Language of #{@creator.youtube_name}" %>
+                <%= label_tag :language, "Main Language of #{@creator.youtube_name}" %>
                 <%= select_tag :language, options_for_select(["French", "Espagnol", "English", "German", "None"]), class: "select2lang", multiple: true, style:"width: 100%; font-size: 16px" %>
 
 
