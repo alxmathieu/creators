@@ -41,7 +41,7 @@ tags:
   - name: "Cinema 🎬"
   - name: "Music 🎧"
   - name: "Popularization 🔍"
-  - name: "History 📚"
+  - name: "History 🏛"
   - name: "Travel 🗺"
   - name: "Comedy 😂"
   - name: "Beauty & LifeStyle 💅"
@@ -134,7 +134,7 @@ creators:
       and will talk about diverse subjects.
     user: Anne-Cécile
     batch: 201810
-    is_showcased: true
+    is_showcased: false
     country: France
     language: French
     remote_avatar_photo_url: "https://yt3.ggpht.com/-obIAdU3EgJw/AAAAAAAAAAI/AAAAAAAAAAA/PEDN82ZKsbA/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
@@ -228,7 +228,7 @@ creators:
       the visuals of rap songs.
     user: Alexis
     batch: 201809
-    is_showcased: false
+    is_showcased: true
     country: France
     language: French
     remote_avatar_photo_url: "https://yt3.ggpht.com/-D8sKShqIeBw/AAAAAAAAAAI/AAAAAAAAAAA/mMYYfQoWbjU/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
