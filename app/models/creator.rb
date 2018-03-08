@@ -34,6 +34,7 @@ class Creator < ApplicationRecord
     format: {with: PATTERN_VIDEO }
   validates :nb_followers, presence: true
   validates :batch, presence: true
+  validates :language, presence: true
 
 
   # Act as Taggable
