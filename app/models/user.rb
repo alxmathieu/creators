@@ -94,6 +94,8 @@ class User < ApplicationRecord
     end
     return true
   end
+
+  acts_as_taggable
 end
 
 

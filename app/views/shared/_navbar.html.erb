@@ -13,7 +13,7 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%#= link_to "Add a new creator", "#creator-modal", "data-toggle" => "modal", class: "navbar-creators-item navbar-creators-link" %>
+      <%= link_to "Add a new creator", "#creator-modal", "data-toggle" => "modal", class: "navbar-creators-item navbar-creators-link" %>
       <%= link_to "See all Creators", search_path, class: "navbar-creators-item navbar-creators-link" %>
       <%#= link_to "My page", user_path(current_user), class: "navbar-creators-item navbar-creators-link" %>
 

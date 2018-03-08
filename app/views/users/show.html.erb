@@ -1,7 +1,7 @@
 <div class="container">
   <div class="col">
     <div class="col-md-3">
-      <div class="card user-infos text-center">
+      <div class="card user-infos text-center card-charcoal">
         <div class="user-infos-container">
           <% if @user.avatar.nil? %>
             <%= image_tag 'default-avatar', alt: @user.username, class: "avatar-large" %>
@@ -12,12 +12,12 @@
             <h3><%= @user.username %></h3>
             <div class="bio-section text-left">
               <h4>About</h4>
-              <% if @user.bio.nil? && current_user == @user %>
+              <% if (@user.bio.nil? || @user.bio.empty?) && current_user == @user %>
                 <p><strong>Edit your profile to describe yourself!</strong></p>
               <% else %>
                 <p><%= @user.bio %></p>
               <% end %>
-              <i class="fas fa-map-marker-alt"></i><span> Paris</span>
+              <i class="fas fa-map-marker-alt"></i><span> <%= @user.location %></span>
             </div>
             <div class="bio-section text-left">
               <h4>Status</h4>
@@ -25,11 +25,11 @@
             </div>
             <div class="bio-section text-left">
               <h4>What I like</h4>
-              <ul class="list-unstyled">
-                <li>Fun</li>
-                <li>Lover</li>
-                <li>Cat</li>
-              </ul>
+              <% @user.tag_list.each do |tag| %>
+                <ul class="list-unstyled">
+                  # <%= tag %>
+                </ul>
+              <% end %>
             </div>
           </div>
         </div>
@@ -41,7 +41,7 @@
     </div>
     <div class="col-md-9">
       <% if current_user == @user %>
-        <div class="card">
+        <div class="card card-gold">
           <h2 class="achievements-title">My profile on Creators</h2>
           <div class="achievements">
             <div class="progress-bar-container">
@@ -63,8 +63,8 @@
                   <li style="<%= 'text-decoration: line-through;' if @user.dig_needed - @user.creators.length <= 0 %>">Dig at least <%= pluralize @user.dig_needed, "creator" %> <span class="light-color">
                     (<%= @user.creators.length < @user.dig_needed ? (@user.dig_needed - @user.creators.length) : "0" %> left!)</span>
                   </li>
-                  <li style="<%= 'text-decoration: line-through;' if @user.upvotes_needed - @user.upvotes.length <= 0 %>">Receive at least <%= pluralize @user.upvotes_needed, "upvote" %> on the creators you dug <span class="light-color">
-                    (<%= @user.upvotes.length < @user.upvotes_needed ? (@user.upvotes_needed - @user.upvotes.length) : "0" %> left!)</span>
+                  <li style="<%= 'text-decoration: line-through;' if @user.upvotes_needed - @user.upvotes_received <= 0 %>">Receive at least <%= pluralize @user.upvotes_needed, "upvote" %> on the creators you dug <span class="light-color">
+                    (<%= @user.upvotes_received < @user.upvotes_needed ? (@user.upvotes_needed - @user.upvotes_received) : "0" %> left!)</span>
                   </li>
                 </ul>
               <% end %>
@@ -73,7 +73,7 @@
         </div>
       <% end %>
 
-      <div class="card">
+      <div class="card card-charcoal">
         <!-- Nav tabs -->
         <ul class="nav nav-tabs custom-tabs" role="tablist">
           <li role="presentation" class="active"><a href="#digs" aria-controls="digs" role="tab" data-toggle="tab">

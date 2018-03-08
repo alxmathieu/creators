@@ -52,16 +52,25 @@
                       @categories, 'id', 'name'), class: 'select2-tags', id: "input-tags-multiple", multiple: true, style:"width: 100%; font-size: 16px" %>
                 </div>
 
-                <%= f.input :language, label: "Language of the channel", class: "select2lang", multiple: true %>
+                <%#= select_tag :language, options_from_collection_for_select(
+                    @categories, 'id', 'name'), class: 'select2-tags', id: "input-tags-multiple", multiple: true, style:"width: 100%; font-size: 16px" %>
+
+
+                <%= label_tag :language, "Main Language of #{@creator.youtube_name}" %>
+                <%= select_tag :language, options_for_select(["French", "Espagnol", "English", "German", "None"]), class: "select2lang", multiple: true, style:"width: 100%; font-size: 16px" %>
+
+
+                <%#= f.input :language, collections: ["French", "Espagnol", "English", "Deutsh"], label: "Language of the channel", class: "select2-tags", multiple: true %>
 
                 <!-- [Hidden-Fields] -->
                 <%= f.hidden_field :channel_url %>
                 <%= f.hidden_field :channel_id %>
+                <%= f.hidden_field :nb_videos %>
                 <%= f.hidden_field :youtube_name %>
                 <%= f.hidden_field :remote_avatar_photo_url %>
                 <%= f.hidden_field :nb_followers %>
                 <%= f.hidden_field :country %>
-                <%= f.hidden_field :language, class: " bfh-languages"%>
+                <%#= f.hidden_field :language, class: " bfh-languages"%>
              </div>
           </div>
         </div>

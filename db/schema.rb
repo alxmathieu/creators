@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180305211319) do
+ActiveRecord::Schema.define(version: 20180308082417) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20180305211319) do
     t.integer "batch_score"
     t.string "avatar_photo", default: "http://res.cloudinary.com/benoitprigent/image/upload/v1519828592/default-avatar.png"
     t.string "channel_id"
+    t.integer "nb_videos"
     t.index ["batch_id"], name: "index_creators_on_batch_id"
     t.index ["user_id"], name: "index_creators_on_user_id"
   end
@@ -101,6 +102,7 @@ ActiveRecord::Schema.define(version: 20180305211319) do
     t.integer "level", default: 0
     t.text "bio"
     t.boolean "admin", default: false
+    t.string "location"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
