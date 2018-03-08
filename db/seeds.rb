@@ -15,6 +15,11 @@ Batch.destroy_all
 file = Rails.root.join('db', 'seeds', 'seed.yml')
 sample = YAML.load(open(file).read)
 
+puts 'Creating Tags'
+sample["tags"].each do |tag|
+  ActsAsTaggableOn::Tag.create! tag
+end
+
 puts 'Creating users...'
 users = {}
 sample["users"].each do |user|
@@ -36,11 +41,6 @@ sample["creators"].each do |creator|
     "channel_url", "video_url", "nb_followers", "description",
     "is_showcased", "remote_avatar_photo_url",
     "language", "tag_list").merge(user: user).merge(batch: batch)
-end
-
-puts 'Creating Tags'
-sample["tags"].each do |tag|
-  ActsAsTaggableOn::Tag.create! tag
 end
 
 puts 'Finished!'
