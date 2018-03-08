@@ -5,7 +5,7 @@ users:
     remote_avatar_url: "https://kitt.lewagon.com/placeholder/users/AlexisPipieri"
     level: 0
   - username: Hugo
-    email: "hugo@lawagon.com"
+    email: "hugo@lewagon.com"
     password: "123456"
     remote_avatar_url: "https://kitt.lewagon.com/placeholder/users/hugolbhn"
     level: 1
