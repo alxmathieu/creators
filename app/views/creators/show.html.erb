@@ -20,7 +20,9 @@
   </div> -->
   <div class="creator">
     <%= cl_image_tag @creator.avatar_photo, class: "avatar-large"%>
-     <%= link_to @creator.youtube_name , creator_path(@creator), class: "showcased-name" %>
+     <div class="showcased-name">
+      <%= @creator.youtube_name %>
+     </div>
   </div>
   <div class="upvotes-content">
     <% if @creator.batch == Batch.current_batch  %>
@@ -50,12 +52,10 @@
             <i class="fas fa-quote-left"></i> <%= @creator.description %> <i class="fas fa-quote-right"></i>
           </div>
           <div class="discovered-by">
-            <p>
-              discovered by <%= @creator.user.username %>
-              <%= link_to(user_path(@creator.user)) do %>
-              <%= image_tag @creator.user.avatar, class: "avatar"%>
-              <% end %>
-            </p>
+            discovered by <%= @creator.user.username %>
+            <%= link_to(user_path(@creator.user)) do %>
+              <%= image_tag @creator.user.avatar, class: "avatar-showcased-digger"%>
+            <% end %>
           </div>
         </div>
         <div class="videoWrapper">
