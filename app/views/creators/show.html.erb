@@ -44,7 +44,12 @@
             <i class="fas fa-quote-left"></i>    <%= @creator.description %>    <i class="fas fa-quote-right"></i>
           </div>
           <div class="discovered-by">
-            <p> discovered by <%= @creator.user.username %> <%= cl_image_tag @creator.user.avatar, class: "avatar" %></p>
+            <p>
+              discovered by <%= @creator.user.username %>
+              <%= link_to(user_path(@creator.user)) do %>
+              <%= image_tag @creator.user.avatar, class: "avatar"%>
+              <% end %>
+            </p>
           </div>
         </div>
         <div class="videoWrapper">
