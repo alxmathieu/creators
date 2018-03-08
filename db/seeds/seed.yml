@@ -95,97 +95,97 @@ creators:
     tag_list:
       - "Economics"
       - "Reviews"
-    - youtube_name: "Ivan Bede"
-      channel_url: "https://www.youtube.com/channel/UCAurJS6W9SOtGFgNF3909UA"
-      video_url: "https://www.youtube.com/watch?v=Sf_K1Q7eKKk"
-      channel_id: "UCAurJS6W9SOtGFgNF3909UA"
-      nb_followers: 479305
-      nb_videos: 70
-      description: |
-          Ivan is a young and talented French youtuber. His style is very close to
-          "The Palmashow", and everyone who love's absurd comedy should check him out!
-      user: Anne-Cécile
-      batch: 201809
-      is_showcased: false
-      country: France
-      language: French
-      remote_avatar_photo_url: "https://yt3.ggpht.com/-59FVA11PoQQ/AAAAAAAAAAI/AAAAAAAAAAA/nEol0fKRies/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
-      tag_list:
-        - "Comedy"
-    - youtube_name: "Benjamin Verracchia"
-      channel_url: "https://www.youtube.com/channel/UCuKa7_pustUzOj3IBcgYNPg"
-      video_url: "https://www.youtube.com/watch?v=6gOuEl2sDZE"
-      channel_id: "UCuKa7_pustUzOj3IBcgYNPg"
-      nb_followers: 293614
-      nb_videos: 40
-      description: |
-        Benjamin is probably one of my greatest YouTube's discovery of 2017! He's *very* talented at story-telling, as
-        he has a unique way to laugh and speak. I'm always laughing my head off when I listen to his stories!
-        Check him out, you won't be disappointed!
-      user: Alex
-      batch: 201810
-      is_showcased: false
-      country: France
-      language: French
-      remote_avatar_photo_url: "https://yt3.ggpht.com/-iKLVj42_j2Y/AAAAAAAAAAI/AAAAAAAAAAA/TAcJtuq40Wk/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
-      tag_list:
-        - "Comedy"
-        - "Vlog"
-    - youtube_name: "Simon Puech"
-      channel_url: "https://www.youtube.com/channel/UCMQSwUNSnMOP4IRysfeg8EA"
-      video_url: "https://www.youtube.com/watch?v=jUBw8kiAthA"
-      channel_id: "UCMQSwUNSnMOP4IRysfeg8EA"
-      nb_followers: 139755
-      nb_videos: 52
-      description: |
-        Simon Puech is a UFO in the French youtube game. He started as a Video-game reviewer/Youtuber interviewer,
-        but with a very specific angle. Almost philosophical. He's now broaden his audience,
-        and will talk about diverse subjects.
-      user: Anne-Cécile
-      batch: 201810
-      is_showcased: true
-      country: France
-      language: French
-      remote_avatar_photo_url: "https://yt3.ggpht.com/-obIAdU3EgJw/AAAAAAAAAAI/AAAAAAAAAAA/PEDN82ZKsbA/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
-      tag_list:
-        - "Gaming"
-        - "Reviews"
-        - "Interview"
-    - youtube_name: "Le Pérave"
-      channel_url: "https://www.youtube.com/user/MagdaSleeper"
-      video_url: "https://www.youtube.com/watch?v=ZekfwA2NkYY"
-      channel_id: "UCGfys_ojj4e-oN0adNX6siw"
-      nb_followers: 104444
-      nb_videos: 12
-      description: |
-        Le Perave is probably one of the future rock star on Youtube in France.
-        His sense of humor is just 120% absurd, and you should definitely check him out!
-      user: Alex
-      batch: 201810
-      is_showcased: false
-      country: France
-      language: French
-      remote_avatar_photo_url: "https://yt3.ggpht.com/-0TKsR6QAmw0/AAAAAAAAAAI/AAAAAAAAAAA/jedxPHRr6cM/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
-      tag_list:
-        - "Comedy"
-    - youtube_name: "PP World"
-      channel_url: "https://www.youtube.com/channel/UCPQsSFJurluaMOG1qL0Y7sA"
-      video_url: "https://www.youtube.com/watch?v=tBCFt7Vjufs"
-      channel_id: "UCPQsSFJurluaMOG1qL0Y7sA"
-      nb_followers: 89879
-      nb_videos: 195
-      description: |
-        PP World is a French tech journalist, and I'm always checking his reviews before buying any product. He's doing reviews, but also travel vlogs,
-        with a Tech focus (all tech objects in Japan, or Samsung specials in Korea for example). He's
-        not doing any paid videos, and you can definitely trust his expert eye!
-      user: Alex
-      batch: 201809
-      is_showcased: false
-      country: France
-      language: French
-      remote_avatar_photo_url: "https://yt3.ggpht.com/-CAxd8PXsumc/AAAAAAAAAAI/AAAAAAAAAAA/3k2De8o2LJ4/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
-      tag_list:
-        - "Tech"
-        - "Reviews"
-        - "Vlog"
+  - youtube_name: "Ivan Bede"
+    channel_url: "https://www.youtube.com/channel/UCAurJS6W9SOtGFgNF3909UA"
+    video_url: "https://www.youtube.com/watch?v=Sf_K1Q7eKKk"
+    channel_id: "UCAurJS6W9SOtGFgNF3909UA"
+    nb_followers: 479305
+    nb_videos: 70
+    description: |
+        Ivan is a young and talented French youtuber. His style is very close to
+        "The Palmashow", and everyone who love's absurd comedy should check him out!
+    user: Anne-Cécile
+    batch: 201809
+    is_showcased: false
+    country: France
+    language: French
+    remote_avatar_photo_url: "https://yt3.ggpht.com/-59FVA11PoQQ/AAAAAAAAAAI/AAAAAAAAAAA/nEol0fKRies/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+    tag_list:
+      - "Comedy"
+  - youtube_name: "Benjamin Verracchia"
+    channel_url: "https://www.youtube.com/channel/UCuKa7_pustUzOj3IBcgYNPg"
+    video_url: "https://www.youtube.com/watch?v=6gOuEl2sDZE"
+    channel_id: "UCuKa7_pustUzOj3IBcgYNPg"
+    nb_followers: 293614
+    nb_videos: 40
+    description: |
+      Benjamin is probably one of my greatest YouTube's discovery of 2017! He's *very* talented at story-telling, as
+      he has a unique way to laugh and speak. I'm always laughing my head off when I listen to his stories!
+      Check him out, you won't be disappointed!
+    user: Alex
+    batch: 201810
+    is_showcased: false
+    country: France
+    language: French
+    remote_avatar_photo_url: "https://yt3.ggpht.com/-iKLVj42_j2Y/AAAAAAAAAAI/AAAAAAAAAAA/TAcJtuq40Wk/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+    tag_list:
+      - "Comedy"
+      - "Vlog"
+  - youtube_name: "Simon Puech"
+    channel_url: "https://www.youtube.com/channel/UCMQSwUNSnMOP4IRysfeg8EA"
+    video_url: "https://www.youtube.com/watch?v=jUBw8kiAthA"
+    channel_id: "UCMQSwUNSnMOP4IRysfeg8EA"
+    nb_followers: 139755
+    nb_videos: 52
+    description: |
+      Simon Puech is a UFO in the French youtube game. He started as a Video-game reviewer/Youtuber interviewer,
+      but with a very specific angle. Almost philosophical. He's now broaden his audience,
+      and will talk about diverse subjects.
+    user: Anne-Cécile
+    batch: 201810
+    is_showcased: true
+    country: France
+    language: French
+    remote_avatar_photo_url: "https://yt3.ggpht.com/-obIAdU3EgJw/AAAAAAAAAAI/AAAAAAAAAAA/PEDN82ZKsbA/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+    tag_list:
+      - "Gaming"
+      - "Reviews"
+      - "Interview"
+  - youtube_name: "Le Pérave"
+    channel_url: "https://www.youtube.com/user/MagdaSleeper"
+    video_url: "https://www.youtube.com/watch?v=ZekfwA2NkYY"
+    channel_id: "UCGfys_ojj4e-oN0adNX6siw"
+    nb_followers: 104444
+    nb_videos: 12
+    description: |
+      Le Perave is probably one of the future rock star on Youtube in France.
+      His sense of humor is just 120% absurd, and you should definitely check him out!
+    user: Alex
+    batch: 201810
+    is_showcased: false
+    country: France
+    language: French
+    remote_avatar_photo_url: "https://yt3.ggpht.com/-0TKsR6QAmw0/AAAAAAAAAAI/AAAAAAAAAAA/jedxPHRr6cM/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+    tag_list:
+      - "Comedy"
+  - youtube_name: "PP World"
+    channel_url: "https://www.youtube.com/channel/UCPQsSFJurluaMOG1qL0Y7sA"
+    video_url: "https://www.youtube.com/watch?v=tBCFt7Vjufs"
+    channel_id: "UCPQsSFJurluaMOG1qL0Y7sA"
+    nb_followers: 89879
+    nb_videos: 195
+    description: |
+      PP World is a French tech journalist, and I'm always checking his reviews before buying any product. He's doing reviews, but also travel vlogs,
+      with a Tech focus (all tech objects in Japan, or Samsung specials in Korea for example). He's
+      not doing any paid videos, and you can definitely trust his expert eye!
+    user: Alex
+    batch: 201809
+    is_showcased: false
+    country: France
+    language: French
+    remote_avatar_photo_url: "https://yt3.ggpht.com/-CAxd8PXsumc/AAAAAAAAAAI/AAAAAAAAAAA/3k2De8o2LJ4/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+    tag_list:
+      - "Tech"
+      - "Reviews"
+      - "Vlog"
 
