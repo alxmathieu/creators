@@ -29,7 +29,13 @@
           </div>
         </div>
       </div>
-  <div class="card-upvote" id="upvote-btn-creator-<%= creator.id %>" >
-    <%= render 'shared/upvote-button', creator: creator %>
-  </div>
+      <% if creator.batch == Batch.next_batch  %>
+        <div class="upvote-tip">
+          Next Week!
+        </div>
+      <% else %>
+        <div class="card-upvote" id="upvote-btn-creator-<%= creator.id %>" >
+          <%= render 'shared/upvote-button', creator: creator %>
+        </div>
+      <% end %>
 </li>
