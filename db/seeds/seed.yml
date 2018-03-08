@@ -19,6 +19,11 @@ users:
     password: "123456"
     remote_avatar_url: "https://kitt.lewagon.com/placeholder/users/benoitprigent"
     level: 0
+  - username: Maximilien
+    email: "max@lewagon.com"
+    password: "123456"
+    remote_avatar_url: "https://kitt.lewagon.com/placeholder/users/MaxR7589"
+    level: 2
   - username: Anne-Cécile
     email: "anne-cecile@gmail.com"
     password: "123456"
@@ -35,23 +40,25 @@ tags:
   - name: "Science 🔬"
   - name: "Cinema 🎬"
   - name: "Music 🎧"
-  - name: "Vulgarization"
+  - name: "Popularization 🔍"
   - name: "History 📚"
-  - name: "Travel"
-  - name: "Comedy"
-  - name: "Beauty 💅"
-  - name: "LifeStyle "
+  - name: "Travel 🗺"
+  - name: "Comedy 😂"
+  - name: "Beauty & LifeStyle 💅"
   - name: "Productivity 🎯"
   - name: "Animated 🐌"
-  - name: "Tech"
-  - name: "Kids"
-  - name: "Entrepreuneurship"
-  - name: "Food & Cooking"
-  - name: "Sport"
-  - name: "Reviews"
-  - name: "Girl Power"
-  - name: "Economics"
-  - name: "Surf"
+  - name: "Tech 🤖"
+  - name: "Kids 🍭"
+  - name: "Entrepreuneurship 🚀"
+  - name: "Food & Cooking 🍳"
+  - name: "Sport ⚽️"
+  - name: "Reviews 🤓"
+  - name: "Girl Power 🙋"
+  - name: "Economics 📊"
+  - name: "Sea 🌊"
+  - name: "Ancient Times 🗿"
+  - name: "Talks 🎤"
+  - name: "Education 📚"
 batches:
   - status: "closed"
     number: 201809
@@ -77,8 +84,8 @@ creators:
     language: French
     remote_avatar_photo_url: "https://yt3.ggpht.com/-YJe6-Yutyvw/AAAAAAAAAAI/AAAAAAAAAAA/0ECRMzz3iTg/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
     tag_list:
-      - "Economics"
-      - "Reviews"
+      - "Economics 📊"
+      - "Reviews 🤓"
   - youtube_name: "Ivan Bede"
     channel_url: "https://www.youtube.com/channel/UCAurJS6W9SOtGFgNF3909UA"
     video_url: "https://www.youtube.com/watch?v=Sf_K1Q7eKKk"
@@ -95,7 +102,7 @@ creators:
     language: French
     remote_avatar_photo_url: "https://yt3.ggpht.com/-59FVA11PoQQ/AAAAAAAAAAI/AAAAAAAAAAA/nEol0fKRies/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
     tag_list:
-      - "Comedy"
+      - "Comedy 😂"
   - youtube_name: "Benjamin Verracchia"
     channel_url: "https://www.youtube.com/channel/UCuKa7_pustUzOj3IBcgYNPg"
     video_url: "https://www.youtube.com/watch?v=6gOuEl2sDZE"
@@ -113,8 +120,8 @@ creators:
     language: French
     remote_avatar_photo_url: "https://yt3.ggpht.com/-iKLVj42_j2Y/AAAAAAAAAAI/AAAAAAAAAAA/TAcJtuq40Wk/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
     tag_list:
-      - "Comedy"
-      - "Vlog"
+      - "Comedy 😂"
+      - "Vlog 🤳"
   - youtube_name: "Simon Puech"
     channel_url: "https://www.youtube.com/channel/UCMQSwUNSnMOP4IRysfeg8EA"
     video_url: "https://www.youtube.com/watch?v=jUBw8kiAthA"
@@ -132,9 +139,9 @@ creators:
     language: French
     remote_avatar_photo_url: "https://yt3.ggpht.com/-obIAdU3EgJw/AAAAAAAAAAI/AAAAAAAAAAA/PEDN82ZKsbA/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
     tag_list:
-      - "Gaming"
-      - "Reviews"
-      - "Interview"
+      - "Gaming 🎮"
+      - "Reviews 🤓"
+      - "Talks 🎤"
   - youtube_name: "Le Pérave"
     channel_url: "https://www.youtube.com/user/MagdaSleeper"
     video_url: "https://www.youtube.com/watch?v=ZekfwA2NkYY"
@@ -151,7 +158,7 @@ creators:
     language: French
     remote_avatar_photo_url: "https://yt3.ggpht.com/-0TKsR6QAmw0/AAAAAAAAAAI/AAAAAAAAAAA/jedxPHRr6cM/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
     tag_list:
-      - "Comedy"
+      - "Comedy 😂"
   - youtube_name: "PP World"
     channel_url: "https://www.youtube.com/channel/UCPQsSFJurluaMOG1qL0Y7sA"
     video_url: "https://www.youtube.com/watch?v=tBCFt7Vjufs"
@@ -169,9 +176,9 @@ creators:
     language: French
     remote_avatar_photo_url: "https://yt3.ggpht.com/-CAxd8PXsumc/AAAAAAAAAAI/AAAAAAAAAAA/3k2De8o2LJ4/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
     tag_list:
-      - "Tech"
-      - "Reviews"
-      - "Vlog"
+      - "Tech 🤖"
+      - "Reviews 🤓"
+      - "Vlog 🤳"
   - youtube_name: "Bon Appetit Ski"
     channel_url: "https://www.youtube.com/user/Bonappetitski"
     video_url: "https://www.youtube.com/watch?v=EtkfqKod87c"
@@ -190,8 +197,8 @@ creators:
     language: French
     remote_avatar_photo_url: "https://yt3.ggpht.com/-ebdBJcxbDYY/AAAAAAAAAAI/AAAAAAAAAAA/SrQSDV8NpiI/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
     tag_list:
-      - "Sport"
-      - "Travel"
+      - "Sport ⚽️"
+      - "Travel 🗺"
   - youtube_name: "La Blogothèque"
     channel_url: "https://www.youtube.com/user/LaBlogotheque/"
     video_url: "https://www.youtube.com/watch?v=kwa_f0c3Xqs"
@@ -244,5 +251,152 @@ creators:
     language: French
     remote_avatar_photo_url: "https://yt3.ggpht.com/-0o2ChA6SZvM/AAAAAAAAAAI/AAAAAAAAAAA/n066fV9isxQ/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
     tag_list:
-      - "Economics"
-      - "Vulgarization"
+      - "Economics 📊"
+      - "Popularization 🔍"
+  - youtube_name: "Lost in the swell"
+    channel_url: "https://www.youtube.com/user/lostintheswell"
+    video_url: "https://youtu.be/fUpxoItNkZE"
+    channel_id: "UC65kvy0ROxxm-ah97Fm_NXw"
+    nb_followers: 14621
+    nb_videos: 60
+    description: |
+      Lost in the swell is the surf adventures for Ewen, Aurel & Ronan around the world!
+    user: Hugo
+    batch: 201810
+    is_showcased: false
+    country: France
+    language: French
+    remote_avatar_photo_url: "https://yt3.ggpht.com/-l9J64Y_5JO0/AAAAAAAAAAI/AAAAAAAAAAA/N3rUwc1zHiM/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+    tag_list:
+      - "Vlog 🤳"
+      - "Sea 🌊"
+      - "Travel 🗺"
+  - youtube_name: "French Fuse"
+    channel_url: "https://www.youtube.com/channel/UCzLFySnc_T_qFHAJ2HTWUTw"
+    video_url: "https://youtu.be/N9BCCcaePGg"
+    channel_id: "UCzLFySnc_T_qFHAJ2HTWUTw"
+    nb_followers: 124517
+    nb_videos: 28
+    description: |
+      Jerry and Benjamin form a composer-producer-arranger duet. They met at the jazz school and then joined together the conservatory of Aix-en-Provence. Armed with their hats and their sunglasses, they have been having fun since September 2015 revisiting with a launch pad and an UltraNova synth the sounds of everyday life.
+    user: Maximilien
+    batch: 201809
+    is_showcased: false
+    country: France
+    language: French
+    remote_avatar_photo_url: "https://yt3.ggpht.com/-VbEt4rfw60g/AAAAAAAAAAI/AAAAAAAAAAA/6PyIUzC0Vjo/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+    tag_list:
+      - "Music 🎧"
+  - youtube_name: "Le Wagon"
+    channel_url: "https://www.youtube.com/channel/UChCDYcBCrb8tuPAO6e0P-Hw"
+    video_url: "https://youtu.be/-9ZheXYOMeM"
+    channel_id: "UChCDYcBCrb8tuPAO6e0P-Hw"
+    nb_followers: 18434
+    nb_videos: 303
+    description: |
+      Le Wagon is the best coding bootcamp for entrepreneurs and creatives. Checkout for yourself the projects developed by our students after the 9-week fullstack coding bootcamp and enjoy our free workshops!
+    user: Hugo
+    batch: 201810
+    is_showcased: false
+    country: France
+    language: French
+    remote_avatar_photo_url: "https://yt3.ggpht.com/--nwjadjjE4o/AAAAAAAAAAI/AAAAAAAAAAA/o7nNR65usBo/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+    tag_list:
+      - "Tech 🤖"
+      - "Talks 🎤"
+      - "Education 📚"
+  - youtube_name: "Port d'Attache"
+    channel_url: "https://www.youtube.com/channel/UChH5L8Od81YohhlVWGdDyQg"
+    video_url: "https://youtu.be/S_7_LSsByiA"
+    channel_id: "UChH5L8Od81YohhlVWGdDyQg"
+    nb_followers: 1000
+    nb_videos: 12
+    description: |
+      The crew that presents Brittany in its most unusual aspects! Its culture, gastronomy, initiatives and unusual places will inspire you.
+    user: Hugo
+    batch: 201809
+    is_showcased: false
+    country: France
+    language: French
+    remote_avatar_photo_url: "https://yt3.ggpht.com/-EkyWTX2QOTo/AAAAAAAAAAI/AAAAAAAAAAA/OokjLziFOm8/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+    tag_list:
+      - "Vlog 🤳"
+      - "Comedy 😂"
+      - "Sea 🌊"
+
+
+  - youtube_name: "DirtyBiology"
+    channel_url: "https://www.youtube.com/channel/UCtqICqGbPSbTN09K1_7VZ3Q"
+    video_url: "https://www.youtube.com/watch?v=3MGzSlcLmoc"
+    channel_id: "UCtqICqGbPSbTN09K1_7VZ3Q"
+    nb_followers: 559335
+    nb_videos: 59
+    description: |
+      Biology seems boring, right ? Leo will change your mind!
+    user: Benoit
+    batch: 201809
+    is_showcased: false
+    country: France
+    language: French
+    remote_avatar_photo_url: "https://yt3.ggpht.com/-Cq0yHLyhyUg/AAAAAAAAAAI/AAAAAAAAAAA/0z2g4n9bPmU/s800-c-k-no-mo-rj-c0xffffff/photo.jpg"
+    tag_list:
+      - "Science 🔬"
+      - "Popularization 🔍"
+  - youtube_name: "Axolot"
+    channel_url: "https://www.youtube.com/channel/UC2_OG1L8DLTzQ7UrZVOk7OA"
+    video_url: "https://www.youtube.com/watch?v=XhoZzh-Fkss"
+    channel_id: "UC2_OG1L8DLTzQ7UrZVOk7OA"
+    nb_followers: 465890
+    nb_videos: 23
+    description: |
+      An Axoltl is a tiny cute animal living in the water! This channel is absolutely
+      not about animals but curiosities. He's an absolute fan of strange things
+      and love telling stories about it! 📚Wanna discover all secrets of London,
+      New York or Paris ? Patrick Baud will show you with his tender voice!
+    user: Benoit
+    batch: 201810
+    is_showcased: false
+    country: France
+    language: French
+    remote_avatar_photo_url: "https://yt3.ggpht.com/-KXvIZQ87JQU/AAAAAAAAAAI/AAAAAAAAAAA/xcm0OKXcok4/s800-c-k-no-mo-rj-c0xffffff/photo.jpg"
+    tag_list:
+      - "Ancient Times 🗿"
+      - "Popularization 🔍"
+  - youtube_name: "Horror Humanum Est"
+    channel_url: "https://www.youtube.com/channel/UCLbgxBMMEo6mAYe87esxGmg"
+    video_url: "https://www.youtube.com/watch?v=4mK73sjxB7I"
+    channel_id: "UCLbgxBMMEo6mAYe87esxGmg"
+    nb_followers: 219490
+    nb_videos: 32
+    description: |
+      Do you really know about history horror events ? Horror Humanum Est
+      delivers short animated videos about horrific events led by humans.
+      His sense of design is just 100% clean, and you should definitely check him out!
+    user: Benoit
+    batch: 201809
+    is_showcased: false
+    country: France
+    language: French
+    remote_avatar_photo_url: "https://yt3.ggpht.com/-JzTHebMH_xc/AAAAAAAAAAI/AAAAAAAAAAA/bKuIjC6Zo4I/s800-c-k-no-mo-rj-c0xffffff/photo.jpg"
+    tag_list:
+      - "Animated 🐻"
+      - "History 🏛"
+      - "Popularization 🔍"
+  - youtube_name: "Le Club Officiel"
+    channel_url: "https://www.youtube.com/channel/UCCUNwuq5Ay4MpuirGSfsDaw"
+    video_url: "https://www.youtube.com/watch?v=4MbLZBO2euQ"
+    channel_id: "UCCUNwuq5Ay4MpuirGSfsDaw"
+    nb_followers: 35426
+    nb_videos: 224
+    description: |
+      Le Club team is the biggest team of haters in the french youtube game!
+      Each week they review web news and don't chew their words 😍
+    user: Benoit
+    batch: 201810
+    is_showcased: false
+    country: France
+    language: French
+    remote_avatar_photo_url: "https://yt3.ggpht.com/-zgfLurPbfAw/AAAAAAAAAAI/AAAAAAAAAAA/K39nW-AR0r8/s800-c-k-no-mo-rj-c0xffffff/photo.jpg"
+    tag_list:
+      - "Reviews 🤓"
+      - "Web Culture 🌐"
