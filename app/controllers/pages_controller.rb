@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home]
+  skip_before_action :authenticate_user!, only: [:home, :landing]
 
 
   def home
@@ -42,6 +42,10 @@ class PagesController < ApplicationController
     else
       @next_creators = Batch.next_batch.creators.length
     end
+
+  end
+
+  def landing
 
   end
 

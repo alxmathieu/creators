@@ -1,4 +1,4 @@
-<div class="navbar-creators">
+<div class="navbar-creators <%= yield(:navbar_class) %>">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-creators-brand" do %>
     <%= cl_image_tag asset_url("logo-inline-yellow.svg"), class: "hidden-xs"  %>

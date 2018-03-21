@@ -4,7 +4,8 @@ Rails.application.routes.draw do
     mount Sidekiq::Web => '/sidekiq'
   end
   devise_for :users
-  root to: 'pages#home'
+  root to: 'pages#landing'
+  # root to: 'pages#home'
   get :creators, to: "creators#index", as: :search
   resources :users, only: [:show, :edit, :update]
   resources :creators, only: [:show, :edit, :update ] do
