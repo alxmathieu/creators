@@ -1,0 +1,20 @@
+.content-landing{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fa-caret-right{
+  font-size: 50px;
+  color: $charcoal;
+}
+
+.landing-title{
+  text-align: center;
+}
+
+.landing-content{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
