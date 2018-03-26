@@ -5,6 +5,11 @@ ruby '2.4.3'
 gem 'sidekiq'
 gem 'sidekiq-failures', '~> 1.0'
 
+# Admin interface
+gem 'activeadmin', github: 'activeadmin/activeadmin'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+
+# LeWagon template
 gem 'devise'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'

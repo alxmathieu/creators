@@ -96,6 +96,11 @@ class User < ApplicationRecord
   end
 
   acts_as_taggable
+
+  # For active admin
+  def name
+    "#{id} - #{username}"
+  end
 end
 
 
