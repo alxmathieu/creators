@@ -24,6 +24,15 @@
     <meta name="twitter:image:src" content="<%= meta_image %>">
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116384489-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-116384489-1');
+    </script>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= stylesheet_pack_tag 'application', media: 'all' %> <!--  Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
