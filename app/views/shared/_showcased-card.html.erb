@@ -1,0 +1,51 @@
+<% unless @showcased_creator.nil? %>
+    <!-- <div class="showcased"> -->
+      <div class="card card-showcased">
+        <div class="editors-choice">
+          Team's choice
+        </div>
+        <div class="showcased-avatar-tags">
+          <%= link_to(creator_path(@showcased_creator)) do %>
+            <%= cl_image_tag @showcased_creator.avatar_photo, class: "avatar-showcased-creator"%>
+          <% end %>
+          <div class="showcased-tags">
+            <ul class="list-unstyled list-tags" style="text-align: center">
+              <% @showcased_creator.tag_list.first(5).each do |tag| %>
+                <li>
+                  <% if tag.length < 14 %>
+                    <%= "##{tag.capitalize}" %>
+                  <% else %>
+                    <%= "##{tag.capitalize.first(14)}" %>
+                  <% end %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+        <div class="showcased-infos">
+          <%= link_to @showcased_creator.youtube_name , creator_path(@showcased_creator), class: "showcased-name" %>
+          <div class="showcased-description">
+            <i class="fas fa-quote-left"></i>
+            <%= @showcased_creator.description.first(350) %>...
+            <i class="fas fa-quote-right"></i>
+          </div>
+          <div class="showcased-digger">
+            discovered by <%= @showcased_creator.user.username %>
+            <%= link_to(user_path(@showcased_creator.user)) do %>
+              <%= image_tag @showcased_creator.user.avatar, class: "avatar-showcased-digger"%>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="showcased-video">
+          <div class="player">
+            <iframe class="ytplayer-showcased"
+            src="https://www.youtube.com/embed/<%= @showcased_creator.video_youtube_id %>?rel=0"
+            allowfullscreen width="100%" height="100%" frameborder="0">
+            </iframe>
+          </div>
+        </div>
+
+      </div>
+   <!--  </div> -->
+  <% end %>

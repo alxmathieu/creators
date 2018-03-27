@@ -27,6 +27,15 @@
   }
 }
 
+@media(max-width: 1000px) {
+  .card-showcased{
+    flex-direction: column;
+  }
+  .player{}
+
+}
+
+
 .avatar-showcased-creator{
   height: 120px;
   border-radius: 50%;
@@ -35,12 +44,36 @@
   // top: -125px;
 }
 
-.showcased-video{
-  flex: 0 0 350px;
-  iframe {
-    height:43vh;
-    width:38vw;
+
+.showcased-video {
+  max-width: 800px;
+  width: 100%;
+  .player {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    width: 100%;
+    overflow: hidden;
+    background: gray;
+    iframe, object, embed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
   }
+}
+
+
+.showcased-video{
+  flex: 0 0 550px;
+//   iframe {
+//     width: 100%
+//     // height:43vh;
+//     // width:38vw;
+//   }
 }
 
 .showcased-name{
