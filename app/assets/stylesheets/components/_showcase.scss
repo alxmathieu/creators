@@ -27,15 +27,6 @@
   }
 }
 
-@media(max-width: 1000px) {
-  .card-showcased{
-    flex-direction: column;
-  }
-  .player{}
-
-}
-
-
 .avatar-showcased-creator{
   height: 120px;
   border-radius: 50%;
@@ -47,7 +38,8 @@
 
 .showcased-video {
   max-width: 800px;
-  width: 100%;
+  width: 85%;
+
   .player {
     position: relative;
     padding-bottom: 56.25%;
@@ -67,14 +59,13 @@
 }
 
 
-.showcased-video{
-  flex: 0 0 550px;
+// .showcased-video{
 //   iframe {
 //     width: 100%
 //     // height:43vh;
 //     // width:38vw;
 //   }
-}
+// }
 
 .showcased-name{
   font-family: $creators-font;
@@ -125,8 +116,38 @@
 }
 
 
+// MEDIA QUERIES
 
 
+
+@media screen and (max-width: 1000px) {
+  .card-showcased{
+    flex-direction: column;
+  }
+  .player{
+    margin-top: 30px;
+  }
+}
+
+
+@media screen and (min-width: 1000px) {
+  .showcased-video{
+    flex: 0 0 550px;
+  }
+}
+
+
+@media screen and (min-width : 500 ) {
+  .showcased-video{
+    flex: 0 0 200px;
+  }
+}
+
+@media screen and (min-width : 1000 ) {
+  .showcased-video{
+    flex: 0 0 400px;
+  }
+}
 
 
 
