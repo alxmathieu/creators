@@ -4,7 +4,7 @@ var ticker;
 
 function getSeconds() {
  var nowDate = new Date();
- var dy = 0 ; //Sunday through Saturday, 0 to 6
+ var dy = 1 ; //Sunday through Saturday, 0 to 6
  var countertime = new Date(nowDate.getFullYear(),nowDate.getMonth(),nowDate.getDate(),4,30,0); //20 out of 24 hours = 8pm
 
  var curtime = nowDate.getTime(); //current time
