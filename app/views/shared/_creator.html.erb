@@ -4,38 +4,38 @@
       <%= link_to(creator_path(creator)) do %>
         <%= cl_image_tag creator.avatar_photo, class: "avatar-creator"%>
       <% end %>
-        </div>
-        <div class="card-content">
-          <div class="creator-name">
-            <%= link_to creator.youtube_name, creator_path(creator), class: "creator-name" %>
-          </div>
-          <div class="card-sub-content">
-            <div class="creator-tags">
-              <ul class="list-unstyled creator-tags">
-                <% creator.tag_list.first(3).each do |tag| %>
-                  <li>
-                    <% if tag.length < 13 %>
-                      <%= "##{tag.capitalize}" %>
-                    <% else %>
-                      <%= "##{tag.capitalize.first(13)}" %>
-                    <% end %>
-                  </li>
+    </div>
+    <div class="card-content">
+      <div class="creator-name">
+        <%= link_to creator.youtube_name, creator_path(creator), class: "creator-name" %>
+      </div>
+      <div class="card-sub-content">
+        <div class="creator-tags">
+          <ul class="list-unstyled creator-tags">
+            <% creator.tag_list.first(3).each do |tag| %>
+              <li>
+                <% if tag.length < 13 %>
+                  <%= "##{tag.capitalize}" %>
+                <% else %>
+                  <%= "##{tag.capitalize.first(13)}" %>
                 <% end %>
-              </ul>
-            </div>
-            <div class="creator-description">
-              <%= link_to "#{creator.description.first(120)}...", creator_path(creator) %>
-            </div>
-          </div>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="creator-description">
+          <%= link_to "#{creator.description.first(120)}...", creator_path(creator) %>
         </div>
       </div>
-      <% if creator.batch == Batch.next_batch  %>
-        <div class="upvote-tip">
-          Next Week!
-        </div>
-      <% else %>
-        <div class="card-upvote" id="upvote-btn-creator-<%= creator.id %>" >
-          <%= render 'shared/upvote-button', creator: creator %>
-        </div>
-      <% end %>
+    </div>
+  </div>
+  <% if creator.batch == Batch.next_batch  %>
+    <div class="upvote-tip">
+      Next Week!
+    </div>
+  <% else %>
+    <div class="card-upvote" id="upvote-btn-creator-<%= creator.id %>" >
+      <%= render 'shared/upvote-button', creator: creator %>
+    </div>
+  <% end %>
 </li>

@@ -81,9 +81,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  .btn-info{
-    width: 20%;
-  }
+  // .btn-info{
+  //   width: 20%;
+  // }
 }
 
 .icon-upvoted{
@@ -101,8 +101,18 @@
   }
 }
 
+@media screen and (max-width: 1000px) {
+  .content-homepage{
+    flex-direction: column;
+  }
+  .container-rankings{
+    margin-right: 0px;
+    width: 100%;
+  }
+  .container-menu{
+    display: none;
+  }
 
-
-
+}
 
 
