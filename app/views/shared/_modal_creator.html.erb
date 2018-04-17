@@ -22,7 +22,7 @@
               <%= form.button :submit, 'Retrieve data', class:"btn btn-primary" %>
             <% end %>
           <% else %>
-            <p>Sorry, you can't upload a creator...</p>
+            <p>Sorry, you can't upload a creator...yet!</p>
             <% if current_user.level == 0 %>
               <p>Upvotes some creators you like!</p>
             <% elsif current_user.level == 1 || current_user.level == 2 %>
