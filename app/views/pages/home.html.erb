@@ -1,83 +1,42 @@
 
 <div class="container">
-  <% unless @showcased_creator.nil? %>
-    <div class="showcased">
-      <div class="card card-showcased">
-        <div class="editors-choice">
-          Team's choice
-        </div>
-       <!--  <i class="fas fa-star"></i> -->
-        <div class="showcased-avatar-tags">
-          <%= link_to(creator_path(@showcased_creator)) do %>
-            <%= cl_image_tag @showcased_creator.avatar_photo, class: "avatar-showcased-creator"%>
-          <% end %>
-          <div class="showcased-tags">
-            <ul class="list-unstyled list-tags" style="text-align: center">
-              <% @showcased_creator.tag_list.first(5).each do |tag| %>
-                <li>
-                  <% if tag.length < 13 %>
-                    <%= "##{tag.capitalize}" %>
-                  <% else %>
-                    <%= "##{tag.capitalize.first(13)}" %>
-                  <% end %>
-                </li>
-              <% end %>
-            </ul>
-          </div>
-        </div>
-        <div class="showcased-infos">
-          <%= link_to @showcased_creator.youtube_name , creator_path(@showcased_creator), class: "showcased-name" %>
-          <div class="showcased-description">
-            <i class="fas fa-quote-left"></i>
-            <%= @showcased_creator.description.first(350) %>...
-            <i class="fas fa-quote-right"></i>
-          </div>
-          <div class="showcased-digger">
-            discovered by <%= @showcased_creator.user.username %>
-            <%= link_to(user_path(@showcased_creator.user)) do %>
-              <%= image_tag @showcased_creator.user.avatar, class: "avatar-showcased-digger"%>
-            <% end %>
-          </div>
-        </div>
-        <div class="showcased-video">
-          <iframe class="ytplayer-showcased" type="text/html"
-          src="https://www.youtube.com/embed/<%= @showcased_creator.video_youtube_id %>?autoplay=0"
-          frameborder="0">
-          </iframe>
-        </div>
-      </div>
-    </div>
-  <% end %>
+  <%= render 'shared/showcased-card' %>
   <div class="content-homepage" id="homepage">
     <div class="container-rankings card card-gold">
-      <div class="title-current-batch">
-        <% if Batch.current_batch.nil? || Batch.all.empty? %>
-          <h1> Please check back later! A new batch will be released soon.</h1>
-        <% else %>
-          <h1 style= "margin-bottom: 0px">Discover this week's new Creators</h1>
-      </div>
-      <div class="tagline-last-batch">Here are some brand new Creators! Upvote and make them reach the top.</div>
-          <div class="current-batch">
+      <div class="current-batch">
+        <div class="title-current-batch">
+          <% if Batch.current_batch.nil? || Batch.all.empty? %>
+            <h1> Please check back later! A new batch will be released soon.</h1>
+          <% else %>
+            <h1 style= "margin-bottom: 0px">Discover this week's new Creators</h1>
+        </div>
+        <div class="tagline-last-batch">
+          Here are some brand new Creators! Upvote and make them reach the top.
+        </div>
+          <div class="current-ranking">
             <ul class="list-unstyled">
               <% @ordered_creators_current_batch.each do |creator| %>
                 <%= render 'shared/creator', creator: creator %>
               <% end %>
             </ul>
           </div>
-          <div class="last-batch">
-            <h2>Last week's Creators</h2>
-              <div class="tagline-last-batch">Missed last week's ranking? Check them out!</div>
-            <div class="last-ranking">
-              <ul class="list-unstyled">
-                <% @ordered_creators_last_batch.each do |creator| %>
-                  <%= render 'shared/creator', creator: creator %>
-                <% end %>
-              </ul>
-              <div class="btn btn-info btn-lg">
-                <%= link_to "See all creators", search_path %>
-              </div>
+      </div>
+        <div class="last-batch">
+          <h2>Last week's Creators</h2>
+          <div class="tagline-last-batch">
+            Missed last week's ranking? Check them out!
+          </div>
+          <div class="last-ranking">
+            <ul class="list-unstyled">
+              <% @ordered_creators_last_batch.each do |creator| %>
+                <%= render 'shared/creator', creator: creator %>
+              <% end %>
+            </ul>
+            <div class="btn btn-info btn-lg">
+              <%= link_to "See all creators", search_path %>
             </div>
           </div>
+        </div>
 
         <% end %>
 

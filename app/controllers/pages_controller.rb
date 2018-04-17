@@ -3,6 +3,8 @@ class PagesController < ApplicationController
 
 
   def home
+    # for creation modal (tbc)
+    @creator = Creator.new
     # for upvote creation
     @upvote = Upvote.new
     # for showcasing div
@@ -18,8 +20,7 @@ class PagesController < ApplicationController
       @ordered_creators_current_batch = sort_creators_current_batch(creators_in_current_batch)
       @ordered_creators_last_batch = sort_creators_last_batch(creators_in_last_batch)
     end
-    @creator = Creator.new
-
+    # For winners of last batch
     if last_batch.nil? || last_batch.first_creator_id.nil? || last_batch.second_creator_id.nil? || last_batch.third_creator_id.nil?
       @winners_last_batch = []
     elsif Batch.last_batch.creators.size >= 3

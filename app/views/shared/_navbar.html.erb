@@ -49,9 +49,15 @@
       <ul class="dropdown-menu dropdown-menu-right navbar-creators-dropdown-menu">
         <% if user_signed_in? %>
           <li>
-            <%= link_to "Dashboard", user_path(current_user), class: "navbar-creators-item navbar-creators-link" %>
+            <!-- NEED TO ADD THE BTN TO add a creator, WITHOUT a modal. -->
           </li>
-        <!-- <li><a href="#">Other one</a></li> -->
+          <li>
+            <%= link_to "All Creators", search_path, class: "navbar-creators-item navbar-creators-link" %>
+          </li>
+          <!-- NEED TO ADD THE BTN TO see last week winner. NEEDS A NEW PAGE?? -->
+          <li>
+            <%= link_to "My Profile", user_path(current_user), class: "navbar-creators-item navbar-creators-link" %>
+          </li>
         <% end %>
       </ul>
     </div>

@@ -14,7 +14,7 @@
      <i class="fas fa-chevron-circle-up icon-not-upvoted "></i>
   <% end %>
 <% end %>
-<span class="nb_upvotes"> <%= creator.upvotes.length %> </span>
+<span class="nb_upvotes <%= upvote_for_creator.nil? ? "upvote-grey" : "upvote-gold" %> "> <%= creator.upvotes.length %> </span>
 
 
 

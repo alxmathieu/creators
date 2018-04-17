@@ -21,6 +21,14 @@ class Creator < ApplicationRecord
     return array
   end
 
+  # For activeAdmin
+
+  def name
+    "#{id} - #{youtube_name}"
+  end
+
+
+
   # Avatar Photo
   mount_uploader :avatar_photo, PhotoUploader
 

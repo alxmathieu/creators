@@ -96,6 +96,67 @@
   border-top: 5px solid $charcoal;
 }
 
+.upvote-grey{
+  color: $charcoal !important;
+}
+
+.upvote-gold{
+  color: $gold !important;
+}
+
+
+
+
+
+// MEDIA QUERIES FOR MOBILE
+
+@media screen and (max-width: 1000px) {
+  .creator-tags{
+    display: none;
+  }
+  .card-creator{
+    padding: 20px 0px;
+  }
+  .card-avatar{
+    margin: 0;
+  }
+  .creator-info{
+    // align-items: stretch;
+  }
+  .creator-description{
+    margin: 0;
+    padding: 5px 10px 0px 10px;
+  }
+  .card-content{
+    padding: 0;
+  }
+  .container-rankings{
+    padding: 20px 0px 20px 10px;
+  }
+  .title-current-batch, .tagline-last-batch{
+    text-align: center;
+    h1{
+      margin-top: 0px;
+    }
+  }
+  .last-batch{
+    margin-top: 40px !important;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
