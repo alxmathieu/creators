@@ -3,13 +3,15 @@
     <div class="col-md-3">
       <div class="card user-infos text-center card-charcoal">
         <div class="user-infos-container">
-          <% if @user.avatar.nil? %>
-            <%= image_tag 'default-avatar', alt: @user.username, class: "avatar-large" %>
-          <% else %>
-            <%= image_tag @user.avatar.url, alt: @user.username, class: "avatar-large" %>
-          <% end %>
-          <div class="user-infos-content" id="id-user-infos">
+          <div class="user-header">
+            <% if @user.avatar.nil? %>
+              <%= image_tag 'default-avatar', alt: @user.username, class: "avatar-large" %>
+            <% else %>
+              <%= image_tag @user.avatar.url, alt: @user.username, class: "avatar-large" %>
+            <% end %>
             <h3><%= @user.username %></h3>
+          </div>
+          <div class="user-infos-content" id="id-user-infos">
             <div class="bio-section text-left">
               <h4>About</h4>
               <% if (@user.bio.nil? || @user.bio.empty?) && current_user == @user %>
@@ -25,11 +27,11 @@
             </div>
             <div class="bio-section text-left">
               <h4>What I like</h4>
-              <% @user.tag_list.each do |tag| %>
-                <ul class="list-unstyled">
-                  # <%= tag %>
-                </ul>
-              <% end %>
+              <ul class="list-unstyled">
+                <% @user.tag_list.each do |tag| %>
+                  <li># <%= tag %></li>
+                <% end %>
+              </ul>
             </div>
           </div>
         </div>
@@ -44,10 +46,10 @@
         <div class="card card-gold">
           <h2 class="achievements-title">My profile on Creators</h2>
           <div class="achievements">
-            <div class="progress-bar-container">
+            <div class="progress-bar-container hidden-xs hidden-sm">
               <%= render 'progress', user: @user %>
             </div>
-            <div class="divider"></div>
+            <div class="divider hidden-xs hidden-sm"></div>
             <div class="next-steps">
               <h4>Steps to upgrade your profile</h4>
               <% if @user.level == 0 %>
