@@ -3,7 +3,7 @@
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background: $charcoal;
   transition: all 0.3s ease;
-  height: 80px;
+  height: 60px;
   padding: 0px 30px;
   display: flex;
   align-items: center;
@@ -12,13 +12,13 @@
 
 /* Logo */
 .navbar-creators-brand img {
-  height: 100px;
+  height: 80px;
 }
 
 /* User Avatar */
 .navbar-creators .avatar {
-  height: 50px;
-  width: 50px;
+  height: 40px; // was 50px
+  width: 40px;  // was 50 px
   border-radius: 50%;
 }
 
@@ -27,6 +27,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  a:hover{
+    color: white;
+  }
 }
 
 /* Basic navbar item */
@@ -39,11 +42,21 @@
 .navbar-creators-link {
   color: $light-gray;
   font-size: 14px;
+  padding-top: 20px;
+  padding-bottom: 16px;
+  &:hover{
+    text-decoration: none;
+    border-bottom: 4px solid $gold;
+    font-weight: bolder;
+  }
+
+
 }
-.navbar-creators-link:hover {
-  color: $gold;
-  text-decoration: none;
-}
+
+
+
+
+
 
 /* Dropdown menu */
 .navbar-creators-dropdown-menu {
@@ -79,7 +92,6 @@
 /* When small screen */
 .navbar-xs-menu {
   color: $light-gray;
-
   &:hover {
   color: $gold;
   }
