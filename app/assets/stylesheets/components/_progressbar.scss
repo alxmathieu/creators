@@ -9,7 +9,7 @@
   text-decoration: none;
 }
 .steps-container {
-  background: $light-gray;
+  background: #EEEEEE;
   height: 10px;
   width: 100%;
   border-radius: 10px;
@@ -27,7 +27,7 @@
   margin: -14px 0 0 0;
 }
 .step-image span {
-  background-color: $light-gray;
+  background-color: #EEEEEE;
   display: block;
   width: 37px;
   height: 37px;
@@ -43,7 +43,7 @@
   background-color: $gold;
 }
 .activated .step-image span:after {
-  background-color: $light-gray;
+  background-color: #EEEEEE;
   display: block;
   content: '';
   position: absolute;

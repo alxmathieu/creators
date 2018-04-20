@@ -2,7 +2,7 @@
   min-height: 100px;
   background-color: white;
   border-radius: 3px;
-  box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+  box-shadow: 0 1px 10px 0 hsla(0, 0%, 0%, 0.2);
   margin: 20px 0;
   padding: 20px;
   h2 {
@@ -68,7 +68,7 @@
   text-align: justify;
   a{
     text-decoration: none;
-    color: $charcoal;
+    color: #848486;
   }
   a:hover{
     color: black;
@@ -94,6 +94,10 @@
 
 .card-charcoal{
   border-top: 5px solid $charcoal;
+}
+
+.card-turquoise{
+  border-top: 5px solid $turquoise;
 }
 
 .upvote-grey{
