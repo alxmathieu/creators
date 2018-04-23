@@ -60,6 +60,7 @@
   font-size: 10px;
   color: $silver-gray;
   font-style: italic;
+  min-width: 60px;
 }
 
 .creator-description{
@@ -68,10 +69,10 @@
   text-align: justify;
   a{
     text-decoration: none;
-    color: #848486;
+    color: rgba(black, 0.6);
   }
   a:hover{
-    color: black;
+    color: rgba(black, 0.75);
   }
 }
 
