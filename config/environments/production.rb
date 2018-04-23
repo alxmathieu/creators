@@ -4,6 +4,11 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: ENV['MAIL_HOST_PROD'] }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
+
+
+
+
+
   # Verifies that versions and hashed value of the package contents in the project's package.json
   config.webpacker.check_yarn_integrity = false
 
