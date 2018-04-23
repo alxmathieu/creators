@@ -27,7 +27,7 @@
             <%= link_to @showcased_creator.youtube_name , creator_path(@showcased_creator), class: "showcased-name" %>
             <div class="showcased-description">
               <i class="fas fa-quote-left"></i>
-              <%= @showcased_creator.description.first(350) %>...
+              <%= link_to "#{@showcased_creator.description.first(350)}...", creator_path(@showcased_creator), class: "showcased-text" %>
               <i class="fas fa-quote-right"></i>
             </div>
           </div>

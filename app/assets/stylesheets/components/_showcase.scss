@@ -119,6 +119,15 @@
   padding: 0px 10px;
 }
 
+.showcased-text{
+    text-decoration: none;
+    color: black;
+    &:hover{
+      text-decoration: none;
+      color: black;
+    }
+}
+
 
 // MEDIA QUERIES
 
@@ -134,6 +143,17 @@
   .showcased-name-desc{
     text-align: center;
     margin-top: 10px;
+  }
+  .avatar-showcased-creator{
+    height: 70px;
+    width: 70px;
+  }
+  .showcased-avatar-tags{
+    display: flex;
+    align-items: center;
+  }
+  .showcased-description{
+    padding: 15px 0px;
   }
 }
 
