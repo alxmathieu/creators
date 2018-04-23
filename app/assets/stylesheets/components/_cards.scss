@@ -21,6 +21,7 @@
   align-items: center;
   border-bottom: 0.5px solid rgba($light-gray, 0.7);
   position: relative;
+  min-height:105px;
   &:hover{
     background-color: rgba($light-gray, 0.4)
   }
@@ -115,6 +116,7 @@
   position: absolute;
   top: 6px;
   left: 10px;
+  font-size: 20px;
 }
 
 .team-choice{
@@ -160,7 +162,7 @@
   .showcased-icon{
     color: $turquoise;
     position: absolute;
-    top: 6px;
+    top: 15px;
     left: 20px;
   }
 }
