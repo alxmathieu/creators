@@ -28,6 +28,8 @@ if (document.getElementById("id-user-infos")) {
   });
 };
 
-
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
 
 

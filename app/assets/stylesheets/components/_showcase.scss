@@ -18,8 +18,8 @@
   }
   .editors-choice{
     position: absolute;
-    top: 20px;
-    left: -30px;
+    top: 26px;
+    left: -31px;
     transform: rotate(-42deg);
     background-color: $turquoise;
     color: white;
@@ -113,6 +113,7 @@
 
 .showcased-avatar-tags{
   position: relative;
+  text-align: center;
 }
 
 .showcased-infos{
