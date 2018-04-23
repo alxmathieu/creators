@@ -1,4 +1,7 @@
-<li class="card-creator">
+<li class="card-creator <%= "team-choice" if creator.already_showcased %>">
+  <% if creator.already_showcased %>
+    <i class="fas fa-heart showcased-heart" data-toggle="tooltip" data-placement="top" title="Tooltip on top"></i>
+  <% end -%>
   <div class="creator-info">
     <div class="card-avatar">
       <%= link_to(creator_path(creator)) do %>

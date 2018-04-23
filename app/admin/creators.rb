@@ -2,7 +2,7 @@ ActiveAdmin.register Creator do
 
   permit_params :youtube_name, :description, :video_url, :nb_followers,
   :is_showcased, :country, :language, :user_id, :batch_id, :batch_score,
-  :avatar_photo, :nb_videos
+  :avatar_photo, :nb_videos, :already_showcased
 
   index do
     selectable_column
@@ -11,6 +11,7 @@ ActiveAdmin.register Creator do
     column :batch_id
     column :batch_score
     column :is_showcased
+    column :already_showcased
     column :user_id
     column :country
     column :language
