@@ -46,21 +46,16 @@
               <!-- [...] -->
               <div class="form-inputs">
                 <%= f.input :description, label: "Write the review about #{@creator.youtube_name}, explain what makes you vibrate..."%>
-                <div class="form-group">
+                <div class="form-group has-error">
                   <%= label_tag :tags, "Add a few tag applying to #{@creator.youtube_name}" %>
                   <%= select_tag :tags, options_from_collection_for_select(
                       @categories, 'id', 'name'), class: 'select2-tags', id: "input-tags-multiple", multiple: true, style:"width: 100%; font-size: 16px" %>
                 </div>
 
-                <%#= select_tag :language, options_from_collection_for_select(
-                    @categories, 'id', 'name'), class: 'select2-tags', id: "input-tags-multiple", multiple: true, style:"width: 100%; font-size: 16px" %>
-
-
-                <%= label_tag :language, "Main Language of #{@creator.youtube_name}" %>
-                <%= select_tag :language, options_for_select(["French", "Espagnol", "English", "German", "None"]), class: "select2lang", multiple: true, style:"width: 100%; font-size: 16px" %>
-
-
-                <%#= f.input :language, collections: ["French", "Espagnol", "English", "Deutsh"], label: "Language of the channel", class: "select2-tags", multiple: true %>
+                <div class="form-group has-error">
+                  <%= label_tag :language, "Main Language of #{@creator.youtube_name}" %>
+                  <%= select_tag :language, options_for_select(["French", "Espagnol", "English", "German", "None"]), class: "select2lang", include_blank: "---", multiple: true, style:"width: 100%; font-size: 16px" %>
+                </div>
 
                 <!-- [Hidden-Fields] -->
                 <%= f.hidden_field :channel_url %>
@@ -86,6 +81,10 @@
                     <%= link_to "I want this one 👆", "#", class: "add-video-btn btn", id: id %>
                   </div>
               <% end %>
+          </div>
+          <div class="text-center">
+            <h3>Or enter the url of the video below:</h3>
+            <%= text_field_tag "Video url", nil, id: "custom-video-input", placeholder: 'https://www.youtube.com/watch?v=...' %>
           </div>
           <%= f.hidden_field :video_url, label: "Pick a video that embodies the most #{@creator.youtube_name}", id: "video-form" %>
           <div class="form-actions text-center">

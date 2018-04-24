@@ -1,19 +1,12 @@
 function pickVideo() {
-  // const pickvideoBtn = document.getElementById("add-video-btn");
   const pickvideoBtn = document.querySelectorAll(".add-video-btn");
   const videoForm = document.getElementById("video-form");
   const all_video = document.querySelectorAll(".ytplayer-showcased");
+  const inputVideo = document.getElementById("custom-video-input");
 
   pickvideoBtn.forEach((button) => {
     button.addEventListener("click", (event) => {
       event.preventDefault();
-      console.log(event);
-      console.log(button.id);
-      // const video = document.getElementById(`${button.id}`);
-      // all_video.forEach( (video_player) => {
-      //   video_player.classList.remove("selected-video");
-      // });
-      // video.classList.toggle("selected-video");
       pickvideoBtn.forEach ( (btn) => {
         btn.classList.remove("selected-video");
       })
@@ -21,7 +14,17 @@ function pickVideo() {
       videoForm.value = `https://www.youtube.com/watch?v=${button.id}`;
     });
   });
+
+  inputVideo.addEventListener("click", (event) => {
+    pickvideoBtn.forEach ( (btn) => {
+      btn.classList.remove("selected-video");
+    })
+    videoForm.value = inputVideo.value;;
+  });
+
+  inputVideo.addEventListener('keyup', (event) => {
+    videoForm.value = inputVideo.value;
+  });
 }
 
 export{pickVideo};
-
