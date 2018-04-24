@@ -1,1 +1,47 @@
-<h1>ABOUT</h1>
+<div class="container">
+  <h1 style="text-align: center"> Who are we?</h1>
+  <div class="description-about">
+    <div class="about-paragraph">
+      We are a group of 5 friends who are passionate about YouTube.
+      Creators was originally a class-project, but we feel like there is a real
+      need for this, so that why we are now launching it (Alpha Version for now 😇)
+    </div>
+    <div class="about-paragraph">
+      The main goal of Creators is to enable you to discover hidden gems on YouTube,
+      and share your favorites with the community!
+    </div>
+    <div class="about-paragraph">
+      This will hopefully give visibility to small Creators and help you discover what's great
+      about YouTube !
+    </div>
+    <div class="about-paragraph">
+      As this is our Alpha Version, we need as much feedback as possible.
+      You can send them on twitter, facebook, or via email: alex@rising-creators.com
+    </div>
+  </div>
+  <div class="about-team">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="card card-turquoise card-about">
+          <div class="avatar-about">
+            <%= link_to(user_path(@alex)) do %>
+              <%= image_tag @alex.avatar, alt: @alex.username, class: "avatar-about"%>
+            <% end %>
+          </div>
+          <div class="name-about">
+            <%= link_to @alex.username, user_path(@alex), class: "name-about" %>
+          </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+</div>

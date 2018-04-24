@@ -7,7 +7,9 @@
   <div class="footer-creators-brand text-center">
     <%= cl_image_tag asset_url("logo-tagline-inline.svg") %>
   </div>
-  <div class="footer-copyright hidden-xs hidden-sm">
-    This app was made with <i class="fa fa-heart"></i> at Le Wagon
+    <%= link_to(about_path) do %>
+  <div class="footer-copyright " data-toggle="tooltip" data-placement="top" title="About us">
+      This app was made with <i class="fa fa-heart"></i> by our team.
   </div>
+    <% end %>
 </div>

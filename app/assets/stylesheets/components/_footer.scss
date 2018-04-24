@@ -22,6 +22,9 @@
   font-weight: 300;
   font-size: 10px;
   color: $light-gray;
+  &:hover{
+    font-weight: bolder;
+  }
 }
 
 .footer-links a {

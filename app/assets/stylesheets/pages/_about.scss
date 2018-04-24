@@ -1,0 +1,25 @@
+.about-paragraph{
+  padding: 10px 0px;
+}
+
+.card-about{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar-about{
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+
+.name-about{
+  font-family: $creators-font;
+  color: black !important;
+  font-size: 25px;
+  a:hover{
+    text-decoration: none
+  }
+}
