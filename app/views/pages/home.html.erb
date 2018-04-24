@@ -53,11 +53,11 @@
       </div>
 
       <div class="teaser-next-week card card-charcoal">
-        <span>Discover <%= pluralize @next_creators, " new Creator" %> in</span>
+        <span>Discover <strong><%= pluralize @next_creators, " new Creator" %></strong> in</span>
         <div id="countholder">
-         <div class="days" ><span id="days"></span><div>Days</div></div>
-         <div class="hours"><span id="hours"></span><div>Hours</div></div>
-         <div class="minutes"><span id="minutes"></span><div>Minutes</div></div>
+         <div class="days" ><strong><span id="days"></span></strong><div>Days</div></div>
+         <div class="hours"><strong><span id="hours"></span></strong><div>Hours</div></div>
+         <div class="minutes"><strong><span id="minutes"></strong></span><div>Minutes</div></div>
         </div>
       </div>
       <% unless @winners_last_batch == [] %>
@@ -78,7 +78,7 @@
         </div>
       <% end %>
       <% if user_signed_in? %>
-        <%= render 'shared/user-level-card' %>
+        <%= render 'shared/user-level-card', class: "level-up-card" %>
       <% end %>
     </div>
   </div>
