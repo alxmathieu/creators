@@ -28,6 +28,6 @@ if (document.getElementById("id-user-infos")) {
   });
 };
 
-
+// if il y a l'upvote-btn dans la page, alors on appelle la function définie dans mojs.js
 
 
