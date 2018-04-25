@@ -28,8 +28,14 @@ if (document.getElementById("id-user-infos")) {
   });
 };
 
+import { showBurst } from '../components/mojs.js';
+if (document.querySelector(".icon-not-upvoted")) {
+  showBurst();
+};
+
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
+
 
 
