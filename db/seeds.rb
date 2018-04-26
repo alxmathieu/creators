@@ -26,6 +26,11 @@ sample["users"].each do |user|
   users[user["username"]] = User.create! user.slice("username", "email", "password", "remote_avatar_url", "level")
 end
 
+# TODO : Faire en sorte que les gens de la seed aient leur e mail confirmé de maniere plus propre
+User.all.each do |user|
+  user.update(confirmed_at: DateTime.now)
+end
+
 puts 'Creating batches...'
 batches = {}
 sample["batches"].each do |batch|
