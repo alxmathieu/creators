@@ -1,4 +1,8 @@
 class Creator < ApplicationRecord
+
+  extend FriendlyId
+  friendly_id :youtube_name, use: :slugged
+
   # Dependency
   belongs_to :user
   belongs_to :batch
