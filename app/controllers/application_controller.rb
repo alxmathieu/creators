@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!, except: [:home]
-
+  before_action :set_locale
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def configure_permitted_parameters
@@ -37,7 +37,6 @@ class ApplicationController < ActionController::Base
 
   # Set locale
 
-  before_action :set_locale
 
   def set_locale
     I18n.locale = params.fetch(:locale, I18n.default_locale).to_sym
