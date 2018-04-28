@@ -1,5 +1,5 @@
 ---
-en:
+fr:
   activerecord:
       models:
         creator: "Créateur"
@@ -9,4 +9,6 @@ en:
           name: "Nom"
   creators:
     index:
-      title: "- This is where you can browse all creators   -"
+      title: "-  C'est ici que tu peux découvrir des pépites -"
+      search: Rechercher
+      search-placeholder: Bonne recherche!
