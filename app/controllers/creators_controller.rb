@@ -7,7 +7,6 @@ class CreatorsController < ApplicationController
     @batches = Batch.where(status: ["active", "closed"]).order(created_at: :asc)
     @languages = Creator.find_all_languages
     @creators = policy_scope(Creator)
-    @creator = Creator.new
     if params[:name].present?
       sql_query = "description ILIKE :query OR youtube_name ILIKE :query"
       @creators = @creators.where(sql_query, query: "%#{params[:name]}%")

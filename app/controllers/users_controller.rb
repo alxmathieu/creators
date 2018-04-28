@@ -4,7 +4,6 @@ class UsersController < ApplicationController
     authorize @user
     @user.update_level
     @categories = ActsAsTaggableOn::Tag.order(:name)
-    @creator = Creator.new
   end
 
   def update

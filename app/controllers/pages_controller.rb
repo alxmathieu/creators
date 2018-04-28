@@ -3,8 +3,6 @@ class PagesController < ApplicationController
 
 
   def home
-    # for creation modal (tbc)
-    @creator = Creator.new
     # for upvote creation
     @upvote = Upvote.new
     # for showcasing div
