@@ -38,6 +38,9 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
+# Change url appearance
+gem 'friendly_id', '~> 5.1.0'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end

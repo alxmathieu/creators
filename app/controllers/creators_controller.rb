@@ -85,7 +85,7 @@ class CreatorsController < ApplicationController
   private
 
   def find_creator
-    @creator = Creator.find(params[:id])
+    @creator = Creator.friendly.find(params[:id])
   end
 
   def creator_params
