@@ -43,8 +43,10 @@ class UpvotesController < ApplicationController
   private
 
   def set_creator
-    @creator = Creator.find(params[:creator_id])
+    @creator = Creator.friendly.find(params[:creator_id])
   end
+
+
 
   # def upvotes_params
   #   params.require(:upvote).permit(:user_id, :creator_id, :video_attributes)

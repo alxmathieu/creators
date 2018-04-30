@@ -12,3 +12,19 @@ fr:
       title: "-  C'est ici que tu peux découvrir des pépites -"
       search: Rechercher
       search-placeholder: Bonne recherche!
+  pages:
+    home:
+      batch-empty: Revenez un peu plus tard! Un nouveau classement sera bientôt disponible!
+      title: Découvre les Créateurs de la semaine!
+      tagline-current-batch: Découvre et vote pour les Créateurs de la semaine et aide les à atteindre la première place
+      title-last-batch: Créateurs de la semaine dernière
+      tagline-last-batch: Tu as raté les Créateurs de la semaine dernière ? Découvre les ici !
+      teaser-next-week: Découvre
+      in: dans
+      teaser-next-week-plural: Créateur(s)
+      days: jours
+      hours: heures
+      minutes: min
+      last-winners: Gagnants de la semaine dernière
+      all-btn: Tous les Créateurs
+

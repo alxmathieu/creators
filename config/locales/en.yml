@@ -9,4 +9,19 @@ en:
           name: "Nom"
   creators:
     index:
-      title: "- This is where you can browse all creators   -"
+      title: "- This is where you can browse all creators -"
+  pages:
+    home:
+      batch-empty: Please check back later! A new batch will be released soon.
+      title: Discover this week's new Creators!
+      tagline-current-batch: Here are some brand new Creators! Upvote and make them reach the top.
+      title-last-batch: Last week's Creators
+      tagline-last-batch: Missed last week's ranking? Check them out!
+      teaser-next-week: Discover
+      in: dans
+      teaser-next-week-plural: new Creator
+      days: days
+      hours: hours
+      minutes: minutes
+      last-winners: Last week's winners
+      all-btn: See all Creators
