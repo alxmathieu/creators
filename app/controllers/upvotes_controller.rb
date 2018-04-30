@@ -43,7 +43,7 @@ class UpvotesController < ApplicationController
   private
 
   def set_creator
-    @creator = Creator.find(params[:creator_id])
+    @creator = Creator.friendly.find(params[:creator_id])
   end
 
   # def upvotes_params
