@@ -1,5 +1,5 @@
 <% content_for :title_tab, "#{@creator.youtube_name} - #{DEFAULT_META["meta_product_name"]}" %>
-<% content_for :meta_title, "#{@creator.youtube_name} is on #{DEFAULT_META["meta_product_name"]} thanks to #{@creator.user.username}" %>
+<% content_for :meta_title, "#{@creator.youtube_name} is now on #{DEFAULT_META["meta_product_name"]} thanks to #{@creator.user.username}. Check it out!" %>
 <% content_for :meta_description, @creator.description.first(100) %>
 
 <% if @creator.batch == Batch.current_batch  %>
