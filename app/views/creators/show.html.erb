@@ -1,6 +1,6 @@
 <% content_for :title_tab, "#{@creator.youtube_name} - #{DEFAULT_META["meta_product_name"]}" %>
-<% content_for :meta_title, "#{@creator.youtube_name} is on #{DEFAULT_META["meta_product_name"]} thanks to #{@creator.user.username}" %>
-<% content_for :meta_description, @creator.description.first(100) %>
+<% content_for :meta_title, "#{@creator.youtube_name.capitalize} is now on #{DEFAULT_META["meta_product_name"]}. Check it out!" %>
+<% content_for :meta_description, " '#{@creator.description.first(100)}' - found by #{@creator.user.username}" %>
 
 <% if @creator.batch == Batch.current_batch  %>
   <div class="upvote-tip text-center">
