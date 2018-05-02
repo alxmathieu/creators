@@ -1,4 +1,5 @@
 class CreatorsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:show, :index]
   before_action :find_creator, only: [ :show, :edit, :update ]
 
 
@@ -7,7 +8,6 @@ class CreatorsController < ApplicationController
     @batches = Batch.where(status: ["active", "closed"]).order(created_at: :asc)
     @languages = Creator.find_all_languages
     @creators = policy_scope(Creator)
-    @creator = Creator.new
     if params[:name].present?
       sql_query = "description ILIKE :query OR youtube_name ILIKE :query"
       @creators = @creators.where(sql_query, query: "%#{params[:name]}%")
@@ -85,7 +85,7 @@ class CreatorsController < ApplicationController
   private
 
   def find_creator
-    @creator = Creator.find(params[:id])
+    @creator = Creator.friendly.find(params[:id])
   end
 
   def creator_params

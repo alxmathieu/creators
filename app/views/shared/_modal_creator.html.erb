@@ -14,7 +14,8 @@
         </div>
         <div class="modal-body">
           <% if current_user.allowed_to_upload? %>
-            <%= simple_form_for @creator, url: creators_path do |form| %>
+            <% @new_creator = Creator.new %>
+            <%= simple_form_for @new_creator, url: creators_path do |form| %>
               <div class="stuff-wrapper" style="margin: 40px 20px;">
                 <%= form.input :channel_url, required: true, as: :string, id: "form-input-no-border", label: false, placeholder: "https://www.youtube.com/channel/mychanel", input_html: {class:"stuff"}
                  %>

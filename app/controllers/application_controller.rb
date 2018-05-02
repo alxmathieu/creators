@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!, except: [:home]
-
+  before_action :set_locale
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def configure_permitted_parameters
@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
    # end
 
    def default_url_options
-     { host: ENV["HOST"] || "localhost:3000" }
+     { host: ENV['HOST'] || 'localhost:3000' }
    end
 
    private
@@ -34,4 +34,14 @@ class ApplicationController < ActionController::Base
    def skip_pundit?
      devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
    end
+
+  # Set locale
+  def set_locale
+    I18n.locale = params.fetch(:locale, I18n.default_locale).to_sym
+  end
+
+  def default_url_options
+    { locale: I18n.locale == I18n.default_locale ? nil : I18n.locale }
+  end
+
 end

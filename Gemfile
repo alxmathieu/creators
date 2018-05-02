@@ -19,6 +19,10 @@ gem 'rails', '5.1.5'
 gem 'redis'
 gem 'pundit'
 
+# Locale Gems
+gem 'rails-i18n', '5.0.3'
+
+
 # Act As Taggable - Gems
 gem 'acts-as-taggable-on', '~> 4.0'
 gem 'country_select'
@@ -37,6 +41,9 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+
+# Change url appearance
+gem 'friendly_id', '~> 5.1.0'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

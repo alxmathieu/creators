@@ -1,14 +1,13 @@
 class UsersController < ApplicationController
   def show
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
     authorize @user
     @user.update_level
     @categories = ActsAsTaggableOn::Tag.order(:name)
-    @creator = Creator.new
   end
 
   def update
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
     unless @user.tag_list.empty?
       @user.tag_list = []
     end
