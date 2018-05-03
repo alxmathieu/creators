@@ -30,4 +30,24 @@ fr:
   shared:
     creator:
       next-week: Bientôt !
+    navbar:
+      add-creator: Proposer un Créateur
+      sign_in: S'identifier
+      sign_up: Créer un compte
+      all-creators: Tous les Créateurs
+      profile: Mon profil
+  devise:
+    shared:
+      links:
+        log-in: S'identifier
+        sign-up: Créer un compte
+        forgot-password-link: Mot de passe oublié ?
+        resend-confirmation: Instructions de confirmation non-reçues ?
+        resend-unlock: Instructions de déblocage non-reçues ?
+    sessions:
+      new:
+        log-in-title: S'identifier
+    registrations:
+      new:
+        sign-up-title: Créer un compte
 

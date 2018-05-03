@@ -28,3 +28,23 @@ en:
   shared:
     creator:
       next-week: Next week!
+    navbar:
+      add-creator: Add a new creator
+      sign_in: Login
+      sign_up: Sign-up
+      all-creators: All Creators
+      profile: My profile
+  devise:
+    shared:
+      links:
+        log-in: Log in
+        sign-up: Sign up
+        forgot-password-link: Forgot your password?
+        resend-confirmation: Didn't receive confirmation instructions?
+        resend-unlock: Didn't receive unlock instructions?
+    sessions:
+      new:
+        log-in-title: Log in
+    registrations:
+      new:
+        sign-up-title: Sign up
