@@ -10,3 +10,13 @@ en:
   creators:
     index:
       title: "- This is where you can browse all creators   -"
+      search: Search
+      search-placeholder: Happy Browsing!
+      categories: Categories
+      languages: Languages
+      weeks: Weeks
+      filter: Filter
+      creator_nil: Didn't find the creator you wanted ? 😢
+      add_creator: Add a new creator
+
+

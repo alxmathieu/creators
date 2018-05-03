@@ -12,3 +12,9 @@ fr:
       title: "-  C'est ici que tu peux découvrir des pépites -"
       search: Rechercher
       search-placeholder: Bonne recherche!
+      categories: Catégories
+      languages: Langues
+      weeks: Semaines
+      filter: Filtrer
+      creator_nil: Tu n'as pas trouvé la pépite à ton pied ? 😢
+      add_creator: Ajoute un nouveau créateur
