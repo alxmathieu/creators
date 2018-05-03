@@ -34,7 +34,7 @@
   </div>
   <% if creator.batch == Batch.next_batch  %>
     <div class="upvote-tip">
-      Next Week!
+      <%= t('.next-week') %>
     </div>
   <% else %>
     <div class="card-upvote" id="upvote-btn-creator-<%= creator.id %>" >
