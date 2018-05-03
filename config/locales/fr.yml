@@ -27,4 +27,7 @@ fr:
       minutes: min
       last-winners: Gagnants de la semaine dernière
       all-btn: Tous les Créateurs
+  shared:
+    creator:
+      next-week: Bientôt !
 
