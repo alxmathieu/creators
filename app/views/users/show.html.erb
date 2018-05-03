@@ -13,20 +13,20 @@
           </div>
           <div class="user-infos-content" id="id-user-infos">
             <div class="bio-section text-left">
-              <h4>About</h4>
+              <h4><%= t('.about') %></h4>
               <% if (@user.bio.nil? || @user.bio.empty?) && current_user == @user %>
-                <p><strong>Edit your profile to describe yourself!</strong></p>
+                <p><strong><%= t('.about-empty') %></strong></p>
               <% else %>
                 <p><%= @user.bio %></p>
               <% end %>
               <i class="fas fa-map-marker-alt"></i><span> <%= @user.location %></span>
             </div>
             <div class="bio-section text-left">
-              <h4>Status</h4>
+              <h4><%= t('.status') %></h4>
               <p><%= @user.level_name %></p>
             </div>
             <div class="bio-section text-left">
-              <h4>What I like</h4>
+              <h4><%= t('.tags-liked') %></h4>
               <ul class="list-unstyled">
                 <% @user.tag_list.each do |tag| %>
                   <li># <%= tag %></li>
@@ -44,29 +44,38 @@
     <div class="col-md-9">
       <% if current_user == @user %>
         <div class="card card-gold">
-          <h2 class="achievements-title">My profile on Creators</h2>
+          <h2 class="achievements-title"><%= t('.profile-title') %></h2>
           <div class="achievements">
             <div class="progress-bar-container hidden-xs hidden-sm">
               <%= render 'progress', user: @user %>
             </div>
             <div class="divider hidden-xs hidden-sm"></div>
             <div class="next-steps">
-              <h4>Steps to upgrade your profile</h4>
+              <h4><%= t('.steps') %></h4>
               <% if @user.level == 0 %>
                 <ul class="list-unstyled">
-                  <li style="<%= 'text-decoration: line-through;' if @user.number_upvoted > 9 %>">Upvote at least <%= @user.min_upvotes %> creators <span class="light-color">
-                    (<%= @user.number_upvoted < @user.min_upvotes ? (@user.min_upvotes - @user.number_upvoted) : "0" %> left!)</span>
+                  <li style="<%= 'text-decoration: line-through;' if @user.number_upvoted > 9 %>">
+                    <%= t('.min-upvotes', user: @user ) %>
+                    <span class="light-color">
+                      (<%= @user.number_upvoted < @user.min_upvotes ? (@user.min_upvotes - @user.number_upvoted) : "0" %> <%= t('.number-hint') %>)
+                    </span>
                   </li>
                 </ul>
               <% elsif @user.level == 3 %>
-                <p>You're already an <%= @user.level_name %>!</p>
+                <p><%= t('.status-max') %></p>
               <% else %>
                 <ul class="list-unstyled">
-                  <li style="<%= 'text-decoration: line-through;' if @user.dig_needed - @user.creators.length <= 0 %>">Dig at least <%= pluralize @user.dig_needed, "creator" %> <span class="light-color">
-                    (<%= @user.creators.length < @user.dig_needed ? (@user.dig_needed - @user.creators.length) : "0" %> left!)</span>
+                  <li style="<%= 'text-decoration: line-through;' if @user.dig_needed - @user.creators.length <= 0 %>">
+                    <%= t('.min-digs', count: @user.dig_needed) %>
+                    <span class="light-color">
+                      (<%= @user.creators.length < @user.dig_needed ? (@user.dig_needed - @user.creators.length) : "0" %> <%= t('.number-hint') %>)
+                    </span>
                   </li>
-                  <li style="<%= 'text-decoration: line-through;' if @user.upvotes_needed - @user.upvotes_received <= 0 %>">Receive at least <%= pluralize @user.upvotes_needed, "upvote" %> on the creators you dug <span class="light-color">
-                    (<%= @user.upvotes_received < @user.upvotes_needed ? (@user.upvotes_needed - @user.upvotes_received) : "0" %> left!)</span>
+                  <li style="<%= 'text-decoration: line-through;' if @user.upvotes_needed - @user.upvotes_received <= 0 %>">
+                    <%= t('.min-upvotes-received', upvotes_needed: @user.upvotes_needed) %>
+                    <span class="light-color">
+                      (<%= @user.upvotes_received < @user.upvotes_needed ? (@user.upvotes_needed - @user.upvotes_received) : "0" %> <%= t('.number-hint') %>)
+                    </span>
                   </li>
                 </ul>
               <% end %>
@@ -80,17 +89,17 @@
         <ul class="nav nav-tabs custom-tabs" role="tablist">
           <li role="presentation" class="active"><a href="#digs" aria-controls="digs" role="tab" data-toggle="tab">
             <% if current_user == @user %>
-              My digs (<%= @user.creators.length %>)
+              <%= t('.current-user-digs') %> (<%= @user.creators.length %>)
             <% else %>
-              Creators uploaded by <%= @user.username %> (<%= @user.creators.length %>)
+              <%= t('.user-digs', user: @user.username) %> (<%= @user.creators.length %>)
             <% end %>
           </a>
           </li>
           <li role="presentation"><a href="#upvotes" aria-controls="upvotes" role="tab" data-toggle="tab">
             <% if current_user == @user %>
-              My upvotes (<%= @user.upvotes.length %>)
+              <%= t('.current-user-upvotes') %> (<%= @user.upvotes.length %>)
             <% else %>
-              Creators upvoted by <%= @user.username %> (<%= @user.upvotes.length %>)
+              <%= t('.user-upvotes', user: @user.username) %> (<%= @user.upvotes.length %>)
             <% end %>
           </a></li>
         </ul>

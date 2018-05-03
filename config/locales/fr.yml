@@ -9,6 +9,42 @@ fr:
           name: "Nom"
   creators:
     index:
-      title: "-  C'est ici que tu peux découvrir des pépites -"
+      title: "- C'est ici que tu peux découvrir des pépites -"
       search: Rechercher
       search-placeholder: Bonne recherche!
+  users:
+    show:
+      about: "À propos"
+      about-empty: "Édite ton profil pour te présenter à la communauté"
+      status: Statut
+      tags-liked: "Mes centres d'intérêt"
+      profile-title: "Mon statut sur Creators"
+      steps: "Les étapes pour passer au niveau supérieur"
+      min-upvotes: "Upvote au moins %{user.min_upvotes} créateurs"
+      number-hint: "restant !"
+      min-digs:
+        one: "Partage au moins 1 créateur"
+        other: "Partage au moins %{count} créateurs"
+      min-upvotes-received: "Reçoit au moins %{upvotes_needed} upvotes
+        sur les créateurs que tu as partagé"
+      status-max: "Tu es déjà un expert !"
+      current-user-digs: "Mes pépites"
+      user-digs: "Créateurs partagés par %{user}"
+      current-user-upvotes: "Mes upvotes"
+      user-upvotes: "Créateurs upvotés par %{user}"
+    progress:
+      first-step-name: Débutant
+      second-step-name: "Dénicheur débutant"
+      third-step-name: "Dénicheur avancé"
+      fourth-step-name: "Dénicheur expert"
+      popover-title: "Tu peux :"
+      first-step-content: "- Upvoter des créateurs"
+      second-step-content: "- Upvoter des créateurs
+        <br>- Mettre en avant un créateur par semaine"
+      third-step-content: "- Upvoter des créateurs
+        <br>- Mettre en avant un créateur par semaine
+        <br>- Mise en avant de tes découvertes dans le classement de la semaine"
+      fourth-step-content: "- Upvoter des créateurs
+        <br>- Mettre en avant un créateur par semaine
+        <br>- Mise en avant de tes découvertes dans le classement de la semaine
+        <br>- Écrire des recommandations"

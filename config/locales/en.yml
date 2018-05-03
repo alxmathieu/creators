@@ -9,4 +9,40 @@ en:
           name: "Nom"
   creators:
     index:
-      title: "- This is where you can browse all creators   -"
+      title: "- This is where you can browse all creators -"
+  users:
+    show:
+      about: About
+      about-empty: "Edit your profile to describe yourself!"
+      status: Status
+      tags-liked: "What I like"
+      profile-title: "My profile on Creators"
+      steps: "Steps to upgrade your profile"
+      min-upvotes: "Upvote at least %{user.min_upvotes} creators"
+      number-hint: "left!"
+      min-digs:
+        one: "Dig at least 1 creator"
+        other: "Dig at least %{count} creators"
+      min-upvotes-received: "Receive at least %{upvotes_needed} upvotes
+        on the creators you dug"
+      status-max: "You're already an expert!"
+      current-user-digs: "My digs"
+      user-digs: "Creators uploaded by %{user}"
+      current-user-upvotes: "My upvotes"
+      user-upvotes: "Creators upvoted by %{user}"
+    progress:
+      first-step-name: Viewer
+      second-step-name: Basic digger
+      third-step-name: Advanced digger
+      fourth-step-name: Expert digger
+      popover-title: "You can:"
+      first-step-content: "- Upvote Creators"
+      second-step-content: "- Upvote Creators
+        <br>- Showcase one Creator per week"
+      third-step-content: "- Upvote Creators
+        <br>- Showcase one Creator per week
+        <br>- Get your Creator highlighted in the weekly ranking"
+      fourth-step-content: "- Upvote Creators
+        <br>- Showcase one Creator per week
+        <br>- Get your Creator highlighted in the weekly ranking
+        <br>- Write 'Team's choice' recommendations"
