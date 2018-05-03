@@ -9,9 +9,15 @@ fr:
           name: "Nom"
   creators:
     index:
-      title: "-  C'est ici que tu peux découvrir des pépites -"
+      title: "- C'est ici que tu peux découvrir des pépites -"
       search: Rechercher
       search-placeholder: Bonne recherche!
+      categories: Catégories
+      languages: Langues
+      weeks: Semaines
+      filter: Filtrer
+      creator_nil: Tu n'as pas trouvé la pépite que tu cherchais ? 😢
+      add_creator: Ajoute un nouveau créateur
   pages:
     home:
       batch-empty: Revenez un peu plus tard! Un nouveau classement sera bientôt disponible!
@@ -50,4 +56,3 @@ fr:
     registrations:
       new:
         sign-up-title: Créer un compte
-

@@ -9,7 +9,15 @@ en:
           name: "Nom"
   creators:
     index:
-      title: "- This is where you can browse all creators -"
+      title: "- This is where you can browse all creators   -"
+      search: Search
+      search-placeholder: Happy Browsing!
+      categories: Categories
+      languages: Languages
+      weeks: Weeks
+      filter: Filter
+      creator_nil: Didn't find the Creator you wanted ? 😢
+      add_creator: Add a new creator
   pages:
     home:
       batch-empty: Please check back later! A new batch will be released soon.
@@ -48,3 +56,8 @@ en:
     registrations:
       new:
         sign-up-title: Sign up
+=======
+
+
+
+>>>>>>> master
