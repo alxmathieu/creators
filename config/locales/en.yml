@@ -1,5 +1,9 @@
 ---
 en:
+  helpers:
+    submit:
+      user:
+        update: "Update my profile"
   activerecord:
       models:
         creator: "Créateur"
@@ -17,19 +21,9 @@ en:
       status: Status
       tags-liked: "What I like"
       profile-title: "My profile on Creators"
-      steps: "Steps to upgrade your profile"
-      min-upvotes: "Upvote at least %{user.min_upvotes} creators"
-      number-hint: "left!"
-      min-digs:
-        one: "Dig at least 1 creator"
-        other: "Dig at least %{count} creators"
-      min-upvotes-received: "Receive at least %{upvotes_needed} upvotes
-        on the creators you dug"
-      status-max: "You're already an expert!"
-      current-user-digs: "My digs"
-      user-digs: "Creators uploaded by %{user}"
-      current-user-upvotes: "My upvotes"
-      user-upvotes: "Creators upvoted by %{user}"
+  shared:
+    modal_progress_bar:
+      profile-title: "My profile on Creators"
     progress:
       first-step-name: Viewer
       second-step-name: Basic digger
@@ -46,3 +40,17 @@ en:
         <br>- Showcase one Creator per week
         <br>- Get your Creator highlighted in the weekly ranking
         <br>- Write 'Team's choice' recommendations"
+    progress_next_steps:
+      steps: "Steps to upgrade your profile"
+      min-upvotes: "Upvote at least %{user.min_upvotes} creators"
+      number-hint: "left!"
+      min-digs:
+        one: "Dig at least 1 creator"
+        other: "Dig at least %{count} creators"
+      min-upvotes-received: "Receive at least %{upvotes_needed} upvotes
+        on the creators you dug"
+      status-max: "You're already an expert!"
+      current-user-digs: "My digs"
+      user-digs: "Creators uploaded by %{user}"
+      current-user-upvotes: "My upvotes"
+      user-upvotes: "Creators upvoted by %{user}"

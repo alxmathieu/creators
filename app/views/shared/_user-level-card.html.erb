@@ -3,6 +3,8 @@
     <p> You're currently a <span class="lever-user-typo"> <%= current_user.level_name %></span>! Want to level up?</p>
     <span class="btn btn-info">
       <%= link_to "How to do it ?", user_path(current_user) %>
+      <%#= link_to "How to do it ?", "#modalProgress", "data-toggle" => "modal" %>
     </span>
   </div>
+  <%#= render 'shared/modal_progress_bar', user: current_user %>
 <% end %>

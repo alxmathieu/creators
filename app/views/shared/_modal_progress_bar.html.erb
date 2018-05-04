@@ -1,0 +1,27 @@
+<div class="modal fade bd-example-modal-lg" id="modalProgress" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h5 class="modal-title text-left" id="exampleModalLabel">
+          <%= t('.profile-title') %>
+        </h5>
+      </div>
+      <div class="modal-body">
+        <div class="achievements">
+          <%= render 'shared/progress', user: user %>
+          <div class="divider hidden-xs hidden-sm"></div>
+          <div class="text-left">
+
+          <%= render 'shared/progress_next_steps', user: user %>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

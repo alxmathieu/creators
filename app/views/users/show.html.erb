@@ -47,39 +47,10 @@
           <h2 class="achievements-title"><%= t('.profile-title') %></h2>
           <div class="achievements">
             <div class="progress-bar-container hidden-xs hidden-sm">
-              <%= render 'progress', user: @user %>
+              <%= render 'shared/progress', user: @user %>
             </div>
             <div class="divider hidden-xs hidden-sm"></div>
-            <div class="next-steps">
-              <h4><%= t('.steps') %></h4>
-              <% if @user.level == 0 %>
-                <ul class="list-unstyled">
-                  <li style="<%= 'text-decoration: line-through;' if @user.number_upvoted > 9 %>">
-                    <%= t('.min-upvotes', user: @user ) %>
-                    <span class="light-color">
-                      (<%= @user.number_upvoted < @user.min_upvotes ? (@user.min_upvotes - @user.number_upvoted) : "0" %> <%= t('.number-hint') %>)
-                    </span>
-                  </li>
-                </ul>
-              <% elsif @user.level == 3 %>
-                <p><%= t('.status-max') %></p>
-              <% else %>
-                <ul class="list-unstyled">
-                  <li style="<%= 'text-decoration: line-through;' if @user.dig_needed - @user.creators.length <= 0 %>">
-                    <%= t('.min-digs', count: @user.dig_needed) %>
-                    <span class="light-color">
-                      (<%= @user.creators.length < @user.dig_needed ? (@user.dig_needed - @user.creators.length) : "0" %> <%= t('.number-hint') %>)
-                    </span>
-                  </li>
-                  <li style="<%= 'text-decoration: line-through;' if @user.upvotes_needed - @user.upvotes_received <= 0 %>">
-                    <%= t('.min-upvotes-received', upvotes_needed: @user.upvotes_needed) %>
-                    <span class="light-color">
-                      (<%= @user.upvotes_received < @user.upvotes_needed ? (@user.upvotes_needed - @user.upvotes_received) : "0" %> <%= t('.number-hint') %>)
-                    </span>
-                  </li>
-                </ul>
-              <% end %>
-            </div>
+            <%= render 'shared/progress_next_steps', user: @user %>
           </div>
         </div>
       <% end %>
