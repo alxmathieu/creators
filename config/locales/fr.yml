@@ -16,6 +16,12 @@ fr:
       title: "- C'est ici que tu peux découvrir des pépites -"
       search: Rechercher
       search-placeholder: Bonne recherche!
+      categories: Catégories
+      languages: Langues
+      weeks: Semaines
+      filter: Filtrer
+      creator_nil: Tu n'as pas trouvé la pépite que tu cherchais ? 😢
+      add_creator: Ajoute un nouveau créateur
   users:
     show:
       about: "À propos"
@@ -24,6 +30,14 @@ fr:
       tags-liked: "Mes centres d'intérêt"
       profile-title: "Mon statut sur Creators"
   shared:
+    creator:
+      next-week: Bientôt !
+    navbar:
+      add-creator: Proposer un Créateur
+      sign_in: S'identifier
+      sign_up: Créer un compte
+      all-creators: Tous les Créateurs
+      profile: Mon profil
     modal_progress_bar:
       profile-title: "Mon statut sur Creators"
     progress:
@@ -56,3 +70,32 @@ fr:
       user-digs: "Créateurs partagés par %{user}"
       current-user-upvotes: "Mes upvotes"
       user-upvotes: "Créateurs upvotés par %{user}"
+  pages:
+    home:
+      batch-empty: Revenez un peu plus tard! Un nouveau classement sera bientôt disponible!
+      title: Découvre les Créateurs de la semaine!
+      tagline-current-batch: Découvre et vote pour les Créateurs de la semaine et aide les à atteindre la première place
+      title-last-batch: Créateurs de la semaine dernière
+      tagline-last-batch: Tu as raté les Créateurs de la semaine dernière ? Découvre les ici !
+      teaser-next-week: Découvre
+      in: dans
+      teaser-next-week-plural: Créateur(s)
+      days: jours
+      hours: heures
+      minutes: min
+      last-winners: Gagnants de la semaine dernière
+      all-btn: Tous les Créateurs
+  devise:
+    shared:
+      links:
+        log-in: S'identifier
+        sign-up: Créer un compte
+        forgot-password-link: Mot de passe oublié ?
+        resend-confirmation: Instructions de confirmation non-reçues ?
+        resend-unlock: Instructions de déblocage non-reçues ?
+    sessions:
+      new:
+        log-in-title: S'identifier
+    registrations:
+      new:
+        sign-up-title: Créer un compte

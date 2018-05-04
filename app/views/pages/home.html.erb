@@ -7,12 +7,12 @@
       <div class="current-batch">
         <div class="title-current-batch">
           <% if Batch.current_batch.nil? || Batch.all.empty? %>
-            <h1> Please check back later! A new batch will be released soon.</h1>
+            <h1> <%= t('.batch-empty') %> </h1>
           <% else %>
-            <h1 style= "margin-bottom: 0px">Discover this week's new Creators</h1>
+            <h1 style= "margin-bottom: 0px"> <%= t('.title') %></h1>
         </div>
         <div class="tagline-last-batch">
-          Here are some brand new Creators! Upvote and make them reach the top.
+          <%= t('.tagline-current-batch') %>
         </div>
           <div class="current-ranking">
             <ul class="list-unstyled">
@@ -23,9 +23,9 @@
           </div>
       </div>
         <div class="last-batch">
-          <h2>Last week's Creators</h2>
+          <h2><%= t('.title-last-batch') %></h2>
           <div class="tagline-last-batch">
-            Missed last week's ranking? Check them out!
+            <%= t('.tagline-last-batch') %>
           </div>
           <div class="last-ranking">
             <ul class="list-unstyled">
@@ -34,7 +34,7 @@
               <% end %>
             </ul>
             <div class="btn btn-info btn-lg">
-              <%= link_to "See all creators", search_path %>
+              <%= link_to t('.all-btn'), search_path %>
             </div>
           </div>
         </div>
@@ -53,27 +53,38 @@
       </div>
 
       <div class="teaser-next-week card card-charcoal">
-        <span>Discover <strong><%= pluralize @next_creators, " new Creator" %></strong> in</span>
+        <span><%= t('.teaser-next-week') %> <strong><%= pluralize @next_creators, t('.teaser-next-week-plural') %></strong> <%= t('.in') %></span>
         <div id="countholder">
-         <div class="days" ><strong><span id="days"></span></strong><div>Days</div></div>
-         <div class="hours"><strong><span id="hours"></span></strong><div>Hours</div></div>
-         <div class="minutes"><strong><span id="minutes"></strong></span><div>Minutes</div></div>
+         <div class="days" ><strong><span id="days"></span></strong><div><%= t('.days') %></div></div>
+         <div class="hours"><strong><span id="hours"></span></strong><div><%= t('.hours') %></div></div>
+         <div class="minutes"><strong><span id="minutes"></strong></span><div><%= t('.minutes') %></div></div>
         </div>
       </div>
       <% unless @winners_last_batch == [] %>
         <div class="ranking-last-week card card-charcoal">
-          <h5> Last week's winners </h5>
+          <h5 style="text-align: center"> <%= t('.last-winners') %> </h5>
           <ul class="list-unstyled">
-            <% @winners_last_batch.each do |winner| %>
-              <div class="position-last-week">
-                <li>
-                  <%= "#{@winners_last_batch.index(winner) + 1}" %> - <%= winner.youtube_name %> <br>
-                  <%= link_to(creator_path(winner)) do %>
-                    <%= cl_image_tag winner.avatar_photo, class: "avatar-creator"%>
-                  <% end %>
-                </li>
-              </div>
-            <% end %>
+            <!-- 1er place -->
+            <div class="position-last-week">
+              <li>
+                <%#= "#{@winners_last_batch.index(winner) + 1}" %>
+                <%= image_tag "gold-medal.svg", class: "medal" %> - <%= link_to @winners_last_batch.first.youtube_name, creator_path(@winners_last_batch.first), class: "winner-last-batch"  %>
+              </li>
+            </div>
+            <!-- 2e place -->
+            <div class="position-last-week">
+              <li>
+                <%#= "#{@winners_last_batch.index(winner) + 1}" %>
+                <%= image_tag "silver-medal.svg", class: "medal" %> - <%= link_to @winners_last_batch[1].youtube_name, creator_path(@winners_last_batch[1]), class: "winner-last-batch"  %>
+              </li>
+            </div>
+            <!-- 3e place -->
+            <div class="position-last-week">
+              <li>
+                <%#= "#{@winners_last_batch.index(winner) + 1}" %>
+                <%= image_tag "bronze-medal.svg", class: "medal" %> - <%= link_to @winners_last_batch.last.youtube_name, creator_path(@winners_last_batch.last), class: "winner-last-batch"  %>
+              </li>
+            </div>
           </ul>
         </div>
       <% end %>
