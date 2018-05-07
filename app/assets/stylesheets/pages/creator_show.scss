@@ -1,7 +1,22 @@
+
+// bandeau de fond
+.back-show{
+  z-index: -2;
+  position: absolute;
+  top: 350px;
+  left: -276px;
+  -webkit-transform: rotate(-5deg);
+  background-color: $charcoal;
+  height: 200px;
+  width: 120vw;
+
+}
+
+
+// bandeau logo/nom/btn-upvote
 .upvotes-content {
   flex: 0 0 auto;
   text-align: center;
-  // display: flex;
 }
 
 .upvote-tip {
@@ -14,32 +29,27 @@
   }
 }
 
+.upvote-btn-symbol {
+  font-weight: bold;
+}
+
+.full-btn-upvote-nb {
+    color: white;
+    background-color: #3c5474;
+    width: 30px;
+    border-radius: 0px 3px 3px 0px;
+}
+
 .counter-upvotes {
-  margin-right: 10Px
+  margin: 30px;
 }
 
 .creator {
   flex: 0 0 60%;
   display: flex;
   align-items: center;
+  padding: 0px 300px;
 }
-
-.back-show{
-  z-index: -2;
-  position: absolute;
-  top: 300px;
-  left: -80px;
-  -webkit-transform: rotate(-5deg);
-  background-color: $charcoal;
-  height: 200px;
-  width: 120vw;
-
-}
-
-.wrapper {
-  overflow: hidden;
-}
-
 .show-card{
   position: relative;
   display: flex;
@@ -51,26 +61,30 @@
 
 
   .avatar-large {
-    height: 120px;
-    width: 120px;
+    height: 170px;
+    width: 170px;
     border-radius: 50%;
     flex: 0 0 auto;
     margin: 10px;
+    margin-right: 30px;
   }
 
   .showcased-name {
     font-family: "Permanent Marker", "Helvetica", "cursive";
-    font-size: 50px;
+    font-size: 60px;
     line-height: 45px;
     color: $charcoal;
     text-decoration: none;
+    width: 500px !important;
   }
 
 }
 
+// card info
 .info {
-  margin: 0px;
+  margin: 0px 40px;
   margin-bottom: 30px;
+  width: 235px;
 }
 
 .subtitle-info {
@@ -78,32 +92,9 @@
 }
 
 .social {
-  ul {
     margin-top: 5px;
-  }
 }
 
-.btn-more {
-  background-color: none;
-  position: absolute;
-  padding: 10px;
-  bottom: -5px;
-  right: 42%;
-
-  a {
-
-    font-size: 16px;
-    text-decoration: none;
-    color: $silver-gray;
-    transition: 0.3 ease;
-
-    &:hover {
-      text-decoration: none;
-      opacity: 0.8;
-
-    }
-  }
-}
 
 .btn-subscribe {
   margin-left: 40px;
@@ -130,6 +121,13 @@
   }
 }
 
+.description-video {
+    padding: 1px;
+    margin: auto;
+    width-max:  auto;
+    margin-bottom: 30px;
+}
+
 .description {
   position: relative;
   display: flex;
@@ -148,15 +146,6 @@
   right: 30px;
 }
 
-.description-video {
-  padding: 0px;
-  margin: auto;
-}
-
-.counter-upvotes {
-  margin: 5px;
-}
-
 .videoWrapper {
   position: relative;
   padding-bottom: 56.25%; /* 16:9 */
@@ -169,4 +158,77 @@
   position: absolute;
   width: 90%;
   height: 90%;
+}
+
+.btn-more {
+  background-color: none;
+  position: absolute;
+  padding: 10px;
+  bottom: -5px;
+  right: 42%;
+
+  a {
+
+    font-size: 16px;
+    text-decoration: none;
+    color: $silver-gray;
+    transition: 0.3 ease;
+
+    &:hover {
+      text-decoration: none;
+      opacity: 0.8;
+
+    }
+  }
+}
+
+
+// Pour mobile
+@media screen and (max-width: 1000px) {
+  .creator{
+    flex-direction: column;
+  }
+  .upvotes-content{
+    flex-direction: column;
+    margin-top: 30px;
+  }
+  .showcased-name {
+    font-size: 60px !important;
+    text-align: center;
+    width: 200px !important;
+  }
+
+  .back-show{
+  z-index: -2;
+  position: absolute;
+  top: 400px;
+  left: -70px;
+  -webkit-transform: rotate(-5deg);
+  background-color: $charcoal;
+  height: 200px;
+  width: 120vw;
+  }
+
+  .btn-more {
+  position: absolute;
+  bottom: -20px;
+
+  right: 32%;
+  }
+
+  .info {
+    width: 93vw;
+    margin: 0px 0px 10px 0px;
+  }
+}
+
+.main {
+  background: cover;
+  height: auto;
+}
+
+.main2 {
+  width: 380;
+  height: auto;
+  margin-left: 0px;
 }
