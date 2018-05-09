@@ -8,9 +8,12 @@
         <%= f.input :bio %>
         <%= f.input :location %>
         <div class="form-group">
-          <%= label_tag :tags, "Choose some tags" %>
+          <%= label_tag :tags %>
           <%= select_tag :tags, options_from_collection_for_select(
               @categories, 'id', 'name', @user.tags.map {|t| t.id}), class: 'select2-tags', id: "input-tags-multiple", multiple: true, style:"width: 100%; font-size: 16px" %>
+        </div>
+        <div class="text-left">
+          <%= f.input :private %>
         </div>
         <%= f.submit class: "btn btn-primary"%>
       <% end %>

@@ -11,6 +11,21 @@ en:
       attributes:
         creator:
           name: "Nom"
+  simple_form:
+    labels:
+      user:
+        avatar: Avatar
+        username: Username
+        password: Password
+        password_confirmation: Password confirmation
+        remember_me: Remember
+        bio: Bio
+        location: Location
+        tags: Choose some tags
+        private: Private (other users won't see your upvotes)
+    hints:
+      user:
+        password: 6 characters minimum
   creators:
     index:
       title: "- This is where you can browse all creators -"
@@ -29,6 +44,11 @@ en:
       status: Status
       tags-liked: "What I like"
       profile-title: "My profile on Creators"
+      private: Private profile
+      private-hint: Other users won't see the creators you upvoted
+      public: Public profile
+      public-hint: Other users can see the creators you upvoted
+      user
   shared:
     creator:
       next-week: Next week!

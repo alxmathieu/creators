@@ -19,7 +19,22 @@
               <% else %>
                 <p><%= @user.bio %></p>
               <% end %>
-              <i class="fas fa-map-marker-alt"></i><span> <%= @user.location %></span>
+              <p>
+                <i class="fas fa-map-marker-alt"></i> <%= @user.location %>
+              </p>
+              <% if @user == current_user %>
+                <% if @user.private %>
+                  <p>
+                    <i class="fas fa-lock"></i> <%= t('.private') %>
+                    <sup><i class="far fa-question-circle" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="<%= t('.private-hint') %>"></i></sup>
+                  </p>
+                <% else %>
+                  <p>
+                    <i class="fas fa-unlock"></i> <%= t('.public') %>
+                    <sup><i class="far fa-question-circle" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="<%= t('.public-hint') %>"></i></sup>
+                  </p>
+                <% end %>
+              <% end %>
             </div>
             <div class="bio-section text-left">
               <h4><%= t('.status') %></h4>
@@ -70,7 +85,9 @@
             <% if current_user == @user %>
               <%= t('.current-user-upvotes') %> (<%= @user.upvotes.length %>)
             <% else %>
-              <%= t('.user-upvotes', user: @user.username) %> (<%= @user.upvotes.length %>)
+              <% unless @user.private %>
+                <%= t('.user-upvotes', user: @user.username) %> (<%= @user.upvotes.length %>)
+              <% end %>
             <% end %>
           </a></li>
         </ul>

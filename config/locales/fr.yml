@@ -11,6 +11,21 @@ fr:
       attributes:
         creator:
           name: "Nom"
+  simple_form:
+    labels:
+      user:
+        avatar: Avatar
+        username: Nom d'utilisateur
+        password: Mot de passe
+        password_confirmation: Confirmer le mot de passe
+        remember_me: Se souvenir de moi
+        bio: Bio
+        location: Localisation
+        tags: Choisis quelques tags
+        private: Privé (les autres utilisateurs ne verront pas tes upvotes)
+    hints:
+      user:
+        password: 6 caractères minimum
   creators:
     index:
       title: "- C'est ici que tu peux découvrir des pépites -"
@@ -99,3 +114,11 @@ fr:
     registrations:
       new:
         sign-up-title: Créer un compte
+  users:
+    show:
+      private: Profil privé
+      private-hint: Les autres utilisateurs ne peuvent pas voir les créateurs
+        que tu as upvoté
+      public: Profil public
+      public-hint: Les autres utilisateurs peuvent voir les créateurs que tu as
+        upvoté
