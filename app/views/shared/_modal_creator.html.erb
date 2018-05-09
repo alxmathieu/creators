@@ -7,7 +7,7 @@
             <span aria-hidden="true">&times;</span>
           </button>
           <% if current_user.allowed_to_upload? %>
-            <h5 class="modal-title" id="exampleModalLabel">Enter the URL of the creator's channel you want to share</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Enter the Youtube URL of the creator's channel you want to share</h5>
           <% else %>
             <h5 class="modal-title" id="exampleModalLabel">🚫</h5>
           <% end %>
@@ -20,7 +20,9 @@
                 <%= form.input :channel_url, required: true, as: :string, id: "form-input-no-border", label: false, placeholder: "https://www.youtube.com/channel/mychanel", input_html: {class:"stuff"}
                  %>
               </div>
-              <%= form.button :submit, 'Retrieve data', class:"btn btn-primary" %>
+              <div class="text-center">
+                <%= form.button :submit, 'Go fetch my creator!', class:"btn btn-primary" %>
+              </div>
             <% end %>
           <% else %>
             <p>Sorry, you can't upload a creator...yet!</p>
@@ -31,7 +33,7 @@
             <% elsif current_user.level == 3 %>
               <p>You can only upload 2 creators per week!</p>
             <% end %>
-            <%= render 'users/progress', user: current_user %>
+            <%= render 'shared/progress', user: current_user %>
             <div class="modal-footer">
               <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
               <div class="btn btn-primary">
