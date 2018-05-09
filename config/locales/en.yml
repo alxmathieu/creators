@@ -10,3 +10,49 @@ en:
   creators:
     index:
       title: "- This is where you can browse all creators   -"
+      search: Search
+      search-placeholder: Happy Browsing!
+      categories: Categories
+      languages: Languages
+      weeks: Weeks
+      filter: Filter
+      creator_nil: Didn't find the Creator you wanted ? 😢
+      add_creator: Add a new creator
+  pages:
+    home:
+      batch-empty: Please check back later! A new batch will be released soon.
+      title: Discover this week's new Creators!
+      tagline-current-batch: Here are some brand new Creators! Upvote and make them reach the top.
+      title-last-batch: Last week's Creators
+      tagline-last-batch: Missed last week's ranking? Check them out!
+      teaser-next-week: Discover
+      in: dans
+      teaser-next-week-plural: new Creator
+      days: days
+      hours: hours
+      minutes: minutes
+      last-winners: Last week's winners
+      all-btn: See all Creators
+  shared:
+    creator:
+      next-week: Next week!
+    navbar:
+      add-creator: Add a new creator
+      sign_in: Login
+      sign_up: Sign-up
+      all-creators: All Creators
+      profile: My profile
+  devise:
+    shared:
+      links:
+        log-in: Log in
+        sign-up: Sign up
+        forgot-password-link: Forgot your password?
+        resend-confirmation: Didn't receive confirmation instructions?
+        resend-unlock: Didn't receive unlock instructions?
+    sessions:
+      new:
+        log-in-title: Log in
+    registrations:
+      new:
+        sign-up-title: Sign up

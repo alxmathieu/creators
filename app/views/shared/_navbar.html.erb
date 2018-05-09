@@ -14,9 +14,9 @@
 
       <!-- Links when logged in -->
 
-      <%= link_to "Add a new creator", "#creator-modal", "data-toggle" => "modal", class: "navbar-creators-item navbar-creators-link" %>
+      <%= link_to t('.add-creator'), "#creator-modal", "data-toggle" => "modal", class: "navbar-creators-item navbar-creators-link" %>
       <%= render 'shared/modal_creator' %>
-      <%= link_to "See all Creators", search_path, class: "navbar-creators-item navbar-creators-link" %>
+      <%= link_to t('.see-all-creators'), search_path, class: "navbar-creators-item navbar-creators-link" %>
       <%#= link_to "My page", user_path(current_user), class: "navbar-creators-item navbar-creators-link" %>
 
       <!-- Avatar with dropdown menu -->
@@ -39,10 +39,10 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to "See all Creators", search_path, class: "navbar-creators-item navbar-creators-link" %>
+      <%= link_to t('.all-creators'), search_path, class: "navbar-creators-item navbar-creators-link" %>
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-creators-item navbar-creators-link" %>
       <!-- Signup link (when logged out) -->
-      <%= link_to t(".sign_up", default: "Signup"), new_user_registration_path, class: "navbar-creators-item navbar-creators-link" %>
+      <%= link_to t(".sign_up", default: "Sign-up"), new_user_registration_path, class: "navbar-creators-item navbar-creators-link" %>
     <% end %>
   </div>
   <!-- Dropdown list appearing on mobile only -->
@@ -55,11 +55,11 @@
             <!-- NEED TO ADD THE BTN TO add a creator, WITHOUT a modal. -->
           </li>
           <li>
-            <%= link_to "All Creators", search_path, class: "navbar-creators-item navbar-creators-link" %>
+            <%= link_to t('.all-creators'), search_path, class: "navbar-creators-item navbar-creators-link" %>
           </li>
           <!-- NEED TO ADD THE BTN TO see last week winner. NEEDS A NEW PAGE?? -->
           <li>
-            <%= link_to "My Profile", user_path(current_user), class: "navbar-creators-item navbar-creators-link" %>
+            <%= link_to t('.profile'), user_path(current_user), class: "navbar-creators-item navbar-creators-link" %>
           </li>
         <% end %>
       </ul>
