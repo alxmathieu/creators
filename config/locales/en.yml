@@ -1,5 +1,9 @@
 ---
 en:
+  helpers:
+    submit:
+      user:
+        update: "Update my profile"
   activerecord:
       models:
         creator: "Créateur"
@@ -9,7 +13,7 @@ en:
           name: "Nom"
   creators:
     index:
-      title: "- This is where you can browse all creators   -"
+      title: "- This is where you can browse all creators -"
       search: Search
       search-placeholder: Happy Browsing!
       categories: Categories
@@ -18,6 +22,54 @@ en:
       filter: Filter
       creator_nil: Didn't find the Creator you wanted ? 😢
       add_creator: Add a new creator
+  users:
+    show:
+      about: About
+      about-empty: "Edit your profile to describe yourself!"
+      status: Status
+      tags-liked: "What I like"
+      profile-title: "My profile on Creators"
+  shared:
+    creator:
+      next-week: Next week!
+    navbar:
+      add-creator: Add a new creator
+      sign_in: Login
+      sign_up: Sign-up
+      all-creators: All Creators
+      profile: My profile
+    modal_progress_bar:
+      profile-title: "My profile on Creators"
+    progress:
+      first-step-name: Viewer
+      second-step-name: Basic digger
+      third-step-name: Advanced digger
+      fourth-step-name: Expert digger
+      popover-title: "You can:"
+      first-step-content: "- Upvote Creators"
+      second-step-content: "- Upvote Creators
+        <br>- Showcase one Creator per week"
+      third-step-content: "- Upvote Creators
+        <br>- Showcase one Creator per week
+        <br>- Get your Creator highlighted in the weekly ranking"
+      fourth-step-content: "- Upvote Creators
+        <br>- Showcase one Creator per week
+        <br>- Get your Creator highlighted in the weekly ranking
+        <br>- Write 'Team's choice' recommendations"
+    progress_next_steps:
+      steps: "Steps to upgrade your profile"
+      min-upvotes: "Upvote at least %{user.min_upvotes} creators"
+      number-hint: "left!"
+      min-digs:
+        one: "Dig at least 1 creator"
+        other: "Dig at least %{count} creators"
+      min-upvotes-received: "Receive at least %{upvotes_needed} upvotes
+        on the creators you dug"
+      status-max: "You're already an expert!"
+      current-user-digs: "My digs"
+      user-digs: "Creators uploaded by %{user}"
+      current-user-upvotes: "My upvotes"
+      user-upvotes: "Creators upvoted by %{user}"
   pages:
     home:
       batch-empty: Please check back later! A new batch will be released soon.
@@ -33,15 +85,6 @@ en:
       minutes: minutes
       last-winners: Last week's winners
       all-btn: See all Creators
-  shared:
-    creator:
-      next-week: Next week!
-    navbar:
-      add-creator: Add a new creator
-      sign_in: Login
-      sign_up: Sign-up
-      all-creators: All Creators
-      profile: My profile
   devise:
     shared:
       links:
