@@ -48,7 +48,11 @@ en:
       private-hint: Other users won't see the creators you upvoted
       public: Public profile
       public-hint: Other users can see the creators you upvoted
-      user
+        user
+      current-user-digs: "My digs"
+      user-digs: "Creators uploaded by %{user}"
+      current-user-upvotes: "My upvotes"
+      user-upvotes: "Creators upvoted by %{user}"
   shared:
     creator:
       next-week: Next week!
@@ -86,10 +90,6 @@ en:
       min-upvotes-received: "Receive at least %{upvotes_needed} upvotes
         on the creators you dug"
       status-max: "You're already an expert!"
-      current-user-digs: "My digs"
-      user-digs: "Creators uploaded by %{user}"
-      current-user-upvotes: "My upvotes"
-      user-upvotes: "Creators upvoted by %{user}"
   pages:
     home:
       batch-empty: Please check back later! A new batch will be released soon.
