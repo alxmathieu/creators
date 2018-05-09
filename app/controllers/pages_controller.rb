@@ -58,7 +58,8 @@ class PagesController < ApplicationController
   #   @hugo = User.find(69)
   #   @benoit = User.find(71)
   #   @maximilien = User.find(72)
-  # end
+
+  end
 
 
 
@@ -80,9 +81,9 @@ class PagesController < ApplicationController
     end
   end
 
-def sort_creators_last_batch(array)
-  asc = array.sort_by {|creator| creator.upvotes.length }
-  asc.reverse
-end
+  def sort_creators_last_batch(array)
+    asc = array.sort_by {|creator| creator.upvotes.length }
+    asc.reverse
+  end
 
 end
