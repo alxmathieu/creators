@@ -7,6 +7,21 @@ en:
       attributes:
         creator:
           name: "Nom"
+  simple_form:
+    labels:
+      user:
+        avatar: Avatar
+        username: Username
+        password: Password
+        password_confirmation: Password confirmation
+        remember_me: Remember
+        bio: Bio
+        location: Location
+        tags: Choose some tags
+        private: Private (other users won't see your upvotes)
+    hints:
+      user:
+        password: 6 characters minimum
   creators:
     index:
       title: "- This is where you can browse all creators   -"
@@ -56,8 +71,9 @@ en:
     registrations:
       new:
         sign-up-title: Sign up
-=======
-
-
-
->>>>>>> master
+  users:
+    show:
+      private: Private profile
+      private-hint: Other users won't see the creators you upvtoed
+      public: Public profile
+      public-hint: Other users can see the creators you upvoted

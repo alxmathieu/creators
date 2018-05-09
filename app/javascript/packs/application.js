@@ -19,15 +19,6 @@ if (document.getElementById("days")) {
   getSeconds();
 };
 
-
-if (document.getElementById("id-user-infos")) {
-  $(document).ready(function(){
-      $('[data-toggle="popover"]').popover({
-        html : true
-      });
-  });
-};
-
 import { showBurst } from '../components/mojs.js';
 if (document.querySelector(".icon-not-upvoted")) {
   showBurst();
@@ -37,5 +28,9 @@ $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
 
-
+$(function () {
+  $('[data-toggle="popover"]').popover({
+    container: 'body'
+  })
+})
 
