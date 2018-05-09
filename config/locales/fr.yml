@@ -44,6 +44,16 @@ fr:
       status: Statut
       tags-liked: "Mes centres d'intérêt"
       profile-title: "Mon statut sur Creators"
+      private: Profil privé
+      private-hint: Les autres utilisateurs ne verront pas les créateurs que tu
+        as upvoté
+      public: Profil public
+      public-hint: Les autres utilisateurs verront les créateurs que tu
+        as upvoté
+      current-user-digs: "Mes pépites"
+      user-digs: "Créateurs partagés par %{user}"
+      current-user-upvotes: "Mes upvotes"
+      user-upvotes: "Créateurs upvotés par %{user}"
   shared:
     creator:
       next-week: Bientôt !
@@ -81,10 +91,6 @@ fr:
       min-upvotes-received: "Reçoit au moins %{upvotes_needed} upvotes
         sur les créateurs que tu as partagé"
       status-max: "Tu es déjà un expert !"
-      current-user-digs: "Mes pépites"
-      user-digs: "Créateurs partagés par %{user}"
-      current-user-upvotes: "Mes upvotes"
-      user-upvotes: "Créateurs upvotés par %{user}"
   pages:
     home:
       batch-empty: Revenez un peu plus tard! Un nouveau classement sera bientôt disponible!
@@ -114,11 +120,3 @@ fr:
     registrations:
       new:
         sign-up-title: Créer un compte
-  users:
-    show:
-      private: Profil privé
-      private-hint: Les autres utilisateurs ne peuvent pas voir les créateurs
-        que tu as upvoté
-      public: Profil public
-      public-hint: Les autres utilisateurs peuvent voir les créateurs que tu as
-        upvoté
