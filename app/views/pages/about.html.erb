@@ -1,5 +1,219 @@
-<h1>ABOUT</h1>
+<div class="container">
+  <h1 style="text-align: center"> Who are we?</h1>
+  <div class="description-about">
+    <div class="about-paragraph">
+      We are a group of 5 friends who are passionate about YouTube.
+      Creators was originally a class-project, but we feel like there is a real
+      need for this, so that why we are now launching it (Alpha Version for now 😇)
+    </div>
+    <div class="about-paragraph">
+      The main goal of Creators is to enable you to discover hidden gems on YouTube,
+      and share your favorites with the community!
+    </div>
+    <div class="about-paragraph">
+      This will hopefully give visibility to small Creators and help you discover what's great
+      about YouTube !
+    </div>
+    <div class="about-paragraph">
+      As this is our Alpha Version, we need as much feedback as possible.
+      You can send them on twitter, facebook, or via email: alex@rising-creators.com
+    </div>
+  </div>
+  <div class="about-team">
+    <div class="row">
+      <!-- ONE CARD -->
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="card card-turquoise card-about">
+          <div class="avatar-about">
+            <%= link_to(user_path(@alex)) do %>
+              <%= image_tag @alex.avatar, alt: @alex.username, class: "avatar-about"%>
+            <% end %>
+          </div>
+          <div class="name-about">
+            <%= link_to @alex.username, user_path(@alex), class: "name-about" %>
+          </div>
+          <div class="desc-about">
+            <p>
+              I became addicted to YouTube while being in cold dark Finland during winter 😅.
+            </p>
+          </div>
+          <div class="favorites-title-about">
+            I mostly watch:
+          </div>
+          <div class="favorites-about">
+            <div class="cat-about" data-toggle="tooltip" data-placement="bottom" title="Vlogs">
+              🤳
+            </div>
+            <div class="cat-about" data-toggle="tooltip" data-placement="bottom" title="Gaming">
+               🎮
+            </div>
+            <div class="cat-about" data-toggle="tooltip" data-placement="bottom" title="Travels">
+               🗺
+            </div>
+            <div class="cat-about" data-toggle="tooltip" data-placement="bottom" title="Tech">
+               🤖
+            </div>
+            <div class="cat-about" data-toggle="tooltip" data-placement="bottom" title="Science">
+               🔬
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ONE CARD -->
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="card card-turquoise card-about">
+          <div class="avatar-about">
+            <%= link_to(user_path(@alexis)) do %>
+              <%= image_tag @alexis.avatar, alt: @alexis.username, class: "avatar-about"%>
+            <% end %>
+          </div>
+          <div class="name-about">
+            <%= link_to @alexis.username, user_path(@alexis), class: "name-about" %>
+          </div>
+          <div class="desc-about">
+            <p>
+              Engineer, specialized in Aeronautics? That's no fun, let's gather a YouTube Community here!
+            </p>
+          </div>
+          <div class="favorites-title-about">
+            I mostly watch:
+          </div>
+          <div class="favorites-about">
+            <div class="cat-about" data-toggle="tooltip" data-placement="bottom" title="Vlogs">
+              🤳
+            </div>
+            <div class="cat-about" data-toggle="tooltip" data-placement="bottom" title="Talks">
+               🎤
+            </div>
+            <div class="cat-about" data-toggle="tooltip" data-placement="bottom" title="Sport">
+               ⚽️
+            </div>
+            <div class="cat-about" data-toggle="tooltip" data-placement="bottom" title="Tech">
+               🤖
+            </div>
+            <div class="cat-about" data-toggle="tooltip" data-placement="bottom" title="Science">
+               🔬
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ONE CARD -->
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="card card-turquoise card-about">
+          <div class="avatar-about">
+            <%= link_to(user_path(@benoit)) do %>
+              <%= image_tag @benoit.avatar, alt: @benoit.username, class: "avatar-about"%>
+            <% end %>
+          </div>
+          <div class="name-about">
+            <%= link_to @benoit.username, user_path(@benoit), class: "name-about" %>
+          </div>
+          <div class="desc-about">
+            <p>
+              I love YT and finding small Creators is my main hobby. This and partying! "MDRRRR"
+            </p>
+          </div>
+          <div class="favorites-title-about">
+            I mostly watch:
+          </div>
+          <div class="favorites-about">
+            <div class="cat-about" data-toggle="tooltip" data-placement="bottom" title="Vlogs">
+              🤳
+            </div>
+            <div class="cat-about" data-toggle="tooltip" data-placement="bottom" title="Popularization">
+               🔍
+            </div>
+            <div class="cat-about" data-toggle="tooltip" data-placement="bottom" title="Education">
+               📚
+            </div>
+            <div class="cat-about" data-toggle="tooltip" data-placement="bottom" title="Music">
+               🎧
+            </div>
+            <div class="cat-about" data-toggle="tooltip" data-placement="bottom" title="Cinema">
+               🎬
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ONE CARD -->
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="card card-turquoise card-about">
+          <div class="avatar-about">
+            <%= link_to(user_path(@hugo)) do %>
+              <%= image_tag @hugo.avatar, alt: @hugo.username, class: "avatar-about"%>
+            <% end %>
+          </div>
+          <div class="name-about">
+            <%= link_to @hugo.username, user_path(@hugo), class: "name-about" %>
+          </div>
+          <div class="desc-about">
+            <p>
+              I'm from Britanny and I can't be away from the sea more than 10 days, i love it too much!
+            </p>
+          </div>
+          <div class="favorites-title-about">
+            I mostly watch:
+          </div>
+          <div class="favorites-about">
+            <div class="cat-about" data-toggle="tooltip" data-placement="bottom" title="Sea">
+              🌊
+            </div>
+            <div class="cat-about" data-toggle="tooltip" data-placement="bottom" title="Sea">
+               🌊
+            </div>
+            <div class="cat-about" data-toggle="tooltip" data-placement="bottom" title="Sea">
+               🌊
+            </div>
+            <div class="cat-about" data-toggle="tooltip" data-placement="bottom" title="Sea">
+               🌊
+            </div>
+            <div class="cat-about" data-toggle="tooltip" data-placement="bottom" title="Sea">
+               🌊
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ONE CARD -->
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="card card-turquoise card-about">
+          <div class="avatar-about">
+            <%= link_to(user_path(@maximilien)) do %>
+              <%= image_tag @maximilien.avatar, alt: @maximilien.username, class: "avatar-about"%>
+            <% end %>
+          </div>
+          <div class="name-about">
+            <%= link_to @maximilien.username, user_path(@maximilien), class: "name-about" %>
+          </div>
+          <div class="desc-about">
+            <p>
+              I love spending my freetime watching Casey roll through NY or Benjamin Verrachia laugh...!
+            </p>
+          </div>
+          <div class="favorites-title-about">
+            I mostly watch:
+          </div>
+          <div class="favorites-about">
+            <div class="cat-about" data-toggle="tooltip" data-placement="bottom" title="Vlogs">
+              🤳
+            </div>
+            <div class="cat-about" data-toggle="tooltip" data-placement="bottom" title="Comedy">
+               😂
+            </div>
+            <div class="cat-about" data-toggle="tooltip" data-placement="bottom" title="Travels">
+               🗺
+            </div>
+            <div class="cat-about" data-toggle="tooltip" data-placement="bottom" title="Tech">
+               🤖
+            </div>
+            <div class="cat-about" data-toggle="tooltip" data-placement="bottom" title="Entrepreneurship">
+               🚀
+            </div>
+          </div>
+        </div>
+      </div>
 
 
-
-<div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+    </div>
+  </div>
+  <div class="copyright-icons">Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+</div>

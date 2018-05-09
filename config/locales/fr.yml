@@ -1,5 +1,9 @@
 ---
 fr:
+  helpers:
+    submit:
+      user:
+        update: "Modifier mon profil"
   activerecord:
       models:
         creator: "Créateur"
@@ -33,6 +37,54 @@ fr:
       filter: Filtrer
       creator_nil: Tu n'as pas trouvé la pépite que tu cherchais ? 😢
       add_creator: Ajoute un nouveau créateur
+  users:
+    show:
+      about: "À propos"
+      about-empty: "Édite ton profil pour te présenter à la communauté"
+      status: Statut
+      tags-liked: "Mes centres d'intérêt"
+      profile-title: "Mon statut sur Creators"
+  shared:
+    creator:
+      next-week: Bientôt !
+    navbar:
+      add-creator: Proposer un Créateur
+      sign_in: S'identifier
+      sign_up: Créer un compte
+      all-creators: Tous les Créateurs
+      profile: Mon profil
+    modal_progress_bar:
+      profile-title: "Mon statut sur Creators"
+    progress:
+      first-step-name: Débutant
+      second-step-name: "Dénicheur débutant"
+      third-step-name: "Dénicheur avancé"
+      fourth-step-name: "Dénicheur expert"
+      popover-title: "Tu peux :"
+      first-step-content: "- Upvoter des créateurs"
+      second-step-content: "- Upvoter des créateurs
+        <br>- Mettre en avant un créateur par semaine"
+      third-step-content: "- Upvoter des créateurs
+        <br>- Mettre en avant un créateur par semaine
+        <br>- Mise en avant de tes découvertes dans le classement de la semaine"
+      fourth-step-content: "- Upvoter des créateurs
+        <br>- Mettre en avant un créateur par semaine
+        <br>- Mise en avant de tes découvertes dans le classement de la semaine
+        <br>- Écrire des recommandations"
+    progress_next_steps:
+      steps: "Les étapes pour passer au niveau supérieur"
+      min-upvotes: "Upvote au moins %{user.min_upvotes} créateurs"
+      number-hint: "restant !"
+      min-digs:
+        one: "Partage au moins 1 créateur"
+        other: "Partage au moins %{count} créateurs"
+      min-upvotes-received: "Reçoit au moins %{upvotes_needed} upvotes
+        sur les créateurs que tu as partagé"
+      status-max: "Tu es déjà un expert !"
+      current-user-digs: "Mes pépites"
+      user-digs: "Créateurs partagés par %{user}"
+      current-user-upvotes: "Mes upvotes"
+      user-upvotes: "Créateurs upvotés par %{user}"
   pages:
     home:
       batch-empty: Revenez un peu plus tard! Un nouveau classement sera bientôt disponible!
@@ -48,15 +100,6 @@ fr:
       minutes: min
       last-winners: Gagnants de la semaine dernière
       all-btn: Tous les Créateurs
-  shared:
-    creator:
-      next-week: Bientôt !
-    navbar:
-      add-creator: Proposer un Créateur
-      sign_in: S'identifier
-      sign_up: Créer un compte
-      all-creators: Tous les Créateurs
-      profile: Mon profil
   devise:
     shared:
       links:

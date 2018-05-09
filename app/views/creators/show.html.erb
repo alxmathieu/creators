@@ -1,6 +1,9 @@
+
 <% content_for :title_tab, "#{@creator.youtube_name} - #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_title, "#{@creator.youtube_name.capitalize} is now on #{DEFAULT_META["meta_product_name"]}. Check it out!" %>
-<% content_for :meta_description, " '#{@creator.description.first(100)}' - found by #{@creator.user.username}" %>
+<% content_for :meta_description, "#{@creator.description.first(100)}... - found by #{@creator.user.username}" %>
+<% # content_for :meta_image, cl_image_tag(@creator.avatar_photo) %>
+
 
 <% if @creator.batch == Batch.current_batch  %>
   <div class="upvote-tip text-center">
@@ -21,32 +24,33 @@
   </div> -->
   <div class="creator">
     <%= cl_image_tag @creator.avatar_photo, class: "avatar-large"%>
-     <div class="showcased-name">
+    <div class="showcased-name">
       <%= @creator.youtube_name %>
-     </div>
+    </div>
+    <div class="upvotes-content">
+      <% if @creator.batch == Batch.current_batch  %>
+        <div class="btn btn-primary btn-upvote-no-padding" id="upvote-btn-creator-<%= @creator.id %>" >
+          <%= render 'shared/upvote_full_btn', creator: @creator %>
+        </div>
+      <% elsif @creator.batch == Batch.next_batch %>
+      <% else %>
+        <div class="btn btn-primary btn-upvote-no-padding" id="upvote-btn-creator-<%= @creator.id %>" >
+          <%= render 'shared/upvote_full_btn', creator: @creator %>
+        </div>
+      <% end %>
+    </div>
   </div>
-  <div class="upvotes-content">
-    <% if @creator.batch == Batch.current_batch  %>
-      <div class="btn btn-primary btn-upvote-no-padding" id="upvote-btn-creator-<%= @creator.id %>" >
-        <%= render 'shared/upvote_full_btn', creator: @creator %>
-      </div>
-    <% elsif @creator.batch == Batch.next_batch %>
-    <% else %>
-      <div class="btn btn-primary btn-upvote-no-padding" id="upvote-btn-creator-<%= @creator.id %>" >
-        <%= render 'shared/upvote_full_btn', creator: @creator %>
-      </div>
-    <% end %>
-  </div>
+
+
   <div class="wrapper">
     <div class="back-show ">
     </div>
   </div>
 </div>
+
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-md-8">
-
-
+    <div class="col-xs-12 col-md-9  main">
       <div class="card description-video card-gold">
         <div class="card description">
           <div class= "quote" style=" font-size: 25px">
@@ -65,32 +69,28 @@
           frameborder="0" width="100%" heigth= "100%" >
           </iframe>
           <div class="btn-more">
-          <%= link_to "More on Youtube...", @creator.channel_url, :target => "_blank" %>
+          <%= link_to " More on Youtube...", @creator.channel_url, :target => "_blank" %>
           </div>
         </div>
       </div>
     </div>
-
-    <div class="col-xs-12 col-md-4">
+    <div class="col-xs-12 col-md-3 main2">
       <div class="card info card-charcoal">
-        <div class="tags info">
-          <p class="subtitle-info"><strong>Tags</strong></p>
+        <div class="tags ">
           <% @creator.tag_list.each do |tag| %>
-            <ul>
-              #<%= tag %>
+              <ul><strong>#<%= tag %></strong>
             </ul>
           <% end %>
         </div>
-        <div class="followers info">
-          <p class="subtitle-info"><strong>Activity on Youtube</strong></p>
-          <ul><%= "#{@creator.nb_followers/1000}" %>k followers</ul>
-          <ul><%= @creator.nb_videos %> vidéos uploaded</ul>
+        <div class="followers ">
+          <ul><strong><%= "#{@creator.nb_followers/1000}" %>k </strong>followers</ul>
+          <ul><strong><%= @creator.nb_videos %></strong> vidéos</ul>
         </div>
-        <div class="social info">
-          <p class="subtitle-info"><strong>Social</strong></p>
+        <div class="social ">
+         <!--  <p class="subtitle-info"><strong>Social</strong></p>
           <ul><i class="fab fa-instagram"></i> Instagram</ul>
           <ul><i class="fab fa-facebook-square"></i> Facebook</ul>
-          <ul><i class="fab fa-twitter-square"></i> Twitter</ul>
+          <ul><i class="fab fa-twitter-square"></i> Twitter</ul> -->
           <div class="btn-subscribe ">
             <!-- <ul class="g-ytsubscribe" data-channelid="UChH5L8Od81YohhlVWGdDyQg" data-count="hidden" target="_blank"></ul> -->
             <div class="youtube-btn1">
@@ -99,31 +99,14 @@
               <div class="youtube-btn2">
                 <a href= "<%= @creator.channel_url %>?sub_confirmation=1" target="_blank"></a>
               </div>
-
-
-            <!-- TO DO a remplacer par la ligne:
-            quand la channel id sera disponible et faire css -->
+            </div>
           </div>
         </div>
       </div>
     </div>
-
-
+    </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   <script src="https://apis.google.com/js/platform.js"></script>
 

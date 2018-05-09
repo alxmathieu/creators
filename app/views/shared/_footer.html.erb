@@ -1,13 +1,20 @@
 <div class="footer">
   <div class="footer-links hidden-xs hidden-sm">
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.facebook.com/TheRisingCreators/" target="blank"><i class="fab fa-facebook"></i></a>
-    <a href="https://twitter.com/CreatorsRising" target="blank"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.instagram.com/the.rising.creators/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com/TheRisingCreators/" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://twitter.com/CreatorsRising" target="_blank"><i class="fab fa-twitter"></i></a>
   </div>
   <div class="footer-creators-brand text-center">
     <%= cl_image_tag asset_url("logo-tagline-inline.svg") %>
   </div>
-  <div class="footer-copyright hidden-xs hidden-sm">
-    This app was made with <i class="fa fa-heart"></i> at Le Wagon
+  <div class="info-footer">
+    <div class="footer-copyright">
+        This app was made with <i class="fa fa-heart"></i> by our team.
+    </div>
+    <div class="about-link">
+        <%= link_to "Learn more about us!", about_path %>
+    </div>
   </div>
 </div>
+
+

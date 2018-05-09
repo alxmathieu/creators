@@ -1,0 +1,47 @@
+.about-paragraph{
+  padding: 10px 0px;
+}
+
+.card-about{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar-about{
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+
+.name-about{
+  font-family: $creators-font;
+  color: black !important;
+  font-size: 25px;
+  a:hover{
+    text-decoration: none
+  }
+}
+
+
+.favorites-about{
+  display: flex;
+}
+
+.cat-about{
+  padding: 5px;
+}
+
+.about-team{
+  text-align: center;
+}
+
+.copyright-icons{
+  color: $charcoal;
+  padding-bottom: 5px;
+  font-size: 12px;
+  a{
+    color: $charcoal;
+  }
+}

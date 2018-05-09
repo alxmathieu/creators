@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home]
+  skip_before_action :authenticate_user!, only: [:home, :about]
 
 
   def home
@@ -44,6 +44,27 @@ class PagesController < ApplicationController
 
   end
 
+  def about
+    # for heroku DB
+    @alex = User.find(91)
+    @alexis = User.find(89)
+    @hugo = User.find(90)
+    @benoit = User.find(92)
+    @maximilien = User.find(93)
+
+    # for local DB
+  #   @alex = User.find(70)
+  #   @alexis = User.find(68)
+  #   @hugo = User.find(69)
+  #   @benoit = User.find(71)
+  #   @maximilien = User.find(72)
+
+  end
+
+
+
+
+
   private
 
   def sort_creators_current_batch(array)
@@ -60,9 +81,9 @@ class PagesController < ApplicationController
     end
   end
 
-def sort_creators_last_batch(array)
-  asc = array.sort_by {|creator| creator.upvotes.length }
-  asc.reverse
-end
+  def sort_creators_last_batch(array)
+    asc = array.sort_by {|creator| creator.upvotes.length }
+    asc.reverse
+  end
 
 end
