@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: space-around;
   height: 70px;
-  padding: 0px 50px;
+  padding: 0px 0px;
   color: rgba(0,0,0,0.3);
   // border-top: 1px solid rgba($silver-gray, 0.4);
 }
@@ -22,6 +22,24 @@
   font-weight: 300;
   font-size: 10px;
   color: $light-gray;
+}
+
+.about-link{
+  font-weight: 300;
+  font-size: 10px;
+  color: $light-gray;
+  padding-top: 10px;
+  &:hover{
+    font-weight: bolder;
+  }
+  a{
+    color: $light-gray;
+  }
+}
+
+.info-footer{
+  display: flex;
+  flex-direction: column;
 }
 
 .footer-links a {

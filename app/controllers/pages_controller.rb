@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home]
+  skip_before_action :authenticate_user!, only: [:home, :about]
 
 
   def home
@@ -43,6 +43,26 @@ class PagesController < ApplicationController
     end
 
   end
+
+  def about
+    # for heroku DB
+    # @alex = Creator.find(91)
+    # @alexis = Creator.find(89)
+    # @hugo = Creator.find(90)
+    # @benoit = Creator.find(92)
+    # @maximilien = Creator.find(93)
+
+    # for local DB
+    @alex = User.find(70)
+    @alexis = User.find(68)
+    @hugo = User.find(69)
+    @benoit = User.find(71)
+    @maximilien = User.find(72)
+  end
+
+
+
+
 
   private
 

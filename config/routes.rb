@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   scope '(:locale)', locale: /en/ do
     root to: 'pages#home'
+    get :about, to: "pages#about"
     get :creators, to: "creators#index", as: :search
     resources :users, only: [:show, :edit, :update]
     resources :creators, only: [:show, :edit, :update ] do
@@ -16,6 +17,7 @@ Rails.application.routes.draw do
         post "create", to: "creators#create", as: :create
       end
       resources :upvotes, only: [:new, :create, :destroy]
+
     end
   end
 
