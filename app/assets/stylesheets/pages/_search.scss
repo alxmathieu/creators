@@ -6,16 +6,16 @@
 }
 
 .wrapper-search {
-
 }
 
 .side-wrapper {
-  position: sticky;
-}
-
-.sticky {
-  position: sticky;
-  top: 10px;
+  @media all and (max-width: 768px){
+    position: block;
+  }
+  @media all and (min-width: 769px) {
+    top: 10px;
+   position: sticky;
+  }
 }
 
 .filters-card {
@@ -26,8 +26,7 @@
   // height: 65vh;
 }
 
-
-// Design - Scroll
+// Design Scroll
 
 
 // Search - Bar - Design

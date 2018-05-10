@@ -20,8 +20,7 @@
   <div class="wrapper-search">
     <div class="row">
       <div class="col-xs-12 col-sm-3 side-wrapper">
-        <div class="sticky">
-          <div class="filters-card card card-charcoal">
+        <div class="filters-card card card-charcoal">
             <div class="select-tags">
               <h3> <%= t('.categories') %> </h3>
               <%= select_tag :categories, options_from_collection_for_select(@categories, :id, :name, params[:categories]), include_blank: true, prompt: "Select something", class: "select2-search-tags select2form-index", multiple: true%>
@@ -41,10 +40,9 @@
                 <%= button_tag t('.filter'), class: "btn btn-primary" %>
               </span>
             </div>
-          </div>
-          <div class="hidden-xs">
-            <%= render 'shared/user-level-card'%>
-          </div>
+        </div>
+        <div class="hidden-xs">
+          <%= render 'shared/user-level-card'%>
         </div>
       </div>
 
@@ -53,7 +51,6 @@
       <div class="col-xs-12 col-sm-9 content-search">
 
           <!-- Content to scroll -->
-
             <div class="container-rankings card card-gold" id="ranking-search">
               <div class="current-batch">
                 <ul class="list-unstyled">
