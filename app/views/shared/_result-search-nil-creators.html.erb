@@ -3,7 +3,7 @@
     <h4>  <%= t("creators.index.creator_nil") %></h4>
     <div class="btn btn-charcoal-creator">
       <% if user_signed_in? %>
-        <%= link_to "Add a new creator", "#creator-modal", "data-toggle" => "modal" %>
+        <%= link_to t("creators.index.add_creator"), "#creator-modal", "data-toggle" => "modal" %>
         <%= render 'shared/modal_creator' %>
       <% else %>
         <%= link_to t("creators.index.add_creator"), new_user_session_path %>
