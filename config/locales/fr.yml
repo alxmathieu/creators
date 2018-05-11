@@ -91,6 +91,9 @@ fr:
       min-upvotes-received: "Reçoit au moins %{upvotes_needed} upvotes
         sur les créateurs que tu as partagé"
       status-max: "Tu es déjà un expert !"
+    user_level_card:
+      tagline_html: "Vous êtes actuellement <span class='lever-user-typo'> %{level} </span> sur Creators! Tu veux monter en niveau ?"
+      button: Découvre comment!
   pages:
     home:
       batch-empty: Revenez un peu plus tard! Un nouveau classement sera bientôt disponible!
