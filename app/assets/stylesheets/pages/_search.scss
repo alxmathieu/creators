@@ -6,24 +6,19 @@
 }
 
 .wrapper-search {
-  display: flex;
 }
 
 .side-wrapper {
-  width: 30vw;
-  margin-right: 20px;
-  position: sticky;
-  top: 10px;
-  margin-bottom: 20px;
-}
-
-.sticky {
-  position: sticky;
-  top: 10px;
+  @media all and (max-width: 768px){
+    position: block;
+  }
+  @media all and (min-width: 769px) {
+    top: 10px;
+   position: sticky;
+  }
 }
 
 .filters-card {
-
   display: flex;
   flex-direction: column;
   color: $charcoal;
@@ -31,9 +26,7 @@
   // height: 65vh;
 }
 
-
-// Design - Scroll
-
+// Design Scroll
 
 
 // Search - Bar - Design
@@ -45,6 +38,14 @@
   padding-bottom: 10px;
   margin-left: auto;
   margin-right: auto;
+
+  @media all and (max-width: 768px){
+    width: 90vw;
+  }
+  @media all and (min-width: 769px) {
+    width: 40vw;
+  }
+
 }
 
 .search-bar {
@@ -63,14 +64,9 @@
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
   box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.1);
-
-
 }
 
 // Level - card - info
-
-
-
 
 .lever-user-typo {
   color: $charcoal;
