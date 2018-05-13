@@ -11,6 +11,7 @@ fr:
       attributes:
         creator:
           name: "Nom"
+          language: "Langue"
   simple_form:
     labels:
       user:
