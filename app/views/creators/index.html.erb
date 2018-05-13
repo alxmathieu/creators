@@ -34,6 +34,12 @@
               <h3> <%= t('.weeks') %> </h3>
               <%= select_tag :batch, options_for_select(@batches.collect{ |b| [b.name, b.id]}, params[:batch]), include_blank: true, class: "select2batches select2form-index", multiple: true %>
             </div>
+            <div class="select-tags">
+              <h3> <%= t('.already_showcased') %> </h3>
+              <%#= check_box_tag 'already_showcased', true %>
+              <input type="checkbox" id="already_showcased" name="already_showcased" value="already_showcased">
+                <label for="subscribeNews">Afficher uniquement les créateurs "à la une" </label>
+            </div>
             <div class= "select-tags text-center">
               <br>
               <span class="input-group-btn">
