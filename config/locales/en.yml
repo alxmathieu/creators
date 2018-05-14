@@ -90,6 +90,9 @@ en:
       min-upvotes-received: "Receive at least %{upvotes_needed} upvotes
         on the creators you dug"
       status-max: "You're already an expert!"
+    user_level_card:
+      tagline_html: "You're currently a <span class='lever-user-typo'> %{level} </span>! Want to level up?"
+      button: How to do it ?
   pages:
     home:
       batch-empty: Please check back later! A new batch will be released soon.

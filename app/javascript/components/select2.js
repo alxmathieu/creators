@@ -10,21 +10,21 @@ $('.select2-tags').select2({
 
 $('.select2-search-tags').select2({
   maximumSelectionLength: 1,
-  placeholder: 'Tags',
+  placeholder: 'Selectionne des tags',
   tags: false,
   allowClear: true
 });
 
 $('.select2lang').select2({
   maximumSelectionLength: 1,
-  placeholder: 'Languages',
+  placeholder: 'Choisis une langue',
   tags: false,
   allowClear: true
 });
 
 $('.select2batches').select2({
   maximumSelectionLength: 1,
-  placeholder: 'Week',
+  placeholder: 'Découvre par semaine',
   tags: false,
   allowClear: true
 });

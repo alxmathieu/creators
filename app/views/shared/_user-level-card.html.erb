@@ -1,8 +1,8 @@
 <% if user_signed_in? %>
   <div class="level-card card text-center card-charcoal">
-    <p> You're currently a <span class="lever-user-typo"> <%= current_user.level_name %></span>! Want to level up?</p>
+    <p> <%=  t('shared.user_level_card.tagline_html', level: current_user.level_name ) %> </p>
     <span class="btn btn-info">
-      <%= link_to "How to do it ?", user_path(current_user) %>
+      <%= link_to t('shared.user_level_card.button'), user_path(current_user) %>
       <%#= link_to "How to do it ?", "#modalProgress", "data-toggle" => "modal" %>
     </span>
   </div>
