@@ -59,7 +59,7 @@ fr:
     creator:
       next-week: Bientôt !
     navbar:
-      add-creator: Proposer un Créateur
+      add-creator: Ajouter un Créateur
       sign_in: S'identifier
       sign_up: Créer un compte
       all-creators: Tous les Créateurs
@@ -95,6 +95,9 @@ fr:
     user_level_card:
       tagline_html: "Vous êtes actuellement <span class='lever-user-typo'> %{level} </span> sur Creators! Tu veux monter en niveau ?"
       button: Découvre comment!
+    showcased-card:
+      team-selection: Choix de l'équipe
+      discovered_by: "découvert par %{user}"
   pages:
     home:
       batch-empty: Revenez un peu plus tard! Un nouveau classement sera bientôt disponible!
@@ -111,6 +114,7 @@ fr:
       last-winners: Gagnants de la semaine dernière
       all-btn: Tous les Créateurs
       beta-tip: Creators est un site où découvrir et partager de nouveaux Créateurs YouTube avec la communauté. Nous sommes en Beta, nous attendons vos feedbacks !
+      add_creator: Ajouter un Créateur
     about:
       about-title: Creators, qu'est ce que c'est ?
       about-intro: Nous sommes 5 amis, passionnés de YouTube. Nous passons chacun des dizaines d'heures sur YouTube, et adorons nous partager nos Créateurs préférés.

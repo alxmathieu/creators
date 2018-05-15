@@ -93,6 +93,9 @@ en:
     user_level_card:
       tagline_html: "You're currently a <span class='lever-user-typo'> %{level} </span>! Want to level up?"
       button: How to do it ?
+    showcased-card:
+      team-selection: Team's selection
+      discovered_by: "discovered by %{user}"
   pages:
     home:
       batch-empty: Please check back later! A new batch will be released soon.
@@ -109,6 +112,7 @@ en:
       last-winners: Last week's winners
       all-btn: See all Creators
       beta-tip: Creators is a website where you can discover and share new YouTube Creators with the community. It's currently in Beta, so feel free to send us feedbacks!
+      add_creator: Add a new creator
     about:
       about-title: What is Creators?
       about-intro: We are a group of 5 friends who are passionate about YouTube. We spend hundreds of hours on YouTube, and love to share our favorites Creators with each other.
