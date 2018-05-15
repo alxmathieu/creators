@@ -46,18 +46,18 @@ class PagesController < ApplicationController
 
   def about
     # for heroku DB
-    @alex = User.find(91)
-    @alexis = User.find(89)
-    @hugo = User.find(90)
-    @benoit = User.find(92)
-    @maximilien = User.find(93)
+    # @alex = User.find(91)
+    # @alexis = User.find(89)
+    # @hugo = User.find(90)
+    # @benoit = User.find(92)
+    # @maximilien = User.find(93)
 
     # for local DB
-  #   @alex = User.find(70)
-  #   @alexis = User.find(68)
-  #   @hugo = User.find(69)
-  #   @benoit = User.find(71)
-  #   @maximilien = User.find(72)
+    @alex = User.find(70)
+    @alexis = User.find(68)
+    @hugo = User.find(69)
+    @benoit = User.find(71)
+    @maximilien = User.find(72)
 
   end
 

@@ -1,6 +1,8 @@
 
-
-  <div class="container">
+<div class="beta-tip text-center">
+  <h1><%= link_to t('.beta-tip'), about_path  %></h1>
+</div>
+<div class="container">
   <%= render 'shared/showcased-card' %>
   <div class="content-homepage" id="homepage">
     <div class="container-rankings card card-gold">
@@ -9,7 +11,7 @@
           <% if Batch.current_batch.nil? || Batch.all.empty? %>
             <h1> <%= t('.batch-empty') %> </h1>
           <% else %>
-            <h1 style= "margin-bottom: 0px"> <%= t('.title') %></h1>
+            <h2 style= "margin-bottom: 0px"> <%= t('.title') %></h2>
         </div>
         <div class="tagline-last-batch">
           <%= t('.tagline-current-batch') %>
