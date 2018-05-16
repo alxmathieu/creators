@@ -29,7 +29,7 @@ fr:
         password: 6 caractères minimum
   creators:
     index:
-      title: "- C'est ici que tu peux découvrir des pépites -"
+      title: "- Toutes les pépites sont listées ici -"
       search: Rechercher
       search-placeholder: Bonne recherche!
       categories: Catégories
@@ -105,16 +105,17 @@ fr:
       tagline-current-batch: Découvre et vote pour les Créateurs de la semaine et aide les à atteindre la première place
       title-last-batch: Créateurs de la semaine dernière
       tagline-last-batch: Tu as raté les Créateurs de la semaine dernière ? Découvre les ici !
-      teaser-next-week: Découvre
-      in: dans
-      teaser-next-week-plural: Créateur(s)
+      teaser_next_week_html:
+        zero: 'Découvre les nouveaux Créateurs dans'
+        one: 'Découvre <strong>1 Créateur</strong> dans'
+        other: 'Découvre <strong>%{count} Créateurs</strong> dans'
       days: jours
       hours: heures
       minutes: min
       last-winners: Gagnants de la semaine dernière
       all-btn: Tous les Créateurs
       beta-tip: Creators est un site où découvrir et partager de nouveaux Créateurs YouTube avec la communauté. Nous sommes en Beta, nous attendons vos feedbacks !
-      add_creator: Ajouter un Créateur
+      add_creator_btn: Ajouter un Créateur
     about:
       about-title: Creators, qu'est ce que c'est ?
       about-intro: Nous sommes 5 amis, passionnés de YouTube. Nous passons chacun des dizaines d'heures sur YouTube, et adorons nous partager nos Créateurs préférés.
@@ -146,3 +147,6 @@ fr:
     registrations:
       new:
         sign-up-title: Créer un compte
+    confirmations:
+      new:
+        resend_confirmation_instructions: Renvoyer le mail de confirmation
