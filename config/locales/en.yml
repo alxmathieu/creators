@@ -103,16 +103,17 @@ en:
       tagline-current-batch: Here are some brand new Creators! Upvote and make them reach the top.
       title-last-batch: Last week's Creators
       tagline-last-batch: Missed last week's ranking? Check them out!
-      teaser-next-week: Discover
-      in: dans
-      teaser-next-week-plural: new Creator
+      teaser_next_week_html:
+        zero: 'Discover new Creators in'
+        one: 'Discover <strong>1 new Creator</strong> in'
+        other: 'Discover <strong>%{count} new Creators</strong> in'
       days: days
       hours: hours
       minutes: minutes
       last-winners: Last week's winners
       all-btn: See all Creators
       beta-tip: Creators is a website where you can discover and share new YouTube Creators with the community. It's currently in Beta, so feel free to send us feedbacks!
-      add_creator: Add a new creator
+      add_creator_btn: Add a new creator
     about:
       about-title: What is Creators?
       about-intro: We are a group of 5 friends who are passionate about YouTube. We spend hundreds of hours on YouTube, and love to share our favorites Creators with each other.
@@ -143,3 +144,6 @@ en:
     registrations:
       new:
         sign-up-title: Sign up
+    confirmations:
+      new:
+        resend_confirmation_instructions: Resend confirmation instructions
