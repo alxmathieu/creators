@@ -1,17 +1,17 @@
 <div class="full-btn-upvote">
-  <div class="upvote-btn-title-symbol">
-    <div class="upvote-btn-title">
-    </div>
-    <div class="upvote-btn-symbol">
-      <% if user_signed_in? %>
+  <% if user_signed_in? %>
         <% upvote_for_creator = current_user.upvotes.where("creator_id = #{creator.id}").first %>
         <% if upvote_for_creator.nil? %>
           <%= link_to creator_upvotes_path(creator), method: :post, remote: true do %>
+          <div class="waiting">
              Upvote<i class="fas fa-angle-up"></i>
+          </div>
           <% end %>
         <% else upvote_for_creator %>
           <%= link_to creator_upvote_path(creator, upvote_for_creator), method: :delete, remote: true do %>
-             Upvote<i class="fas fa-angle-down"></i></i>
+          <div class="upvoted">
+            Upvoté<i class="fas fa-angle-up"></i>
+          </div>
           <% end %>
         <% end %>
       <% else %>
@@ -19,8 +19,6 @@
            <i class="fas fa-angle-up"></i>
         <% end %>
       <% end %>
-    </div>
-  </div>
   <div class="full-btn-upvote-nb">
     <%= creator.upvotes.length %>
   </div>

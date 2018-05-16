@@ -12,12 +12,6 @@
 }
 
 
-.full-btn-upvote {
-  width: 200px;
-  display: flex;
-  justify-content: space-around;
-
-}
 
 .upvote-btn-title-symbol {
   flex: 0 0 70%;
@@ -33,16 +27,6 @@
   padding-left: 10px;
 }
 
-.full-btn-upvote-nb{
-  flex: 0 0 30%;
-  background-color: white;
-  color: $silver-gray;
-  width:30px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
 .fa-angle-up {
   padding: 0px 10px 0px 10px;
   margin-right: 10px;
@@ -56,4 +40,46 @@
 
 .btn-upvote-no-padding {
   padding: 0;
+}
+
+
+.full-btn-upvote {
+  display: flex;
+  justify-content: space-around;
+  background-color: #ffffff;
+  border: 1px solid $gold;
+  border-radius: 2px;
+  width: 200px;
+  height: 55px;
+  vertical-align: middle;
+
+}
+
+.full-btn-upvote-nb{
+  border-color: $gold !important;
+  background-color: white !important;
+  color: $charcoal !important;
+  width:55px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-left: 1px solid;
+}
+
+.waiting{
+  color: $charcoal;
+  font-weight: bold;
+  width: 145px;
+  height: 55px;
+  padding-top: 10px;
+  padding-left: 18px;
+}
+
+.upvoted{
+  background-color: $gold;
+  font-weight: bold;
+  width: 145px;
+  height: 54px;
+  padding-top: 10px;
+  padding-left: 18px;
 }
