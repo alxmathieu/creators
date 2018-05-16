@@ -99,6 +99,7 @@ en:
     footer:
       footer_love_html: 'This app was made with <i class="fa fa-heart"></i> by our team.'
       footer_team: About us
+      footer_cgu: CGU
     navbar:
       navbar_project: The project
       add_creator: Add a Creator
@@ -137,6 +138,8 @@ en:
       about-hugo: I'm from Britanny and I can't be away from the sea more than 10 days, i love it too much!
       about-max: I love spending my freetime watching Casey roll through NY or Benjamin Verrachia laugh...!
       about-favorites: I mostly watch
+    cgu:
+      title_cgu: CGU
   devise:
     shared:
       links:

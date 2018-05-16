@@ -103,6 +103,7 @@ fr:
     footer:
       footer_love_html: 'Créé avec <i class="fa fa-heart"></i> par notre équipe.'
       footer_team: À propos de nous
+      footer_cgu: CGU
     navbar:
       navbar_project: Le projet
       add_creator: Ajouter un Créateur

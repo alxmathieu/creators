@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   scope '(:locale)', locale: /en/ do
     root to: 'pages#home'
     get :about, to: "pages#about"
+    get :cgu, to: "pages#cgu"
     get :creators, to: "creators#index", as: :search
     resources :users, only: [:show, :edit, :update]
     resources :creators, only: [:show, :edit, :update ] do
