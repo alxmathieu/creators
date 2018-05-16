@@ -53,11 +53,11 @@ class PagesController < ApplicationController
     @maximilien = User.find(93)
 
     # for local DB
-  #   @alex = User.find(70)
-  #   @alexis = User.find(68)
-  #   @hugo = User.find(69)
-  #   @benoit = User.find(71)
-  #   @maximilien = User.find(72)
+    # @alex = User.find(70)
+    # @alexis = User.find(68)
+    # @hugo = User.find(69)
+    # @benoit = User.find(71)
+    # @maximilien = User.find(72)
 
   end
 

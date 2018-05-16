@@ -93,6 +93,9 @@ en:
     user_level_card:
       tagline_html: "You're currently a <span class='lever-user-typo'> %{level} </span>! Want to level up?"
       button: How to do it ?
+    showcased-card:
+      team-selection: Team's selection
+      discovered_by: "discovered by %{user}"
   pages:
     home:
       batch-empty: Please check back later! A new batch will be released soon.
@@ -108,6 +111,24 @@ en:
       minutes: minutes
       last-winners: Last week's winners
       all-btn: See all Creators
+      beta-tip: Creators is a website where you can discover and share new YouTube Creators with the community. It's currently in Beta, so feel free to send us feedbacks!
+      add_creator: Add a new creator
+    about:
+      about-title: What is Creators?
+      about-intro: We are a group of 5 friends who are passionate about YouTube. We spend hundreds of hours on YouTube, and love to share our favorites Creators with each other.
+      about-goal_html: 'The main goal of Creators is to enable you to <strong> discover hidden gems on YouTube, and share your favorites with the community!</strong>'
+      about-recognition_html: 'Creators is also about <strong>giving recognition and visibility to the best smaller Creators.</strong>'
+      about-selection: "We'll regularly hand-pick some Creators that particularly impressed us and will highlight them:"
+      about-beta_html: "As this is our <strong>Beta Version</strong>, we need as much feedback as possible to improve the experience. You can send them on twitter, facebook, or via email: feedback@rising-creators.com"
+      about-love: We hope you'll love Creators ❤️
+      team-choice: Team's selection
+      about-team: The Team
+      about-alex: I became addicted to YouTube while being in cold dark Finland during winter 😅.
+      about-alexis: Engineer, specialized in Aeronautics? That's no fun, let's gather a YouTube Community here!
+      about-benoit: I love YT and finding small Creators is my main hobby. This and partying! "MDRRRR"
+      about-hugo: I'm from Britanny and I can't be away from the sea more than 10 days, i love it too much!
+      about-max: I love spending my freetime watching Casey roll through NY or Benjamin Verrachia laugh...!
+      about-favorites: I mostly watch
   devise:
     shared:
       links:

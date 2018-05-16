@@ -1,6 +1,8 @@
 
-
-  <div class="container">
+<div class="beta-tip text-center">
+  <h1><%= link_to t('.beta-tip'), about_path  %></h1>
+</div>
+<div class="container">
   <%= render 'shared/showcased-card' %>
   <div class="content-homepage" id="homepage">
     <div class="container-rankings card card-gold">
@@ -9,7 +11,7 @@
           <% if Batch.current_batch.nil? || Batch.all.empty? %>
             <h1> <%= t('.batch-empty') %> </h1>
           <% else %>
-            <h1 style= "margin-bottom: 0px"> <%= t('.title') %></h1>
+            <h2 style= "margin-bottom: 0px"> <%= t('.title') %></h2>
         </div>
         <div class="tagline-last-batch">
           <%= t('.tagline-current-batch') %>
@@ -45,7 +47,7 @@
     <div class="container-menu">
       <div class="btn btn-primary btn-lg btn-submit">
         <% if user_signed_in? %>
-          <%= link_to "Add a new creator", "#creator-modal", "data-toggle" => "modal" %>
+          <%= link_to t('.add_creator'), "#creator-modal", "data-toggle" => "modal" %>
           <%= render 'shared/modal_creator' %>
         <% else %>
           <%= link_to "Add a new creator", new_user_session_path %>
