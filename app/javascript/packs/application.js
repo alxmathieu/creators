@@ -19,10 +19,15 @@ if (document.getElementById("days")) {
   getSeconds();
 };
 
-import { showBurst } from '../components/mojs.js';
+import { showBurstCard } from '../components/mojs.js';
 if (document.querySelector(".icon-not-upvoted")) {
-  showBurst();
+  showBurstCard();
 };
+
+import { showBurstCreatorShow } from '../components/mojs.js';
+
+  showBurstCreatorShow();
+
 
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()

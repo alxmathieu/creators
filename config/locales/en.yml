@@ -96,6 +96,14 @@ en:
     showcased-card:
       team-selection: Team's selection
       discovered_by: "discovered by %{user}"
+    footer:
+      footer_love_html: 'This app was made with <i class="fa fa-heart"></i> by our team.'
+      footer_team: About us
+    navbar:
+      navbar_project: The project
+      add_creator: Add a Creator
+      all_creators: All Creators
+      beta-tip: Creators is a website where you can discover and share new YouTube Creators with the community. It's currently in Beta, so feel free to send us feedbacks!
   pages:
     home:
       batch-empty: Please check back later! A new batch will be released soon.
@@ -112,15 +120,14 @@ en:
       minutes: minutes
       last-winners: Last week's winners
       all-btn: See all Creators
-      beta-tip: Creators is a website where you can discover and share new YouTube Creators with the community. It's currently in Beta, so feel free to send us feedbacks!
       add_creator_btn: Add a new creator
     about:
-      about-title: What is Creators?
+      about-title: The Creators project
       about-intro: We are a group of 5 friends who are passionate about YouTube. We spend hundreds of hours on YouTube, and love to share our favorites Creators with each other.
       about-goal_html: 'The main goal of Creators is to enable you to <strong> discover hidden gems on YouTube, and share your favorites with the community!</strong>'
       about-recognition_html: 'Creators is also about <strong>giving recognition and visibility to the best smaller Creators.</strong>'
-      about-selection: "We'll regularly hand-pick some Creators that particularly impressed us and will highlight them:"
-      about-beta_html: "As this is our <strong>Beta Version</strong>, we need as much feedback as possible to improve the experience. You can send them on twitter, facebook, or via email: feedback@rising-creators.com"
+      about-selection: "Together with the community, we'll regularly hand-pick some Creators that particularly impressed us and will highlight them:"
+      about-beta_html: "As this is our <strong>Beta Version</strong>, we need as much feedback as possible to improve the experience. You either click on the banner above or send them on twitter, facebook, or via email: feedback@rising-creators.com"
       about-love: We hope you'll love Creators ❤️
       team-choice: Team's selection
       about-team: The Team
