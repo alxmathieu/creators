@@ -3,7 +3,7 @@
   <% if user.level == 0 %>
     <ul class="list-unstyled">
       <li style="<%= 'text-decoration: line-through;' if user.number_upvoted > 9 %>">
-        <%= t('.min-upvotes', user: user ) %>
+        <%= t('.min-upvotes', upvotes_needed: user.min_upvotes) %>
         <span class="light-color">
           (<%= user.number_upvoted < user.min_upvotes ? (user.min_upvotes - user.number_upvoted) : "0" %> <%= t('.number-hint') %>)
         </span>

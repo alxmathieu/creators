@@ -89,7 +89,7 @@ fr:
         <br>- Écrire des recommandations"
     progress_next_steps:
       steps: "Les étapes pour passer au niveau supérieur"
-      min-upvotes: "Upvote au moins %{user.min_upvotes} créateurs"
+      min-upvotes: "Upvote au moins %{upvotes_needed} créateurs"
       number-hint: "restant !"
       min-digs:
         one: "Partage au moins 1 créateur"
