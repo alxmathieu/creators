@@ -56,6 +56,7 @@ en:
   shared:
     creator:
       next-week: Next week!
+      team-choice: Team's selection
     navbar:
       add-creator: Add a new creator
       sign_in: Login
@@ -128,7 +129,8 @@ en:
       about-goal_html: 'The main goal of Creators is to enable you to <strong> discover hidden gems on YouTube, and share your favorites with the community!</strong>'
       about-recognition_html: 'Creators is also about <strong>giving recognition and visibility to the best smaller Creators.</strong>'
       about-selection: "Together with the community, we'll regularly hand-pick some Creators that particularly impressed us and will highlight them:"
-      about-beta_html: "As this is our <strong>Beta Version</strong>, we need as much feedback as possible to improve the experience. You either click on the banner above or send them on twitter, facebook, or via email: feedback@rising-creators.com"
+      about-beta_html: "As this is our <strong>Beta Version</strong>, we need as much feedback as possible to improve the Creators experience. You can either <a href='https://insights.hotjar.com/s?siteId=874983&surveyId=53050' target='_blank'>fill up the survey </a> or send them on Twitter ( <a href='https://twitter.com/CreatorsRising' target='_blank'><i class='fab fa-twitter'></i></a> ), Facebook ( <a href='https://www.facebook.com/TheRisingCreators/' target='_blank'><i class='fab fa-facebook'></i></a> )"
+      about-mail_html: "or via Email ("
       about-love: We hope you'll love Creators ❤️
       team-choice: Team's selection
       about-team: The Team
@@ -138,6 +140,8 @@ en:
       about-hugo: I'm from Britanny and I can't be away from the sea more than 10 days, i love it too much!
       about-max: I love spending my freetime watching Casey roll through NY or Benjamin Verrachia laugh...!
       about-favorites: I mostly watch
+      beta-tip: Creators is there to discover Creators on Youtube and share them with the community. We are still in Beta phase, so we need your feedbacks!
+      mail-subject: Some feedbacks to improve Creators!
     cgu:
       title_cgu: CGU
   devise:
