@@ -1,6 +1,7 @@
-
-
-  <div class="container">
+<div class="beta-tip text-center">
+  <h1><%= link_to t('.beta-tip'), 'https://insights.hotjar.com/s?siteId=874983&surveyId=53050', target: "_blank"  %></h1>
+</div>
+<div class="container">
   <%= render 'shared/showcased-card' %>
   <div class="content-homepage" id="homepage">
     <div class="container-rankings card card-gold">
@@ -9,7 +10,7 @@
           <% if Batch.current_batch.nil? || Batch.all.empty? %>
             <h1> <%= t('.batch-empty') %> </h1>
           <% else %>
-            <h1 style= "margin-bottom: 0px"> <%= t('.title') %></h1>
+            <h2 style= "margin-bottom: 3px"> <%= t('.title') %></h2>
         </div>
         <div class="tagline-last-batch">
           <%= t('.tagline-current-batch') %>
@@ -23,7 +24,7 @@
           </div>
       </div>
         <div class="last-batch">
-          <h2><%= t('.title-last-batch') %></h2>
+          <h2 style= "margin-bottom: 3px"><%= t('.title-last-batch') %></h2>
           <div class="tagline-last-batch">
             <%= t('.tagline-last-batch') %>
           </div>
@@ -45,15 +46,15 @@
     <div class="container-menu">
       <div class="btn btn-primary btn-lg btn-submit">
         <% if user_signed_in? %>
-          <%= link_to "Add a new creator", "#creator-modal", "data-toggle" => "modal" %>
+          <%= link_to t('.add_creator_btn'), "#creator-modal", "data-toggle" => "modal" %>
           <%= render 'shared/modal_creator' %>
         <% else %>
-          <%= link_to "Add a new creator", new_user_session_path %>
+          <%= link_to t('.add_creator_btn'), new_user_session_path %>
         <% end %>
       </div>
 
       <div class="teaser-next-week card card-charcoal">
-        <span><%= t('.teaser-next-week') %> <strong><%= pluralize @next_creators, t('.teaser-next-week-plural') %></strong> <%= t('.in') %></span>
+        <span><%= t('.teaser_next_week_html', count: @next_creators.size) %> </span>
         <div id="countholder">
          <div class="days" ><strong><span id="days"></span></strong><div><%= t('.days') %></div></div>
          <div class="hours"><strong><span id="hours"></span></strong><div><%= t('.hours') %></div></div>

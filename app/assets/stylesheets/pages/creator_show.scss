@@ -4,7 +4,7 @@
   z-index: -2;
   position: absolute;
   top: 350px;
-  left: --276px;
+  left: -244px;
   -webkit-transform: rotate(-5deg);
   background-color: $charcoal;
   height: 200px;
@@ -33,12 +33,6 @@
   font-weight: bold;
 }
 
-.full-btn-upvote-nb {
-    color: white;
-    background-color: #3c5474;
-    width: 30px;
-    border-radius: 0px 3px 3px 0px;
-}
 
 .counter-upvotes {
   margin: 30px;
@@ -219,6 +213,9 @@
   .info {
     width: 93vw;
     margin: 0px 0px 10px 0px;
+  }
+  .card-padding-mobile{
+    padding-left: 28%;
   }
 }
 

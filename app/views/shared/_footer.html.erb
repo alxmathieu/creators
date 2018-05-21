@@ -1,6 +1,6 @@
 <div class="footer">
   <div class="footer-links hidden-xs hidden-sm">
-    <a href="https://www.instagram.com/the.rising.creators/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.instagram.com/_risingcreators/" target="_blank"><i class="fab fa-instagram"></i></a>
     <a href="https://www.facebook.com/TheRisingCreators/" target="_blank"><i class="fab fa-facebook"></i></a>
     <a href="https://twitter.com/CreatorsRising" target="_blank"><i class="fab fa-twitter"></i></a>
   </div>
@@ -9,10 +9,13 @@
   </div>
   <div class="info-footer">
     <div class="footer-copyright">
-        This app was made with <i class="fa fa-heart"></i> by our team.
+        <%= t('.footer_love_html') %>
     </div>
     <div class="about-link">
-        <%= link_to "Learn more about us!", about_path %>
+        <%= link_to t('.footer_team'), about_path %>
+    </div>
+    <div class="about-link">
+        <%= link_to t('.footer_cgu'), cgu_path %>
     </div>
   </div>
 </div>

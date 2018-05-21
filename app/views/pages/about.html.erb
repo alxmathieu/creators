@@ -1,24 +1,27 @@
+<div class="beta-tip text-center">
+  <h1><%= link_to t('.beta-tip'), 'https://insights.hotjar.com/s?siteId=874983&surveyId=53050', target: "_blank"  %></h1>
+</div>
 <div class="container">
-  <h1 style="text-align: center"> Who are we?</h1>
-  <div class="description-about">
+  <h1 style="text-align: center"> <%= t('.about-title') %></h1>
+  <div class="description-about text-justify">
     <div class="about-paragraph">
-      We are a group of 5 friends who are passionate about YouTube.
-      Creators was originally a class-project, but we feel like there is a real
-      need for this, so that why we are now launching it (Alpha Version for now 😇)
+      <%= t('.about-intro') %>
     </div>
     <div class="about-paragraph">
-      The main goal of Creators is to enable you to discover hidden gems on YouTube,
-      and share your favorites with the community!
+      <%= t('.about-goal_html') %>
     </div>
     <div class="about-paragraph">
-      This will hopefully give visibility to small Creators and help you discover what's great
-      about YouTube !
+      <%= t('.about-recognition_html') %>
+      <br>
+      <%= t('.about-selection') %>
+      <i class="fas fa-star team-choice-star" data-toggle="tooltip" data-placement="top" title= "<%= t('.team-choice') %>"></i>
     </div>
     <div class="about-paragraph">
-      As this is our Alpha Version, we need as much feedback as possible.
-      You can send them on twitter, facebook, or via email: alex@rising-creators.com
+      <%= t('.about-beta_html') %>
+      <div class= "text-center about-love"><strong><%= t('.about-love') %></strong></div>
     </div>
   </div>
+  <h2 style="text-align: center"> <%= t('.about-team') %></h2>
   <div class="about-team">
     <div class="row">
       <!-- ONE CARD -->
@@ -34,11 +37,11 @@
           </div>
           <div class="desc-about">
             <p>
-              I became addicted to YouTube while being in cold dark Finland during winter 😅.
+              <%= t('.about-alex') %>
             </p>
           </div>
           <div class="favorites-title-about">
-            I mostly watch:
+            <%= t('.about-favorites') %>
           </div>
           <div class="favorites-about">
             <div class="cat-about" data-toggle="tooltip" data-placement="bottom" title="Vlogs">
@@ -72,11 +75,11 @@
           </div>
           <div class="desc-about">
             <p>
-              Engineer, specialized in Aeronautics? That's no fun, let's gather a YouTube Community here!
+              <%= t('.about-alexis') %>
             </p>
           </div>
           <div class="favorites-title-about">
-            I mostly watch:
+            <%= t('.about-favorites') %>
           </div>
           <div class="favorites-about">
             <div class="cat-about" data-toggle="tooltip" data-placement="bottom" title="Vlogs">
@@ -110,11 +113,11 @@
           </div>
           <div class="desc-about">
             <p>
-              I love YT and finding small Creators is my main hobby. This and partying! "MDRRRR"
+              <%= t('.about-benoit') %>
             </p>
           </div>
           <div class="favorites-title-about">
-            I mostly watch:
+            <%= t('.about-favorites') %>
           </div>
           <div class="favorites-about">
             <div class="cat-about" data-toggle="tooltip" data-placement="bottom" title="Vlogs">
@@ -136,7 +139,7 @@
         </div>
       </div>
       <!-- ONE CARD -->
-      <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-2">
         <div class="card card-turquoise card-about">
           <div class="avatar-about">
             <%= link_to(user_path(@hugo)) do %>
@@ -148,11 +151,11 @@
           </div>
           <div class="desc-about">
             <p>
-              I'm from Britanny and I can't be away from the sea more than 10 days, i love it too much!
+              <%= t('.about-hugo') %>
             </p>
           </div>
           <div class="favorites-title-about">
-            I mostly watch:
+            <%= t('.about-favorites') %>
           </div>
           <div class="favorites-about">
             <div class="cat-about" data-toggle="tooltip" data-placement="bottom" title="Sea">
@@ -174,7 +177,7 @@
         </div>
       </div>
       <!-- ONE CARD -->
-      <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-offset-0 col-md-4 ">
         <div class="card card-turquoise card-about">
           <div class="avatar-about">
             <%= link_to(user_path(@maximilien)) do %>
@@ -186,11 +189,11 @@
           </div>
           <div class="desc-about">
             <p>
-              I love spending my freetime watching Casey roll through NY or Benjamin Verrachia laugh...!
+              <%= t('.about-max') %>
             </p>
           </div>
           <div class="favorites-title-about">
-            I mostly watch:
+            <%= t('.about-favorites') %>
           </div>
           <div class="favorites-about">
             <div class="cat-about" data-toggle="tooltip" data-placement="bottom" title="Vlogs">

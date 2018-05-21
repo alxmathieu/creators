@@ -24,6 +24,9 @@
   color: $charcoal;
   padding: 0px 20px 10px 20px;
   // height: 65vh;
+  @media all and (max-width: 768px){
+    text-align: center;
+  }
 }
 
 // Design Scroll
@@ -80,6 +83,9 @@
 #ranking-search {
   width: 100%;
   padding: 30px;
+    @media all and (max-width: 1000px) {
+    padding: 5px;
+  }
 }
 
  // No result-card //
@@ -126,5 +132,9 @@
     margin: 20px 20px 0px 0px;
     font-size: 20px;
     font-weight: 400;
+  }
+
+  input {
+    font-weight: 200;
   }
 }

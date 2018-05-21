@@ -2,7 +2,7 @@
     <!-- <div class="showcased"> -->
       <div class="card card-showcased card-turquoise">
         <div class="editors-choice">
-          Team's selection
+          <%= t('.team-selection') %>
         </div>
         <div class="showcased-avatar-tags">
           <%= link_to(creator_path(@showcased_creator)) do %>
@@ -32,7 +32,7 @@
             </div>
           </div>
           <div class="showcased-digger">
-            discovered by <%= @showcased_creator.user.username %>
+            <%= t('.discovered_by', user: @showcased_creator.user.username ) %>
             <%= link_to(user_path(@showcased_creator.user)) do %>
               <%= image_tag @showcased_creator.user.avatar, class: "avatar-showcased-digger"%>
             <% end %>

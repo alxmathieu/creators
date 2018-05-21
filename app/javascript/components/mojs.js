@@ -11,7 +11,7 @@ function getOffset( el ) {
     return { top: _y, left: _x };
 }
 
-function showBurst() {
+function showBurstCard() {
 
   const allUpvoteBtnsInactive = document.querySelectorAll(".icon-not-upvoted");
 
@@ -50,9 +50,52 @@ function showBurst() {
     });
 };
 
-showBurst();
+showBurstCard();
 
-export {showBurst};
+export {showBurstCard};
+
+function showBurstCreatorShow() {
+
+  const allUpvoteBtnsInactive = document.querySelectorAll(".waiting");
+
+  // default style
+  // const explo = new mojs.Burst({
+  //   left:0,
+  //   top: 0,
+  //    children: {
+  //      fill:       '#fec624',
+  //    }
+  // });
+
+  //twitter style
+  const explo = new mojs.Burst({
+    left: 0, top: 0,
+    radius:   { 4: 32 },
+    angle:    45,
+    count:    14,
+    children: {
+      radius:       2.5,
+      fill:         '#fec624',
+      scale:        { 1: 0, easing: 'quad.in' },
+      pathScale:    [ .8, null ],
+      degreeShift:  [ 13, null ],
+      duration:     [ 500, 700 ],
+      easing:       'quint.out'
+    }
+  });
+
+  allUpvoteBtnsInactive.forEach((upvoteBtn) => {
+    upvoteBtn.addEventListener( 'click', function (e) {
+      explo
+        .tune({ x: getOffset(upvoteBtn).left + 1.18 * (upvoteBtn.offsetWidth) , y: getOffset(upvoteBtn).top +  0.5 * (upvoteBtn.offsetHeight)  }) //0.5 for centering it to the button
+        .replay();
+      });
+    });
+};
+
+showBurstCreatorShow();
+
+export {showBurstCreatorShow};
 
 
 
