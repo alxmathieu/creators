@@ -60,6 +60,7 @@ fr:
   shared:
     creator:
       next-week: Bientôt !
+      team-choice: Choix de l'équipe
     navbar:
       add-creator: Ajouter un Créateur
       sign_in: S'identifier
@@ -132,7 +133,8 @@ fr:
       about-goal_html: "Le but de Creators est de vous permettre de <strong> découvrir les pépites de YouTube, et de partager VOS chouchous avec la communauté !</strong>"
       about-recognition_html: "Nous pensons également que <strong>les meilleurs 'petits' YouTubers méritent d'être reconnus et mis en avant.</strong>"
       about-selection: 'Avec la communauté, nous choisirons régulièrement les Créateurs qui nous impressionnent particulièrement et les mettrons en évidence:'
-      about-beta_html: "Creators est encore en <strong>Version Beta</strong>, nous avons donc besoin de vos retours pour améliorer votre expérience ! Vous pouvez nous les envoyer et suivre l'avancée du projet en cliquant sur remplissant le sondage ou encore sur <br/> Twitter : <a href='https://twitter.com/CreatorsRising' target='_blank'><i class='fab fa-twitter'></i></a> <br/>Facebook : <a href='https://www.facebook.com/TheRisingCreators/' target='_blank'><i class='fab fa-facebook'></i></a> <br/> Email : feedback@rising-creators.com"
+      about-beta_html: "Creators est encore en <strong>Version Beta</strong>, nous avons donc besoin de vos retours pour améliorer votre expérience ! Vous pouvez nous les envoyer et suivre l'avancée du projet en <a href='https://insights.hotjar.com/s?siteId=874983&surveyId=53050' target='_blank'>remplissant le sondage </a> ou encore sur Twitter ( <a href='https://twitter.com/CreatorsRising' target='_blank'><i class='fab fa-twitter'></i></a> ), Facebook ( <a href='https://www.facebook.com/TheRisingCreators/' target='_blank'><i class='fab fa-facebook'></i></a> )"
+      about-mail_html: " ou par Email ("
       about-love: Nous espérons que vous aimerez Creators ❤️
       team-choice: Choix de l'équipe
       about-team: L'équipe
@@ -143,6 +145,7 @@ fr:
       about-max: TEXT
       about-favorites: "Je regarde principalement :"
       beta-tip: Creators est un site où découvrir et partager de nouveaux Créateurs YouTube avec la communauté. Nous sommes en Beta, nous attendons vos feedbacks !
+      mail-subject: Quelques feedbacks pour améliorer l'expérience Creators !
   devise:
     shared:
       links:
