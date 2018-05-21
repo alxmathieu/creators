@@ -6,7 +6,7 @@ class CreatorsController < ApplicationController
   def index
     @categories = ActsAsTaggableOn::Tag.order(:name)
     @batches = Batch.where(status: ["active", "closed"]).order(created_at: :asc)
-    @languages = Creator.find_all_languages
+    @languages = Creator.all.map(&:language).uniq
     @creators = policy_scope(Creator)
     if params[:name].present?
       sql_query = "description ILIKE :query OR youtube_name ILIKE :query"
@@ -24,6 +24,11 @@ class CreatorsController < ApplicationController
     if params[:languages].present?
       @creators = @creators.where(language: params[:languages])
     end
+
+    if params[:already_showcased].present?
+      @creators = @creators.where(already_showcased: true)
+    end
+
   end
 
   def show
