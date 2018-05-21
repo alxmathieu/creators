@@ -2,9 +2,9 @@
   <div class="level-card card text-center card-charcoal">
     <p> <%=  t('shared.user_level_card.tagline_html', level: current_user.level_name ) %> </p>
     <span class="btn btn-info">
-      <%= link_to t('shared.user_level_card.button'), user_path(current_user) %>
-      <%#= link_to "How to do it ?", "#modalProgress", "data-toggle" => "modal" %>
+      <%#= link_to t('shared.user_level_card.button'), user_path(current_user) %>
+      <%= link_to "How to do it ?", "#modalProgress", "data-toggle" => "modal" %>
     </span>
   </div>
-  <%#= render 'shared/modal_progress_bar', user: current_user %>
+  <%= render 'shared/modal_progress_bar', user: current_user %>
 <% end %>
