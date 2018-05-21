@@ -62,10 +62,13 @@ fr:
       next-week: Bientôt !
     navbar:
       add-creator: Ajouter un Créateur
-      sign_in: S'identifier
-      sign_up: Créer un compte
+      sign-in: S'identifier
+      sign-up: Créer un compte
+      sign-out: Se déconnecter
       all-creators: Tous les Créateurs
       profile: Mon profil
+      navbar-project: Le projet
+      add-creator: Ajouter un Créateur
     modal_progress_bar:
       profile-title: "Mon statut sur Creators"
     progress:
@@ -104,10 +107,6 @@ fr:
       footer_love_html: 'Créé avec <i class="fa fa-heart"></i> par notre équipe.'
       footer_team: À propos de nous
       footer_cgu: CGU
-    navbar:
-      navbar_project: Le projet
-      add_creator: Ajouter un Créateur
-      all_creators: Tous les Créateurs
   pages:
     home:
       batch-empty: Revenez un peu plus tard! Un nouveau classement sera bientôt disponible!
