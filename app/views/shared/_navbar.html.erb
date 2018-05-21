@@ -13,10 +13,10 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to t('.navbar_project'), about_path, class: "navbar-creators-item navbar-creators-link"%>
-      <%= link_to t('.add_creator'), "#creator-modal", "data-toggle" => "modal", class: "navbar-creators-item navbar-creators-link" %>
+      <%= link_to t('.navbar-project'), about_path, class: "navbar-creators-item navbar-creators-link"%>
+      <%= link_to t('.add-creator'), "#creator-modal", "data-toggle" => "modal", class: "navbar-creators-item navbar-creators-link" %>
       <%= render 'shared/modal_creator' %>
-      <%= link_to t('.all_creators'), search_path, class: "navbar-creators-item navbar-creators-link" %>
+      <%= link_to t('.all-creators'), search_path, class: "navbar-creators-item navbar-creators-link" %>
       <%#= link_to "My page", user_path(current_user), class: "navbar-creators-item navbar-creators-link" %>
 
       <!-- Avatar with dropdown menu -->
@@ -39,11 +39,11 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to t('.navbar_project'), about_path, class: "navbar-creators-item navbar-creators-link"%>
+      <%= link_to t('.navbar-project'), about_path, class: "navbar-creators-item navbar-creators-link"%>
       <%= link_to t('.all-creators'), search_path, class: "navbar-creators-item navbar-creators-link" %>
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-creators-item navbar-creators-link" %>
+      <%= link_to t('.sign-in'), new_user_session_path, class: "navbar-creators-item navbar-creators-link" %>
       <!-- Signup link (when logged out) -->
-      <%= link_to t(".sign_up", default: "Sign-up"), new_user_registration_path, class: "navbar-creators-item navbar-creators-link" %>
+      <%= link_to t('.sign-up'), new_user_registration_path, class: "navbar-creators-item navbar-creators-link" %>
     <% end %>
   </div>
   <!-- Dropdown list appearing on mobile only -->
@@ -61,6 +61,16 @@
           <!-- NEED TO ADD THE BTN TO see last week winner. NEEDS A NEW PAGE?? -->
           <li>
             <%= link_to t('.profile'), user_path(current_user), class: "navbar-creators-item navbar-creators-link" %>
+          </li>
+          <li>
+            <%= link_to t('.sign-out'), destroy_user_session_path, method: :delete, class: "navbar-creators-item navbar-creators-link" %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to t('.navbar-project'), about_path, class: "navbar-creators-item navbar-creators-link"%>
+            <%= link_to t('.all-creators'), search_path, class: "navbar-creators-item navbar-creators-link" %>
+            <%= link_to t('.sign-in'), new_user_session_path, class: "navbar-creators-item navbar-creators-link" %>
+            <%= link_to t('.sign-up'), new_user_registration_path, class: "navbar-creators-item navbar-creators-link" %>
           </li>
         <% end %>
       </ul>
