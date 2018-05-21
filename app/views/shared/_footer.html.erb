@@ -9,10 +9,13 @@
   </div>
   <div class="info-footer">
     <div class="footer-copyright">
-        This app was made with <i class="fa fa-heart"></i> by our team.
+        <%= t('.footer_love_html') %>
     </div>
     <div class="about-link">
-        <%= link_to "Learn more about us!", about_path %>
+        <%= link_to t('.footer_team'), about_path %>
+    </div>
+    <div class="about-link">
+        <%= link_to t('.footer_cgu'), cgu_path %>
     </div>
   </div>
 </div>

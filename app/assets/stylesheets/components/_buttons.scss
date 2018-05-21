@@ -73,7 +73,17 @@
   height: 55px;
   padding-top: 10px;
   padding-left: 18px;
+  &:hover{
+    opacity: 0.75;
+    background-color: $gold;
+    color: white;
+    .fa-angle-up{
+      -webkit-animation: ld-spin 1.5s ;
+      animation: ld-spin 1.5s ;
+    }
+  }
 }
+
 
 .upvoted{
   background-color: $gold;

@@ -38,6 +38,7 @@ fr:
       filter: Filtrer
       creator_nil: Tu n'as pas trouvé la pépite que tu cherchais ? 😢
       add_creator: Ajoute un nouveau créateur
+      beta-tip: Creators est un site où découvrir et partager de nouveaux Créateurs YouTube avec la communauté. Nous sommes en Beta, nous attendons vos feedbacks !
   users:
     show:
       about: "À propos"
@@ -55,6 +56,7 @@ fr:
       user-digs: "Créateurs partagés par %{user}"
       current-user-upvotes: "Mes upvotes"
       user-upvotes: "Créateurs upvotés par %{user}"
+      beta-tip: Creators est un site où découvrir et partager de nouveaux Créateurs YouTube avec la communauté. Nous sommes en Beta, nous attendons vos feedbacks !
   shared:
     creator:
       next-week: Bientôt !
@@ -98,6 +100,14 @@ fr:
     showcased-card:
       team-selection: Choix de l'équipe
       discovered_by: "découvert par %{user}"
+    footer:
+      footer_love_html: 'Créé avec <i class="fa fa-heart"></i> par notre équipe.'
+      footer_team: À propos de nous
+      footer_cgu: CGU
+    navbar:
+      navbar_project: Le projet
+      add_creator: Ajouter un Créateur
+      all_creators: Tous les Créateurs
   pages:
     home:
       batch-empty: Revenez un peu plus tard! Un nouveau classement sera bientôt disponible!
@@ -114,15 +124,15 @@ fr:
       minutes: min
       last-winners: Gagnants de la semaine dernière
       all-btn: Tous les Créateurs
-      beta-tip: Creators est un site où découvrir et partager de nouveaux Créateurs YouTube avec la communauté. Nous sommes en Beta, nous attendons vos feedbacks !
       add_creator_btn: Ajouter un Créateur
+      beta-tip: Creators est un site où découvrir et partager de nouveaux Créateurs YouTube avec la communauté. Nous sommes en Beta, nous attendons vos feedbacks !
     about:
-      about-title: Creators, qu'est ce que c'est ?
+      about-title: Le projet Creators
       about-intro: Nous sommes 5 amis, passionnés de YouTube. Nous passons chacun des dizaines d'heures sur YouTube, et adorons nous partager nos Créateurs préférés.
       about-goal_html: "Le but de Creators est de vous permettre de <strong> découvrir les pépites de YouTube, et de partager VOS chouchous avec la communauté !</strong>"
       about-recognition_html: "Nous pensons également que <strong>les meilleurs 'petits' YouTubers méritent d'être reconnus et mis en avant.</strong>"
-      about-selection: 'Nous choisirons régulièrement les Créateurs qui nous impressionnent particulièrement et les mettrons en évidence:'
-      about-beta_html: "Creators est encore en <strong>Version Beta</strong>, nous avons donc besoin de vos retours pour améliorer votre expérience ! Vous pouvez nous les envoyer sur twitter, facebook ou par email: feedback@rising-creators.com"
+      about-selection: 'Avec la communauté, nous choisirons régulièrement les Créateurs qui nous impressionnent particulièrement et les mettrons en évidence:'
+      about-beta_html: "Creators est encore en <strong>Version Beta</strong>, nous avons donc besoin de vos retours pour améliorer votre expérience ! Vous pouvez nous les envoyer en cliquant sur la bannière plus haut ou encore sur twitter, facebook ou par email: feedback@rising-creators.com"
       about-love: Nous espérons que vous aimerez Creators ❤️
       team-choice: Choix de l'équipe
       about-team: L'équipe
@@ -132,7 +142,7 @@ fr:
       about-hugo: TEXT
       about-max: TEXT
       about-favorites: "Je regarde principalement :"
-
+      beta-tip: Creators est un site où découvrir et partager de nouveaux Créateurs YouTube avec la communauté. Nous sommes en Beta, nous attendons vos feedbacks !
   devise:
     shared:
       links:
