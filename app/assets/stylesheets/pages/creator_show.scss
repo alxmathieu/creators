@@ -179,6 +179,7 @@
 
 // Pour mobile
 @media screen and (max-width: 1000px) {
+
   .creator{
     flex-direction: column;
   }
@@ -187,11 +188,15 @@
     margin-top: 30px;
   }
   .showcased-name {
-    font-size: 60px !important;
+    // font-size: 60px !important;
     text-align: center;
     width: 200px !important;
   }
 
+  .mobile-creator-name{
+    font-size: 40px !important;
+    max-width: 200px;
+  }
   .back-show{
   z-index: -2;
   position: absolute;
