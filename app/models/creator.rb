@@ -17,20 +17,11 @@ class Creator < ApplicationRecord
     return youtube_id
   end
 
-  def self.find_all_languages
-    array = []
-    self.all.each do |creator|
-      array << creator.language if !(array.include? creator.language)
-    end
-    return array
-  end
-
   # For activeAdmin
 
   def name
     "#{id} - #{youtube_name}"
   end
-
 
 
   # Avatar Photo

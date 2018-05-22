@@ -105,7 +105,6 @@
   background-color: $charcoal;
 }
 
-
 // Select 2 forms
 
 .select2form-index {
@@ -126,6 +125,12 @@
 .select-tags {
   li {
     color: black;
+    font-weight: 400;
+  }
+
+  label {
+    margin: 20px 20px 0px 0px;
+    font-size: 20px;
     font-weight: 400;
   }
 

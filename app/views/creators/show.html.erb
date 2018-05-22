@@ -24,7 +24,7 @@
   </div> -->
   <div class="creator">
     <%= cl_image_tag @creator.avatar_photo, class: "avatar-large"%>
-    <div class="showcased-name">
+    <div class="showcased-name mobile-creator-name">
       <%= @creator.youtube_name %>
     </div>
     <div class="upvotes-content">
@@ -75,7 +75,7 @@
       </div>
     </div>
     <div class="col-xs-12 col-md-3 main2">
-      <div class="card info card-charcoal">
+      <div class="card info card-charcoal card-padding-mobile">
         <div class="tags ">
           <% @creator.tag_list.each do |tag| %>
               <ul><strong>#<%= tag %></strong>

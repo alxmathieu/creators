@@ -60,12 +60,16 @@ fr:
   shared:
     creator:
       next-week: Bientôt !
+      team-choice: Choix de l'équipe
     navbar:
       add-creator: Ajouter un Créateur
-      sign_in: S'identifier
-      sign_up: Créer un compte
+      sign-in: S'identifier
+      sign-up: Créer un compte
+      sign-out: Se déconnecter
       all-creators: Tous les Créateurs
       profile: Mon profil
+      navbar-project: Le projet
+      add-creator: Ajouter un Créateur
     modal_progress_bar:
       profile-title: "Mon statut sur Creators"
     progress:
@@ -86,7 +90,7 @@ fr:
         <br>- Écrire des recommandations"
     progress_next_steps:
       steps: "Les étapes pour passer au niveau supérieur"
-      min-upvotes: "Upvote au moins %{user.min_upvotes} créateurs"
+      min-upvotes: "Upvote au moins %{upvotes_needed} créateurs"
       number-hint: "restant !"
       min-digs:
         one: "Partage au moins 1 créateur"
@@ -104,10 +108,6 @@ fr:
       footer_love_html: 'Créé avec <i class="fa fa-heart"></i> par notre équipe.'
       footer_team: À propos de nous
       footer_cgu: CGU
-    navbar:
-      navbar_project: Le projet
-      add_creator: Ajouter un Créateur
-      all_creators: Tous les Créateurs
     modal_creator:
       title: Renseigne ici l'URL Youtube de la chaîne que tu souhaites partager
       user-not-allowed: Désolé, tu ne peux pas partager un créateur... pour le moment !
@@ -156,7 +156,8 @@ fr:
       about-goal_html: "Le but de Creators est de vous permettre de <strong> découvrir les pépites de YouTube, et de partager VOS chouchous avec la communauté !</strong>"
       about-recognition_html: "Nous pensons également que <strong>les meilleurs 'petits' YouTubers méritent d'être reconnus et mis en avant.</strong>"
       about-selection: 'Avec la communauté, nous choisirons régulièrement les Créateurs qui nous impressionnent particulièrement et les mettrons en évidence:'
-      about-beta_html: "Creators est encore en <strong>Version Beta</strong>, nous avons donc besoin de vos retours pour améliorer votre expérience ! Vous pouvez nous les envoyer en cliquant sur la bannière plus haut ou encore sur twitter, facebook ou par email: feedback@rising-creators.com"
+      about-beta_html: "Creators est encore en <strong>Version Beta</strong>, nous avons donc besoin de vos retours pour améliorer votre expérience ! Vous pouvez nous les envoyer et suivre l'avancée du projet en <a href='https://insights.hotjar.com/s?siteId=874983&surveyId=53050' target='_blank'>remplissant le sondage </a> ou encore sur Twitter ( <a href='https://twitter.com/CreatorsRising' target='_blank'><i class='fab fa-twitter'></i></a> ), Facebook ( <a href='https://www.facebook.com/TheRisingCreators/' target='_blank'><i class='fab fa-facebook'></i></a> )"
+      about-mail_html: " ou par Email ("
       about-love: Nous espérons que vous aimerez Creators ❤️
       team-choice: Choix de l'équipe
       about-team: L'équipe
@@ -167,6 +168,7 @@ fr:
       about-max: TEXT
       about-favorites: "Je regarde principalement :"
       beta-tip: Creators est un site où découvrir et partager de nouveaux Créateurs YouTube avec la communauté. Nous sommes en Beta, nous attendons vos feedbacks !
+      mail-subject: Quelques feedbacks pour améliorer l'expérience Creators !
   devise:
     shared:
       links:
