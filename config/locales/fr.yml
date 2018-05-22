@@ -69,7 +69,6 @@ fr:
       all-creators: Tous les Créateurs
       profile: Mon profil
       navbar-project: Le projet
-      add-creator: Ajouter un Créateur
     modal_progress_bar:
       profile-title: "Mon statut sur Creators"
     progress:
