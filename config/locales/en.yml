@@ -105,6 +105,30 @@ en:
       add_creator: Add a Creator
       all_creators: All Creators
       beta-tip: Creators is a website where you can discover and share new YouTube Creators with the community. It's currently in Beta, so feel free to send us feedbacks!
+    modal_creator:
+      title: Enter the Youtube URL of the creator's channel you want to share
+      user-not-allowed: Sorry, you can't upload a creator...yet!
+      hint-user-level0: Upvotes some creators you like!
+      hint-user-level12: You can only upload 1 creator per week!
+      hint-user-level3: You can only upload 2 creators per week!
+      close-modal: Close
+      profile-path: See my profile
+      submit: Go fetch my creator!
+    add-creator:
+      error: Sorry, we couldn't find your creator. Please verify the URL and try again!
+      add-creator: Add a new creator
+      creator-found: Waouw, we found your creator! 🎉🎉🎉
+      followers: followers
+      videos: videos
+      views: views
+      form-infos: 1. Add some information to your review
+      form-video: 2. Pick a video that embodies %{creator_name} the most
+      select-video: I want this one 👆
+      video-url-input: "Or enter the url of the video below:"
+      description: "Write the review about %{creator_name}, explain what makes you vibrate..."
+      tags: Add a few tag applying to %{creator_name}
+      language: Main language of %{creator_name}
+      submit: Add %{creator_name} to the next ranking!
   pages:
     home:
       batch-empty: Please check back later! A new batch will be released soon.

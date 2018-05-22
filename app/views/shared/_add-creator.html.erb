@@ -3,18 +3,18 @@
     <% if @youtube_data.nil? %>
       <div class="text-center">
         <h1>
-          Sorry, we couldn't find your creator. Please verify the URL and try again!
+          <%= t('.error') %>
         </h1>
         <hr>
         <div class="btn btn-primary btn-lg btn-submit-home">
-          <%= link_to "Add a new creator", "#creator-modal", "data-toggle" => "modal", class: '' %>
+          <%= link_to t('.add-creator'), "#creator-modal", "data-toggle" => "modal", class: '' %>
           <%= render 'shared/modal_creator' %>
         </div>
       </div>
     <% else %>
       <div class="row">
         <div class="col-xs-6 text-center">
-          <h1> Waouw, we found your creator! 🎉🎉🎉</h1>
+          <h1><%= t('.creator-found') %></h1>
 
           <div class="card card-showcased" id="show-form-card">
             <div id="avatar-name-div">
@@ -24,36 +24,36 @@
             <div class="creator-stats">
                 <div>
                   <span><strong><%= @creator.nb_followers / 1000 %>k</strong></span>
-                  <p>Followers</p>
+                  <p><%= t('.followers') %></p>
                 </div>
                 <div>
                   <span><strong><%= @youtube_data[:nb_videos] %></strong></span>
-                  <p>Videos</p>
+                  <p><%= t('.videos') %></p>
                 </div>
                 <div>
                   <span><strong><%= @youtube_data[:view_count].to_i / 1000 %>k</strong></span>
-                  <p>Views</p>
+                  <p><%= t('.views') %></p>
                 </div>
               </ul>
             </div>
           </div>
         </div>
         <div class="col-xs-6">
-          <h2 class="text-center">1. Add some information to your review</h2>
+          <h2 class="text-center"><%= t('.form-infos') %></h2>
           <div class="card form-card">
 
             <%= simple_form_for @creator, url: create_creators_path do |f| %>
               <!-- [...] -->
               <div class="form-inputs">
-                <%= f.input :description, label: "Write the review about #{@creator.youtube_name}, explain what makes you vibrate..."%>
+                <%= f.input :description, label: t('.description', creator_name: @creator.youtube_name)%>
                 <div class="form-group has-error">
-                  <%= label_tag :tags, "Add a few tag applying to #{@creator.youtube_name}" %>
+                  <%= label_tag :tags, t('.tags', creator_name: @creator.youtube_name)%>
                   <%= select_tag :tags, options_from_collection_for_select(
                       @categories, 'id', 'name'), class: 'select2-tags', id: "input-tags-multiple", multiple: true, style:"width: 100%; font-size: 16px" %>
                 </div>
 
                 <div class="form-group has-error">
-                  <%= label_tag :language, "Main Language of #{@creator.youtube_name}" %>
+                  <%= label_tag :language, t('.language', creator_name: @creator.youtube_name)%>
                   <%= select_tag :language, options_for_select(["French", "Espagnol", "English", "German", "None"]), class: "select2lang", include_blank: "---", multiple: true, style:"width: 100%; font-size: 16px" %>
                 </div>
 
@@ -71,24 +71,24 @@
         </div>
       </div> <!-- Fin de la first row -->
 
-        <h2 class="text-center">2. Pick a video that embodies <%= @creator.youtube_name%> the most  </h2>
+        <h2 class="text-center"><%= t('.form-video', creator_name: @creator.youtube_name) %></h2>
           <div class="wrapper-videos">
               <% @youtube_data[:top_videos].each do |id| %>
                   <div class="video-card text-center">
                     <iframe class="ytplayer-showcased" type="text/html" id="<%= id %>{"
                          src="https://www.youtube.com/embed/<%= id %>?autoplay=0"
                          frameborder="0" height="150px" width="225px"> </iframe>
-                    <%= link_to "I want this one 👆", "#", class: "add-video-btn btn", id: id %>
+                    <%= link_to t('.select-video'), "#", class: "add-video-btn btn", id: id %>
                   </div>
               <% end %>
           </div>
           <div class="text-center">
-            <h3>Or enter the url of the video below:</h3>
+            <h3><%= t('.video-url-input') %></h3>
             <%= text_field_tag "Video url", nil, id: "custom-video-input", placeholder: 'https://www.youtube.com/watch?v=...' %>
           </div>
-          <%= f.hidden_field :video_url, label: "Pick a video that embodies the most #{@creator.youtube_name}", id: "video-form" %>
+          <%= f.hidden_field :video_url, id: "video-form" %>
           <div class="form-actions text-center">
-            <%= f.submit "Add #{@creator.youtube_name} to the next ranking!", class: "btn btn-primary", id:"submit-creator-btn" %>
+            <%= f.submit t('.submit', creator_name: @creator.youtube_name), class: "btn btn-primary", id:"submit-creator-btn" %>
           </div>
 
       <% end %> <!-- end of the simple form -->
