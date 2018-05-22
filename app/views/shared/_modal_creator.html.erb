@@ -7,7 +7,7 @@
             <span aria-hidden="true">&times;</span>
           </button>
           <% if current_user.allowed_to_upload? %>
-            <h5 class="modal-title" id="exampleModalLabel">Enter the Youtube URL of the creator's channel you want to share</h5>
+            <h5 class="modal-title" id="exampleModalLabel"><%= t('.title') %></h5>
           <% else %>
             <h5 class="modal-title" id="exampleModalLabel">🚫</h5>
           <% end %>
@@ -21,23 +21,23 @@
                  %>
               </div>
               <div class="text-center">
-                <%= form.button :submit, 'Go fetch my creator!', class:"btn btn-primary" %>
+                <%= form.button :submit, t('.submit'), class:"btn btn-primary" %>
               </div>
             <% end %>
           <% else %>
-            <p>Sorry, you can't upload a creator...yet!</p>
+            <p><%= t('.user-not-allowed') %></p>
             <% if current_user.level == 0 %>
-              <p>Upvotes some creators you like!</p>
+              <p><%= t('.hint-user-level0') %></p>
             <% elsif current_user.level == 1 || current_user.level == 2 %>
-              <p>You can only upload 1 creator per week!</p>
+              <p><%= t('.hint-user-level12') %></p>
             <% elsif current_user.level == 3 %>
-              <p>You can only upload 2 creators per week!</p>
+              <p><%= t('.hint-user-level3') %></p>
             <% end %>
             <%= render 'shared/progress', user: current_user %>
             <div class="modal-footer">
-              <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-info" data-dismiss="modal"><%= t('.close-modal') %></button>
               <div class="btn btn-primary">
-                <%= link_to "See my profile", user_path(current_user) %>
+                <%= link_to t('.profile-path'), user_path(current_user) %>
               </div>
             </div>
           <% end %>

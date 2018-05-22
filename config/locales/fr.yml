@@ -108,6 +108,30 @@ fr:
       footer_love_html: 'Créé avec <i class="fa fa-heart"></i> par notre équipe.'
       footer_team: À propos de nous
       footer_cgu: CGU
+    modal_creator:
+      title: Renseigne ici l'URL Youtube de la chaîne que tu souhaites partager
+      user-not-allowed: Désolé, tu ne peux pas partager un créateur... pour le moment !
+      hint-user-level0: Upvotes des créateurs que tu aimes !
+      hint-user-level12: Tu peux seulement partager un créateur par semaine !
+      hint-user-level3: Tu peux seulement partager 2 créateurs par semaine !
+      close-modal: Fermer
+      profile-path: Voir mon profil
+      submit: Trouvez mon Créateur !
+    add-creator:
+      error: Désolé, nous n'avons pas trouvé ton créateur. Vérifie l'URL et réessaye !
+      add-creator: Ajouter un nouveau créateur
+      creator-found: Waouw, nous avons trouvé ton créateur ! 🎉🎉🎉
+      followers: followers
+      videos: vidéos
+      views: vues
+      form-infos: 1. Ajoute quelques informations à ton partage
+      form-video: 2. Choisis une vidéo qui représente le mieux %{creator_name} selon toi
+      select-video: Je veux celle-ci 👆
+      video-url-input: "Tu peux aussi nous soumettre l'URL de la vidéo de ton choix :"
+      description: "Rédige un commentaire à propos de %{creator_name}, explique ce qui te plaît..."
+      tags: Sélectionne quelques tags qui décrivent %{creator_name}
+      language: Quelle est la langue de %{creator_name} ?
+      submit: Ajoute %{creator_name} au prochain classement !
   pages:
     home:
       batch-empty: Revenez un peu plus tard! Un nouveau classement sera bientôt disponible!
