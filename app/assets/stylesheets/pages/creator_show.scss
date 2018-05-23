@@ -21,7 +21,7 @@
 
 .upvote-tip {
   padding: 10px 10px;
-  background-color: rgba($gold, 0.7);
+  background-color: rgba($gold, 0.9);
   color: white;
   h1 {
     font-size: 18px;
@@ -211,8 +211,12 @@
   .btn-more {
   position: absolute;
   bottom: -20px;
-
   right: 32%;
+  }
+
+  .quote {
+    font-size: 30px;
+    padding-bottom: 30px;
   }
 
   .info {
