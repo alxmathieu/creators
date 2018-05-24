@@ -2,6 +2,15 @@
   padding: 10px 0px;
 }
 
+.explanations-block{
+  border: 1px solid $gold;
+  padding: 5px 30px 5px 30px;
+}
+
+.explanations-list{
+  padding-top: 5px;
+}
+
 .card-about{
   display: flex;
   flex-direction: column;
