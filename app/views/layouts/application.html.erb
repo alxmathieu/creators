@@ -49,7 +49,8 @@
             a.appendChild(r);
         })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
     </script>
-
+    <!-- For emojis to work -->
+    <script src="//twemoji.maxcdn.com/2/twemoji.min.js?2.7"></script>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
@@ -69,6 +70,10 @@
     <div>
       <%= render 'shared/footer' %>
     </div>
+    <!-- to change all emojis to tweemoji -->
+    <script>
+      twemoji.parse(document.body);
+    </script>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>
