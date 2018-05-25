@@ -1,3 +1,7 @@
+<!-- Render the modal here when user is signed out and trying to upvote
+to avoid placing it in every upvote button -->
+<%= render 'shared/modal_upvote_disconnected' %>
+
 <div class="beta-tip text-center">
   <h1><%= link_to t('.beta-tip'), 'https://insights.hotjar.com/s?siteId=874983&surveyId=53050', target: "_blank"  %></h1>
 </div>
@@ -49,7 +53,8 @@
           <%= link_to t('.add_creator_btn'), "#creator-modal", "data-toggle" => "modal" %>
           <%= render 'shared/modal_creator' %>
         <% else %>
-          <%= link_to t('.add_creator_btn'), new_user_session_path %>
+          <%= link_to t('.add_creator_btn'), "#upvote_disconnected", "data-toggle" => "modal" %>
+          <%#= link_to t('.add_creator_btn'), new_user_session_path %>
         <% end %>
       </div>
 

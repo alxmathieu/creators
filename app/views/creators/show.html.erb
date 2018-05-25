@@ -4,6 +4,10 @@
 <% content_for :meta_description, "#{@creator.description.first(100)}... - found by #{@creator.user.username}" %>
 <% # content_for :meta_image, cl_image_tag(@creator.avatar_photo) %>
 
+<!-- Render the modal here when user is signed out and trying to upvote
+to avoid any class inheritance that destroys modal style -->
+<%= render 'shared/modal_upvote_disconnected' %>
+
 
 <% if @creator.batch == Batch.current_batch  %>
   <div class="upvote-tip text-center">
