@@ -127,6 +127,12 @@ en:
       tags: Add a few tag applying to %{creator_name}
       language: Main language of %{creator_name}
       submit: Add %{creator_name} to the next ranking!
+    modal_upvote_disconnected:
+        title: Authentification required
+        content-community: Rising Creators is first and foremost a community.
+        content: You need to be connected to upvote or share a creator you like.
+        sign-in: Sign in
+        sign-up: Sign up
   pages:
     home:
       batch-empty: Please check back later! A new batch will be released soon.

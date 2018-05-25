@@ -131,6 +131,13 @@ fr:
       tags: Sélectionne quelques tags qui décrivent %{creator_name}
       language: Quelle est la langue de %{creator_name} ?
       submit: Ajoute %{creator_name} au prochain classement !
+    modal_upvote_disconnected:
+      title: Connexion requise
+      content-community: Rising Creators est avant tout une communauté.
+      content: Pour pouvoir upvoter ou ajouter un créateur que tu apprécies,
+        tu dois être connecté à l'application.
+      sign-in: S'identifier
+      sign-up: Créer un compte
   pages:
     home:
       batch-empty: Revenez un peu plus tard! Un nouveau classement sera bientôt disponible!

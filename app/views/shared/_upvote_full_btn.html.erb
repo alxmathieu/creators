@@ -4,7 +4,7 @@
     <% if upvote_for_creator.nil? %>
       <%= link_to creator_upvotes_path(creator), method: :post, remote: true do %>
         <div class="waiting">
-           Upvote<i class="fas fa-angle-up "></i>
+          Upvote<i class="fas fa-angle-up "></i>
         </div>
       <% end %>
     <% else upvote_for_creator %>
@@ -15,15 +15,13 @@
       <% end %>
     <% end %>
   <% else %>
-    <%= link_to new_user_session_path do %>
-    <div class="waiting">
-       Upvote<i class="fas fa-angle-up"></i>
-    </div>
+    <%= link_to "#upvote_disconnected", "data-toggle" => "modal" do %>
+      <div class="waiting">
+         Upvote<i class="fas fa-angle-up"></i>
+      </div>
     <% end %>
   <% end %>
   <div class="full-btn-upvote-nb">
     <%= creator.upvotes.length %>
   </div>
 </div>
-
-
