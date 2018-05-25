@@ -4,17 +4,29 @@
 <div class="container">
   <h1 style="text-align: center"> <%= t('.about-title') %></h1>
   <div class="description-about text-justify">
-    <div class="about-paragraph">
-      <%= t('.about-intro') %>
-    </div>
+
     <div class="about-paragraph">
       <%= t('.about-goal_html') %>
     </div>
-    <div class="about-paragraph">
-      <%= t('.about-recognition_html') %>
-      <br>
-      <%= t('.about-selection') %>
-      <i class="fas fa-star team-choice-star" data-toggle="tooltip" data-placement="top" title= "<%= t('.team-choice') %>"></i>
+    <div class="explanations-block ">
+      <div class="about-paragraph">
+        <%= t('.explanations-intro') %>
+        <ul class="explanations-list">
+          <li><%= t('.explanations-ranking-html') %></li>
+          <li><%= t('.explanations-creator-html') %></li>
+          <li><%= t('.explanations-upvote-html') %></li>
+          <br>
+          <li><%= t('.explanations-add-html') %></li>
+        </ul>
+
+
+      </div>
+      <div class="about-paragraph">
+        <%= t('.about-recognition_html') %>
+        <br>
+        <%= t('.about-selection') %>
+        <i class="fas fa-star team-choice-star" data-toggle="tooltip" data-placement="top" title= "<%= t('.team-choice') %>"></i>
+      </div>
     </div>
     <div class="about-paragraph">
       <%= t('.about-beta_html') %>
@@ -25,6 +37,9 @@
   </div>
   <h2 style="text-align: center"> <%= t('.about-team') %></h2>
   <div class="about-team">
+    <div class="about-paragraph">
+      <%= t('.about-intro') %>
+    </div>
     <div class="row">
       <!-- ONE CARD -->
       <div class="col-xs-12 col-sm-6 col-md-4">
