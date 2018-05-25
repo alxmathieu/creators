@@ -186,6 +186,8 @@ en:
         resend-confirmation: Didn't receive confirmation instructions?
         resend-unlock: Didn't receive unlock instructions?
     sessions:
+      signed_in: ""
+      signed_out: ""
       new:
         log-in-title: Log in
     registrations:

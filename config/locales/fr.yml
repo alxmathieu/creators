@@ -189,6 +189,8 @@ fr:
         resend-confirmation: Instructions de confirmation non-reçues ?
         resend-unlock: Instructions de déblocage non-reçues ?
     sessions:
+      signed_in: ""
+      signed_out: ""
       new:
         log-in-title: S'identifier
     registrations:

@@ -2,9 +2,9 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Permanent+Marker");
 
 // Define fonts for body and headers
-$body-font: "Lato", "Helvetica", "sans-serif";
-$headers-font: "Lato", "Helvetica", "sans-serif";
-$creators-font: "Permanent Marker", "Helvetica", "cursive";
+$body-font: "Lato", "Helvetica", "Arial", "sans-serif";
+$headers-font: "Lato", "Helvetica", "Arial", "sans-serif";
+$creators-font: "Permanent Marker", "Helvetica", "Arial", "cursive";
 
 body {
   font-weight: lighter;
