@@ -5,6 +5,7 @@ to avoid placing it in every upvote button -->
 <div class="beta-tip text-center">
   <h1><%= link_to t('.beta-tip'), 'https://insights.hotjar.com/s?siteId=874983&surveyId=53050', target: "_blank"  %></h1>
 </div>
+
 <div class="container">
   <%= render 'shared/showcased-card' %>
   <div class="content-homepage" id="homepage">
@@ -51,7 +52,7 @@ to avoid placing it in every upvote button -->
       <div class="btn btn-primary btn-lg btn-submit">
         <% if user_signed_in? %>
           <%= link_to t('.add_creator_btn'), "#creator-modal", "data-toggle" => "modal" %>
-          <%= render 'shared/modal_creator' %>
+          <%#= render 'shared/modal_creator' %>
         <% else %>
           <%= link_to t('.add_creator_btn'), "#upvote_disconnected", "data-toggle" => "modal" %>
           <%#= link_to t('.add_creator_btn'), new_user_session_path %>
