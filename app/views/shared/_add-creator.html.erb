@@ -13,14 +13,14 @@
       </div>
     <% else %>
       <div class="row">
-        <div class="col-xs-6 text-center">
+        <div class="col-md-6 col-sm-12 text-center">
           <h1><%= t('.creator-found') %></h1>
 
           <div class="card card-showcased" id="show-form-card">
             <div id="avatar-name-div">
-            <%= cl_image_tag @youtube_data[:remote_avatar_photo_url], class: "avatar-showcased-creator" %>
+            <%= cl_image_tag @youtube_data[:remote_avatar_photo_url], class: "avatar-new-creator" %>
             </div>
-            <h3 class="showcased-name"> <%=@creator.youtube_name %></h3>
+            <h3 class="name-new-creator"> <%=@creator.youtube_name %></h3>
             <div class="creator-stats">
                 <div>
                   <span><strong><%= @creator.nb_followers / 1000 %>k</strong></span>
@@ -38,7 +38,7 @@
             </div>
           </div>
         </div>
-        <div class="col-xs-6">
+        <div class="col-md-6 col-sm-12 ">
           <h2 class="text-center"><%= t('.form-infos') %></h2>
           <div class="card form-card">
 

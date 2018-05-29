@@ -50,7 +50,7 @@
 }
 
 .form-card {
-  height: 300px;
+  min-height: 300px;
 }
 
 .show-form {
@@ -115,4 +115,32 @@
 
 #custom-video-input {
   width: 35%;
+}
+
+.avatar-new-creator{
+  border-radius: 50%;
+  height: 120px;
+}
+
+.name-new-creator{
+  font-family: $creators-font;
+  font-size: 50px;
+  color: $gold;
+}
+
+@media screen and (max-width: 1000px) {
+  .wrapper-videos {
+    display: block;
+  }
+  .video-card{
+    padding: 10px 0px;
+  }
+  .creator-stats{
+    justify-content: space-around;
+    padding: 0px;
+  }
+  #custom-video-input {
+  width: 80%;
+}
+
 }
