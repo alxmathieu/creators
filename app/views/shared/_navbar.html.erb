@@ -1,4 +1,5 @@
 <div class="navbar-creators">
+  <%= render 'shared/modal_creator' %>
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-creators-brand" do %>
     <%= cl_image_tag asset_url("logo-inline-yellow.svg"), class: "hidden-xs"  %>
@@ -15,7 +16,6 @@
       <!-- Links when logged in -->
       <%= link_to t('.navbar-project'), about_path, class: "navbar-creators-item navbar-creators-link"%>
       <%= link_to t('.add-creator'), "#creator-modal", "data-toggle" => "modal", class: "navbar-creators-item navbar-creators-link" %>
-      <%= render 'shared/modal_creator' %>
       <%= link_to t('.all-creators'), search_path, class: "navbar-creators-item navbar-creators-link" %>
       <%#= link_to "My page", user_path(current_user), class: "navbar-creators-item navbar-creators-link" %>
 
@@ -54,6 +54,7 @@
         <% if user_signed_in? %>
           <li>
             <!-- NEED TO ADD THE BTN TO add a creator, WITHOUT a modal. -->
+            <%= link_to t('.add-creator'), "#creator-modal", "data-toggle" => "modal", class: "navbar-creators-item navbar-creators-link" %>
           </li>
           <li>
             <%= link_to t('.all-creators'), search_path, class: "navbar-creators-item navbar-creators-link" %>
