@@ -68,6 +68,7 @@ class CreatorsController < ApplicationController
     end
     authorize @creator
     if @creator.save
+      SlackNotifier.creator_notifier(current_user.id, @creator.id, "add a new Creator") unless Rails.env.development?
       redirect_to creator_path(@creator)
     else
       @youtube_data = ApiScrapper.new(params[:creator][:channel_url]).scrape
