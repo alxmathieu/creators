@@ -32,6 +32,8 @@ gem 'country_select'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
 
+# Slack Notification
+gem "slack-notifier"
 
 # Front Gems
 gem 'autoprefixer-rails'

@@ -7,6 +7,7 @@ class UpvotesController < ApplicationController
     @upvote = Upvote.new(user: current_user, creator: @creator)
     authorize @upvote
     if @upvote.save
+      SlackNotifier.creator_notifier(current_user.id, @creator.id, "upvoted") unless Rails.env.development?
       respond_to do |format|
         format.html { redirect_to root_path }
         format.js  # <-- will render `app/views/reviews/create.js.erb`
