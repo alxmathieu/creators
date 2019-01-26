@@ -141,10 +141,10 @@ fr:
   pages:
     home:
       batch-empty: Revenez un peu plus tard! Un nouveau classement sera bientôt disponible!
-      title: Découvre les Créateurs de la semaine!
-      tagline-current-batch: Découvre et vote pour les Créateurs de la semaine et aide les à atteindre la première place
+      title: Découvre les Créateurs du moment !
+      tagline-current-batch: Découvre et vote pour les Créateurs du moment et aide les à atteindre la première place
       title-last-batch: Créateurs de la semaine dernière
-      tagline-last-batch: Tu as raté les Créateurs de la semaine dernière ? Découvre les ici !
+      tagline-last-batch: Tu as raté les derniers Créateurs ? Découvre les ici !
       teaser_next_week_html:
         zero: 'Découvre les nouveaux Créateurs dans'
         one: 'Découvre <strong>1 Créateur</strong> dans'
@@ -152,7 +152,7 @@ fr:
       days: jours
       hours: heures
       minutes: min
-      last-winners: Gagnants de la semaine dernière
+      last-winners: Les derniers Créateurs soutenus
       all-btn: Tous les Créateurs
       add_creator_btn: Ajouter un Créateur
       beta-tip: Creators est un site où découvrir et partager de nouveaux Créateurs YouTube avec la communauté. Nous sommes en Beta, nous attendons vos feedbacks !

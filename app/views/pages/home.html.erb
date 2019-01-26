@@ -58,15 +58,15 @@ to avoid placing it in every upvote button -->
           <%#= link_to t('.add_creator_btn'), new_user_session_path %>
         <% end %>
       </div>
-
-      <div class="teaser-next-week card card-charcoal">
+<!-- Commenting the teasing card for now -->
+      <!-- <div class="teaser-next-week card card-charcoal">
         <span><%= t('.teaser_next_week_html', count: @next_creators.size) %> </span>
         <div id="countholder">
          <div class="days" ><strong><span id="days"></span></strong><div><%= t('.days') %></div></div>
          <div class="hours"><strong><span id="hours"></span></strong><div><%= t('.hours') %></div></div>
          <div class="minutes"><strong><span id="minutes"></strong></span><div><%= t('.minutes') %></div></div>
         </div>
-      </div>
+      </div> -->
       <% unless @winners_last_batch == [] %>
         <div class="ranking-last-week card card-charcoal">
           <h5 style="text-align: center"> <%= t('.last-winners') %> </h5>
