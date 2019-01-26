@@ -2,9 +2,9 @@ class ChangeBatchJob < ApplicationJob
   queue_as :default
 
   def perform
-    create_new_batch
-    open_pending_batch
-    close_active_batch
+    # create_new_batch
+    # open_pending_batch
+    # close_active_batch
   end
 
   def create_new_batch
